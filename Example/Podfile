@@ -2,10 +2,19 @@ use_frameworks!
 
 target 'MoreNumbers_Example' do
   pod 'MoreNumbers', :path => '../'
+  pod 'BigInt', '~> 3.0'
+  pod 'SipHash', '~>1.2'
+  pod 'PrimeFactors', :git => 'https://github.com/primetimer/PrimeFactors'
+
 
   target 'MoreNumbers_Tests' do
-    inherit! :search_paths
-
-    
+    inherit! :search_paths    
   end
+end
+
+target 'MoreNumbers Extension' do
+    pod 'MoreNumbers', :path => '../'
+    pod 'BigInt', '~> 3.0'
+    pod 'SipHash', '~>1.2'
+    pod 'PrimeFactors', :git => 'https://github.com/primetimer/PrimeFactors'
 end

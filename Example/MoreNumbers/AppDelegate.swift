@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import BigInt
+import PrimeFactors
+import MoreNumbers
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

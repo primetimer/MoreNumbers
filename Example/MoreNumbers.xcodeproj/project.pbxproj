@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A885A851CD563C3C4AD725D /* Pods_MoreNumbers_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C3B1EFF0DC22C40CD11CA4 /* Pods_MoreNumbers_Extension.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -15,6 +16,13 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		72C67CD9E72BE1A23E64139A /* Pods_MoreNumbers_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D670F12322713ACB97D9BA /* Pods_MoreNumbers_Tests.framework */; };
 		7526D859AF689397A52DB816 /* Pods_MoreNumbers_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72791AF954D5ED2986BCF7F7 /* Pods_MoreNumbers_Example.framework */; };
+		8492807A22213DC40082BBBE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8492807822213DC40082BBBE /* Interface.storyboard */; };
+		8492807C22213DC40082BBBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8492807B22213DC40082BBBE /* Assets.xcassets */; };
+		8492808322213DC40082BBBE /* MoreNumbers Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8492808222213DC40082BBBE /* MoreNumbers Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8492808822213DC40082BBBE /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492808722213DC40082BBBE /* InterfaceController.swift */; };
+		8492808A22213DC40082BBBE /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492808922213DC40082BBBE /* ExtensionDelegate.swift */; };
+		8492808C22213DC50082BBBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8492808B22213DC50082BBBE /* Assets.xcassets */; };
+		8492809022213DC50082BBBE /* MoreNumbers.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8492807622213DC40082BBBE /* MoreNumbers.app */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,12 +33,51 @@
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
 			remoteInfo = MoreNumbers;
 		};
+		8492808422213DC40082BBBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8492808122213DC40082BBBE;
+			remoteInfo = "MoreNumbers Extension";
+		};
+		8492808E22213DC50082BBBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8492807522213DC40082BBBE;
+			remoteInfo = MoreNumbers;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8492809422213DC50082BBBE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8492808322213DC40082BBBE /* MoreNumbers Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8492809822213DC50082BBBE /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8492809022213DC50082BBBE /* MoreNumbers.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		000B78A2F8907317C0733A47 /* Pods-MoreNumbers_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreNumbers_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoreNumbers_Tests/Pods-MoreNumbers_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		0D0C6E9EDC7ECD1388A52597 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		343BCBDB0D1FB11B2F9AFA15 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		0D0C6E9EDC7ECD1388A52597 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		343BCBDB0D1FB11B2F9AFA15 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		5E28F18CD494CB1254DF5C3D /* Pods-MoreNumbers_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreNumbers_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoreNumbers_Example/Pods-MoreNumbers_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* MoreNumbers_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoreNumbers_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,12 +91,31 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		72791AF954D5ED2986BCF7F7 /* Pods_MoreNumbers_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbers_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D670F12322713ACB97D9BA /* Pods_MoreNumbers_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbers_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8492807622213DC40082BBBE /* MoreNumbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoreNumbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8492807922213DC40082BBBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		8492807B22213DC40082BBBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8492807D22213DC40082BBBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8492808222213DC40082BBBE /* MoreNumbers Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MoreNumbers Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8492808722213DC40082BBBE /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		8492808922213DC40082BBBE /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		8492808B22213DC50082BBBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8492808D22213DC50082BBBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E47C0C173A6E3857AE72CEB /* Pods-MoreNumbers Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreNumbers Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoreNumbers Extension/Pods-MoreNumbers Extension.release.xcconfig"; sourceTree = "<group>"; };
 		9E227D326B3200F9D13792C3 /* Pods-MoreNumbers_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreNumbers_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoreNumbers_Tests/Pods-MoreNumbers_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A935D65377E0A2C676EC335C /* Pods-MoreNumbers Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreNumbers Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoreNumbers Extension/Pods-MoreNumbers Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		B23BC282BB48E682976C94A8 /* Pods-MoreNumbers_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreNumbers_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoreNumbers_Example/Pods-MoreNumbers_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CFECBAEC4F7FB474B1E68CBD /* MoreNumbers.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MoreNumbers.podspec; path = ../MoreNumbers.podspec; sourceTree = "<group>"; };
+		CFECBAEC4F7FB474B1E68CBD /* MoreNumbers.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MoreNumbers.podspec; path = ../MoreNumbers.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D5C3B1EFF0DC22C40CD11CA4 /* Pods_MoreNumbers_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbers_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		24E4D25EF2EDCDEC5A130858 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCD1AFB9204008FA782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,6 +132,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8492807F22213DC40082BBBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A885A851CD563C3C4AD725D /* Pods_MoreNumbers_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -75,6 +149,8 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for MoreNumbers */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				8492807722213DC40082BBBE /* MoreNumbers */,
+				8492808622213DC40082BBBE /* MoreNumbers Extension */,
 				607FACD11AFB9204008FA782 /* Products */,
 				7F513B306DF7D7C3311D607E /* Pods */,
 				7E74AE02BA1E9717D17948D4 /* Frameworks */,
@@ -86,6 +162,8 @@
 			children = (
 				607FACD01AFB9204008FA782 /* MoreNumbers_Example.app */,
 				607FACE51AFB9204008FA782 /* MoreNumbers_Tests.xctest */,
+				8492807622213DC40082BBBE /* MoreNumbers.app */,
+				8492808222213DC40082BBBE /* MoreNumbers Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +222,7 @@
 			children = (
 				72791AF954D5ED2986BCF7F7 /* Pods_MoreNumbers_Example.framework */,
 				74D670F12322713ACB97D9BA /* Pods_MoreNumbers_Tests.framework */,
+				D5C3B1EFF0DC22C40CD11CA4 /* Pods_MoreNumbers_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,8 +234,31 @@
 				5E28F18CD494CB1254DF5C3D /* Pods-MoreNumbers_Example.release.xcconfig */,
 				9E227D326B3200F9D13792C3 /* Pods-MoreNumbers_Tests.debug.xcconfig */,
 				000B78A2F8907317C0733A47 /* Pods-MoreNumbers_Tests.release.xcconfig */,
+				A935D65377E0A2C676EC335C /* Pods-MoreNumbers Extension.debug.xcconfig */,
+				8E47C0C173A6E3857AE72CEB /* Pods-MoreNumbers Extension.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8492807722213DC40082BBBE /* MoreNumbers */ = {
+			isa = PBXGroup;
+			children = (
+				8492807822213DC40082BBBE /* Interface.storyboard */,
+				8492807B22213DC40082BBBE /* Assets.xcassets */,
+				8492807D22213DC40082BBBE /* Info.plist */,
+			);
+			path = MoreNumbers;
+			sourceTree = "<group>";
+		};
+		8492808622213DC40082BBBE /* MoreNumbers Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8492808722213DC40082BBBE /* InterfaceController.swift */,
+				8492808922213DC40082BBBE /* ExtensionDelegate.swift */,
+				8492808B22213DC50082BBBE /* Assets.xcassets */,
+				8492808D22213DC50082BBBE /* Info.plist */,
+			);
+			path = "MoreNumbers Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,10 +273,12 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				C6A52FDAA5D8A4AC1CA5BB6E /* [CP] Embed Pods Frameworks */,
+				8492809822213DC50082BBBE /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8492808F22213DC50082BBBE /* PBXTargetDependency */,
 			);
 			name = MoreNumbers_Example;
 			productName = MoreNumbers;
@@ -200,14 +304,51 @@
 			productReference = 607FACE51AFB9204008FA782 /* MoreNumbers_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8492807522213DC40082BBBE /* MoreNumbers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8492809522213DC50082BBBE /* Build configuration list for PBXNativeTarget "MoreNumbers" */;
+			buildPhases = (
+				8492807422213DC40082BBBE /* Resources */,
+				8492809422213DC50082BBBE /* Embed App Extensions */,
+				24E4D25EF2EDCDEC5A130858 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8492808522213DC40082BBBE /* PBXTargetDependency */,
+			);
+			name = MoreNumbers;
+			productName = MoreNumbers;
+			productReference = 8492807622213DC40082BBBE /* MoreNumbers.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		8492808122213DC40082BBBE /* MoreNumbers Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8492809122213DC50082BBBE /* Build configuration list for PBXNativeTarget "MoreNumbers Extension" */;
+			buildPhases = (
+				90634B75E22DA9650C6B6864 /* [CP] Check Pods Manifest.lock */,
+				8492807E22213DC40082BBBE /* Sources */,
+				8492807F22213DC40082BBBE /* Frameworks */,
+				8492808022213DC40082BBBE /* Resources */,
+				556756F256336BBD5EC7A635 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MoreNumbers Extension";
+			productName = "MoreNumbers Extension";
+			productReference = 8492808222213DC40082BBBE /* MoreNumbers Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -218,6 +359,15 @@
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					8492807522213DC40082BBBE = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
+					8492808122213DC40082BBBE = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = DS739J79LU;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -236,6 +386,8 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* MoreNumbers_Example */,
 				607FACE41AFB9204008FA782 /* MoreNumbers_Tests */,
+				8492807522213DC40082BBBE /* MoreNumbers */,
+				8492808122213DC40082BBBE /* MoreNumbers Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +407,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8492807422213DC40082BBBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8492807C22213DC40082BBBE /* Assets.xcassets in Resources */,
+				8492807A22213DC40082BBBE /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8492808022213DC40082BBBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8492808C22213DC50082BBBE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +452,34 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		556756F256336BBD5EC7A635 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MoreNumbers Extension/Pods-MoreNumbers Extension-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BigInt-watchOS/BigInt.framework",
+				"${BUILT_PRODUCTS_DIR}/MoreNumbers-watchOS/MoreNumbers.framework",
+				"${BUILT_PRODUCTS_DIR}/PrimeFactors-watchOS/PrimeFactors.framework",
+				"${BUILT_PRODUCTS_DIR}/SipHash-watchOS/SipHash.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoreNumbers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PrimeFactors.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoreNumbers Extension/Pods-MoreNumbers Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6F20B317C3A11E684B40640A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -305,6 +502,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		90634B75E22DA9650C6B6864 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoreNumbers Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C6A52FDAA5D8A4AC1CA5BB6E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,13 +533,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MoreNumbers_Example/Pods-MoreNumbers_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MoreNumbers/MoreNumbers.framework",
+				"${BUILT_PRODUCTS_DIR}/BigInt-iOS/BigInt.framework",
+				"${BUILT_PRODUCTS_DIR}/MoreNumbers-iOS/MoreNumbers.framework",
+				"${BUILT_PRODUCTS_DIR}/PrimeFactors-iOS/PrimeFactors.framework",
+				"${BUILT_PRODUCTS_DIR}/SipHash-iOS/SipHash.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoreNumbers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PrimeFactors.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -347,6 +572,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8492807E22213DC40082BBBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8492808A22213DC40082BBBE /* ExtensionDelegate.swift in Sources */,
+				8492808822213DC40082BBBE /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -354,6 +588,16 @@
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* MoreNumbers_Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+		8492808522213DC40082BBBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8492808122213DC40082BBBE /* MoreNumbers Extension */;
+			targetProxy = 8492808422213DC40082BBBE /* PBXContainerItemProxy */;
+		};
+		8492808F22213DC50082BBBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8492807522213DC40082BBBE /* MoreNumbers */;
+			targetProxy = 8492808E22213DC50082BBBE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -374,6 +618,14 @@
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
+		8492807822213DC40082BBBE /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8492807922213DC40082BBBE /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -389,12 +641,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -442,12 +696,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -546,6 +802,118 @@
 			};
 			name = Release;
 		};
+		8492809222213DC50082BBBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A935D65377E0A2C676EC335C /* Pods-MoreNumbers Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = DS739J79LU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "MoreNumbers Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.MoreNumbers-Example.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		8492809322213DC50082BBBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E47C0C173A6E3857AE72CEB /* Pods-MoreNumbers Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DS739J79LU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "MoreNumbers Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.MoreNumbers-Example.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
+		8492809622213DC50082BBBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = MoreNumbers_Extension;
+				INFOPLIST_FILE = MoreNumbers/Info.plist;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.MoreNumbers-Example.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Debug;
+		};
+		8492809722213DC50082BBBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = MoreNumbers_Extension;
+				INFOPLIST_FILE = MoreNumbers/Info.plist;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.MoreNumbers-Example.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -572,6 +940,24 @@
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,
 				607FACF41AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8492809122213DC50082BBBE /* Build configuration list for PBXNativeTarget "MoreNumbers Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8492809222213DC50082BBBE /* Debug */,
+				8492809322213DC50082BBBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8492809522213DC50082BBBE /* Build configuration list for PBXNativeTarget "MoreNumbers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8492809622213DC50082BBBE /* Debug */,
+				8492809722213DC50082BBBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -461,9 +461,10 @@ BigInt("111312211312113221133211322112211213322112"),BigInt("3113112221131112211
 
 */
 
+#if true
 class LookAndSayTester : NumTester {
 	
-	private func Previous(n: BigUInt) -> BigUInt? {
+    public func Previous(n: BigUInt) -> BigUInt? {
 		guard let seq = OEIS.shared.GetSequence(key: self.property()) else { return nil }
 		var previus : BigUInt? = nil
 		for p in seq {
@@ -474,7 +475,8 @@ class LookAndSayTester : NumTester {
 		
 	}
 	
-	private func Say(n: BigUInt) -> (say: String, formatted : String, next: BigUInt) {
+    #if false
+	public func Say(n: BigUInt) -> (say: String, formatted : String, next: BigUInt) {
 		if n == 0 { return ("One Zero","0",0) }
 		var next = BigUInt(0)
 		var ans = ""
@@ -507,8 +509,9 @@ class LookAndSayTester : NumTester {
 //		if !speakable { ans = ans + "unspeakable" }
 		return (ans,formatted,next)
 	}
+    #endif
 
-	
+    #if false
 	func getLatex(n: BigUInt) -> String? {
 		var latex = ""
 		var set = "S : = \\{ s_{n} \\} \\\\"
@@ -527,9 +530,10 @@ class LookAndSayTester : NumTester {
 		latex = latex + say + " = " + String(next)
 		return latex
 	}
+    #endif
 
 	
-	func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if n <= 1 { return false }
 		guard let seq = OEIS.shared.GetSequence(key: self.property()) else { return false }
 		for p in seq {
@@ -539,13 +543,14 @@ class LookAndSayTester : NumTester {
 		return false
 	}
 	
+        #if false
 	private func Say(rep: Int, repdigit: Int) -> String {
 		var repdigitstr = SpokenNumber.shared.spoken(n: BigUInt(repdigit))
 		if rep > 1 { repdigitstr = repdigitstr + "s" }
 		return "\\text{" + String(rep) + " " + String(repdigitstr) + " }"
 	}
 	
-	#if false
+
 	func getLatex(n: BigUInt) -> String? {
 		guard let special = TestSpecialSync(n: n) else { return nil }
 		if !special { return nil }
@@ -577,4 +582,5 @@ class LookAndSayTester : NumTester {
 		return "look & say"
 	}
 }
+#endif
 

@@ -51,15 +51,15 @@ class FermatTester : NumTester {
 	}
 }
 
-class ConstructibleTester : NumTester {
+public class ConstructibleTester : NumTester {
 	
-	func property() -> String {
+	public func property() -> String {
 		return "Constructible"
 	}
-	func propertyString() -> String {
+	public func propertyString() -> String {
 		return "con\u{00AD}struc\u{00AD}tible"
 	}
-	func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if n <= 2 { return false }
 		if let _ = Decompose(n: n) {
 			return true
@@ -67,7 +67,7 @@ class ConstructibleTester : NumTester {
 		return false
 	}
 	
-	private func Decompose(n: BigUInt) -> (pow2: Int, fermatn : [Int])? {
+	public func Decompose(n: BigUInt) -> (pow2: Int, fermatn : [Int])? {
 		if n <= 2 { return nil }
 		var nn = n
 		var ans : [Int] = []
@@ -90,12 +90,7 @@ class ConstructibleTester : NumTester {
 		
 	}
 	
-	func getDesc(n: BigUInt) -> String? {
-		let pdesc = WikiLinks.shared.Link(key: self.property())
-		return pdesc
-	}
-	
-	func getLatex(n: BigUInt) -> String? {
+	public func getLatex(n: BigUInt) -> String? {
 		
 		guard let (pow2,fn) = Decompose(n: n) else { return nil }
 		

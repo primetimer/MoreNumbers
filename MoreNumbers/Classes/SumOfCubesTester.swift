@@ -10,13 +10,13 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class TaxiCabTester : SumOfTwoCubesTester {
+public class TaxiCabTester : SumOfTwoCubesTester {
 	
-	override func property() -> String {
+    override public func property() -> String {
 		return "Taxicab"
 	}
 	
-	override func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+    override public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
         guard let iscube = CubeTester().isSpecial(n: n, cancel: cancel) else { return nil }
 		if iscube { return false }
         guard let issum = SumOfTwoCubesTester().isSpecial(n: n,cancel: cancel) else { return nil }
@@ -24,8 +24,8 @@ class TaxiCabTester : SumOfTwoCubesTester {
 		return OEIS.shared.ContainsNumber(key: self.property(), n: n)
 	}
 	
-	override func getLatex(n: BigUInt) -> String? {
-		guard let special = TestSpecialSync(n: n) else { return nil }
+    override public func getLatex(n: BigUInt) -> String? {
+        guard let special = isSpecial(n: n,cancel: nil) else { return nil }
 		if !special { return nil }
 		if let (a,b,c,d) = Express2(n: n) {
 			let (stra,strb,strc,strd) = (String(a),String(b),String(c),String(d))
@@ -35,7 +35,7 @@ class TaxiCabTester : SumOfTwoCubesTester {
 		return nil
 	}
 	
-	private func Express2(n: BigUInt) -> (BigUInt,BigUInt,BigUInt,BigUInt)? {
+	public func Express2(n: BigUInt) -> (BigUInt,BigUInt,BigUInt,BigUInt)? {
 		var (n0,cube) = (n,BigUInt(1))
 		if n > 1000000000 {
 			(n0,cube) = RemoveCubes(n: n)
@@ -56,6 +56,7 @@ class TaxiCabTester : SumOfTwoCubesTester {
 	
 	
 }
+
 public class SumOfTwoCubesTester : NumTester {
 	
 	public func getLatex(n: BigUInt) -> String? {
@@ -133,7 +134,7 @@ public class SumOfTwoCubesTester : NumTester {
 	}
 	
 	public func Express(n: BigUInt) -> (a: BigUInt, b:BigUInt)? {
-		guard let special = TestSpecialSync(n: n) else { return nil }
+        guard let special = isSpecial(n: n, cancel: nil) else { return nil }
 		if !special { return nil }
 		//let (n0,cube) = RemoveCubes(n: n)
 		var (n0,cube) = (n,BigUInt(1))

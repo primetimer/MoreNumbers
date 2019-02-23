@@ -10,15 +10,11 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class PiLatticeTester : NumTester {
-	func getDesc(n: BigUInt) -> String? {
-		let desc = WikiLinks.shared.getLink(tester: self, n: n)
-		return desc
-	}
-	func getLatex(n: BigUInt) -> String? {
+public class PiLatticeTester : NumTester {
+	public func getLatex(n: BigUInt) -> String? {
 		return nil
 	}
-	func property() -> String {
+	public func property() -> String {
 		return "Pi Lattice Approximation"
 	}
 	
@@ -29,7 +25,7 @@ class PiLatticeTester : NumTester {
 		return BigUInt(p)
 		
 	}
-	func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if n<=2 { return false }
 		//n == pi*p^2 -> p = sqrt(n/pi)
 		let pd = sqrt(Double(n) / Double.pi) - 1
@@ -48,19 +44,16 @@ class PiLatticeTester : NumTester {
 	}
 	
 }
-class LatticeTester : NumTester {
-	func getDesc(n: BigUInt) -> String? {
-		let desc = WikiLinks.shared.getLink(tester: self, n: n)
-		return desc
-	}
+public class LatticeTester : NumTester {
+	
 	func getLatex(n: BigUInt) -> String? {
 		return nil
 	}
-	func property() -> String {
+    public func property() -> String {
 		return "Lattice points in circle"
 	}
 	
-	func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+    public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if n <= 1 { return false }
 		if n == 2 { return true }
 		if OEIS.shared.ContainsNumber(key: self.property(),n: n) {
@@ -70,7 +63,7 @@ class LatticeTester : NumTester {
 	}
 	
 	//NUmber of ways to write n = a^2 + b^2
-	func r2(n: BigUInt,cancel: CalcCancelProt?) -> BigUInt {
+	public func r2(n: BigUInt,cancel: CalcCancelProt?) -> BigUInt {
 		if n == 0 { return 1 }
 		var (ans,d1,d3) = (0,0,0)
 		let divisors = FactorCache.shared.Divisors(p: n,cancel: cancel)

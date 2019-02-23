@@ -10,9 +10,9 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class SemiPrimeTester : NumTester {
+public class SemiPrimeTester : NumTester {
 	
-	private lazy var first : [BigInt] = OEIS.shared.GetSequence(key: PrimeTester().property())!
+	private let first : [UInt64] = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,71,73,79,83,89,97]
 	
 	private func SemiPrimeQuickTest(p: BigUInt) -> Bool? {
 		if let factors = FactorCache.shared.IsFactored(p: p) {
@@ -51,7 +51,7 @@ class SemiPrimeTester : NumTester {
 		}
 		return nil
 	}
-	func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
 		if n < 4 { return false }
 		if let quicktest = SemiPrimeQuickTest(p: n) {
 			return  quicktest
@@ -69,20 +69,20 @@ class SemiPrimeTester : NumTester {
 		return nil
 	}
 	
-	func getDesc(n: BigUInt) -> String? {
-		let desc = WikiLinks.shared.getLink(tester: self, n: n)
-		return desc
-	}
+//    func getDesc(n: BigUInt) -> String? {
+//        let desc = WikiLinks.shared.getLink(tester: self, n: n)
+//        return desc
+//    }
+//
+//    func getLatex(n: BigUInt) -> String? {
+//        let dummycert = "is there a semiprime certifcate"
+//        return nil // Factorization is shown elsewhere
+//    }
 	
-	func getLatex(n: BigUInt) -> String? {
-		let dummycert = "is there a semiprime certifcate"
-		return nil // Factorization is shown elsewhere
-	}
-	
-	func property() -> String {
+	public func property() -> String {
 		return "semiprime"
 	}
-	func propertyString() -> String {
+	public func propertyString() -> String {
 		return "semi\u{00AD}prime"
 	}
 }

@@ -10,14 +10,10 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class HeegnerTester : NumTester {
-	func getDesc(n: BigUInt) -> String? {
-		let desc = WikiLinks.shared.getLink(tester: self, n: n)
-		return desc
-	}
+public class HeegnerTester : NumTester {
 	
 	func getLatex(n: BigUInt) -> String? {
-		guard let special = TestSpecialSync(n: n) else { return nil }
+        guard let special = isSpecial(n: n,cancel: nil) else { return nil }
 		if !special { return nil }
 		var latex = "\\mathbb{Q} [\\sqrt{-" + String(n) + "}] \\text{has unique prime factorization}"
 		switch Int(n) {
@@ -35,11 +31,11 @@ class HeegnerTester : NumTester {
 		return latex
 	}
 	
-	func property() -> String {
+	public func property() -> String {
 		return "Heegner"
 	}
 	
-	func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if OEIS.shared.ContainsNumber(key: self.property(), n: n) {
 			return true
 		}

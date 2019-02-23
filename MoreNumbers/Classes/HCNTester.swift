@@ -25,18 +25,7 @@ class HCNTester : NumTester {
 		}
 		return false
 	}
-	
-	func getDesc(n: BigUInt) -> String? {
-		if let hcn = findHCN(n: n) {
-			 var desc = WikiLinks.shared.getLink(tester: self, n: n)
-			 desc = desc + " It has " + String(hcn.div)
-				desc = desc + " divisors. More than any smaller number"
-				return desc
-			
-		}
-		return nil
-	}
-	
+		
 	func getLatex(n: BigUInt) -> String? {
 		if n == 1 {
 			return "\\tau (1) = 1"
@@ -56,12 +45,12 @@ class HCNTester : NumTester {
 	
 }
 
-class HCNumber {
+public class HCNumber {
 	
 	static let shared = HCNumber()
 
 	let primes : [BigUInt] = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
-	let maxn  = 1000000000000 //00000000
+	let maxn  = BigUInt("1000000000000")! //00000000
 	
 	private init() {
 		gen_hcn()

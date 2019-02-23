@@ -10,8 +10,8 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class BernoulliTester : NumTester {
-	func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+public class BernoulliTester : NumTester {
+	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if n < 5 { return false }
 		if  OEIS.shared.NumberIndex(oeisnr: oeisn, n: n, ordered: false) != nil {
 			return true
@@ -20,12 +20,8 @@ class BernoulliTester : NumTester {
 	}
 	
 	let (oeisn,oeisd) = ("A027641","A027642")
-	
-	func getDesc(n: BigUInt) -> String? {
-		return WikiLinks.shared.getLink(tester: self, n: n)
-	}
-	
-	func getLatex(n: BigUInt) -> String? {
+		
+	public func getLatex(n: BigUInt) -> String? {
 		guard let index = OEIS.shared.NumberIndex(oeisnr: oeisn, n: n, ordered: false) else { return nil }
 		guard let seqn = OEIS.shared.GetSequence(oeisnr: oeisn) else { return nil }
 		guard let seqd = OEIS.shared.GetSequence(oeisnr: oeisd) else { return nil }
@@ -39,15 +35,15 @@ class BernoulliTester : NumTester {
 		return latex
 	}
 	
-	func property() -> String {
+	public func property() -> String {
 		return "Bernoulli numerator"
 	}
 	
 	
 }
 
-class IrregularTester : NumTester {
-	func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+public class IrregularTester : NumTester {
+    public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if !PrimeCache.shared.IsPrime(p: n) { return false }
 		if GetBernoulliDivisor(n: n) != nil {
 			return true
@@ -77,10 +73,10 @@ class IrregularTester : NumTester {
 		return nil
 	}
 	
-	func getLatex(n: BigUInt) -> String? {
-		let special = TestSpecialSync(n: n) ?? false
+	public func getLatex(n: BigUInt) -> String? {
+		let special = isSpecial(n: n, cancel: nil) ?? false
 		if !special { return nil }
-		if BernoulliTester().TestSpecialSync(n: n) ?? false { return nil }
+        if BernoulliTester().isSpecial(n: n,cancel:nil) ?? false { return nil }
 		
 		if let (b,_) = GetBernoulliDivisor(n: n) {
 
@@ -92,7 +88,7 @@ class IrregularTester : NumTester {
 		return nil
 	}
 	
-	func property() -> String {
+	public func property() -> String {
 		return "Irregular prime"
 	}
 	

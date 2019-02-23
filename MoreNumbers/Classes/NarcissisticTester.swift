@@ -267,7 +267,7 @@ class SDRepresentation {
 }
 
 
-class NarcisticTester : NumTester {
+public class NarcisticTester : NumTester {
     
     private func CheckDigits(n: BigInt, base : UInt64) -> [(d: Int,pow: Int)] {
         var stellen = n
@@ -329,7 +329,7 @@ class NarcisticTester : NumTester {
     
     
     
-    func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+    public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
         do {
             let ans = CheckDigits(n: BigInt(n), base: 10)
             if ans.count > 0 { return true }
@@ -346,11 +346,6 @@ class NarcisticTester : NumTester {
         
     }
     
-    func getDesc(n: BigUInt) -> String? {
-        let desc =  WikiLinks.shared.getLink(tester: self, n: n)
-        return desc
-    }
-    
     private func format(n: BigUInt,base : Int = 10, param : [(d: Int,pow: Int)]) -> String {
         var latex = String(n) + "="
         for (i,d) in param.enumerated() {
@@ -362,7 +357,7 @@ class NarcisticTester : NumTester {
         return latex
     }
     
-    func getLatex(n: BigUInt) -> String? {
+    public func getLatex(n: BigUInt) -> String? {
         
         var latex = ""
         let p1 = CheckDigits(n: BigInt(n), base: 10)
@@ -389,7 +384,7 @@ class NarcisticTester : NumTester {
         return latex
     }
     
-    func property() -> String {
+    public func property() -> String {
         return "narcissistic"
     }
 }

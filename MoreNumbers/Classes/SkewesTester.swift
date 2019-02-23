@@ -25,7 +25,6 @@ public class BigNumberTester : NumTester {
 //    }
 	
 	public func getLatex(n: BigUInt) -> String? {
-		var latex = ""
         if n == 79 || n == 10101034 || n == 101010963 {
             let latexskewes = "Sk_{1} = e^{e^{e^{79}}} \\approx 10^{10^{10^{34}}} \\\\" +
             "Sk_{2} = 10^{10^{10^{963}}} \\\\" +

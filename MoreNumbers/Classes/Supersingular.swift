@@ -10,9 +10,9 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class SupersingularTester : NumTester {
+public class SupersingularTester : NumTester {
 	private let monster = [2,3,5,7,11,13, 17,19,23,29,31,41,47,59,71]
-	func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if n < 100 {
 			let nn = Int(n)
 			if monster.contains(nn) {
@@ -22,10 +22,10 @@ class SupersingularTester : NumTester {
 		return false
 	}
 	
-	func getDesc(n: BigUInt) -> String? {
-		let desc =  WikiLinks.shared.getLink(tester: self, n: n)
-		return desc
-	}
+//    func getDesc(n: BigUInt) -> String? {
+//        let desc =  WikiLinks.shared.getLink(tester: self, n: n)
+//        return desc
+//    }
 	
 	func getLatex(n: BigUInt) -> String? {
 		var latex = ""
@@ -36,7 +36,7 @@ class SupersingularTester : NumTester {
 
 	}
 	
-	func property() -> String {
+	public func property() -> String {
 		return "supersingular"
 	}
 	

@@ -11,7 +11,7 @@ import BigInt
 import PrimeFactors
 
 
-class HappyTester : NumTester {
+public class HappyTester : NumTester {
 	
 	private func SumOfDigits2(n: BigUInt) -> BigUInt {
 		var sum : BigUInt = 0
@@ -50,11 +50,11 @@ class HappyTester : NumTester {
 	}
 	
 	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
-		guard let seq = OEIS.shared.GetSequence(key: self.property()) else { return false }
-		for p in seq {
-			if p == n { return true }
-			if p > n { return false }
-		}
+//        guard let seq = OEIS.shared.GetSequence(key: self.property()) else { return false }
+//        for p in seq {
+//            if p == n { return true }
+//            if p > n { return false }
+//        }
 		return TestHappy(h: n)
 
 	}

@@ -43,7 +43,7 @@ class NumberSequencer : NumberSequencerProt {
 	
 	func Neighbor(n: BigUInt, count: Int) -> [BigUInt] {
 		var ans : [BigUInt] = []
-		if tester.TestSpecialSync(n: n) ?? false {
+        if tester.isSpecial(n: n, cancel: nil) ?? false {
 			ans.append(n)
 		}
 		var nn : BigUInt = n
@@ -59,7 +59,7 @@ class NumberSequencer : NumberSequencerProt {
 	func Next(n: BigUInt) -> BigUInt? {
 		for i in 1...distance {
 			let p = n + BigUInt(i)
-			if tester.TestSpecialSync(n: p) ?? false {
+            if tester.isSpecial(n: p,cancel: nil) ?? false {
 				return p
 			}
 		}
@@ -70,7 +70,7 @@ class NumberSequencer : NumberSequencerProt {
 		for i in 1...distance {
 			if n >= BigUInt(i) {
 				let p = n - BigUInt(i)
-				if tester.TestSpecialSync(n: p) ?? false {
+                if tester.isSpecial(n: p,cancel: nil) ?? false {
 					return p
 				}
 			}
@@ -78,12 +78,12 @@ class NumberSequencer : NumberSequencerProt {
 		return nil
 	}
 	
-	func StartSequence(count: Int) -> [BigInt] {
-		if let seq = OEIS.shared.GetSequence(key: tester.property()) {
-			return seq
-		}
-		return []
-	}
+    func StartSequence(count: Int) -> [BigInt] {
+        if let seq = OEIS.shared.GetSequence(key: tester.property()) {
+            return seq
+        }
+        return []
+    }
 }
 
 

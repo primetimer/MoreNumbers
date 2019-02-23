@@ -10,7 +10,7 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class MersenneTester : NumTester {
+public class MersenneTester : NumTester {
 	/*
 	func getDesc(n: BigUInt) -> String? {
 		let mdesc = WikiLinks.shared.Link(key: "Mersenne")
@@ -53,11 +53,11 @@ class MersenneTester : NumTester {
 		return latex
 	}
 	
-	func property() -> String {
+    public func property() -> String {
 		return "Mersenne"
 	}
 	
-	func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
+    public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if n == 1 { return true }
 		if n <= 2 { return false }
 		var nn = n+1
@@ -69,29 +69,21 @@ class MersenneTester : NumTester {
 		}
 		return true
 	}
-	func recordLatex() -> String? {
+	public func recordLatex() -> String? {
         return "2^{82589933}-1 - \\text{Mersenne prime}(2019)"
 		return "2^{77232917}-1 - \\text{Mersenne prime}(2018)"
 	}
 	
-	func subtester() -> [NumTester]? {
+    public func subtester() -> [NumTester]? {
 		return [RamanujanNagellTester()]
 	}
 }
 
-class ProthTester : NumTester {
-	func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
+public class ProthTester : NumTester {
+	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		let (k,_,nn) = getpart(n: n)
 		if k < nn { return true }
 		return false
-	}
-	
-	func getDesc(n: BigUInt) -> String? {
-		let pdesc = WikiLinks.shared.Link(key: self.property())
-		if PrimeCache.shared.IsPrime(p: BigUInt(n)) {
-			return String(n) + " is a " + pdesc + " prime"
-		}
-		return String(n) + " is a " + pdesc + " number"
 	}
 	
 	func getLatex(n: BigUInt) -> String? {
@@ -104,7 +96,7 @@ class ProthTester : NumTester {
 		return latex
 	}
 	
-	func property() -> String {
+	public func property() -> String {
 		return "Proth"
 	}
 	
@@ -128,25 +120,20 @@ class ProthTester : NumTester {
 	*/
 }
 
-class SierpinskiTester : NumTester {
-	func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
+public class SierpinskiTester : NumTester {
+	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if oeis.contains(n) {
 			return true
 		}
 		return false
 	}
-	
-	func getDesc(n: BigUInt) -> String? {
-		let desc = WikiLinks.shared.getLink(tester: self, n: n)
-		return desc
-	}
-	
-	func getLatex(n: BigUInt) -> String? {
+		
+	public func getLatex(n: BigUInt) -> String? {
 		let latex =  "\\forall n : " + String(n) + "\\cdot{2^n} +1 \\notin \\mathbb{P}  "
 		return latex
 	}
 	
-	func property() -> String {
+	public func property() -> String {
 		return "Sierpinski"
 	}
 	
@@ -158,18 +145,18 @@ class SierpinskiTester : NumTester {
 	
 }
 
-class TitanicTester : NumTester {
-	func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
+public class TitanicTester : NumTester {
+	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		let special = OEIS.shared.ContainsNumber(key: property(), n: n)
 		return special
 	}
-	func getLatex(n: BigUInt) -> String? {
-		guard let special = isSpecial(n: n,TimeOut()) else { return nil }
+	public func getLatex(n: BigUInt) -> String? {
+        guard let special = isSpecial(n: n,cancel: TimeOut()) else { return nil }
 		if !special { return nil }
 		let latex = "10^{999} + " + String(n) + "\\in \\mathbb{P}"
 		return latex
 	}
-	func property() -> String {
+	public func property() -> String {
 		return "titanic"
 	}
 }

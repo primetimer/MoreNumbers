@@ -258,7 +258,8 @@ class MathConstantTester : NumTester {
 		return nil
 	}
 	
-	internal func FindRational(n: BigUInt) -> (type : MathConstantType, n: BigInt, d: BigInt, index: Int)? {
+    #if false
+    public func FindRational(n: BigUInt) -> (type : MathConstantType, n: BigInt, d: BigInt, index: Int)? {
 		for type in MathConstantType.allValues {
 			guard let (oeis_n_nr,oeis_d_nr,_) = type.OEISRational() else { continue }
 			if !OEIS.shared.ContainsNumber(oeisnr: oeis_n_nr, n: n) { continue }
@@ -273,6 +274,7 @@ class MathConstantTester : NumTester {
 		}
 		return nil
 	}
+    #endif
 	
 	private func testStr(nstr: String, cstr : String) -> Bool
 	{
@@ -291,9 +293,9 @@ class MathConstantTester : NumTester {
 		if FindConst(n: n) != nil {
 			return true
 		}
-		if FindRational(n: n) != nil {
-			return true
-		}
+//        if FindRational(n: n) != nil {
+//            return true
+//        }
 		return false
 	}
 	

@@ -143,7 +143,6 @@ public class ProbablePrimeTester : NumTester {
 
 }
 
-/*
 public class CarmichaelTester : NumTester{
 	public func property() -> String {
 		return "Carmichael"
@@ -175,8 +174,6 @@ public class CarmichaelTester : NumTester{
 //        return latex
 //    }
 }
-*/
-
 
 public class PrimeTester : NumTester {
 	public func property() -> String {

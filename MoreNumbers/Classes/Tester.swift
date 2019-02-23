@@ -42,8 +42,10 @@ public class Tester {
 	public static var shared = Tester()
 	public static let testers : [NumTester] = [
         NarcisticTester(),
-		ExtraTester(),BigNumberTester(),PrimeTester(), SemiPrimeTester(),
-		CarmichaelTester(),AbundanceTester(),
+//        ExtraTester(),
+        BigNumberTester(),PrimeTester(), SemiPrimeTester(),
+//        CarmichaelTester(),
+        AbundanceTester(),
 		TriangleTester(),PronicTester(),SquareTester(),CubeTester(),
 		FibonacciTester(),TetrahedralTest(),
 		PentagonalTester(),HexagonalTester(),
@@ -53,10 +55,13 @@ public class Tester {
 		SierpinskiTester(),CatalanTester(),NonTotientTester(),
 		PlatonicTester(),
 		PalindromicTester(),PandigitalTester(), LucasTester(),SupersingularTester(),
-		HappyTester(),LookAndSayTester(),AudioActiveTester(),
+		HappyTester(),
+//        LookAndSayTester(),
+        AudioActiveTester(),
 		LuckyTester(),
 		SmithTester(),
-		MathConstantTester(),LatticeTester(),BernoulliTester()
+		MathConstantTester(),LatticeTester(),
+        BernoulliTester()
 		//,IrregularTester()
 	]
 	
@@ -330,20 +335,19 @@ class LucasTester : NumTester {
 	}
 }
 
-/*
-class RamanujanNagellTester : MersenneTester {
+public class RamanujanNagellTester : MersenneTester {
 	override public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool {
 		if n == 0 { return false }
 		return OEIS.shared.ContainsNumber(key: self.property(), n: n)
 	}
 	
-	override func getLatex(n: BigUInt) -> String? {
+	override public func getLatex(n: BigUInt) -> String? {
 		return nil //Solved by TriangleTester && MersenneTester
 	}
 	
-	override func property() -> String {
+    override public func property() -> String {
 		return "Ramanujan-Nagell"
 	}
 }
-*/
+
 

@@ -10,18 +10,26 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class TimeOut : CalcCancelProt {
-	func IsCancelled() -> Bool {
-		return false
-		let end = CFAbsoluteTimeGetCurrent()
-		let dif = end-start
-		if dif > 1.0 {
-			return true
-		}
-		return false
-	}
+public class TimeOut : CalcCancelProt {
+    
+    public static var enabletimeout = false
+    public static var timeoutdefault = 1.0
+    
+    public func IsCancelled() -> Bool {
+        if TimeOut.enabletimeout && self.timeout > 0.0 {
+            let end = CFAbsoluteTimeGetCurrent()
+            let dif = end-start
+            if dif > 1.0 {
+                return true
+            }
+        }
+        return false
+    }
 	
-	init(timeout : Double = 1.0) {
+    init() {
+        self.timeout = TimeOut.timeoutdefault
+    }
+	init(timeout : Double) {
 		self.timeout = timeout
 	}
 	

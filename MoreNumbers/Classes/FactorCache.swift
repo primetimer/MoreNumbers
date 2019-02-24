@@ -26,10 +26,10 @@ public class TimeOut : CalcCancelProt {
         return false
     }
 	
-    init() {
+    public init() {
         self.timeout = TimeOut.timeoutdefault
     }
-	init(timeout : Double) {
+	public init(timeout : Double) {
 		self.timeout = timeout
 	}
 	

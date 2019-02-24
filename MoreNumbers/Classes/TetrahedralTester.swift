@@ -10,10 +10,10 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class TetrahedralTest : NumTester {
+public class TetrahedralTest : NumTester {
 	
 	static private var tetrahedral : [BigUInt] = [BigUInt(1)]
-	func property() -> String {
+	public func property() -> String {
 		return "tetrahedral"
 	}
 	func propertyString() -> String {
@@ -25,7 +25,7 @@ class TetrahedralTest : NumTester {
 		return false
 	}
 	
-	func isSpecial(n: BigUInt,cancel: CalcCancelProt? ) -> Bool? {
+	public func isSpecial(n: BigUInt,cancel: CalcCancelProt? ) -> Bool? {
 		if let (b,_) = test(n: n,cancel:cancel) {
 			return b
 		}

@@ -9,11 +9,11 @@
 import Foundation
 import BigInt
 
-typealias OEISNR = String
+public typealias OEISNR = String
 
-class OEIS {	
+public class OEIS {
 	let oeisdefault = "https://oeis.org"
-	static var shared = OEIS()
+	public static var shared = OEIS()
 	private (set) var oeis : [String:OEISNR] = [:]			//Mapping from key to oeisnr
 	private var seq : [OEISNR:[BigInt]] = [:]		//Mapping from oeisnr to sequence
 	//private (set) var testerprop : [String:String] = [:]	//Mapping from oeisnr to testertype
@@ -154,16 +154,16 @@ class OEIS {
 		#endif
 	}
 	
-	func NumberIndex(key: String, n: BigUInt, ordered : Bool = true) -> Int? {
+	public func NumberIndex(key: String, n: BigUInt, ordered : Bool = true) -> Int? {
 		guard let oeisnr : OEISNR = oeis[key] else { return nil }
 		return NumberIndex(oeisnr: oeisnr, n:n , ordered : ordered)
 	}
-	func ContainsNumber(key: String, n: BigUInt) -> Bool {
+	public func ContainsNumber(key: String, n: BigUInt) -> Bool {
 		guard let oeisnr : OEISNR = oeis[key] else { return false }
 		return ContainsNumber(oeisnr: oeisnr,n: n)
 		
 	}
-	func NumberIndex(oeisnr: OEISNR, n: BigUInt, ordered : Bool = true) -> Int? {
+	public func NumberIndex(oeisnr: OEISNR, n: BigUInt, ordered : Bool = true) -> Int? {
 		guard let sequence = seq[oeisnr] else { return nil }
 		for (index,s) in sequence.enumerated() {
 			if abs(s) == n { return index }
@@ -171,28 +171,28 @@ class OEIS {
 		}
 		return nil
 	}
-	func ContainsNumber(oeisnr : OEISNR, n: BigUInt) -> Bool {
+	public func ContainsNumber(oeisnr : OEISNR, n: BigUInt) -> Bool {
 		guard let sequence = seq[oeisnr] else { return false }
 		let ans = sequence.contains(BigInt(n))
 		return ans
 	}
 	
-	func GetSequence(key : String) -> [BigInt]? {
+	public func GetSequence(key : String) -> [BigInt]? {
 		guard let oeisnr : OEISNR = oeis[key] else { return nil }
 		return GetSequence(oeisnr:oeisnr)
 		
 	}
-	func GetSequence(oeisnr: OEISNR) -> [BigInt]? {
+    public func GetSequence(oeisnr: OEISNR) -> [BigInt]? {
 		guard let sequence = seq[oeisnr] else { return nil }
 		return sequence
 	}
 	
 	//From testertype to oeisnr
-	func OEISNumber(key :String) -> OEISNR? {
+	public func OEISNumber(key :String) -> OEISNR? {
 		return oeis[key]
 	}
 	
-	func AddContinuedFractions(type : MathConstantType, _ sequence : [BigInt] = [])
+	public func AddContinuedFractions(type : MathConstantType, _ sequence : [BigInt] = [])
 	{
 		guard let oeisrational = type.OEISRational() else { assert(false) }
 		let key = type.Symbol()
@@ -212,17 +212,17 @@ class OEIS {
 		
 		//Add(denomiatorkey,oeisdenominator,d)
 	}
-	func Add(_ key : String, _ linkval: OEISNR, _ sequence : [BigInt] = [])  {
+	public func Add(_ key : String, _ linkval: OEISNR, _ sequence : [BigInt] = [])  {
 		oeis[key] = linkval
 		seq[linkval] = sequence
 	}
-	func Address(_ key : String) -> String {
+	public func Address(_ key : String) -> String {
 		if let oeis = OEISNumber(key: key) {
 			return "https://oeis.org/" + oeis + "/list"
 		}
 		return oeisdefault
 	}
-	func Link(key: String) -> String {
+	public func Link(key: String) -> String {
 		let adress = Address(key)
 		if adress.isEmpty { return "" }
 		var link = "<a href=\""
@@ -231,7 +231,7 @@ class OEIS {
 		return link
 	}
 	
-	func getLink(tester : NumTester, n: BigUInt) -> String {
+	public func getLink(tester : NumTester, n: BigUInt) -> String {
 		var desc = ""
 		desc = String(n) + " is a "
 		let link = Link(key: tester.property())
@@ -240,7 +240,7 @@ class OEIS {
 		return desc
 	}
 	
-	func getTester(link : String) -> NumTester? {
+	public func getTester(link : String) -> NumTester? {
 		var property = ""
 		for s in oeis {
 			if s.value.contains(link) {

@@ -1,5 +1,6 @@
 import XCTest
 import MoreNumbers
+import BigInt
 
 class Tests: XCTestCase {
     
@@ -13,9 +14,35 @@ class Tests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testPiRational() {
+        let t = MathConstantTester()
+        
+        guard let (type,digits) = t.FindConst(n: 314) else { XCTAssert(false); return }
+        XCTAssert(type == MathConstantType.pi)
+        let (oeis_n_nr,oeis_d_nr,_) = type.OEISRational()!
+        let seqn = OEIS.shared.GetSequence(oeisnr: oeis_n_nr)!
+        let seqd = OEIS.shared.GetSequence(oeisnr: oeis_d_nr)!
+//                for i in 0..<seqn.count {
+//                    print("Gamma \(i) = \(seqn[i]) / \(seqd[i])")
+//                }
+        let frac = ContinuedFractions.shared.ValueRationalDigits(numerator: seqn[1], denominator: seqd[1],precision :5)
+        XCTAssert(frac == "3.14285")
+    }
+
+    
+    func testGammaRational() {
+        let t = MathConstantTester()
+        
+        guard let (type,digits) = t.FindConst(n: 577) else { XCTAssert(false); return }
+        XCTAssert(type == MathConstantType.gamma)
+        let (oeis_n_nr,oeis_d_nr,_) = type.OEISRational()!
+        let seqn = OEIS.shared.GetSequence(oeisnr: oeis_n_nr)!
+        let seqd = OEIS.shared.GetSequence(oeisnr: oeis_d_nr)!
+//        for i in 0..<seqn.count {
+//            print("Gamma \(i) = \(seqn[i]) / \(seqd[i])")
+//        }
+        let frac = ContinuedFractions.shared.ValueRationalDigits(numerator: seqn[8], denominator: seqd[8],precision :4)
+        print(frac)
     }
     
     func testPerformanceExample() {

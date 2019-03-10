@@ -189,6 +189,7 @@ public class PrimeTester : NumTester {
 	public func issubTester() -> Bool {
 		return false
 	}
+    public init() {}
 	
 //    func LatexSet() -> LatexString? {
 //        let set = "\\mathbb{P} := \\{ n > 1 \\in \\mathbb{N} : n|ab \\rightarrow n\\mid a \\lor n\\mid b\\}"

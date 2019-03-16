@@ -45,6 +45,29 @@ class Tests: XCTestCase {
         print(frac)
     }
     
+    func testPhiPow() {
+        let t = MathConstantTester()
+        
+        var phi = MathConstant().ValueStr(type: .phi)
+        phi = phi.replacingOccurrences(of: ".", with: "")
+        phi.truncate(length: 100)
+        let nphi = BigUInt(phi)!
+        
+        var pow10 = BigUInt(1)
+        for _ in 1...100 {
+            pow10 = pow10 * BigUInt(10)
+        }
+        
+        var phipow = nphi
+        for _ in 2...19 {
+            phipow = phipow * nphi / pow10
+            
+        }
+        print(String(phipow))
+        
+       
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure() {

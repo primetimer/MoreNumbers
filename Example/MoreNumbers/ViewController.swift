@@ -7,11 +7,64 @@
 //
 
 import UIKit
+import BigInt
+import iosMath
+import MoreNumbers
 
 class ViewController: UIViewController {
 
+    var uimath : MTMathUILabel!
+    var uilabel : UILabel!
+//
+//
+    private func testSchizophrenic() {
+        let t = SchizophrenicTester()
+        let n = SchizophrenicTester.fn[27]
+
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
+    
+    private func testGelfond() {
+        let t = MathConstantTester()
+        let n = BigUInt(231)
+        
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
+    
+    private func testPadovan() {
+        let t = PadovanTester()
+        let n = PadovanTester.Nth(n: 13)
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
+    private func testViswanath() {
+        let t = MathConstantTester()
+        let n = BigUInt(113)
+        
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        uimath = MTMathUILabel()
+        uilabel = UILabel()
+        view.addSubview(uimath)
+//        view.addSubview(uilabel)
+        
+        uimath.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        uilabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        uilabel.text = "Hallo Welt"
+//        testPadovan()
+        testViswanath()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

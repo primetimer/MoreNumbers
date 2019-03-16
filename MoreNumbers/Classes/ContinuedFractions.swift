@@ -10,7 +10,7 @@ extension String {
      
      - Returns: A `String` object.
      */
-    func truncate(length: Int, trailing: String = "0") -> String {
+    public func truncate(length: Int, trailing: String = "0") -> String {
         if self.count > length {
             return String(self.prefix(length)) + trailing
         } else {
@@ -69,6 +69,11 @@ extension MathConstantType {
             return ("A159766N","A159766D","A159766")
         case .feigenbaumalpha:
             return ("A159767N","A159767D","A159767")
+        case .gelfond:
+            return ("A058287N","A058287D","A058287")
+        case .viswanath:
+            return ("A115064N","A115064D","A115064")
+            
         }
     }
  

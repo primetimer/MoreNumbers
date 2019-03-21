@@ -50,6 +50,23 @@ class ViewController: UIViewController {
         print(latex)
         uimath.latex = latex
     }
+    private func testCarefree() {
+        let t = MathConstantTester()
+        let n = BigUInt(428)
+        
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
+    
+    private func testMultiplicativePersistence() {
+        let t = MultiplicativePersistenceTester()
+        let n = BigUInt(428)
+        
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,7 +79,8 @@ class ViewController: UIViewController {
         uilabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         uilabel.text = "Hallo Welt"
 //        testPadovan()
-        testViswanath()
+//        testViswanath()
+        testCarefree()
         
         
         // Do any additional setup after loading the view, typically from a nib.

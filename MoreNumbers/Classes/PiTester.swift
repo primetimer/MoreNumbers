@@ -35,10 +35,11 @@ public enum MathConstantType : Int {
     case feigenbaumalpha
     case gelfond
     case viswanath
+    case carefree
     
-    static let allValues = [pi,e,gamma,mill,bruns,root2,ln2,pisquare,phi,crt2,zeta3,conwaylambda,khinchin,silver,plastic,gauss,chaitin,copelanderdos,champernowne,ramanujan,feigenbaumdelta,feigenbaumalpha,gelfond,viswanath]
-    static let name = ["π","e","γ","θ","B2","√2","ln(2)","π^2","φ",",∛2","ζ(3)","λ","K","δ","ρ","G","Ω","C","C10","K","δ","α","e^π","v"]
-    static let latex = ["\\pi","e","\\gamma","\\theta","B_{2}","\\sqrt{2}","ln(2)","\\pi^2","\\phi","\\sqrt[3]{2}","\\zeta (3)","\\lambda","K_{0}","\\delta_{S}","\\rho","G","\\Omega","C_{CE}","C_{10}","K_{RL}","\\delta","\\alpha","e^{\\pi}","e^{\\gamma_{f}}"]
+    static let allValues = [pi,e,gamma,mill,bruns,root2,ln2,pisquare,phi,crt2,zeta3,conwaylambda,khinchin,silver,plastic,gauss,chaitin,copelanderdos,champernowne,ramanujan,feigenbaumdelta,feigenbaumalpha,gelfond,viswanath,carefree]
+    static let name = ["π","e","γ","θ","B2","√2","ln(2)","π^2","φ",",∛2","ζ(3)","λ","K","δ","ρ","G","Ω","C","C10","K","δ","α","e^π","v","K1"]
+    static let latex = ["\\pi","e","\\gamma","\\theta","B_{2}","\\sqrt{2}","ln(2)","\\pi^2","\\phi","\\sqrt[3]{2}","\\zeta (3)","\\lambda","K_{0}","\\delta_{S}","\\rho","G","\\Omega","C_{CE}","C_{10}","K_{RL}","\\delta","\\alpha","e^{\\pi}","e^{\\gamma_{f}}","K_{1}"]
     
     func asString() -> String {
         return MathConstant.shared.dict[self] ?? ""
@@ -47,7 +48,7 @@ public enum MathConstantType : Int {
         switch self {
         case .pi, .e, .pisquare,.root2,.mill,.phi,.crt2,.bruns,.zeta3,.conwaylambda,.khinchin,.silver,.plastic,.feigenbaumalpha,.feigenbaumdelta:
             return 0
-        case .ln2, .gamma,.gauss,.copelanderdos,.champernowne,.ramanujan:
+        case .ln2, .gamma,.gauss,.copelanderdos,.champernowne,.ramanujan,.carefree:
             return -1
         case .chaitin:
             return -3
@@ -55,6 +56,7 @@ public enum MathConstantType : Int {
             return 1
         case .viswanath:
             return 0
+        
         }
     }
     func Latex() -> String {
@@ -118,7 +120,8 @@ public enum MathConstantType : Int {
             return exp(Double.pi)
         case .viswanath:
             return 1.1319882487943
-            
+        case .carefree:
+            return 0.4282495056770
         }
     }
 }
@@ -258,6 +261,8 @@ public class MathConstant {
             return "23.140692632779269005729086367948547380266106242600211993445046409524342350690452783516971997067549219675952704801087773144428044414693835844717445879609849365327965863669242230268991013741764684401410395183868477243068059588162449844491430966778413671631963414784038216511287637731470347353833162821294047891936224820221006032065443362736557271823744989618858059591684872645479013397834026595101499643792422968160799565381423536206957600770590460899883002254304871211791300849327379580729427301931042601691939325853203428968661895283290521711157185185506802254197204566370865568386830544799278170407497768540367556534957218867882563994384718224585889428535247260568210271076018491534518468064887386774439630514005169440540665265430968869063937315359837311042174433023967896690035041181486053390287203759918586886897487324321721585596074334676426167856117353336421265631915665454892289692245773889570905361803836197510326567943624088359906422347128465334373148717065178946374273412694796804321041476668230286429"
         case .viswanath:
             return "1.1319882487943"
+        case .carefree:
+            return "0.42824950567709444021876570758182354612129851335593614403190137953   2123052161083044105348514524680685548075734471826650670760298782532202902060406006887295715546753121470856083723205533531615357717745704825428225554297283696738275243948054619580397572948970571255564006624326244822264521782047909356846676624987867336263801297580183603609587285887870271540518570070230066980070361894924470744759244358330723470660351433812586320875486366180958514143724627466515445943595374388523973047948241330515549288601237668132387315374086632831991324601013451241535695308717935409174778207281333728529496818696236287800390835452964120277840366725631718659274937815728785493316964445382432248740067189326836281378269545698518578961240522465858492456205847622932709534303214266618061630301093444739030449710014425660475145093883188574980713768582527634012357670899419615382184833852656242709172820693357405550716893691334855583096871173560177526671757519238439288428663514376486101692284238897841668021682172217568317"
         }
     }
 }
@@ -291,7 +296,7 @@ public class MathConstantTester : NumTester {
     public func FindRational(n: BigUInt) -> (type : MathConstantType, n: BigInt, d: BigInt, index: Int)? {
         for type in MathConstantType.allValues {
             #if false
-            if type == .gelfond {
+            if type == .carefree {
                 print("debug")
             }
             #endif
@@ -458,9 +463,15 @@ public class MathConstantTester : NumTester {
             ans = ans + "e^{\\pi} - \\pi = 19.9990999..."
             return ans
         case .viswanath:
+            //http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.498.8842&rep=rep1&type=pdf
             let v = MathConstantType.latex[type.rawValue]
             var ans = "t_{n} = \\pm t_{n-1} \\pm t_{n-2}, t_{0} = t_{1} = 1 \\\\"
             ans = ans + "\(v) = \\lim\\limits_{n \\rightarrow \\infty} \\sqrt[n]{\\mid t_{n} \\mid } \\\\ "
+            return ans
+        case .carefree:
+            let v = MathConstantType.latex[type.rawValue]
+            var ans = "C_{1}(x) = \\mid \\{ (a,b) \\le x : gcd(a,b) = 1, a \\text{ is squarefree} \\} \\mid"
+            ans = ans + "\\\\ C_{1}(x) = K_{1}x^{2} + O(x ln x)"
             return ans
         }
     }

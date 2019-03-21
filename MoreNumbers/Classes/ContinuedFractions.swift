@@ -73,6 +73,8 @@ extension MathConstantType {
             return ("A058287N","A058287D","A058287")
         case .viswanath:
             return ("A115064N","A115064D","A115064")
+        case .carefree:
+            return nil
             
         }
     }

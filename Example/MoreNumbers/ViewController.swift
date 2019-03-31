@@ -80,7 +80,8 @@ class ViewController: UIViewController {
         uilabel.text = "Hallo Welt"
 //        testPadovan()
 //        testViswanath()
-        testCarefree()
+//        testCarefree()
+        testMultiplicativePersistence()
         
         
         // Do any additional setup after loading the view, typically from a nib.

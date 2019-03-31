@@ -10,6 +10,50 @@ import Foundation
 import BigInt
 import PrimeFactors
 
+public class PrimorialTester : NumTester {
+    //A002110
+     let phash : [BigUInt] = [1, 2, 6, 30, 210, 2310, 30030, 510510, 9699690, 223092870, 6469693230, 200560490130, BigUInt("7420738134810"), BigUInt("304250263527210"), BigUInt("13082761331670030")]
+    public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+        if phash.contains(n) { return true }
+        return false
+    }
+    
+    public func property() -> String {
+        return "primorial"
+    }
+}
+
+class PrimorialPrimeTester : NumTester {
+    
+    //A228486
+    let phash : [BigUInt] = [1, 2, 6, 30, 210, 2310, 30030, 510510, 9699690, 223092870, 6469693230, 200560490130, BigUInt("7420738134810"), BigUInt("304250263527210"), BigUInt("13082761331670030")]
+
+    let pn : [BigUInt] = [2, 3, 5, 7, 29, 31, 211, 2309, 2311, 30029, BigUInt("200560490131"), BigUInt("304250263527209"), BigUInt("23768741896345550770650537601358309")]
+    func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+        if pn.contains(n) { return true }
+        return false
+    }
+    
+    func property() -> String {
+        return "primorial prime"
+    }
+    
+    func getLatex(n: BigUInt) -> String? {
+        var latex = ""
+        if n == 0 { return nil }
+        for i in 0..<phash.count {
+            if phash[i]+1 == n  {
+                latex = latex +  "p_{\(i+1)}# + 1 = \\prod_{i=1}^{\(i+1)} p_{i} + 1= \(String(n)) "
+            }
+            if phash[i]-1 == n  {
+                latex = latex +  "p_{\(i+1)}# - 1 = \\prod_{i=1}^{\(i+1)} p_{i} - 1= \(String(n)) "
+            }
+            if phash[i] > n { break }
+        }
+        return latex
+    }
+}
+
 public class TwinPrimeTester : NumTester {
 	public func property() -> String {
 		return "twin prime"
@@ -20,15 +64,17 @@ public class TwinPrimeTester : NumTester {
 		return true
 	}
 	
-//    override func getLatex(n: BigUInt) -> String? {
-//        if !isSpecial(n: n,cancel : TimeOut()) { return nil }
-//        let nstr = String(n)
-//        var latex = ""
-//        if PrimeCache.shared.IsPrime(p: BigUInt(n+2)) {
-//            latex = nstr + subset(type:2)
-//        }
-//        return latex
-//    }
+    func getLatex(n: BigUInt) -> String? {
+        let special = isSpecial(n: n,cancel : TimeOut()) ?? false
+        
+        if !special { return nil }
+        let nstr = String(n)
+        var latex = ""
+        if PrimeCache.shared.IsPrime(p: BigUInt(n+2)) {
+            latex = nstr + PrimeTester.subset(type:2)
+        }
+        return latex
+    }
 	
 	public func issubTester() -> Bool {
 		return true
@@ -39,25 +85,24 @@ public class CousinPrimeTester : NumTester {
 	public func property() -> String {
 		return "cousin prime"
 	}
-	
-	
+		
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if !PrimeCache.shared.IsPrime(p: n) { return false }
 		if !PrimeCache.shared.IsPrime(p: n+4) { return false }
 		return true
 	}
 	
-//    override func getLatex(n: BigUInt) -> String? {
-//        guard let special = isSpecial(n: n, cancel: TimeOut()) else { return nil }
-//
-//        if !special { return nil }
-//        let nstr = String(n)
-//        var latex = ""
-//        if PrimeCache.shared.IsPrime(p: BigUInt(n+4)) {
-//            latex = nstr + subset(type:4)
-//        }
-//        return latex
-//    }
+    public func getLatex(n: BigUInt) -> String? {
+        guard let special = isSpecial(n: n, cancel: TimeOut()) else { return nil }
+
+        if !special { return nil }
+        let nstr = String(n)
+        var latex = ""
+        if PrimeCache.shared.IsPrime(p: BigUInt(n+4)) {
+            latex = nstr + PrimeTester.subset(type:4)
+        }
+        return latex
+    }
 	public func issubTester() -> Bool { return true }
 }
 
@@ -70,17 +115,17 @@ public class SexyPrimeTester : NumTester {
 		if !PrimeCache.shared.IsPrime(p: n+6) { return false }
 		return true
 	}
-//    override func getLatex(n: BigUInt) -> String? {
-//        guard let special = isSpecial(n: n,cancel : nil) else { return nil }
-//        if !special { return nil }
-//
-//        let nstr = String(n)
-//        var latex = ""
-//        if PrimeCache.shared.IsPrime(p: BigUInt(n+6)) {
-//            latex = nstr + subset(type:6)
-//        }
-//        return latex
-//    }
+    func getLatex(n: BigUInt) -> String? {
+        guard let special = isSpecial(n: n,cancel : nil) else { return nil }
+        if !special { return nil }
+
+        let nstr = String(n)
+        var latex = ""
+        if PrimeCache.shared.IsPrime(p: BigUInt(n+6)) {
+            latex = nstr + PrimeTester.subset(type:6)
+        }
+        return latex
+    }
     public func issubTester() -> Bool { return true }
 }
 public class SOGPrimeTester : NumTester {
@@ -92,12 +137,12 @@ public class SOGPrimeTester : NumTester {
 		if !PrimeCache.shared.IsPrime(p: 2*n+1) { return false }
 		return true
 	}
-//    override func getLatex(n: BigUInt) -> String? {
-//        guard let special = isSpecial(n: n,cancel : TimeOut()) else { return nil }
-//        if !special { return nil }
-//        let latex = "2\\cdot{" + String(n) + " + 1 \\in \\mathbb{N}"
-//        return latex
-//    }
+    func getLatex(n: BigUInt) -> String? {
+        guard let special = isSpecial(n: n,cancel : TimeOut()) else { return nil }
+        if !special { return nil }
+        let latex = "2\\cdot{" + String(n) + " + 1 \\in \\mathbb{N}"
+        return latex
+    }
 	public func issubTester() -> Bool { return true }
 }
 
@@ -110,22 +155,23 @@ public class SafePrimeTester : NumTester {
 		if !PrimeCache.shared.IsPrime(p: (n-1)/2) { return false }
 		return true
 	}
-//    override func getLatex(n: BigUInt) -> String? {
-//        guard let special = TestSpecialSync(n: n) else { return nil }
-//        if !special { return nil }
-//        let latex = "\\frac{" + String(n) + "- 1}{2} \\in \\mathbb{N}"
-//        return latex
-//    }
+    func getLatex(n: BigUInt) -> String? {
+        
+        guard let special = isSpecial(n: n, cancel: TimeOut()) else { return nil }
+        if !special { return nil }
+        let latex = "\\frac{" + String(n) + "- 1}{2} \\in \\mathbb{N}"
+        return latex
+    }
 	public func issubTester() -> Bool { return true }
 }
 
 public class ProbablePrimeTester : NumTester {
 	
-//    func getLatex(n: BigUInt) -> String? {
-//        if n <= 2 { return nil }
-//        let latex = "2^{" + String(n-1) + "} \\equiv_{" + String(n) + "} 1 "
-//        return latex
-//    }
+    public func getLatex(n: BigUInt) -> String? {
+        if n <= 2 { return nil }
+        let latex = "2^{" + String(n-1) + "} \\equiv_{" + String(n) + "} 1 "
+        return latex
+    }
 	
 	var base = BigUInt(2)
 	public func property() -> String {
@@ -196,11 +242,11 @@ public class PrimeTester : NumTester {
 //        return set
 //    }
 	
-//    internal func subset(type : Int) -> String {
-//        let difstr : String = (type > 0 ) ? "+" + String(type) : String(type)
-//        let latex = "\\in \\mathbb{P}_{" + String(type) + "}:= \\{ p \\in \\mathbb{P} : p" + difstr + "\\in \\mathbb{P} \\}"
-//        return latex
-//    }
+    static  public func subset(type : Int) -> String {
+        let difstr : String = (type > 0 ) ? "+" + String(type) : String(type)
+        let latex = "\\in \\mathbb{P}_{" + String(type) + "}:= \\{ p \\in \\mathbb{P} : p" + difstr + "\\in \\mathbb{P} \\}"
+        return latex
+    }
 	
 //    private func GaussianLatex(p: BigUInt) -> String? {
 //        if let (g1,g2) = GaussianInt.FactorPrime(p: p) {

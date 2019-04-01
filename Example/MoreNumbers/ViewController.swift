@@ -67,6 +67,24 @@ class ViewController: UIViewController {
         print(latex)
         uimath.latex = latex
     }
+    
+    private func testPrimorial() {
+        let t = PrimorialPrimeTester()
+        //let n = BigUInt(30029)
+        let n = BigUInt("304250263527209")
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
+    
+    private func testFactorial() {
+        let t = FactorialPrimeTester()
+        //let n = BigUInt(30029)
+        let n = BigUInt("2")
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -81,7 +99,9 @@ class ViewController: UIViewController {
 //        testPadovan()
 //        testViswanath()
 //        testCarefree()
-        testMultiplicativePersistence()
+//        testMultiplicativePersistence()
+//        testPrimorial()
+        testFactorial()
         
         
         // Do any additional setup after loading the view, typically from a nib.

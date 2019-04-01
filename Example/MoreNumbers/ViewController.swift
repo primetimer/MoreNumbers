@@ -70,18 +70,20 @@ class ViewController: UIViewController {
     
     private func testPrimorial() {
         let t = PrimorialPrimeTester()
-        //let n = BigUInt(30029)
-        let n = BigUInt("304250263527209")
-        let latex = t.getLatex(n: n)
+        let t2 = PrimorialTester()
+        let n = BigUInt(30)
+        //let n = BigUInt("304250263527210")
+        let latex = t2.getLatex(n: n)
         print(latex)
         uimath.latex = latex
     }
     
     private func testFactorial() {
         let t = FactorialPrimeTester()
+        let tf = FactorialTester()
         //let n = BigUInt(30029)
-        let n = BigUInt("2")
-        let latex = t.getLatex(n: n)
+        let n = BigUInt("120")*BigUInt(6)*BigUInt(7)
+        let latex = tf.getLatex(n: n)
         print(latex)
         uimath.latex = latex
     }
@@ -100,16 +102,11 @@ class ViewController: UIViewController {
 //        testViswanath()
 //        testCarefree()
 //        testMultiplicativePersistence()
-//        testPrimorial()
-        testFactorial()
+        testPrimorial()
+//        testFactorial()
         
         
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

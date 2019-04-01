@@ -232,6 +232,7 @@ public class SquareTester : NumTester {
 }
 
 public class CubeTester : NumTester {
+    public init() {}
 	public func property() -> String {
 		return "cube"
 	}

@@ -25,6 +25,8 @@ public class MersenneTester : NumTester {
 		return String(n) + " is a "  + mdesc + "  number"
 	}
 	*/
+    
+    public init() {}
 	
 	private func getPow(n: BigUInt) -> (Bool,BigUInt) {
 		if n == 0 { return (false,0) }

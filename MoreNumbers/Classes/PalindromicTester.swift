@@ -24,6 +24,7 @@ import PrimeFactors
 //}
 
 public class PalindromicTester : NumTester {
+    public init() {}
 	private let radix = [10,2,4,16,12,20]
 	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if n < 11 { return false }

@@ -123,7 +123,7 @@ public class SafePrimeTester : NumTester {
 }
 
 public class ProbablePrimeTester : NumTester {
-	
+    public init() {}
     public func getLatex(n: BigUInt) -> String? {
         if n <= 2 { return nil }
         let latex = "2^{" + String(n-1) + "} \\equiv_{" + String(n) + "} 1 "

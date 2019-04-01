@@ -269,6 +269,7 @@ class SDRepresentation {
 
 public class NarcisticTester : NumTester {
     
+    public init() {}
     private func CheckDigits(n: BigInt, base : UInt64) -> [(d: Int,pow: Int)] {
         var stellen = n
         let digits = Int(n.NumOfDigits(base: base))

@@ -122,17 +122,17 @@ public class PerfectTester : NumTester {
 		return nil
 	}
 	
-//    func getLatex(n: BigUInt) -> String? {
-//        guard let special = TestSpecialSync(n: n) else { return nil }
-//        if !special { return nil }
-//        if let m = getFaktors(n: n) {
-//            var latex = String(n)
-//            latex = latex + "= 2^{" + String(m) + "}"
-//            latex = latex + "(2^{" + String(m+1) + "} - 1) "
-//            return latex
-//        }
-//        return nil
-//    }
+    public func getLatex(n: BigUInt) -> String? {
+        guard let special = isSpecial(n: n, cancel: nil) else { return nil }
+        if !special { return nil }
+        if let m = getFaktors(n: n) {
+            var latex = String(n)
+            latex = latex + "= 2^{" + String(m) + "}"
+            latex = latex + "(2^{" + String(m+1) + "} - 1) "
+            return latex
+        }
+        return nil
+    }
 	
 	
 	
@@ -160,24 +160,25 @@ public class AbundanceTester : NumTester {
 		return nil
 	}
 	
-//    func getLatex(n: BigUInt) -> String? {
-//        var latex = String(n) + "<" + "\\sigma^{*}(n) = \\sum_{k \\mid{n}, k<n} k = "
-//        if let sigma = SumOfProperDivisors(n: n) {
-//            latex = latex + String(sigma)
-//            if sigma == n {
-//                latex = String(n) + "= " + "\\sigma^{*}(n) = \\sum_{k \\mid{n}, k<n} k"
-//                return latex
-//            }
-//        }
-//
-//        if n.isInt64() {
-//            if superabundant.contains(Int(n)) {
-//                latex = latex + "\\\\"
-//                latex = latex + "\\forall m<n : \\frac{\\sigma (m)}{m} < \\frac{\\sigma (n)}{n}"
-//            }
-//        }
-//        return latex
-//    }
+    public func getLatex(n: BigUInt) -> String? {
+        var latex = String(n) + "<" + "\\sigma^{*}(n) = \\sum_{k \\mid{n}, k<n} k = "
+        if let sigma = SumOfProperDivisors(n: n) {
+            latex = latex + String(sigma)
+            if sigma == n {
+                latex = String(n) + "= " + "\\sigma^{*}(n) = \\sum_{k \\mid{n}, k<n} k"
+                return latex
+            }
+        }
+
+        if n.isInt64() {
+            if superabundant.contains(Int(n)) {
+                latex = latex + "\\\\"
+                latex = latex + "\\forall m<n : \\frac{\\sigma (m)}{m} < \\frac{\\sigma (n)}{n}"
+            }
+        }
+        return latex
+    }
+    
 	public func property() -> String {
 		return "abundant"
 	}
@@ -241,13 +242,13 @@ public class NonTotientTester : NumTester {
 //        return desc
 //    }
 //
-//    func getLatex(n: BigUInt) -> String? {
-//        var latex = String(n)
-//        latex = latex + "\\in \\{ n \\in \\mathbb{N} | \\forall x \\in \\mathbb{N} : \\phi(x) \\neq n  \\} \\\\"
-//        latex = latex + "\\phi(n) = | \\{ x_{\\leq n} \\in  \\mathbb{N} :  gcd(x,n) = 1  \\} |"
-//
-//        return latex
-//    }
+    public func getLatex(n: BigUInt) -> String? {
+        var latex = String(n)
+        latex = latex + "\\in \\{ n \\in \\mathbb{N} | \\forall x \\in \\mathbb{N} : \\phi(x) \\neq n  \\} \\\\"
+        latex = latex + "\\phi(n) = | \\{ x_{\\leq n} \\in  \\mathbb{N} :  gcd(x,n) = 1  \\} |"
+
+        return latex
+    }
 	
 	public func property() -> String {
 		return "nontotient"

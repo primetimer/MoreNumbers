@@ -25,6 +25,10 @@ public extension NumTester {
     func propertyString() -> String { return property() } //Includes hyphenation
 }
 
+public extension NumTester {
+    func getLatex(n: BigUInt) ->  String? { return nil }
+}
+
 public class EverTrueTester : NumTester {
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		return true

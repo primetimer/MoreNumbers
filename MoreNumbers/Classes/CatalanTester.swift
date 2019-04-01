@@ -10,8 +10,8 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class CatalanTester : NumTester {
-	
+public class CatalanTester : NumTester {
+	    public init() {}
 	private let oeis : [BigUInt] = [1,1,2,5,14,42,132,429,1430,4862,16796,58786,
 									208012,742900,2674440,9694845,35357670,129644790,
 									477638700,1767263190,6564120420,24466267020,
@@ -19,14 +19,14 @@ class CatalanTester : NumTester {
 									4861946401452,18367353072152,69533550916004,
 									263747951750360,1002242216651368,3814986502092304]
 	
-	func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if oeis.contains(n) {
 			return true
 		}
 		return false
 	}
 	
-	func Nth(n: BigUInt) -> Int {
+	public func Nth(n: BigUInt) -> Int {
 		if let nth = oeis.index(where: {$0 == n}) {
 			return nth
 		}

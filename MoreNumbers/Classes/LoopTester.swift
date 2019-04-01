@@ -10,10 +10,11 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class LoopTester : NumTester {
-	
+public class LoopTester : NumTester {
+	    public init() {}
+    
 	static var count : Int = 0
-	func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
 		LoopTester.count += 1
 		print("LOOP:", LoopTester.count)
 		while true {
@@ -25,11 +26,11 @@ class LoopTester : NumTester {
 		}
 	}
 	
-	func getLatex(n: BigUInt) -> String? {
+	public func getLatex(n: BigUInt) -> String? {
 		return nil
 	}
 	
-	func property() -> String {
+	public func property() -> String {
 		return "loop"
 	}
 	

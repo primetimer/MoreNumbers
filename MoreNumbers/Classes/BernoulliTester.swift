@@ -11,6 +11,7 @@ import BigInt
 import PrimeFactors
 
 public class BernoulliTester : NumTester {
+        public init() {}
 	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if n < 5 { return false }
 		if  OEIS.shared.NumberIndex(oeisnr: oeisn, n: n, ordered: false) != nil {
@@ -43,6 +44,7 @@ public class BernoulliTester : NumTester {
 }
 
 public class IrregularTester : NumTester {
+        public init() {}
     public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if !PrimeCache.shared.IsPrime(p: n) { return false }
 		if GetBernoulliDivisor(n: n) != nil {

@@ -462,7 +462,7 @@ BigInt("111312211312113221133211322112211213322112"),BigInt("3113112221131112211
 */
 
 #if true
-class LookAndSayTester : NumTester {
+public class LookAndSayTester : NumTester {
 	
     public func Previous(n: BigUInt) -> BigUInt? {
 		guard let seq = OEIS.shared.GetSequence(key: self.property()) else { return nil }
@@ -578,7 +578,7 @@ class LookAndSayTester : NumTester {
 	}
 	#endif
 	
-	func property() -> String {
+	public func property() -> String {
 		return "look & say"
 	}
 }

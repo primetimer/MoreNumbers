@@ -45,8 +45,8 @@ public class PiLatticeTester : NumTester {
 	
 }
 public class LatticeTester : NumTester {
-	
-	func getLatex(n: BigUInt) -> String? {
+	    public init() {}
+	public func getLatex(n: BigUInt) -> String? {
 		return nil
 	}
     public func property() -> String {

@@ -144,9 +144,9 @@ class LuckyArr {
 	}
 }
 
-class LuckyTester : NumTester {
-	
-	func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+public class LuckyTester : NumTester {
+	    public init() {}
+	public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
 		if n >= LuckyArr.shared.last {
 			return false
 		}
@@ -162,14 +162,14 @@ class LuckyTester : NumTester {
 	}
 	*/
 	
-	func getLatex(n: BigUInt) -> String? {
+	public func getLatex(n: BigUInt) -> String? {
 		let lcount = Double(n) / Double(log(Double(n)))
 		let lstr = String(lcount)
 		let latex = "|\\{l_{<=" + String(n) + "} : \\text{l is lucky}\\}| \\sim \\frac{n}{log n} \\approx " + lstr
 		return latex
 	}
 	
-	func property() -> String {
+	public func property() -> String {
 		return "lucky"
 	}
 }

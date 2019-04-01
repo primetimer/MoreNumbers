@@ -12,6 +12,7 @@ import PrimeFactors
 
 
 public class HappyTester : NumTester {
+        public init() {}
 	
 	private func SumOfDigits2(n: BigUInt) -> BigUInt {
 		var sum : BigUInt = 0
@@ -63,36 +64,37 @@ public class HappyTester : NumTester {
 //        return WikiLinks.shared.getLink(tester: self, n: n)
 //    }
 //
-////    func getLatex(n: BigUInt) -> String? {
-//        var latex = ""
-//        var h = n
-//        while h > 0 {
-//            var digit2latex = ""
-//            var (hh,dsum) = (h,BigUInt(0))
-//            while hh > 0 {
-//                let digit = hh % 10
-//                hh = hh / 10
-//                dsum = dsum + digit * digit
-//                if digit == 0 { continue }
-//                if !digit2latex.isEmpty { digit2latex = "+" + digit2latex }
-//                digit2latex = String(digit) + "^{2}" + digit2latex
-//            }
-//            digit2latex = digit2latex + "=" + String(dsum)
-//            latex = latex + digit2latex
-//            if dsum == 1 { return latex }
-//            latex = latex + "\\rightarrow"
-//            if latex.count > 100 {
-//                if TestSpecialSync(n: n) ?? false {
-//                    latex = latex + "1"
-//                }
-//                return latex
-//            }
-//
-//            h = dsum
-//        }
-//        return latex
-//    }
-	
+     public func getLatex(n: BigUInt) -> String? {
+        var latex = ""
+        var h = n
+        while h > 0 {
+            var digit2latex = ""
+            var (hh,dsum) = (h,BigUInt(0))
+            while hh > 0 {
+                let digit = hh % 10
+                hh = hh / 10
+                dsum = dsum + digit * digit
+                if digit == 0 { continue }
+                if !digit2latex.isEmpty { digit2latex = "+" + digit2latex }
+                digit2latex = String(digit) + "^{2}" + digit2latex
+            }
+            digit2latex = digit2latex + "=" + String(dsum)
+            latex = latex + digit2latex
+            if dsum == 1 { return latex }
+            latex = latex + "\\rightarrow"
+            if latex.count > 100 {
+                let special = isSpecial(n: n, cancel: TimeOut()) ?? false
+                if special {
+                    latex = latex + "1"
+                }
+                return latex
+            }
+
+            h = dsum
+        }
+        return latex
+    }
+
 	public func property() -> String {
 		return "happy"
 	}

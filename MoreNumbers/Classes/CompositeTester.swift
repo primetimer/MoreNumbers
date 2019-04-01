@@ -11,10 +11,11 @@ import BigInt
 import PrimeFactors
 
 
-class CompositeTester : NumTester {
-//    func getLatex(n: BigUInt) -> String? {
-//        return FactorCache.shared.Latex(n: n, withpot: true, cancel: TimeOut())
-//    }
+public class CompositeTester : NumTester {
+    public func getLatex(n: BigUInt) -> String? {
+        return FactorCache.shared.Latex(n: n, withpot: true, cancel: TimeOut())
+    }
+        public init() {}
 	public func property() -> String {
 		return "composite"
 	}

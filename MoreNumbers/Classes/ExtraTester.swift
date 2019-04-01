@@ -11,6 +11,7 @@ import BigInt
 import PrimeFactors
 
 public class ZeroTester : NumTester {
+        public init() {}
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if n == 0 { return true }
 		return false
@@ -26,6 +27,7 @@ public class ZeroTester : NumTester {
 }
 
 public class OneTester : NumTester {
+        public init() {}
 	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if n == 1 { return true }
 		return false

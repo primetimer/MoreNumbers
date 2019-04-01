@@ -10,7 +10,8 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class FermatTester : NumTester {
+public class FermatTester : NumTester {
+        public init() {}
 	
 	/*
 	func getDesc(n: BigUInt) -> String? {
@@ -26,33 +27,33 @@ class FermatTester : NumTester {
 	}
 	*/
 	
-//    func getLatex(n: BigUInt) -> String? {
-//        if n <= 2 { return nil }
-//        guard let special = TestSpecialSync(n: n) else { return nil }
-//        if !special { return nil }
-//        
-//        guard let oeisseq = OEIS.shared.GetSequence(key: self.property()) else { return nil }
-//        for (index,p) in oeisseq.enumerated() {
-//            if n == p {
-//                let latex = String(n) + "= 2^{2^{" + String(index+1) + "}} + 1 = F_{" + String(index) + "}"
-//                return latex
-//            }
-//        }
-//        return nil
-//    }
+    public func getLatex(n: BigUInt) -> String? {
+        if n <= 2 { return nil }
+        guard let special = isSpecial(n: n,cancel : nil) else { return nil }
+        if !special { return nil }
+        
+        guard let oeisseq = OEIS.shared.GetSequence(key: self.property()) else { return nil }
+        for (index,p) in oeisseq.enumerated() {
+            if n == p {
+                let latex = String(n) + "= 2^{2^{" + String(index+1) + "}} + 1 = F_{" + String(index) + "}"
+                return latex
+            }
+        }
+        return nil
+    }
 	
-	func property() -> String {
+	public func property() -> String {
 		return "Fermat"
 	}
 	
-	func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if n <= 2 { return false }
 		return OEIS.shared.ContainsNumber(key: self.property(), n: n)
 	}
 }
 
 public class ConstructibleTester : NumTester {
-	
+	    public init() {}
 	public func property() -> String {
 		return "Constructible"
 	}

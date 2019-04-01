@@ -10,7 +10,8 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class HCNTester : NumTester {
+public class HCNTester : NumTester {
+        public init() {}
 	private func findHCN(n: BigUInt) -> HCNumber.HCN? {
 		let hcn = HCNumber.shared.hcnarr
 		for h in hcn {
@@ -19,14 +20,14 @@ class HCNTester : NumTester {
 		}
 		return nil
 	}
-	func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if let _ = findHCN(n: n) {
 			return true
 		}
 		return false
 	}
 		
-	func getLatex(n: BigUInt) -> String? {
+	public func getLatex(n: BigUInt) -> String? {
 		if n == 1 {
 			return "\\tau (1) = 1"
 		}
@@ -38,7 +39,7 @@ class HCNTester : NumTester {
 		return nil
 	}
 	
-	func property() -> String {
+	public func property() -> String {
 		return "highly composite"
 	}
 	

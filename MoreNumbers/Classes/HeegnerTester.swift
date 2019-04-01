@@ -11,8 +11,8 @@ import BigInt
 import PrimeFactors
 
 public class HeegnerTester : NumTester {
-	
-	func getLatex(n: BigUInt) -> String? {
+	    public init() {}
+	public func getLatex(n: BigUInt) -> String? {
         guard let special = isSpecial(n: n,cancel: nil) else { return nil }
 		if !special { return nil }
 		var latex = "\\mathbb{Q} [\\sqrt{-" + String(n) + "}] \\text{has unique prime factorization}"

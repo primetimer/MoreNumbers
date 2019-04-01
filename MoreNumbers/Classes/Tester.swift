@@ -91,6 +91,7 @@ public class Tester {
 }
 
 public class TriangleTester : NumTester {
+    public init() {}
 	public func property() -> String {
 		return "triangle"
 	}
@@ -119,6 +120,7 @@ public class TriangleTester : NumTester {
 }
 
 public class PronicTester : NumTester {
+    public init() {}
     public func property() -> String {
         return "pronic"
     }
@@ -142,6 +144,7 @@ public class PronicTester : NumTester {
 
 
 class PentagonalTester : NumTester {
+        public init() {}
 	public func property() -> String {
 		return "pentagonal"
 	}
@@ -167,6 +170,7 @@ class PentagonalTester : NumTester {
 }
 
 public class Pow2Tester : NumTester {
+        public init() {}
 	public func property() -> String {
 		return "power of two"
 	}
@@ -187,6 +191,7 @@ public class Pow2Tester : NumTester {
 
 
 public class HexagonalTester : NumTester {
+        public init() {}
 	public func property() -> String {
 		return "hexagonal"
 	}
@@ -215,6 +220,7 @@ public class HexagonalTester : NumTester {
 
 
 public class SquareTester : NumTester {
+        public init() {}
 	public func property() -> String {
 		return "square"
 	}
@@ -238,6 +244,7 @@ public class CubeTester : NumTester {
 
 
 public class RamanujanNagellTester : MersenneTester {
+    
 	override public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool {
 		if n == 0 { return false }
 		return OEIS.shared.ContainsNumber(key: self.property(), n: n)

@@ -100,7 +100,7 @@ public struct FactorWithPot {
 //}
 
 public class PerfectTester : NumTester {
-	
+	    public init() {}
 	public func property() -> String {
 		return "perfect"
 	}
@@ -144,7 +144,7 @@ public class PerfectTester : NumTester {
 }
 
 public class AbundanceTester : NumTester {
-	
+	    public init() {}
 	private let superabundant = [1, 2, 4, 6, 12, 24, 36, 48, 60, 120, 180, 240, 360, 720, 840, 1260, 1680, 2520, 5040, 10080, 15120, 25200, 27720, 55440, 110880, 166320, 277200, 332640, 554400, 665280, 720720, 1441440, 2162160, 3603600, 4324320, 7207200, 8648640, 10810800, 21621600]
 	
 //    func getDesc(n: BigUInt) -> String? {
@@ -201,6 +201,7 @@ public class AbundanceTester : NumTester {
 }
 
 public class NonTotientTester : NumTester {
+        public init() {}
 	public func isSpecial(n: BigUInt, cancel : CalcCancelProt?) -> Bool? {
 		
 		//2p is nontotient iff 2p+1 is prime

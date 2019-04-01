@@ -162,11 +162,11 @@ class PentagonalTester : NumTester {
 	}
 }
 
-class Pow2Tester : NumTester {
-	func property() -> String {
+public class Pow2Tester : NumTester {
+	public func property() -> String {
 		return "power of two"
 	}
-	func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if n == 0 { return false }
 		if n == 1 { return true }
         if n == 2 { return true }
@@ -182,11 +182,11 @@ class Pow2Tester : NumTester {
 }
 
 
-class HexagonalTester : NumTester {
-	func property() -> String {
+public class HexagonalTester : NumTester {
+	public func property() -> String {
 		return "hexagonal"
 	}
-	func propertyString() -> String {
+	public func propertyString() -> String {
 		return "hexa\u{00AD}gonal"
 	}
 	
@@ -210,22 +210,22 @@ class HexagonalTester : NumTester {
 }
 
 
-class SquareTester : NumTester {
-	func property() -> String {
+public class SquareTester : NumTester {
+	public func property() -> String {
 		return "square"
 	}
-	func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if n == 0 { return false }
 		let r = n.squareRoot()
 		return r*r == n
 	}
 }
 
-class CubeTester : NumTester {
-	func property() -> String {
+public class CubeTester : NumTester {
+	public func property() -> String {
 		return "cube"
 	}
-	func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if n == 0 { return false }
 		let r = n.iroot3()
 		return r*r*r == n

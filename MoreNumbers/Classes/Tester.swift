@@ -201,7 +201,7 @@ public class HexagonalTester : NumTester {
 		}
 		return nil
 	}
-	func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
+	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if let _ = hexroot(n: n) {
 			return true
 		}

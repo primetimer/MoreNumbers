@@ -267,8 +267,6 @@ public class MathConstant {
     }
 }
 
-
-
 public class MathConstantTester : NumTester {
     
     public init() {}
@@ -278,13 +276,13 @@ public class MathConstantTester : NumTester {
         if nstr.count < 3 { return nil }
         //Decimal Digits
         for c in MathConstantType.allValues {
-            let digits = CheckConst(n: n, type: c)
+            let digits = CheckConstDigits(n: n, type: c)
             if digits > 2 { return (c,digits)}
         }
         return nil
     }
     
-    public func CheckConst(n: BigUInt,type: MathConstantType) -> Int {
+    public func CheckConstDigits(n: BigUInt,type: MathConstantType) -> Int {
         let nstr = String(n)
         let cstr = type.asString()
         if testStr(nstr: nstr, cstr: cstr) {
@@ -293,27 +291,31 @@ public class MathConstantTester : NumTester {
         return 0
     }
     
-    public func FindRational(n: BigUInt) -> (type : MathConstantType, n: BigInt, d: BigInt, index: Int)? {
-        for type in MathConstantType.allValues {
-            #if false
-            if type == .carefree {
-                print("debug")
-            }
-            #endif
-            guard let (oeis_n_nr,oeis_d_nr,_) = type.OEISRational() else { continue }
-            if !OEIS.shared.ContainsNumber(oeisnr: oeis_n_nr, n: n) { continue }
-            guard let seqn = OEIS.shared.GetSequence(oeisnr: oeis_n_nr) else { continue }
-            guard let seqd = OEIS.shared.GetSequence(oeisnr: oeis_d_nr) else { continue }
-            
-            for i in 0..<seqn.count {
-                if seqn[i] == n {
-                    return (type,seqn[i],seqd[i],i)
-                }
+    public func FindRational(n: BigUInt,type : MathConstantType) -> (n: BigInt, d: BigInt, index: Int)? {
+        guard let (oeis_n_nr,oeis_d_nr,_) = type.OEISRational() else { return nil }
+        if !OEIS.shared.ContainsNumber(oeisnr: oeis_n_nr, n: n) { return nil }
+        guard let seqn = OEIS.shared.GetSequence(oeisnr: oeis_n_nr) else { return nil }
+        guard let seqd = OEIS.shared.GetSequence(oeisnr: oeis_d_nr) else { return nil }
+        
+        for i in 0..<seqn.count {
+            if seqn[i] == n {
+                return (seqn[i],seqd[i],i)
             }
         }
+        
+        assert(false)
         return nil
     }
     
+    public func FindRational(n: BigUInt) -> (type : MathConstantType, n: BigInt, d: BigInt, index: Int)? {
+        for type in MathConstantType.allValues {
+            if let (num,denom,i) = FindRational(n: n, type: type) {
+                return (type,num,denom,i)
+            }
+            
+        }
+        return nil
+    }
     
     private func testStr(nstr: String, cstr : String) -> Bool
     {
@@ -475,6 +477,56 @@ public class MathConstantTester : NumTester {
             return ans
         }
     }
+    
+    internal func getLatex(n: BigUInt, type: MathConstantType) -> String {
+        let latexname = type.Latex()
+        let pot = type.withPot()
+        let digits = CheckConstDigits(n: n, type: type)
+        
+        var latex = String(n)
+        latex = latex + "\\cdot{10^{-" + String(digits-1-pot) + "}} \\approx "
+        latex = latex + latexname + "=" + String(type.asDouble()) + "..."
+        
+        let morelatex = moreLatex(type: type)
+        
+        if !morelatex.isEmpty {
+            latex = latex + "\\\\" + morelatex
+        }
+        return latex
+        
+    }
+    
+    public func getRationalLatex(n: BigUInt, type: MathConstantType) -> String? {
+        guard let (num,denom,index) = FindRational(n: n, type: type) else { return nil }
+        var latex = ""
+        let latexname = type.Latex()
+        //            if type == .champernowne {
+        //                print("Debug")
+        //            }
+        guard let (_,_,oeiscf) = type.OEISRational() else { return nil }
+        if !latex.isEmpty { latex = latex + "\\\\" }
+        latex = latex + latexname + " \\approx " + "\\frac{"
+        latex = latex + String(num) + "}{" + String(denom) + "} ="
+        guard let seq = OEIS.shared.GetSequence(key: oeiscf) else { return nil }
+        for i in 0...index {
+            if i == 0 {
+                latex = latex + String(seq[0]) + " + "
+            } else if i < index {
+                latex = latex + "\\frac{1}{" + String(seq[i]) + "+\\text{ }}"
+            } else if i == index {
+                latex = latex + "\\frac{1}{" + String(seq[i]) + "}"
+            }
+        }
+        
+        let frac = ContinuedFractions.shared.ValueRationalDigits(numerator: num, denominator: denom)
+        latex = latex + " \\approx " + frac
+        
+        let morelatex = moreLatex(type: type)
+        
+        return latex + morelatex
+        
+        
+    }
     public func getLatex(n: BigUInt) -> String? {
         var latex = ""
         var morelatex = ""
@@ -492,36 +544,6 @@ public class MathConstantTester : NumTester {
             
             morelatex = morelatex + moreLatex(type: type)
         }
-        if let (type,num,denom,index) = FindRational(n: n) {
-            let latexname = type.Latex()
-            //            if type == .champernowne {
-            //                print("Debug")
-            //            }
-            guard let (_,_,oeiscf) = type.OEISRational() else { return nil }
-            if !latex.isEmpty { latex = latex + "\\\\" }
-            latex = latex + latexname + " \\approx " + "\\frac{"
-            latex = latex + String(num) + "}{" + String(denom) + "} ="
-            guard let seq = OEIS.shared.GetSequence(key: oeiscf) else { return nil }
-            for i in 0...index {
-                if i == 0 {
-                    latex = latex + String(seq[0]) + " + "
-                } else if i < index {
-                    latex = latex + "\\frac{1}{" + String(seq[i]) + "+\\text{ }}"
-                } else if i == index {
-                    latex = latex + "\\frac{1}{" + String(seq[i]) + "}"
-                }
-            }
-            
-            let frac = ContinuedFractions.shared.ValueRationalDigits(numerator: num, denominator: denom)
-            latex = latex + " \\approx " + frac
-            
-            let morelatex2 = moreLatex(type: type)
-            if !morelatex.isEmpty && !morelatex2.isEmpty {
-                morelatex = morelatex + "\\\\" + morelatex2
-            } else {
-                morelatex = morelatex2
-            }
-        }
         
         if !morelatex.isEmpty {
             latex = latex + "\\\\" + morelatex
@@ -534,4 +556,127 @@ public class MathConstantTester : NumTester {
     }
 }
 
+public enum NumberType : Int {
+    case Integer = 0
+    case Rational
+    case Constructible
+    case Algebraic
+    case Transcendent
+    case Normal
+    case SuspectedNormal
+    case Notcomputable
+}
 
+public protocol NumberTypeProt {
+    func ConstantType() -> Set<NumberType>
+}
+
+public  class SpecialConstantTester : MathConstantTester  {
+    
+    public var type : MathConstantType!
+    public init(_ type: MathConstantType) {
+        self.type = type
+    }
+    
+    override public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+        let digits = CheckConstDigits(n: n, type: self.type)
+        if digits <= 2 { return false }
+        return true
+    }
+    
+    override public func property() -> String {
+        return MathConstantType.name[type.rawValue]
+    }
+    
+    override public func getLatex(n: BigUInt) -> String? {
+        return super.getLatex(n: n, type: self.type)
+    }
+    
+}
+
+public class RationalApproxTester : MathConstantTester  {
+    
+    public var type : MathConstantType!
+    public init(_ type: MathConstantType) {
+        self.type = type
+    }
+    
+    override public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+        if let (_,_,_) = super.FindRational(n: n, type: self.type) {
+            return true
+        }
+        return false
+    }
+    
+    override public func property() -> String {
+        let texttype = MathConstantType.name[type.rawValue]
+        return "rational " + texttype + " approx"
+    }
+    
+    override public func getLatex(n: BigUInt) -> String? {
+        return super.getRationalLatex(n: n, type: self.type)
+    }
+    
+}
+    
+
+//public class PiTester : SpecialConstantTester , NumberTypeProt {
+//
+//    public init() {
+//        super.init(.pi)
+//    }
+//
+//    public func ConstantType() -> Set<NumberType> {
+//        return [.Transcendent,.SuspectedNormal]
+//    }
+//
+//
+//}
+//
+//public class Sqrt2Tester : SpecialConstantTester, NumberTypeProt {
+//    public init() {
+//        super.init(.root2)
+//    }
+//
+//    public func ConstantType() -> Set<NumberType> {
+//        return [.Algebraic,.Constructible,.SuspectedNormal]
+//    }
+//}
+//
+//public class eTester : SpecialConstantTester, NumberTypeProt {
+//    public init() {
+//        super.init(.e)
+//    }
+//
+//    public func ConstantType() -> Set<NumberType> {
+//        return [.Transcendent,.Constructible]
+//    }
+//}
+//
+//case pi = 0
+//case e
+//case gamma
+//case mill
+//case bruns
+//case root2
+//case ln2
+//case pisquare
+//case phi
+//case crt2
+//case zeta3
+//case conwaylambda
+//case khinchin
+//case silver
+//case plastic
+//case gauss
+//case chaitin
+//case copelanderdos
+//case champernowne
+//case ramanujan
+//case feigenbaumdelta
+//case feigenbaumalpha
+//case gelfond
+//case viswanath
+//case carefree
+//
+//

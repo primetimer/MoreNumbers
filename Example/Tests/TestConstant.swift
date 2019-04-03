@@ -8,7 +8,7 @@ class TestGelfond: XCTestCase {
         let t = MathConstantTester()
         let n = BigUInt(231)
         
-        let digits = t.CheckConst(n: n, type: .gelfond)
+        let digits = t.CheckConstDigits(n: n, type: .gelfond)
         XCTAssert(digits == 3)
         let special = t.isSpecial(n: n, cancel: nil)
         XCTAssert(special == true)

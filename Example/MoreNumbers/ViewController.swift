@@ -87,6 +87,15 @@ class ViewController: UIViewController {
         print(latex)
         uimath.latex = latex
     }
+    
+    private func testRational() {
+        let t = RationalApproxTester(.pi)
+        let n = BigUInt(22)
+        //let n = BigUInt("304250263527210")
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -100,10 +109,12 @@ class ViewController: UIViewController {
         uilabel.text = "Hallo Welt"
 //        testPadovan()
 //        testViswanath()
-//        testCarefree()
+//       testCarefree()
 //        testMultiplicativePersistence()
-        testPrimorial()
+//        testPrimorial()
 //        testFactorial()
+//        testGelfond()
+        testRational()
         
         
         // Do any additional setup after loading the view, typically from a nib.

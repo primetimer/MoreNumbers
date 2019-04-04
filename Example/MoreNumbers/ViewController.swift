@@ -11,6 +11,7 @@ import BigInt
 import iosMath
 import MoreNumbers
 
+
 class ViewController: UIViewController {
 
     var uimath : MTMathUILabel!
@@ -89,12 +90,21 @@ class ViewController: UIViewController {
     }
     
     private func testRational() {
-        let t = RationalApproxTester(.pi)
+//        let t = RationalApproxTester(.pi)
         let n = BigUInt(22)
         //let n = BigUInt("304250263527210")
-        let latex = t.getLatex(n: n)
-        print(latex)
-        uimath.latex = latex
+//        let latex = t.getLatex(n: n)
+//        print(latex)
+//        uimath.latex = latex
+        
+        for r in Tester.shared.completetesters {
+            if r is RationalApproxTester {
+                if r.isSpecial(n: n, cancel: nil) ?? false {
+                    let latex = r.getLatex(n: n)
+                    uimath.latex = latex
+                }
+            }
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

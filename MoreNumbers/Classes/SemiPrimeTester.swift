@@ -74,10 +74,10 @@ public class SemiPrimeTester : NumTester {
 //        return desc
 //    }
 //
-//    func getLatex(n: BigUInt) -> String? {
-//        let dummycert = "is there a semiprime certifcate"
-//        return nil // Factorization is shown elsewhere
-//    }
+    public func getLatex(n: BigUInt) -> String? {
+        let dummycert = "is there a semiprime certifcate"
+        return nil // Factorization is shown elsewhere
+    }
 	
 	public func property() -> String {
 		return "semiprime"

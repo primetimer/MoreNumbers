@@ -257,7 +257,7 @@ public class OEIS {
 			return nil
 		}
 		
-		for t in Tester.completetesters {
+		for t in Tester.shared.completetesters {
 			if t.property() == property {
 				return t
 			}

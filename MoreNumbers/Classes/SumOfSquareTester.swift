@@ -12,17 +12,17 @@ import PrimeFactors
 
 public class SumOfTwoSquaresTester : NumTester {
 	
-//    func getLatex(n: BigUInt) -> String? {
-//        let special = TestSpecialSync(n: n) ?? false
-//        if !special { return nil }
-//        if let (a,b) = Express(n: n,cancel : TimeOut()) {
-//            let stra = String(a)
-//            let strb = String(b)
-//            let latex = String(n) + "=" + stra + "^2 + " + strb + "^2"
-//            return latex
-//        }
-//        return nil
-//    }
+    public func getLatex(n: BigUInt) -> String? {
+        let special = isSpecial(n: n, cancel: nil) ?? false
+        if !special { return nil }
+        if let (a,b) = Express(n: n,cancel : TimeOut()) {
+            let stra = String(a)
+            let strb = String(b)
+            let latex = String(n) + "=" + stra + "^2 + " + strb + "^2"
+            return latex
+        }
+        return nil
+    }
 	public func property() -> String {
 		return "sum of two squares"
 	}

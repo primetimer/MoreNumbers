@@ -11,6 +11,11 @@ import BigInt
 import PrimeFactors
 
 public class ZeroTester : NumTester {
+    public func getLatex(n: BigUInt) -> String? {
+        let latex = "\\forall n in \\mathBB{N} : n = n + 0 "
+        return latex
+    }
+    
         public init() {}
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if n == 0 { return true }

@@ -21,7 +21,7 @@ public class TwinPrimeTester : NumTester {
 		return true
 	}
 	
-    func getLatex(n: BigUInt) -> String? {
+    public func getLatex(n: BigUInt) -> String? {
         let special = isSpecial(n: n,cancel : TimeOut()) ?? false
         
         if !special { return nil }
@@ -72,7 +72,7 @@ public class SexyPrimeTester : NumTester {
 		if !PrimeCache.shared.IsPrime(p: n+6) { return false }
 		return true
 	}
-    func getLatex(n: BigUInt) -> String? {
+    public func getLatex(n: BigUInt) -> String? {
         guard let special = isSpecial(n: n,cancel : nil) else { return nil }
         if !special { return nil }
 
@@ -94,7 +94,7 @@ public class SOGPrimeTester : NumTester {
 		if !PrimeCache.shared.IsPrime(p: 2*n+1) { return false }
 		return true
 	}
-    func getLatex(n: BigUInt) -> String? {
+    public func getLatex(n: BigUInt) -> String? {
         guard let special = isSpecial(n: n,cancel : TimeOut()) else { return nil }
         if !special { return nil }
         let latex = "2\\cdot{" + String(n) + " + 1 \\in \\mathbb{N}"
@@ -112,7 +112,7 @@ public class SafePrimeTester : NumTester {
 		if !PrimeCache.shared.IsPrime(p: (n-1)/2) { return false }
 		return true
 	}
-    func getLatex(n: BigUInt) -> String? {
+    public func getLatex(n: BigUInt) -> String? {
         
         guard let special = isSpecial(n: n, cancel: TimeOut()) else { return nil }
         if !special { return nil }
@@ -171,11 +171,11 @@ public class CarmichaelTester : NumTester{
 		return true
 	}
 	
-//    func getLatex(n: BigUInt) -> String? {
-//        if n <= 2 { return nil }
-//        let latex = "\\forall b \\in \\mathbb{N} : b^{" + String(n-1) + "} \\equiv_{" + String(n) + "} 1 "
-//        return latex
-//    }
+    public func getLatex(n: BigUInt) -> String? {
+        if n <= 2 { return nil }
+        let latex = "\\forall b \\in \\mathbb{N} : b^{" + String(n-1) + "} \\equiv_{" + String(n) + "} 1 "
+        return latex
+    }
 }
 
 public class PrimeTester : NumTester {
@@ -194,10 +194,10 @@ public class PrimeTester : NumTester {
 	}
     public init() {}
 	
-//    func LatexSet() -> LatexString? {
-//        let set = "\\mathbb{P} := \\{ n > 1 \\in \\mathbb{N} : n|ab \\rightarrow n\\mid a \\lor n\\mid b\\}"
-//        return set
-//    }
+    func LatexSet() -> LatexString? {
+        let set = "\\mathbb{P} := \\{ n > 1 \\in \\mathbb{N} : n|ab \\rightarrow n\\mid a \\lor n\\mid b\\}"
+        return set
+    }
 	
     static  public func subset(type : Int) -> String {
         let difstr : String = (type > 0 ) ? "+" + String(type) : String(type)
@@ -205,58 +205,59 @@ public class PrimeTester : NumTester {
         return latex
     }
 	
-//    private func GaussianLatex(p: BigUInt) -> String? {
-//        if let (g1,g2) = GaussianInt.FactorPrime(p: p) {
-//            var latex = String(p) + "="
-//            let g1str = g1.asString()
-//            let g2str = g2.asString()
-//
-//            latex = latex + "(" + g1str + ")"
-//            latex = latex + "(" + g2str + ")"
-//            return latex
-//        }
-//        return nil
-//    }
-//
-//    private func EisensteinLatex(p: BigUInt) -> String? {
-//        if let (g1,g2) = EisensteinInt.FactorPrime(p: p) {
-//            var latex = String(p) + "="
-//            let g1str = g1.asString()
-//            let g2str = g2.asString()
-//
-//            latex = latex + "(" + g1str + ")"
-//            latex = latex + "(" + g2str + ")"
-//            return latex
-//        }
-//        return nil
-//    }
-//
-//
-//    func getLatex(n: BigUInt) -> String? {
-//        var set = LatexSet() ?? ""
-//        let nstr = String(n)
-//
-//        guard let special = isSpecial(n: n, cancel: nil) else { return set }
-//        if special {
-//            set = nstr + "\\in" + set
-//        } else {
-//            set = nstr + "\\notin" + set
-//        }
-//        var latex = set
-//
-//        //var latex = nstr + "\\in \\mathbb{P} := \\{ p \\in \\mathbb{N} | \\forall q : q\\mid p \\rightarrow q=1 \\lor q=p \\}"
-//
-//        if special {
-//            if let gausslatex = GaussianLatex(p: n) {
-//                latex = latex + "\\\\" + gausslatex
-//            }
-//            if let eisensteinlatex = EisensteinLatex(p: n) {
-//                latex = latex + "\\\\" + eisensteinlatex
-//                latex = latex + "," + EisensteinInt.omegaDefinition
-//            }
-//        }
-//        return latex
-//    }
+    private func GaussianLatex(p: BigUInt) -> String? {
+        if let (g1,g2) = GaussianInt.FactorPrime(p: p) {
+            var latex = String(p) + "="
+            let g1str = g1.asString()
+            let g2str = g2.asString()
+
+            latex = latex + "(" + g1str + ")"
+            latex = latex + "(" + g2str + ")"
+            return latex
+        }
+        return nil
+    }
+
+    private func EisensteinLatex(p: BigUInt) -> String? {
+        if let (g1,g2) = EisensteinInt.FactorPrime(p: p) {
+            var latex = String(p) + "="
+            let g1str = g1.asString()
+            let g2str = g2.asString()
+
+            latex = latex + "(" + g1str + ")"
+            latex = latex + "(" + g2str + ")"
+            return latex
+        }
+        return nil
+    }
+
+
+    public func getLatex(n: BigUInt) -> String? {
+        var set = LatexSet() ?? ""
+        let nstr = String(n)
+
+        guard let special = isSpecial(n: n, cancel: nil) else { return set }
+        if special {
+            set = nstr + "\\in" + set
+        } else {
+            set = nstr + "\\notin" + set
+        }
+        var latex = set
+
+        //var latex = nstr + "\\in \\mathbb{P} := \\{ p \\in \\mathbb{N} | \\forall q : q\\mid p \\rightarrow q=1 \\lor q=p \\}"
+
+        if special {
+            if let gausslatex = GaussianLatex(p: n) {
+                latex = latex + "\\\\" + gausslatex
+            }
+            if let eisensteinlatex = EisensteinLatex(p: n) {
+                latex = latex + "\\\\" + eisensteinlatex
+                
+                //latex = latex + "," + EisensteinInt.omegaDefinition
+            }
+        }
+        return latex
+    }
 	
 	private var subtesters : [NumTester] = []
 	public func subtester() -> [NumTester]? {

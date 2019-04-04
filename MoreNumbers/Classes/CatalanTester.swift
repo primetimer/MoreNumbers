@@ -62,14 +62,14 @@ public class CatalanTester : NumTester {
 		return desc
 	}
  
-	
-	func getLatex(n: BigUInt) -> String? {
+	*/
+	public func getLatex(n: BigUInt) -> String? {
 		let nth = Nth(n: n)
 		if n <= 2 { return nil }
 		let latex =  String(n) + " = \\prod_{k=1}^{ " + String(nth+2) + "- 2} \\frac{4k-2}{k+1}"
 		return latex
 	}
-    */
+    
 	
 	public func property() -> String {
 		return "Catalan"

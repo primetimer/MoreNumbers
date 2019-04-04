@@ -16,6 +16,7 @@ public protocol NumTester {
 	func invers() -> NumTester?
 	func subtester() -> [NumTester]?
 	func issubTester() -> Bool
+    func getLatex(n: BigUInt) -> String?
 }
 
 public extension NumTester {
@@ -25,11 +26,15 @@ public extension NumTester {
     func propertyString() -> String { return property() } //Includes hyphenation
 }
 
-public extension NumTester {
-    func getLatex(n: BigUInt) ->  String? { return nil }
-}
+//public extension NumTester {
+//    func getLatex(n: BigUInt) ->  String? { return nil }
+//}
 
 public class EverTrueTester : NumTester {
+    public func getLatex(n: BigUInt) -> String? {
+        return nil
+    }
+    
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		return true
 	}
@@ -64,25 +69,34 @@ public class Tester {
         AudioActiveTester(),
 		LuckyTester(),
 		SmithTester(),
-		MathConstantTester(),LatticeTester(),
+//        MathConstantTester(),
+        LatticeTester(),
         BernoulliTester()
 		//,IrregularTester()
 	]
 	
-	public static let xtesters : [NumTester] = [TwinPrimeTester(),CousinPrimeTester(),SexyPrimeTester(),
+	public let xtesters : [NumTester] = [TwinPrimeTester(),CousinPrimeTester(),SexyPrimeTester(),
 								  SOGPrimeTester(),SafePrimeTester()]
 	
-	static public var completetesters : [NumTester] = []
+	public var completetesters : [NumTester] = []
 	private init() {
 		for t in Tester.testers {
-			Tester.completetesters.append(t)
-			if t.invers() != nil { Tester.completetesters.append(t.invers()!)}
+			self.completetesters.append(t)
+			if t.invers() != nil { self.completetesters.append(t.invers()!)}
 			if t.subtester() != nil {
 				for sub in t.subtester()! {
-					Tester.completetesters.append(sub)
+					self.completetesters.append(sub)
 				}
 			}
 		}
+        
+        for type in MathConstantType.allValues {
+            let t = SpecialConstantTester(type)
+            self.completetesters.append(t)
+            
+            let r = RationalApproxTester(type)
+            self.completetesters.append(r)
+        }
 	}
 	
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
@@ -91,6 +105,12 @@ public class Tester {
 }
 
 public class TriangleTester : NumTester {
+    public func getLatex(n: BigUInt) -> String? {
+        guard let r = triangleroot(n: n) else { return nil }
+        let latex = String(n) + "= \\sum_{k=1}^{\(r)} k"
+        return latex
+    }
+    
     public init() {}
 	public func property() -> String {
 		return "triangle"
@@ -120,6 +140,12 @@ public class TriangleTester : NumTester {
 }
 
 public class PronicTester : NumTester {
+    public func getLatex(n: BigUInt) -> String? {
+        guard let r = pronicroot(n: n) else { return nil }
+        let latex = String(n) + "= \(r)(\(r)+1)"
+        return latex
+    }
+    
     public init() {}
     public func property() -> String {
         return "pronic"
@@ -144,6 +170,12 @@ public class PronicTester : NumTester {
 
 
 class PentagonalTester : NumTester {
+    func getLatex(n: BigUInt) -> String? {
+        guard let r = pentagonalroot(n: n) else { return nil }
+        let latex = String(n) + "= \\frac{3\(r)^2-\(r)}{2}"
+        return latex
+    }
+    
         public init() {}
 	public func property() -> String {
 		return "pentagonal"
@@ -170,6 +202,22 @@ class PentagonalTester : NumTester {
 }
 
 public class Pow2Tester : NumTester {
+    public func getLatex(n: BigUInt) -> String? {
+        if n == 1 { return "1 = 2^0"}
+        if n == 2 { return "2 = 2^1"}
+        var nn = n
+        var pow = 1
+        while nn>1 {
+            if nn % 2 != 0 {
+                return nil
+            }
+            nn = nn / 2
+            pow = pow + 1
+        }
+            let latex = String(n) + "= 2^{\(pow)}"
+        return latex
+    }
+    
         public init() {}
 	public func property() -> String {
 		return "power of two"
@@ -191,6 +239,12 @@ public class Pow2Tester : NumTester {
 
 
 public class HexagonalTester : NumTester {
+    public func getLatex(n: BigUInt) -> String? {
+        guard let r = hexroot(n: n) else { return nil }
+        let latex = String(n) + "=" + "2\(r)^2 - \(r)"
+        return latex
+    }
+    
         public init() {}
 	public func property() -> String {
 		return "hexagonal"
@@ -216,10 +270,18 @@ public class HexagonalTester : NumTester {
 		}
 		return false
 	}
+    
 }
 
 
 public class SquareTester : NumTester {
+    public func getLatex(n: BigUInt) -> String? {
+        let r = n.squareRoot()
+        if r*r != n { return nil }
+        let latex = String(n) + "=" + "\(r)^2"
+        return latex
+    }
+    
         public init() {}
 	public func property() -> String {
 		return "square"
@@ -241,6 +303,12 @@ public class CubeTester : NumTester {
 		let r = n.iroot3()
 		return r*r*r == n
 	}
+    public func getLatex(n: BigUInt) -> String? {
+        let r = n.iroot3()
+        if r*r*r != n { return nil }
+        let latex = String(n) + "=" + "\(r)^3"
+        return latex
+    }
 }
 
 

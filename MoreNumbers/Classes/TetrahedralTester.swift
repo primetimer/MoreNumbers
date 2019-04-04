@@ -96,13 +96,13 @@ public class TetrahedralTest : NumTester {
 //        return WikiLinks.shared.getLink(tester: self, n: n)
 //    }
 //    
-//    func getLatex(n: BigUInt) -> String? {
-//        if let (_,k) = test(n: n,cancel: TimeOut()) {
-//            let latex = String(n) + "= \\sum_{k=1}^{" + String(k) + "}\\frac{k\\cdot{(k+1)}}{2}"
-//            return latex
-//        }
-//        return nil
-//    }
+    public func getLatex(n: BigUInt) -> String? {
+        if let (_,k) = test(n: n,cancel: TimeOut()) {
+            let latex = String(n) + "= \\sum_{k=1}^{" + String(k) + "}\\frac{k\\cdot{(k+1)}}{2}"
+            return latex
+        }
+        return nil
+    }
 }
 
 

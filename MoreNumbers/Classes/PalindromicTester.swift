@@ -71,17 +71,17 @@ public class PalindromicTester : NumTester {
 //        return desc
 //    }
 //
-//    func getLatex(n: BigUInt) -> String? {
-//        let pbase = PalindromicBase(n: n)
-//        if pbase.count == 0 { return nil }
-//        var latex = String(n)
-//        for b in pbase {
-//            //var nstr = n.asString(toBase: b)
-//            latex = latex + " = " + String(n,radix : b).uppercased() + "_{" + String(b) + "}"
-//        }
-//        return latex
-//
-//    }
+    public func getLatex(n: BigUInt) -> String? {
+        let pbase = PalindromicBase(n: n)
+        if pbase.count == 0 { return nil }
+        var latex = String(n)
+        for b in pbase {
+            //var nstr = n.asString(toBase: b)
+            latex = latex + " = " + String(n,radix : b).uppercased() + "_{" + String(b) + "}"
+        }
+        return latex
+
+    }
 	
 	public func property() -> String {
 		return "palindromic"

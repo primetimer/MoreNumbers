@@ -40,7 +40,7 @@ public class MersenneTester : NumTester {
 		return (true,pow)
 	}
 	
-	func getLatex(n: BigUInt) -> String? {
+	public func getLatex(n: BigUInt) -> String? {
 		if n == 0 { return nil }
 		if n == 1 {
 			return "1 = M_1 = 2^1 - 1 \\\\"
@@ -88,7 +88,7 @@ public class ProthTester : NumTester {
 		return false
 	}
 	
-	func getLatex(n: BigUInt) -> String? {
+	public func getLatex(n: BigUInt) -> String? {
 		
 		let (k,pot2,_) = getpart(n: n)
 		var latex = String(n) + "= " + String(k) + "\\cdot { 2^{" + String(pot2) + "}} + 1"

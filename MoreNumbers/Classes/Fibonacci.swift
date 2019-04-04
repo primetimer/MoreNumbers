@@ -51,7 +51,7 @@ public class FibonacciTester : NumTester {
         return previ
     }
     
-    func getLatex(n: BigUInt) -> String? {
+    public func getLatex(n: BigUInt) -> String? {
         guard let special = isSpecial(n: n, cancel: nil) else { return nil }
         if !special { return nil }
         if n == 1 {
@@ -123,7 +123,7 @@ public class LucasTester : NumTester {
         return ans
     }
     
-    func getLatex(n: BigUInt) -> String? {
+    public func getLatex(n: BigUInt) -> String? {
         guard let special = isSpecial(n: n, cancel: nil) else { return nil }
         if !special { return nil }
         if n <= 2 {    return nil }

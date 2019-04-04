@@ -65,34 +65,34 @@ class SmithTester : NumTester {
 	}
 	*/
 	
-//    func getLatex(n: BigUInt) -> String? {
-//        let special = TestSpecialSync(n: n) ?? false
-//        if !special { return nil }
-//        let factors = FactorCache.shared.Factor(p: n,cancel: TimeOut())
-//        var latex = ""
-//        let s = String(n)
-//        for (index,c) in s.enumerated() {
-//            if index > 0 { latex = latex + "+" }
-//            latex = latex + String(c)
-//        }
-//        latex = latex + "="
-//        for (findex,f) in factors.factors.enumerated() {
-//            if findex > 0 { latex = latex + "+" }
-//            if f >= 10 {
-//                let strf = String(f)
-//                var latexf = ""
-//                for (index,c) in strf.enumerated() {
-//                    if index > 0 { latexf = latexf + "+" }
-//                    latexf = latexf + String(c)
-//                }
-//                latex = latex + "(" + latexf + ")"
-//            } else {
-//                latex = latex + String(f)
-//            }
-//        }
-//        //latex = latex + "\\\\"
-//        return latex
-//    }
-//}
+    func getLatex(n: BigUInt) -> String? {
+        let special = isSpecial(n: n, cancel: nil) ?? false
+        if !special { return nil }
+        let factors = FactorCache.shared.Factor(p: n,cancel: TimeOut())
+        var latex = ""
+        let s = String(n)
+        for (index,c) in s.enumerated() {
+            if index > 0 { latex = latex + "+" }
+            latex = latex + String(c)
+        }
+        latex = latex + "="
+        for (findex,f) in factors.factors.enumerated() {
+            if findex > 0 { latex = latex + "+" }
+            if f >= 10 {
+                let strf = String(f)
+                var latexf = ""
+                for (index,c) in strf.enumerated() {
+                    if index > 0 { latexf = latexf + "+" }
+                    latexf = latexf + String(c)
+                }
+                latex = latex + "(" + latexf + ")"
+            } else {
+                latex = latex + String(f)
+            }
+        }
+        //latex = latex + "\\\\"
+        return latex
+    }
 }
+
 

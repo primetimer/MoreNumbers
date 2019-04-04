@@ -475,8 +475,9 @@ public class LookAndSayTester : NumTester {
 		
 	}
 	
-    #if false
+    #if true
 	public func Say(n: BigUInt) -> (say: String, formatted : String, next: BigUInt) {
+        let spoken = ["zero","one","two","three","four","five","six","seven","eight","nine"]
 		if n == 0 { return ("One Zero","0",0) }
 		var next = BigUInt(0)
 		var ans = ""
@@ -495,7 +496,7 @@ public class LookAndSayTester : NumTester {
 			if ans != "" { ans = ans + ", "}
 			ans = ans + String(count+1) + " " //SpokenNumber.shared.spoken(n: BigUInt(count+1))
 			guard let digit = BigUInt(String(a[i])) else { continue }
-			var digitstr = SpokenNumber.shared.spoken(n: digit)
+			var digitstr = spoken[Int(digit)] //SpokenNumber.shared.spoken(n: digit)
 			if count > 0 { digitstr = digitstr + "s" }
 			let help = 10 * (count+1) + Int(String(a[i]))!
 			next = next * 100 + BigUInt(help)
@@ -511,8 +512,8 @@ public class LookAndSayTester : NumTester {
 	}
     #endif
 
-    #if false
-	func getLatex(n: BigUInt) -> String? {
+    #if true
+	public func getLatex(n: BigUInt) -> String? {
 		var latex = ""
 		var set = "S : = \\{ s_{n} \\} \\\\"
 		set = set + "s_{n+1} = \\begin{cases}"

@@ -20,6 +20,66 @@ extension String {
 }
 
 extension MathConstantType {
+    
+    public func OEISDigitsSeries() -> String {
+        switch self {
+        case .pi:
+            return "A000796"
+        case .e:
+            return "A001113"
+        case .gamma:
+            return "A001620"
+        case .bruns:
+            return "A065421"
+        case .carefree:
+            return "A065464"
+        case .chaitin:
+            return "A100264"
+        case .champernowne:
+            return "A033307"
+        case .conwaylambda:
+            return "A014715"
+        case .copelanderdos:
+            return "A033308"
+        case .crt2:
+            return "A002580"
+        case .feigenbaumalpha:
+            return "A006891"
+        case .feigenbaumdelta:
+            return "A006890"
+        case .gauss:
+            return "A062539" //Acgtung ist G*pi
+        case .gelfond:
+            return "A039661"
+        case .khinchin:
+            return "A087491"
+        case .ln2:
+            return "A002162"
+        case .mill:
+            return "A051021"
+            
+            
+            
+        case .root2:
+            return "A002193"
+        case .pisquare:
+            return "A002388"
+        case .phi:
+            return "A001622"
+        case .zeta3:
+            return "A002117"
+        case .silver:
+            return "A014176"
+        case .plastic:
+            return "A060006"
+        case .ramanujan:
+            return "A064533"
+        case .viswanath:
+            return "A078416"
+
+        }
+        
+    }
     public func OEISRational() -> (n: String,d: String,cf: String)? {
         switch self {
         case .pi:

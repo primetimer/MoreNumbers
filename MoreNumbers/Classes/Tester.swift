@@ -17,6 +17,7 @@ public protocol NumTester {
 	func subtester() -> [NumTester]?
 	func issubTester() -> Bool
     func getLatex(n: BigUInt) -> String?
+    func OEISNr() -> String?
 }
 
 public extension NumTester {
@@ -24,6 +25,10 @@ public extension NumTester {
 	func subtester() -> [NumTester]? { return nil }
 	func issubTester() -> Bool { return false }
     func propertyString() -> String { return property() } //Includes hyphenation
+    func OEISNr() -> String? {
+        let oeisnr = OEIS.shared.OEISNumber(key: self.property())
+        return oeisnr
+    }
 }
 
 //public extension NumTester {
@@ -31,6 +36,10 @@ public extension NumTester {
 //}
 
 public class EverTrueTester : NumTester {
+    public func OEISNr() -> String? {
+        return ""
+    }
+    
     public func getLatex(n: BigUInt) -> String? {
         return nil
     }
@@ -94,8 +103,10 @@ public class Tester {
             let t = SpecialConstantTester(type)
             self.completetesters.append(t)
             
-            let r = RationalApproxTester(type)
-            self.completetesters.append(r)
+            if let (n,d,cf) = type.OEISRational()  {
+                let r = RationalApproxTester(type)
+                self.completetesters.append(r)
+            }
         }
 	}
 	

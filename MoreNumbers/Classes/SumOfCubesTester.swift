@@ -59,6 +59,7 @@ public class TaxiCabTester : SumOfTwoCubesTester {
 
 public class SumOfTwoCubesTester : NumTester {
 	
+    public init() {}
 	public func getLatex(n: BigUInt) -> String? {
         guard let special = isSpecial(n: n,cancel: TimeOut()) else { return nil }
 		if !special { return nil }

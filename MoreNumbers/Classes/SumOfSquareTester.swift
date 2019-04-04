@@ -11,7 +11,8 @@ import BigInt
 import PrimeFactors
 
 public class SumOfTwoSquaresTester : NumTester {
-	
+    public init() {}
+    
     public func getLatex(n: BigUInt) -> String? {
         let special = isSpecial(n: n, cancel: nil) ?? false
         if !special { return nil }

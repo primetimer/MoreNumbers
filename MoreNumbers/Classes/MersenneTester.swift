@@ -123,6 +123,7 @@ public class ProthTester : NumTester {
 }
 
 public class SierpinskiTester : NumTester {
+    public init() {}
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if oeis.contains(n) {
 			return true

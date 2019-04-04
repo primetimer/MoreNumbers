@@ -71,6 +71,7 @@ class TestOEISConsistency: XCTestCase {
             //print(t.property(),oeis)
             if oeis == nil {
                  print(t.property(),oeis)
+                let debug = t.OEISNr()
             }
         }
     }

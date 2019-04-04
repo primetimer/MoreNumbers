@@ -89,6 +89,21 @@ class ViewController: UIViewController {
         uimath.latex = latex
     }
     
+    private func testSkewes() {
+        let t = SkewesTester()
+        let n = BigUInt(139)
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
+    private func testGraham() {
+        let t = GrahamNumberTester()
+        let n = BigUInt(387)
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
+    
     private func testRational() {
 //        let t = RationalApproxTester(.pi)
         let n = BigUInt(22)
@@ -124,7 +139,9 @@ class ViewController: UIViewController {
 //        testPrimorial()
 //        testFactorial()
 //        testGelfond()
-        testRational()
+//        testRational()
+        testSkewes()
+        testGraham()
         
         
         // Do any additional setup after loading the view, typically from a nib.

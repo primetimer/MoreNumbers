@@ -61,7 +61,7 @@ public class Tester {
 	public static let testers : [NumTester] = [
         NarcisticTester(),
 //        ExtraTester(),
-        BigNumberTester(),PrimeTester(), SemiPrimeTester(),
+        PrimeTester(), SemiPrimeTester(),
 //        CarmichaelTester(),
         AbundanceTester(),
 		TriangleTester(),PronicTester(),SquareTester(),CubeTester(),
@@ -80,6 +80,8 @@ public class Tester {
 		SmithTester(),
 //        MathConstantTester(),
         LatticeTester(),
+        GrahamNumberTester(),
+        SkewesTester(),
         BernoulliTester()
 		//,IrregularTester()
 	]
@@ -103,7 +105,7 @@ public class Tester {
             let t = SpecialConstantTester(type)
             self.completetesters.append(t)
             
-            if let (n,d,cf) = type.OEISRational()  {
+            if let (n,d,_) = type.OEISRational()  {
                 let r = RationalApproxTester(type)
                 self.completetesters.append(r)
             }

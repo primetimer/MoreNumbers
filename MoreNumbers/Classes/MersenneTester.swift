@@ -82,6 +82,7 @@ public class MersenneTester : NumTester {
 }
 
 public class ProthTester : NumTester {
+    public init() {}
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		let (k,_,nn) = getpart(n: n)
 		if k < nn { return true }
@@ -149,6 +150,7 @@ public class SierpinskiTester : NumTester {
 }
 
 public class TitanicTester : NumTester {
+    public init() {}
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		let special = OEIS.shared.ContainsNumber(key: property(), n: n)
 		return special

@@ -12,6 +12,7 @@ import PrimeFactors
 
 
 public class TwinPrimeTester : NumTester {
+    public init() {}
 	public func property() -> String {
 		return "twin prime"
 	}
@@ -39,6 +40,7 @@ public class TwinPrimeTester : NumTester {
 }
 
 public class CousinPrimeTester : NumTester {
+    public init() {}
 	public func property() -> String {
 		return "cousin prime"
 	}
@@ -64,6 +66,7 @@ public class CousinPrimeTester : NumTester {
 }
 
 public class SexyPrimeTester : NumTester {
+    public init() {}
 	public func property() -> String {
 		return "sexy prime"
 	}
@@ -86,6 +89,7 @@ public class SexyPrimeTester : NumTester {
     public func issubTester() -> Bool { return true }
 }
 public class SOGPrimeTester : NumTester {
+    public init() {}
 	public func property() -> String {
 		return "Sophie Germain prime"
 	}
@@ -104,6 +108,7 @@ public class SOGPrimeTester : NumTester {
 }
 
 public class SafePrimeTester : NumTester {
+    public init() {}
     public func property() -> String {
 		return "safe prime"
 	}
@@ -147,6 +152,7 @@ public class ProbablePrimeTester : NumTester {
 }
 
 public class CarmichaelTester : NumTester{
+    public init() {}
 	public func property() -> String {
 		return "Carmichael"
 	}

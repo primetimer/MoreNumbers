@@ -11,6 +11,8 @@ import BigInt
 import PrimeFactors
 
 public class PandigitalTester : NumTester {
+    
+    public init() {}
 	
     public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
         if n == 0 { return false }

@@ -23,8 +23,9 @@ extension BigUInt {
 	}
 }
 
-class SmithTester : NumTester {
-	
+public class SmithTester : NumTester {
+    public init() {}
+    
 	private func SmithSum(n: BigUInt, base : BigUInt = 10, cancel: CalcCancelProt?) -> BigUInt {
 		let factors = FactorCache.shared.Factor(p: n, cancel: cancel)
 		if cancel?.IsCancelled() ?? false { return 0 }
@@ -34,10 +35,10 @@ class SmithTester : NumTester {
 		}
 		return sum
 	}
-	func property() -> String {
+    public func property() -> String {
 		return "Smith"
 	}
-	func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+    public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if n <= 3 { return false }
 		if PrimeCache.shared.IsPrime(p: n) { return false }
 		
@@ -65,7 +66,7 @@ class SmithTester : NumTester {
 	}
 	*/
 	
-    func getLatex(n: BigUInt) -> String? {
+    public func getLatex(n: BigUInt) -> String? {
         let special = isSpecial(n: n, cancel: nil) ?? false
         if !special { return nil }
         let factors = FactorCache.shared.Factor(p: n,cancel: TimeOut())

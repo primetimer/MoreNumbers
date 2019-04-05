@@ -65,7 +65,7 @@ public class Tester {
 //        CarmichaelTester(),
         AbundanceTester(),
 		TriangleTester(),PronicTester(),SquareTester(),CubeTester(),
-		FibonacciTester(),TetrahedralTest(),
+		FibonacciTester(),TetrahedralTester(),
 		PentagonalTester(),HexagonalTester(),
 		Pow2Tester(),MersenneTester(),TitanicTester(),HeegnerTester(),
 		PerfectTester(),ProthTester(),FermatTester(),ConstructibleTester(),

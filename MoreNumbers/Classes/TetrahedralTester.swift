@@ -10,9 +10,10 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-public class TetrahedralTest : NumTester {
+public class TetrahedralTester : NumTester {
 	
 	static private var tetrahedral : [BigUInt] = [BigUInt(1)]
+    public init() {}
 	public func property() -> String {
 		return "tetrahedral"
 	}

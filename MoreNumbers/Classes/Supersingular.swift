@@ -11,6 +11,7 @@ import BigInt
 import PrimeFactors
 
 public class SupersingularTester : NumTester {
+    public init() {}
 	private let monster = [2,3,5,7,11,13, 17,19,23,29,31,41,47,59,71]
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if n < 100 {

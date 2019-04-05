@@ -10,17 +10,18 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-class PlatonicTester : NumTester {
+public class PlatonicTester : NumTester {
 	
 	private var platonic = [4,6,8,12,20]
-	func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
+    public init() {}
+    public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		for p in platonic {
 			if BigUInt(p) == n { return true }
 		}
 		return false
 	}
 	
-	func getLatex(n: BigUInt) -> String? {
+    public func getLatex(n: BigUInt) -> String? {
 		//n+e-f == 2
 		var latex = ""
 		switch n {
@@ -40,10 +41,10 @@ class PlatonicTester : NumTester {
 		return latex
 	}
 	
-	func property() -> String {
+    public func property() -> String {
 		return "platonic"
 	}
-	func propertyString() -> String {
+	public func propertyString() -> String {
 		return "pla\u{00AD}tonic solid"
 	}
 }

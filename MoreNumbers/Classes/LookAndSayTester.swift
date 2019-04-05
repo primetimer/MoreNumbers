@@ -11,8 +11,9 @@ import BigInt
 import PrimeFactors
 
 
-class AudioActiveTester : NumTester {
-	func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
+public class AudioActiveTester : NumTester {
+    public init() {}
+    public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if ConwayActive.shared.contains(nr: n) != nil {
 			return true
 		}
@@ -35,7 +36,7 @@ class AudioActiveTester : NumTester {
 	}
 	
 	
-	func getLatex(n: BigUInt) -> String? {
+    public func getLatex(n: BigUInt) -> String? {
 		guard let elem = ConwayActive.shared.contains(nr: n) else { return nil }
 		var latex = String(n) + " = " + elem.name + "_{" + String(elem.index+1) + "}"
 		latex = latex + "\\rightarrow "
@@ -43,11 +44,11 @@ class AudioActiveTester : NumTester {
 		return latex
 			}
 	
-	func property() -> String {
+    public func property() -> String {
 		return "audioactive"
 	}
 	
-	func propertyString() -> String {
+	public func propertyString() -> String {
 		return "audio\u{00AD}active"
 	}
 }
@@ -464,6 +465,7 @@ BigInt("111312211312113221133211322112211213322112"),BigInt("3113112221131112211
 #if true
 public class LookAndSayTester : NumTester {
 	
+    public init() {}
     public func Previous(n: BigUInt) -> BigUInt? {
 		guard let seq = OEIS.shared.GetSequence(key: self.property()) else { return nil }
 		var previus : BigUInt? = nil

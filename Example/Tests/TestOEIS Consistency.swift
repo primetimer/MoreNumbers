@@ -73,6 +73,25 @@ class TestOEISConsistency: XCTestCase {
                  print(t.property(),oeis)
                 let debug = t.OEISNr()
             }
+            
+            testSeries(tester: t)
+        }
+    }
+    
+    private func testSeries(tester: NumTester) {
+        print(tester.property())
+        guard let oeis = tester.OEISNr() else {
+            XCTAssert(false)
+            return
+        }
+        var rindex = 0
+        for n in 0...100 {
+            let special = tester.isSpecial(n: BigUInt(n), cancel: nil)
+            let root = tester.Root(n: BigUInt(n))
+            if special != nil {
+                XCTAssert(rindex == root!)
+            }
+            rindex += 1
         }
     }
 

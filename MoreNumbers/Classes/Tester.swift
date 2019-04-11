@@ -18,6 +18,7 @@ public protocol NumTester {
 	func issubTester() -> Bool
     func getLatex(n: BigUInt) -> String?
     func OEISNr() -> String?
+    func Root(n: BigUInt) -> Int?
 }
 
 public extension NumTester {
@@ -28,6 +29,12 @@ public extension NumTester {
     func OEISNr() -> String? {
         let oeisnr = OEIS.shared.OEISNumber(key: self.property())
         return oeisnr
+    }
+    func Root(n: BigUInt) -> Int? {
+        guard let oeis = OEISNr() else { return nil }
+        guard let seq = OEIS.shared.GetSequence(key: oeis) else { return nil }
+        let index = seq.index(of: BigInt(n))
+        return index
     }
 }
 

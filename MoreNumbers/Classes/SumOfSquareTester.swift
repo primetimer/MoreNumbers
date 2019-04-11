@@ -188,3 +188,102 @@ public class SumOfTwoSquaresTester : NumTester {
 	}
 }
 
+
+public class SumOfFourSquaresTester: NumTester {
+    public init() {}
+    public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+        return true
+    }
+    
+    public func property() -> String {
+        return "sum of four squares"
+    }
+    
+    public func getLatex(n: BigUInt) -> String? {
+        return ""
+    }
+    private let sum2tester = SumOfTwoSquaresTester()
+    
+    private func divisor(_ n: BigInt, factor: BigInt) -> BigInt {
+        var n = n
+        var divisor = BigInt(1)
+        while (n % factor == 0) {
+            n = n / factor;
+            divisor = divisor * factor;
+        }
+        return divisor
+    }
+    
+    public func squareTerms(n : BigUInt, cancel : CalcCancelProt?) -> [BigInt]? {
+        if n == 0 { return [BigInt(0),BigInt(0),BigInt(0),BigInt(0)] }
+        if n == 1 { return [BigInt(1),BigInt(0),BigInt(0),BigInt(0)] }
+        var res = [BigInt(1),BigInt(0),BigInt(0),BigInt(0)]
+        let factors = FactorCache.shared.Factor(p: n, cancel: cancel)
+
+        for f in factors.factors {
+            if cancel?.IsCancelled() ?? false { return nil}
+            guard let sq = squareTerms4Primes(p: f, cancel: cancel) else { return nil }
+            
+//            print(res)
+//            print(sq)
+            var prod = [BigInt(0),BigInt(0),BigInt(0),BigInt(0)]
+            
+            prod = [
+                res[0]*sq[0] + res[1]*sq[1] + res[2]*sq[2] + res[3]*sq[3],
+                res[0]*sq[1] - res[1]*sq[0] + res[2]*sq[3] - res[3]*sq[2],
+                res[0]*sq[2] - res[1]*sq[3] - res[2]*sq[0] + res[3]*sq[1],
+                res[0]*sq[3] + res[1]*sq[2] - res[2]*sq[1] - res[3]*sq[0] ]
+            
+            res = prod
+            
+        }
+        return res
+        
+    }
+    
+    public func squareTerms4Primes(p : BigUInt, cancel : CalcCancelProt?) -> [BigInt]? {
+        var res = [BigInt(1),BigInt(0),BigInt(0),BigInt(0)]
+        
+        var sq1 = BigInt(p.squareRoot())
+        var n2 = BigInt(p) - sq1*sq1
+        
+        // 1. Find a suitable first square
+        while sq1 > 0 {
+            if cancel?.IsCancelled() ?? false { return nil }
+            // A number can be written as a sum of three squares
+            // <==> it is NOT of the form 4^a(8b+7)
+            if ( (n2 / divisor(n2, factor : 4)) % 8 != 7 ) {
+                break
+            }
+            sq1 = sq1 - 1
+            n2 = BigInt(p) - sq1*sq1
+        }
+        
+        var sq2 = BigInt(0)
+        while n2 > sq2*sq2 {
+            let n3 = n2 - sq2*sq2
+            if n3 == 1 {
+                res[0] = sq1
+                res[1] = 1
+                return res
+            }
+            if cancel?.IsCancelled() ?? false { return nil }
+            guard let special = sum2tester.isSpecial(n: n3.magnitude, cancel: cancel) else { return nil }
+            if special {
+                guard let (a,b) = sum2tester.Express(n: n3.magnitude, cancel: cancel) else { return nil }
+                res[0] = sq1
+                res[1] = sq2
+                res[2] = BigInt(a)
+                res[3] = BigInt(b)
+                print(res)
+                return res
+            }
+            
+            sq2 = sq2 + 1
+        }
+        assert(false)
+        return nil
+    }
+}
+
+

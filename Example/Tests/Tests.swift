@@ -68,10 +68,47 @@ class Tests: XCTestCase {
        
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure() {
-            // Put the code you want to measure the time of here.
+    func testTetrahedral() {
+        let t = TetrahedralTester()
+        var sum = 0
+        for k in 1...100 {
+            sum = sum + k * (k+1) / 2
+            let isspecial = t.isSpecial(n: BigUInt(sum), cancel: nil)
+            if isspecial == false {
+                print("Error")
+            }
+            XCTAssert(isspecial == true)
+            
+        }
+    }
+    
+    func testPyramidal() {
+        let t = PyramidalTester()
+        var sum = 0
+        for k in 1...100 {
+            sum = sum + k * k
+            let isspecial = t.isSpecial(n: BigUInt(sum), cancel: nil)
+            if isspecial == false {
+                print("Error")
+            }
+            XCTAssert(isspecial == true)
+            
+        }
+    }
+    
+    func test4squares() {
+        let t4 = SumOfFourSquaresTester()
+        
+        for p in 9...10000 {
+            let n = BigUInt(p)
+            //if !n.isPrime() { continue }
+            guard let ans = t4.squareTerms(n: n, cancel: nil) else { XCTAssert(false); return}
+            let sum = ans[0]*ans[0] + ans[1]*ans[1] + ans[2]*ans[2] + ans[3]*ans[3]
+            print("\(p): \(sum) - \(ans) ")
+            if sum != n {
+                print("Error at \(p)")
+            }
+            XCTAssert(sum == p)
         }
     }
     

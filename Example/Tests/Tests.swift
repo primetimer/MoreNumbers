@@ -97,14 +97,33 @@ class Tests: XCTestCase {
     }
     
     func test4squares() {
+        
+        func countnonzero(sq: [BigInt]) -> Int {
+            var ans = 0
+            for f in sq {
+                if f != 0 { ans = ans + 1 }
+            }
+            return ans
+        }
         let t4 = SumOfFourSquaresTester()
         
-        for p in 9...10000 {
+        for p in 0...1000 {
             let n = BigUInt(p)
             //if !n.isPrime() { continue }
+            
+            
             guard let ans = t4.squareTerms(n: n, cancel: nil) else { XCTAssert(false); return}
             let sum = ans[0]*ans[0] + ans[1]*ans[1] + ans[2]*ans[2] + ans[3]*ans[3]
-            print("\(p): \(sum) - \(ans) ")
+
+//            print("\(p): \(sum) - \(ans) ")
+            let special = t4.isSpecial(n: n, cancel: nil)  ?? false
+            let count = countnonzero(sq: ans)
+            if special {
+//                print(p)
+                XCTAssert(count == 4)
+            }
+            
+
             if sum != n {
                 print("Error at \(p)")
             }

@@ -192,6 +192,11 @@ public class SumOfTwoSquaresTester : NumTester {
 public class SumOfFourSquaresTester: NumTester {
     public init() {}
     public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+        if n < 7 { return false }
+//        let r = n.squareRoot()
+        if (BigInt(n) / divisor(BigInt(n), factor : 4)) % 8 != 7 {
+            return false
+        }
         return true
     }
     
@@ -235,6 +240,8 @@ public class SumOfFourSquaresTester: NumTester {
                 res[0]*sq[3] + res[1]*sq[2] - res[2]*sq[1] - res[3]*sq[0] ]
             
             res = prod
+//               print(res)
+            
             
         }
         return res
@@ -275,13 +282,13 @@ public class SumOfFourSquaresTester: NumTester {
                 res[1] = sq2
                 res[2] = BigInt(a)
                 res[3] = BigInt(b)
-                print(res)
+//                print(res)
                 return res
             }
             
             sq2 = sq2 + 1
         }
-        assert(false)
+//        assert(false)
         return nil
     }
 }

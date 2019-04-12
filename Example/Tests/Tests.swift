@@ -105,7 +105,7 @@ class Tests: XCTestCase {
             }
             return ans
         }
-        let t4 = SumOfFourSquaresTester()
+        let t4 = SumOf4SquaresTester()
         
         for p in 0...1000 {
             let n = BigUInt(p)
@@ -119,7 +119,7 @@ class Tests: XCTestCase {
             let special = t4.isSpecial(n: n, cancel: nil)  ?? false
             let count = countnonzero(sq: ans)
             if special {
-//                print(p)
+                print(p)
                 XCTAssert(count == 4)
             }
             
@@ -128,6 +128,29 @@ class Tests: XCTestCase {
                 print("Error at \(p)")
             }
             XCTAssert(sum == p)
+        }
+    }
+    
+    func test3squares() {
+        
+      let t3 = SumOf3SquaresTester()
+        
+        for p in 0...1000 {
+            let n = BigUInt(p)
+            let special = t3.isSpecial(n: n, cancel: nil)  ?? false
+            if special {
+                print("3-Squares \(p)")
+            
+                guard let ans = t3.squareTerms(n: n, cancel: nil)
+                    else { XCTAssert(false); return}
+                let sum = ans[0]*ans[0] + ans[1]*ans[1] + ans[2]*ans[2]
+
+            
+                if sum != n {
+                    print("Error at \(p)")
+                }
+                XCTAssert(sum == p)
+            }
         }
     }
     

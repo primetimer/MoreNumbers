@@ -189,7 +189,7 @@ public class SumOfTwoSquaresTester : NumTester {
 }
 
 
-public class SumOfFourSquaresTester: NumTester {
+public class SumOf4SquaresTester: NumTester {
     public init() {}
     public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
         if n < 7 { return false }
@@ -201,7 +201,7 @@ public class SumOfFourSquaresTester: NumTester {
     }
     
     public func property() -> String {
-        return "sum of four squares"
+        return "Only sum of 4 squares"
     }
     
     public func getLatex(n: BigUInt) -> String? {
@@ -275,7 +275,9 @@ public class SumOfFourSquaresTester: NumTester {
                 return res
             }
             if cancel?.IsCancelled() ?? false { return nil }
-            guard let special = sum2tester.isSpecial(n: n3.magnitude, cancel: cancel) else { return nil }
+            guard let special = TesterCache.shared.TestSpecial(tester: sum2tester, n: n3.magnitude, cancel: cancel) else {
+                return nil
+            }
             if special {
                 guard let (a,b) = sum2tester.Express(n: n3.magnitude, cancel: cancel) else { return nil }
                 res[0] = sq1
@@ -292,5 +294,72 @@ public class SumOfFourSquaresTester: NumTester {
         return nil
     }
 }
+
+public class SumOf3SquaresTester: NumTester {
+    public init() {}
+    public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+        if n < 3 { return false }
+        
+        let sum2special = TesterCache.shared.TestSpecial(tester: sum2tester, n: n, cancel: cancel) ?? false
+        if sum2special {
+            return false
+        }
+        if (BigInt(n) / divisor(BigInt(n), factor : 4)) % 8 != 7 {
+            return true
+        }
+        return false
+    }
+    
+    public func property() -> String {
+        return "sum of 3 squares"
+    }
+    
+    public func getLatex(n: BigUInt) -> String? {
+        return ""
+    }
+    private let sum2tester = SumOfTwoSquaresTester()
+    
+    private func divisor(_ n: BigInt, factor: BigInt) -> BigInt {
+        var n = n
+        var divisor = BigInt(1)
+        while (n % factor == 0) {
+            n = n / factor;
+            divisor = divisor * factor;
+        }
+        return divisor
+    }
+    
+    public func squareTerms(n : BigUInt, cancel : CalcCancelProt?) -> [BigInt]? {
+        if n == 0 { return [BigInt(0),BigInt(0),BigInt(0)] }
+        if n == 1 { return [BigInt(1),BigInt(0),BigInt(0)] }
+        var res = [BigInt(1),BigInt(0),BigInt(0)]
+        
+        var n2 = BigInt(n)
+        var sq2 = BigInt(0)
+        while n2 > sq2*sq2 {
+            let n3 = n2 - sq2*sq2
+            if n3 == 1 {
+                res[0] = sq2
+                res[1] = 1
+                return res
+            }
+            if cancel?.IsCancelled() ?? false { return nil }
+            guard let special = sum2tester.isSpecial(n: n3.magnitude, cancel: cancel) else { return nil }
+            if special {
+                guard let (a,b) = sum2tester.Express(n: n3.magnitude, cancel: cancel) else { return nil }
+                res[0] = sq2
+                res[1] = BigInt(a)
+                res[2] = BigInt(b)
+                //                print(res)
+                return res
+            }
+            
+            sq2 = sq2 + 1
+        }
+        //        assert(false)
+        return nil
+    }
+}
+
 
 

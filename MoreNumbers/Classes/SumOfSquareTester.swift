@@ -205,8 +205,17 @@ public class SumOf4SquaresTester: NumTester {
     }
     
     public func getLatex(n: BigUInt) -> String? {
-        return ""
+        var latex = ""
+        guard let sq = squareTerms(n: n, cancel: TimeOut()) else { return nil }
+        for q in sq {
+            if latex.count > 0 { latex = latex + "+" }
+            latex = latex + String(q) + "^{2}"
+        }
+        latex = String(n) + "=" + latex
+        return latex
+        
     }
+    
     private let sum2tester = SumOfTwoSquaresTester()
     
     private func divisor(_ n: BigInt, factor: BigInt) -> BigInt {
@@ -315,7 +324,15 @@ public class SumOf3SquaresTester: NumTester {
     }
     
     public func getLatex(n: BigUInt) -> String? {
-        return ""
+        var latex = ""
+        guard let sq = squareTerms(n: n, cancel: TimeOut()) else { return nil }
+        for q in sq {
+            if latex.count > 0 { latex = latex + "+" }
+            latex = latex + String(q) + "^{2}"
+        }
+        latex = String(n) + "=" + latex
+        return latex
+        
     }
     private let sum2tester = SumOfTwoSquaresTester()
     

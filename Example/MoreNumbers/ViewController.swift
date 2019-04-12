@@ -121,6 +121,20 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    private func testSquares() {
+        let ts : [NumTester] = [SumOfTwoSquaresTester(),SumOf3SquaresTester(),SumOf4SquaresTester()]
+        let n = BigUInt(252)
+        
+        for t in ts {
+            if t.isSpecial(n: n, cancel: nil) ?? false {
+                let latex = t.getLatex(n: n)
+                print(latex)
+                uimath.latex = latex
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -140,8 +154,9 @@ class ViewController: UIViewController {
 //        testFactorial()
 //        testGelfond()
 //        testRational()
-        testSkewes()
-        testGraham()
+//        testSkewes()
+//        testGraham()
+        testSquares()
         
         
         // Do any additional setup after loading the view, typically from a nib.

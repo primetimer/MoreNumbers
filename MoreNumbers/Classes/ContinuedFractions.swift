@@ -91,7 +91,7 @@ extension MathConstantType {
         case .gamma:
             return ("A046114","A064115","A002852")
         case .bruns:
-            return ("A065421","A065421N","A065421D")    //Bruns decimal not Continued Fractions"
+            return ("A065421CF","A065421N","A065421D")    //Bruns decimal not Continued Fractions"
         case .pisquare:
             return nil //return ("A096456","A096463")
         case .root2:

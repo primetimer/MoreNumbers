@@ -32,8 +32,13 @@ public extension NumTester {
     }
     func Root(n: BigUInt) -> Int? {
         guard let oeis = OEISNr() else { return nil }
-        guard let seq = OEIS.shared.GetSequence(key: oeis) else { return nil }
+        guard let seq = OEIS.shared.GetSequence(key: property()) else { return nil }
         let index = seq.index(of: BigInt(n))
+        
+        let last = seq[seq.count-1]
+        if n > last {
+            return -1
+        }
         return index
     }
 }
@@ -82,7 +87,7 @@ public class Tester {
 		PlatonicTester(),
 		PalindromicTester(),PandigitalTester(), LucasTester(),SupersingularTester(),
 		HappyTester(),
-//        LookAndSayTester(),
+        LookAndSayTester(),
         AudioActiveTester(),
 		LuckyTester(),
 		SmithTester(),

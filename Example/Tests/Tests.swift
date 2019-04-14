@@ -173,4 +173,22 @@ class Tests: XCTestCase {
         }
     }
     
+    func testAbundance() {
+        let n = BigUInt(18)
+        // 18 = 2*3*3
+        // 1 +2 + 6 + 9 + 18 
+        let t = AbundanceTester()
+        do {
+            let special = t.isSpecial(n: 18, cancel: nil)
+            XCTAssert(special == true)
+        }
+        
+        do {
+            let special = t.isSpecial(n: 6, cancel: nil)
+            XCTAssert(special == false)
+        }
+        
+        
+    }
+    
 }

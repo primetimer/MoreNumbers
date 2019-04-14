@@ -14,6 +14,16 @@ class TestOEISConsistency: XCTestCase {
         super.tearDown()
     }
     
+    func testTwin() {
+        let t = TwinPrimeTester()
+        for n in 0...100 {
+            let special = t.isSpecial(n: BigUInt(n), cancel: nil) ?? false
+            if special {
+                print(String(n))
+            }
+        }
+    }
+    
     func testConstructible() {
         let t = ConstructibleTester()
         for n in 0...100 {
@@ -64,6 +74,66 @@ class TestOEISConsistency: XCTestCase {
         }
     }
     
+    func testProth() {
+        let t = ProthTester()
+        for n in 0...400 {
+            let special = t.isSpecial(n: BigUInt(n), cancel: nil) ?? false
+            if special {
+                print(String(n))
+            }
+        }
+    }
+    
+    func testNonTotient() {
+        let t = NonTotientTester()
+        for n in 0...400 {
+            let special = t.isSpecial(n: BigUInt(n), cancel: nil) ?? false
+            if special {
+                print(String(n))
+            }
+        }
+    }
+    
+    func testLattice() {
+        let t = LatticeTester()
+        for n in 0...400 {
+            let special = t.isSpecial(n: BigUInt(n), cancel: nil) ?? false
+            if special {
+                print(String(n))
+            }
+        }
+    }
+    
+    func testLucky() {
+        let t = LuckyTester()
+        for n in 0...400 {
+            let special = t.isSpecial(n: BigUInt(n), cancel: nil) ?? false
+            if special {
+                print(String(n))
+            }
+        }
+    }
+    
+    func testB() {
+        let t = BernoulliTester()
+        for n in 0...4000 {
+            let special = t.isSpecial(n: BigUInt(n), cancel: nil) ?? false
+            if special {
+                print(String(n))
+            }
+        }
+    }
+    
+    func testRationalBruns() {
+        let t = RationalApproxTester(.bruns)
+        for n in 19...400 {
+            let special = t.isSpecial(n: BigUInt(n), cancel: nil) ?? false
+            if special {
+                print(String(n))
+            }
+        }
+    }
+    
     func testConsitency() {
         let n = BigUInt(22)
         for t in Tester.shared.completetesters {
@@ -79,19 +149,66 @@ class TestOEISConsistency: XCTestCase {
     }
     
     private func testSeries(tester: NumTester) {
-        print(tester.property())
+        print(tester.property(),tester.OEISNr())
         guard let oeis = tester.OEISNr() else {
+            if tester.property() == "p-adic" { return }
+            print("No Oeis")
             XCTAssert(false)
             return
         }
-        var rindex = 0
-        for n in 0...100 {
-            let special = tester.isSpecial(n: BigUInt(n), cancel: nil)
-            let root = tester.Root(n: BigUInt(n))
-            if special != nil {
-                XCTAssert(rindex == root!)
+        
+        let (start,offset) : (Int,Int) = {
+            switch tester.property() {
+            case "narcissistic","audioactive":
+                return (-1,0)
+            case "Constructible":
+                return (3,2)
+            case "palindromic":
+                return (-1,0)
+            case "rational δ approx":
+                return (-1,0)
+            case "prime":
+                return (2,0)
+            case "triangle","Mersenne":
+                return (1,1)
+            case "pronic","square","cube":
+                return (0,1)
+            case "Fibonacci":
+                return (2,3)
+            case "tetrahedral","pentagonal","sum of two squares","sum of two cubes":
+                return (2,2)
+            case "rational B2 approx":
+                return (-1,0)
+            default :
+                return (0,0)
             }
-            rindex += 1
+        }()
+        
+        if start < 0 {
+            return
+        }
+        
+        var rindex = offset
+        for n in start...100 {
+            let special = tester.isSpecial(n: BigUInt(n), cancel: nil) ?? false
+            if special {
+                let root = tester.Root(n: BigUInt(n))
+                if root == nil {
+                    print("Fehler: \(n)")
+                    let rdebug = tester.Root(n: BigUInt(n))
+                    XCTAssert(false)
+                } else if root! >= 0 {
+                    if rindex != root! && rindex != root!+1 && rindex != root!-1 {
+                        print("Error:",tester.property(),root,rindex)
+                        XCTAssert(false)
+                    }
+                    
+                } else if root == -1 {
+                    return
+                }
+                rindex += 1
+            }
+            
         }
     }
 

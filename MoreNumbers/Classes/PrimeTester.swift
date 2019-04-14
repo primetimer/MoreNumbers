@@ -18,7 +18,14 @@ public class TwinPrimeTester : NumTester {
 	}
     public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if !PrimeCache.shared.IsPrime(p: n) { return false }
-		if !PrimeCache.shared.IsPrime(p: n+2) { return false }
+		if !PrimeCache.shared.IsPrime(p: n+2) {
+            if n > 3 {
+                if PrimeCache.shared.IsPrime(p: n-2) {
+                    return true
+                }
+            }
+            return false
+        }
 		return true
 	}
 	

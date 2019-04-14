@@ -93,11 +93,11 @@ public class GrahamNumberTester : NumTester {
 	}
 	
 	public func property() -> String {
-		return "Large Number"
+		return "Graham Number"
 	}
-	public func subtester() -> [NumTester]? {
-		return [ZeroTester(),OneTester()]
-	}
+//    public func subtester() -> [NumTester]? {
+//        return [ZeroTester(),OneTester()]
+//    }
 	public func issubTester() -> Bool {
 		return false
 	}

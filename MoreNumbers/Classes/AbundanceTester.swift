@@ -143,9 +143,41 @@ public class PerfectTester : NumTester {
 	
 }
 
+public class SuperAbundanceTester : NumTester {
+    public init() {}
+    
+    private let superabundant = [1, 2, 4, 6, 12, 24, 36, 48, 60, 120, 180, 240, 360, 720, 840, 1260, 1680, 2520, 5040, 10080, 15120, 25200, 27720, 55440, 110880, 166320, 277200, 332640, 554400, 665280, 720720, 1441440, 2162160, 3603600, 4324320, 7207200, 8648640, 10810800, 21621600]
+
+    public func getLatex(n: BigUInt) -> String? {
+        var latex = ""
+        if n.isInt64() {
+            if superabundant.contains(Int(n)) {
+                latex = latex + "\\forall m<n : \\frac{\\sigma (m)}{m} < \\frac{\\sigma (n)}{n}"
+            }
+        }
+        return latex
+    }
+    
+    public func property() -> String {
+        return "super abundant"
+    }
+    public func propertyString() -> String {
+        return "super abun\u{00AD}dant"
+    }
+    public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+        if n.isInt64() {
+            if superabundant.contains(Int(n)) {
+                return true
+                
+            }
+            return false
+        }
+        return nil
+    }
+}
+
 public class AbundanceTester : NumTester {
 	    public init() {}
-	private let superabundant = [1, 2, 4, 6, 12, 24, 36, 48, 60, 120, 180, 240, 360, 720, 840, 1260, 1680, 2520, 5040, 10080, 15120, 25200, 27720, 55440, 110880, 166320, 277200, 332640, 554400, 665280, 720720, 1441440, 2162160, 3603600, 4324320, 7207200, 8648640, 10810800, 21621600]
 	
 //    func getDesc(n: BigUInt) -> String? {
 //        var desc = WikiLinks.shared.getLink(tester: self, n: n)
@@ -169,13 +201,6 @@ public class AbundanceTester : NumTester {
                 return latex
             }
         }
-
-        if n.isInt64() {
-            if superabundant.contains(Int(n)) {
-                latex = latex + "\\\\"
-                latex = latex + "\\forall m<n : \\frac{\\sigma (m)}{m} < \\frac{\\sigma (n)}{n}"
-            }
-        }
         return latex
     }
     
@@ -191,7 +216,7 @@ public class AbundanceTester : NumTester {
 		if let sigma = FactorCache.shared.Sigma(p: p,cancel: cancel) {
 			let iscancelled = cancel?.IsCancelled() ?? false
 			if iscancelled { return nil }
-			if sigma >= BigUInt(n) * BigUInt(2) {
+			if sigma > BigUInt(n) * BigUInt(2) {
 				return true
 			}
 			return false

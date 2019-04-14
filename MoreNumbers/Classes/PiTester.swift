@@ -320,13 +320,13 @@ public class MathConstantTester : NumTester {
         guard let seqn = OEIS.shared.GetSequence(oeisnr: oeis_n_nr) else { return nil }
         guard let seqd = OEIS.shared.GetSequence(oeisnr: oeis_d_nr) else { return nil }
         
-        for i in 0..<seqn.count {
+        for i in 0..<min(seqn.count,seqd.count) {
             if seqn[i] == n {
                 return (seqn[i],seqd[i],i)
             }
         }
         
-        assert(false)
+//        assert(false)
         return nil
     }
     

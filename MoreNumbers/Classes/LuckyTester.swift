@@ -87,7 +87,7 @@ class LuckyArr {
 			self.sieving(self.maxlucky)
 			self.completed = true
 		}
-		DispatchQueue.global(qos: .background).async(execute: dwi)
+		DispatchQueue.global(qos: .background).sync(execute: dwi)
 	}
 	
 	private func emit_result(_ n: Int) {
@@ -148,7 +148,7 @@ public class LuckyTester : NumTester {
 	    public init() {}
 	public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
 		if n >= LuckyArr.shared.last {
-			return false
+			return nil
 		}
 		let ans = LuckyArr.shared.test(n: Int(n))
 		return ans

@@ -39,6 +39,12 @@ public class FibonacciTester : NumTester {
         let l = log(a) / log(phi)
         let nth = floor(l)
         return Int(nth)
+        
+        
+    }
+    
+    public func Root(n: BigUInt) -> Int {
+        return NIndex(n: n)
     }
     
     private func prev(n: BigUInt) -> BigUInt {

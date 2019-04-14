@@ -54,8 +54,8 @@ public class LatticeTester : NumTester {
 	}
 	
     public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
-		if n <= 1 { return false }
-		if n == 2 { return true }
+		if n == 1 { return true }
+		if n < 5 { return false }
 		if OEIS.shared.ContainsNumber(key: self.property(),n: n) {
 			return true
 		}

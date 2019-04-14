@@ -34,14 +34,15 @@ public enum MathConstantType : Int {
     case feigenbaumdelta
     case feigenbaumalpha
     case gelfond
+    case gompertz
     case viswanath
     case carefree
     
-    static public let allValues = [pi,e,gamma,mill,bruns,root2,ln2,pisquare,phi,crt2,zeta3,conwaylambda,khinchin,silver,plastic,gauss,chaitin,copelanderdos,champernowne,ramanujan,feigenbaumdelta,feigenbaumalpha,gelfond,viswanath,carefree]
+    static public let allValues = [pi,e,gamma,mill,bruns,root2,ln2,pisquare,phi,crt2,zeta3,conwaylambda,khinchin,silver,plastic,gauss,chaitin,copelanderdos,champernowne,ramanujan,feigenbaumdelta,feigenbaumalpha,gelfond,gompertz, viswanath,carefree]
     static public let wiki = ["pi","E_(mathematical_constant)","Euler–Mascheroni_constant","Mills_constant","Brun_theorem","Square_root_of_2",
-                       "Natural_logarithm","pi","Golden_ratio","Cube_root","Apéry_constant","Look-and-say_sequence","Khinchin_constant","Silver_ratio","Plastic_number","gauss_constant","chaitin_constant","Copeland–Erdős_constant","Champernowne_constant","Landau–Ramanujan_constant","Feigenbaum_constants","Feigenbaum_constants","gelfond_constant","Random_Fibonacci_sequence","List_of_mathematical_constants"]
-    static public let name = ["π","e","γ","θ","B2","√2","ln(2)","π^2","φ",",∛2","ζ(3)","λ","K","δ","ρ","G","Ω","C","C10","K","δ","α","e^π","v","K1"]
-    static public let latex = ["\\pi","e","\\gamma","\\theta","B_{2}","\\sqrt{2}","ln(2)","\\pi^2","\\phi","\\sqrt[3]{2}","\\zeta (3)","\\lambda","K_{0}","\\delta_{S}","\\rho","G","\\Omega","C_{CE}","C_{10}","K_{RL}","\\delta","\\alpha","e^{\\pi}","e^{\\gamma_{f}}","K_{1}"]
+                       "Natural_logarithm","pi","Golden_ratio","Cube_root","Apéry_constant","Look-and-say_sequence","Khinchin_constant","Silver_ratio","Plastic_number","gauss_constant","chaitin_constant","Copeland–Erdős_constant","Champernowne_constant","Landau–Ramanujan_constant","Feigenbaum_constants","Feigenbaum_constants","gelfond_constant","gompertz_constant","Random_Fibonacci_sequence","List_of_mathematical_constants"]
+    static public let name = ["π","e","γ","θ","B2","√2","ln(2)","π^2","φ",",∛2","ζ(3)","λ","K","δ","ρ","G","Ω","C","C10","K","δ","α","e^π","eE1(1)","v","K1"]
+    static public let latex = ["\\pi","e","\\gamma","\\theta","B_{2}","\\sqrt{2}","ln(2)","\\pi^2","\\phi","\\sqrt[3]{2}","\\zeta (3)","\\lambda","K_{0}","\\delta_{S}","\\rho","G","\\Omega","C_{CE}","C_{10}","K_{RL}","\\delta","\\alpha","e^{\\pi}","eE_1(1)","e^{\\gamma_{f}}","K_{1}"]
     
     func asString() -> String {
         return MathConstant.shared.dict[self] ?? ""
@@ -56,6 +57,8 @@ public enum MathConstantType : Int {
             return -3
         case .gelfond:
             return 1
+        case .gompertz:
+            return -1
         case .viswanath:
             return 0
         
@@ -120,6 +123,8 @@ public enum MathConstantType : Int {
             return 2.502907875095892822283902873218
         case .gelfond:
             return exp(Double.pi)
+        case .gompertz:
+            return 0.59634736232319407
         case .viswanath:
             return 1.1319882487943
         case .carefree:
@@ -275,6 +280,8 @@ public class MathConstant {
             return "2.5029078750958928222839028732182157863812713767271499773361920567792354631795902067032996497464338341295952318699958547239421823777854451792728633149933725781121635948795037447812609973805986712397117373289276654044010306698313834600094139322364490657889951220584317250787337746308785342428535198858750004235824691874082042817009017148230518216216194131998560661293827426497098440844701008054549677936760888126446406885181552709324007542506497157047047541993283178364533256241537869395712509706638797949265462313767459189098131167524342211101309131278371609511583412308415037164997020224681219644081216686527458043026245782561067150138521821644953254334987348741335279581535101658360545576351327650181078119483694595748502373982354526256327794753972699020128915166457939420198920248803394051699686551494477396533876979741232354061781989611249409599035312899773361184984737794610842883329383390395090089140863515256268033814146692799133107433497051435452013446434264752001621384610729922641994332772918977769053"
         case .gelfond:
             return "23.140692632779269005729086367948547380266106242600211993445046409524342350690452783516971997067549219675952704801087773144428044414693835844717445879609849365327965863669242230268991013741764684401410395183868477243068059588162449844491430966778413671631963414784038216511287637731470347353833162821294047891936224820221006032065443362736557271823744989618858059591684872645479013397834026595101499643792422968160799565381423536206957600770590460899883002254304871211791300849327379580729427301931042601691939325853203428968661895283290521711157185185506802254197204566370865568386830544799278170407497768540367556534957218867882563994384718224585889428535247260568210271076018491534518468064887386774439630514005169440540665265430968869063937315359837311042174433023967896690035041181486053390287203759918586886897487324321721585596074334676426167856117353336421265631915665454892289692245773889570905361803836197510326567943624088359906422347128465334373148717065178946374273412694796804321041476668230286429"
+        case .gompertz:
+            return "0.59634736232319407434107849936927937607417786015254878157348491048232721911487441747043049709361276034423703474842862368981207829952905719661736922266589402431851351436829376329625477118797402524323020521178857378561772836523651378559486742535621813008120833784238448595980666983593217826489686047231099964510855581415383520616257500831887418701758151857931005061160435529456710340150366636350297558071419646592053706025638587543922397638393270961863555954208141117245933865465249552771087829990958035092991791621638963569135506973125548997956937193071784387014696728077517817004991066054484722549462441370725613792849019754998300374952983038426547682453111389665104606160569870635068347161893124491230526414991818434382774564880428194626569143820801867744446017483136989591526756478336954871867400992596022131077861537818589021632262956642078512987325163348487588340256844389750747943861531479299393280778439988176958921982635774062377216822805716991606963300668378017382783396325444262097994142293373856284907"
         case .viswanath:
             return "1.1319882487943"
         case .carefree:
@@ -480,6 +487,11 @@ public class MathConstantTester : NumTester {
             var ans = "e^{\\pi} = (-1)^{-i} \\\\"
             ans = ans + "e^{\\pi} - \\pi = 19.9990999..."
             return ans
+        case .gompertz:
+            var ans = "1-1+2-6+24-120+ ... = \\\\"
+            ans = ans + "\\sum_{k=0}^{\\infty} (-1)^k k! = \\sum_{k=0}^{\\infty} (-1)^k \\int_{0}^{\\infty} x^{k}e^{-x} \\\\"
+            ans = ans + "=^{?} \\int_{0}^{\\infty} \\sum_{k=0}^{\\infty} (-x)^{k}e^{-x} \\\\ = \\int_{0}^{\\infty} \\frac{e^{-x}}{1+x} = eE_1(1)"
+            return ans
         case .viswanath:
             //http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.498.8842&rep=rep1&type=pdf
             let v = MathConstantType.latex[type.rawValue]
@@ -522,21 +534,22 @@ public class MathConstantTester : NumTester {
         guard let (_,_,oeiscf) = type.OEISRational() else { return nil }
         if !latex.isEmpty { latex = latex + "\\\\" }
         latex = latex + latexname + " \\approx " + "\\frac{"
-        latex = latex + String(num) + "}{" + String(denom) + "} ="
-        guard let seq = OEIS.shared.GetSequence(key: oeiscf) else { return nil }
-        for i in 0...index {
-            if i == 0 {
-                latex = latex + String(seq[0]) + " + "
-            } else if i < index {
-                latex = latex + "\\frac{1}{" + String(seq[i]) + "+\\text{ }}"
-            } else if i == index {
-                latex = latex + "\\frac{1}{" + String(seq[i]) + "}"
+        latex = latex + String(num) + "}{" + String(denom) + "}"
+        if let seq = OEIS.shared.GetSequence(key: oeiscf) {
+            latex = latex + " = "
+            for i in 0...index {
+                if i == 0 {
+                    latex = latex + String(seq[0]) + " + "
+                } else if i < index {
+                    latex = latex + "\\frac{1}{" + String(seq[i]) + "+\\text{ }}"
+                } else if i == index {
+                    latex = latex + "\\frac{1}{" + String(seq[i]) + "}"
+                }
             }
+            
+            let frac = ContinuedFractions.shared.ValueRationalDigits(numerator: num, denominator: denom)
+            latex = latex + " \\approx " + frac
         }
-        
-        let frac = ContinuedFractions.shared.ValueRationalDigits(numerator: num, denominator: denom)
-        latex = latex + " \\approx " + frac
-        
         let morelatex = moreLatex(type: type)
         if morelatex != "" {
             latex = latex + "\\\\" + morelatex

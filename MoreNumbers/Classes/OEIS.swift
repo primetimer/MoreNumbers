@@ -138,6 +138,7 @@ public class OEIS {
         Add(LucasTester().property(),"A000032",[1, 2, 3, 4, 7, 11, 18, 29, 47, 76, 123, 199, 322, 521, 843, 1364, 2207, 3571, 5778, 9349, 15127, 24476, 39603, 64079, 103682, 167761, 271443, 439204, 710647, 1149851, 1860498, 3010349, 4870847, 7881196, 12752043, 20633239, 33385282, 54018521, 87403803])
         Add(SupersingularTester().property(),"A002267",[    2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 47, 59, 71])
         Add(SkewesTester().property(),"SKEWES",[1,13,139,1397,13971,139716,1397162])
+        
         /*
 		Add("sqrt 19","A010124", [4, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2])
 		*/
@@ -176,6 +177,9 @@ public class OEIS {
         AddContinuedFractions(type: .copelanderdos, [0, 4, 4, 8, 16, 18, 5, 1, 1, 1, 1, 7, 1, 1, 6, 2, 9, 58, 1, 3, 4, 2, 2, 1, 1, 2, 1, 4, 39, 4, 4, 5, 2, 1, 1, 87, 16, 1, 2, 1, 2, 1, 1, 3, 1, 8, 1, 3, 1, 1, 6, 1, 13, 27, 1, 1, 3, 1, 41, 1, 2, 1, 1, 19, 1, 1, 1, 1, 3, 1, 1, 484, 1, 4, 1, 19, 3, 6, 8, 1, 5, 1, 17, 9, 2, 3, 5, 25, 1468, 1, 1, 3, 1])
         AddContinuedFractions(type: .champernowne, [0, 8, 9, 1, 149083, 1, 1, 1, 4, 1, 1, 1, 3, 4, 1, 1, 1, 15])
         
+        AddContinuedFractions(type: .gompertz,
+        n: [0, 1, 4, 20, 124, 920, 7940, 78040, 859580, 10477880, 139931620, 2030707640, 31805257340, 534514790680, 9591325648580, 182974870484120],
+        d: [1, 2, 7, 34, 209, 1546, 13327, 130922, 1441729, 17572114, 234662231, 3405357682, 53334454417, 896324308634, 16083557845279, 306827170866106])
 		
         for type in MathConstantType.allValues {
             let t = SpecialConstantTester(type)
@@ -250,6 +254,25 @@ public class OEIS {
 	public func OEISNumber(key :String) -> OEISNR? {
 		return oeis[key]
 	}
+    
+    public func AddContinuedFractions(type: MathConstantType, n: [BigInt] , d: [BigInt]) {
+        guard let oeisrational = type.OEISRational() else { assert(false) }
+        let key = type.Symbol()
+        //Add(oeisrational.cf,oeisrational.cf,sequence)
+        
+        //let rational = ContinuedFractions.shared.RationalSequence(seq: sequence, count: sequence.count)
+        let numeratorkey = "Numerator " + key
+        let denomiatorkey = "Denominator" + key
+        
+//        var (n,d) : ([BigInt],[BigInt]) = ([],[])
+//        for r in rational {
+//            n.append(r.n)
+//            d.append(r.d)
+//        }
+        
+        Add(numeratorkey,oeisrational.n,n)
+        Add(denomiatorkey,oeisrational.d,d)
+    }
 	
 	public func AddContinuedFractions(type : MathConstantType, _ sequence : [BigInt] = [])
 	{

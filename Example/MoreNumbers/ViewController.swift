@@ -36,6 +36,15 @@ class ViewController: UIViewController {
         uimath.latex = latex
     }
     
+    private func testGompertz() {
+        let t = RationalApproxTester(.gompertz)
+        let n = BigUInt(124)
+        
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
+    
     private func testPadovan() {
         let t = PadovanTester()
         let n = PadovanTester.Nth(n: 13)
@@ -124,7 +133,10 @@ class ViewController: UIViewController {
     
     private func testSquares() {
         let ts : [NumTester] = [SumOfTwoSquaresTester(),SumOf3SquaresTester(),SumOf4SquaresTester()]
-        let n = BigUInt(252)
+      let n = BigUInt(252) // 4 Squares
+//        let n = BigUInt(381) // 3 Squares
+//        let n = BigUInt(17*29) // 2 Square
+//        let n = BigUInt(13) // 2 square prime
         
         for t in ts {
             if t.isSpecial(n: n, cancel: nil) ?? false {
@@ -133,6 +145,17 @@ class ViewController: UIViewController {
                 uimath.latex = latex
             }
         }
+    }
+    
+    private func testPadic() {
+        let t = DivergentTester()
+//        let n = BigUInt(404)
+//        let n = BigUInt(334)
+//        let n = BigUInt(445) // 1 / 3
+        let n = BigUInt(666)
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
     }
     
     override func viewDidLoad() {
@@ -156,7 +179,9 @@ class ViewController: UIViewController {
 //        testRational()
 //        testSkewes()
 //        testGraham()
-        testSquares()
+//        testSquares()
+        // testGompertz()
+        testPadic()
         
         
         // Do any additional setup after loading the view, typically from a nib.

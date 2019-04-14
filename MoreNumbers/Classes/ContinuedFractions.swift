@@ -51,6 +51,8 @@ extension MathConstantType {
             return "A062539" //Acgtung ist G*pi
         case .gelfond:
             return "A039661"
+        case .gompertz:
+            return "A073003"
         case .khinchin:
             return "A087491"
         case .ln2:
@@ -131,6 +133,8 @@ extension MathConstantType {
             return ("A159767N","A159767D","A159767")
         case .gelfond:
             return ("A058287N","A058287D","A058287")
+        case .gompertz:
+            return ("A002793","A002720","A073003CF")
         case .viswanath:
             return ("A115064N","A115064D","A115064")
         case .carefree:

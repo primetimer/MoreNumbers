@@ -13,6 +13,32 @@ import PrimeFactors
 public class SumOfTwoSquaresTester : NumTester {
     public init() {}
     
+    private func GaussianLatex(p: BigUInt) -> String? {
+        if let (g1,g2) = GaussianInt.FactorPrime(p: p) {
+            var latex = String(p) + "="
+            let g1str = g1.asString()
+            let g2str = g2.asString()
+            
+            latex = latex + "(" + g1str + ")"
+            latex = latex + "(" + g2str + ")"
+            return latex
+        }
+        return nil
+    }
+    
+    private func EisensteinLatex(p: BigUInt) -> String? {
+        if let (g1,g2) = EisensteinInt.FactorPrime(p: p) {
+            var latex = String(p) + "="
+            let g1str = g1.asString()
+            let g2str = g2.asString()
+            
+            latex = latex + "(" + g1str + ")"
+            latex = latex + "(" + g2str + ")"
+            return latex
+        }
+        return nil
+    }
+    
     public func getLatex(n: BigUInt) -> String? {
         let special = isSpecial(n: n, cancel: nil) ?? false
         if !special { return nil }
@@ -20,7 +46,12 @@ public class SumOfTwoSquaresTester : NumTester {
             let stra = String(a)
             let strb = String(b)
             let latex = String(n) + "=" + stra + "^2 + " + strb + "^2"
-            return latex
+            
+            
+            let glatex = GaussianLatex(p: n) ?? ""
+            let elatex = EisensteinLatex(p: n) ?? ""
+            
+            return latex + "\\\\" + glatex + "\\\\" + elatex
         }
         return nil
     }
@@ -212,9 +243,25 @@ public class SumOf4SquaresTester: NumTester {
             latex = latex + String(q) + "^{2}"
         }
         latex = String(n) + "=" + latex
+        
+        if let hfactors = HurwitzInt.FactorHurwitz(n: n, cancel: TimeOut()) {
+            var more = ""
+            for (i,h) in hfactors.enumerated() {
+                if !more.isEmpty { more = more + "\\cdot" }
+                more = more + "(" + h.0.asString() + ")"
+                if h.pow > 1 { more = more + "^{ \(h.pow) }" }
+                if i % 2 == 1 { more = more + "\\\\" }
+            }
+            more = "\(n) = " + more
+            more = more + "i^2=j^2=k^2 = ijk = -1"
+            latex = latex + "\\\\" + more
+        }
+        
         return latex
         
     }
+    
+    
     
     private let sum2tester = SumOfTwoSquaresTester()
     

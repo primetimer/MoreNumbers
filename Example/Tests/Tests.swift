@@ -154,4 +154,23 @@ class Tests: XCTestCase {
         }
     }
     
+    func testHurwitz() {
+        for n in 1...100 {
+//            print("Factorize : \(n)")
+            guard let harr = HurwitzInt.FactorHurwitz(n: BigUInt(n)) else {
+                XCTAssert(false)
+                break
+            }
+            var prod = HurwitzInt(1)
+            for h in harr {
+                for k in 0..<h.pow {
+                    prod = prod * h.0
+                }
+//                print(h,prod)
+            }
+            XCTAssert(prod.a[0] == BigInt(n))
+            for i in 1 ... 3 { XCTAssert(prod.a[i] == 0) }
+        }
+    }
+    
 }

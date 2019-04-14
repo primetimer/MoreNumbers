@@ -142,4 +142,131 @@ public struct EisensteinInt {
 	}
 }
 
+public func +(_ lhs: HurwitzInt, _ rhs: HurwitzInt) -> HurwitzInt {
+    
+    var a : [BigInt] = [0,0,0,0]
+    
+    for i in 0...3 {
+        a[i] = lhs.a[i] + rhs.a[i]
+    }
+    let ans = HurwitzInt(a)
+    return ans 
+    
+}
+
+public func -(_ lhs: HurwitzInt, _ rhs: HurwitzInt) -> HurwitzInt {
+    
+    var a : [BigInt] = [0,0,0,0]
+    
+    for i in 0...3 {
+        a[i] = lhs.a[i] - rhs.a[i]
+    }
+    let ans = HurwitzInt(a)
+    return ans
+    
+}
+
+public func *(_ lhs: HurwitzInt, _ rhs: HurwitzInt) -> HurwitzInt {
+    
+    let lhsa = lhs.a
+    let rhsa = rhs.a
+    
+    let prod = [
+        lhsa[0]*rhsa[0] - lhsa[1]*rhsa[1] - lhsa[2]*rhsa[2] - lhsa[3]*rhsa[3],
+        lhsa[0]*rhsa[1] + lhsa[1]*rhsa[0] - lhsa[2]*rhsa[3] + lhsa[3]*rhsa[2],
+        lhsa[0]*rhsa[2] + lhsa[1]*rhsa[3] + lhsa[2]*rhsa[0] - lhsa[3]*rhsa[1],
+        lhsa[0]*rhsa[3] - lhsa[1]*rhsa[2] + lhsa[2]*rhsa[1] + lhsa[3]*rhsa[0] ]
+    
+    let ans = HurwitzInt(prod)
+    return ans
+    
+}
+
+
+public struct HurwitzInt : CustomStringConvertible, Equatable {
+    public var description: String { return self.asString() }
+    
+    public private (set) var a: [BigInt] = [0,0,0,0]
+    
+    public init(_ a: [BigInt]) {
+        self.a = a
+    }
+    public init(_ h : HurwitzInt) {
+        self.a = h.a
+    }
+    public init(_ a: BigInt) {
+        self.a = [a,0,0,0]
+    }
+    
+    public mutating func conjugate() {
+        for i in 1...3 {
+            self.a[i] = -self.a[i]
+        }
+    }
+    
+    public var conj : HurwitzInt {
+        var hquer = HurwitzInt(self)
+        hquer.conjugate()
+        return hquer
+    }
+    
+    
+    
+    public func asString() -> String {
+        
+        func format(x : BigInt, i : String) -> String {
+            if x == 1 {
+                return "+\(i)"
+            } else if x == -1 {
+                return "-\(i)"
+            } else if x > 0 {
+                return "+\(x)\(i)"
+            } else if x < 0 {
+                return "-\(x)\(i)"
+            }
+            return ""
+        }
+        
+        var ans = String(a[0])
+        ans = ans + format(x: a[1], i: "i")
+        ans = ans + format(x: a[2], i: "j")
+        ans = ans + format(x: a[3], i: "k")
+        return ans
+    }
+    
+    private static let sum4tester = SumOf4SquaresTester()
+    
+    public static func FactorHurwitz(n : BigUInt, cancel: CalcCancelProt? = nil) -> [(h: HurwitzInt,pow: Int)]? {
+        
+        var ans : [(h: HurwitzInt,pow : Int)] = []
+        var hf: [HurwitzInt] = []
+        if n == 1 { return ans }
+        let factors = FactorCache.shared.Factor(p: n, cancel: cancel)
+        for f in factors.factors {
+            guard let sq = sum4tester.squareTerms4Primes(p: f, cancel: cancel) else { return nil }
+            let h = HurwitzInt(sq)
+            hf.append(h)
+            hf.append(h.conj)
+         }
+        
+        for h in hf {
+            var found = false
+            for j in 0..<ans.count {
+               
+                if h == ans[j].h {
+                    ans[j].pow += 1
+                    found = true
+                    break
+                }
+            }
+            if !found {
+                ans.append((h:h,pow:1))
+            }
+        }
+    
+        return ans
+    }
+}
+
+
 

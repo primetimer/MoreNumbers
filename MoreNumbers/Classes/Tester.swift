@@ -90,7 +90,8 @@ public class Tester {
         LatticeTester(),
         GrahamNumberTester(),
         SkewesTester(),
-        BernoulliTester()
+        BernoulliTester(),
+        DivergentTester()
 		//,IrregularTester()
 	]
 	

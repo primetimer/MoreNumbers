@@ -31,18 +31,19 @@ enum NarcisticMode {
     case factorion
 }
 
-extension BigUInt {
-    func getDigits(base : Int = 10) -> [Int] {
-        var stellen = self
-        var ans : [Int] = []
-        while stellen > 0 {
-            let digit = Int(stellen % BigUInt(base))
-            ans.insert(digit, at: 0)
-            stellen /= BigUInt(base)
-        }
-        return ans
-    }
-}
+//extension BigUInt {
+//    
+//    func getDigits(base : Int = 10) -> [Int] {
+//        var stellen = self
+//        var ans : [Int] = []
+//        while stellen > 0 {
+//            let digit = Int(stellen % BigUInt(base))
+//            ans.insert(digit, at: 0)
+//            stellen /= BigUInt(base)
+//        }
+//        return ans
+//    }
+//}
 
 class SDRepresentation {
     
@@ -55,7 +56,7 @@ class SDRepresentation {
     
     func Koefficients(n: BigInt) -> [Int] {
         if n == 0 { return [] }
-        let digits = n.magnitude.getDigits().reversed()
+        let digits = n.magnitude.getDigits(base:10) //.reversed()
         var sum = BigInt(0)
         let count = digits.count
         var f : [BigInt] = Array(repeating: BigInt(1), count: count+1)

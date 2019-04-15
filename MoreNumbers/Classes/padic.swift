@@ -203,6 +203,30 @@ extension padic {
         return false
     }
     
+    public func squareRoot() -> padic? {
+        //search x0
+        var n0 = 0
+        let n = self.value!
+        while n0 < self.base {
+            if n % BigUInt(base) == BigUInt(n0*n0) % BigUInt(base) {
+                break
+            }
+            n0 += 1
+        }
+        
+        var x0 = padic(n0,base:self.base)
+        let two = padic(2,base:self.base)
+        
+        for _ in 0...100 {
+            let x1 = (x0 + (self / x0)) / two
+            if (x1*x1).value == n {
+                return x1
+            }
+            x0 = x1
+        }
+        return nil
+    }
+    
     // 10 = 2
     // 1 / 10 = 1 , order = 1
     

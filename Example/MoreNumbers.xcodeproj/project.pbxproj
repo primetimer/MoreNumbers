@@ -17,6 +17,8 @@
 		72C67CD9E72BE1A23E64139A /* Pods_MoreNumbers_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D670F12322713ACB97D9BA /* Pods_MoreNumbers_Tests.framework */; };
 		7526D859AF689397A52DB816 /* Pods_MoreNumbers_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72791AF954D5ED2986BCF7F7 /* Pods_MoreNumbers_Example.framework */; };
 		841985782236383E00BEF0A4 /* TestSchizophrenic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84198576223637E300BEF0A4 /* TestSchizophrenic.swift */; };
+		841C2C332264D8BE008B6CAB /* TestPalindrom2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C2C322264D8BE008B6CAB /* TestPalindrom2.swift */; };
+		844365B72264532800F2FD6E /* TestPalindrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844365B62264532800F2FD6E /* TestPalindrom.swift */; };
 		8492807A22213DC40082BBBE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8492807822213DC40082BBBE /* Interface.storyboard */; };
 		8492807C22213DC40082BBBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8492807B22213DC40082BBBE /* Assets.xcassets */; };
 		8492808322213DC40082BBBE /* MoreNumbers Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8492808222213DC40082BBBE /* MoreNumbers Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -97,6 +99,8 @@
 		72791AF954D5ED2986BCF7F7 /* Pods_MoreNumbers_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbers_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D670F12322713ACB97D9BA /* Pods_MoreNumbers_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbers_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84198576223637E300BEF0A4 /* TestSchizophrenic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSchizophrenic.swift; sourceTree = "<group>"; };
+		841C2C322264D8BE008B6CAB /* TestPalindrom2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPalindrom2.swift; sourceTree = "<group>"; };
+		844365B62264532800F2FD6E /* TestPalindrom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPalindrom.swift; sourceTree = "<group>"; };
 		8492807622213DC40082BBBE /* MoreNumbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoreNumbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8492807922213DC40082BBBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		8492807B22213DC40082BBBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				841C2C322264D8BE008B6CAB /* TestPalindrom2.swift */,
+				844365B62264532800F2FD6E /* TestPalindrom.swift */,
 				84976AF622561EC4008A3EE1 /* TestOEIS Consistency.swift */,
 				84198576223637E300BEF0A4 /* TestSchizophrenic.swift */,
 				84C07EE7223AD07A00E2C6BF /* TestConstant.swift */,
@@ -590,8 +596,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844365B72264532800F2FD6E /* TestPalindrom.swift in Sources */,
 				84C07EED223C063300E2C6BF /* TestFibonacci.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				841C2C332264D8BE008B6CAB /* TestPalindrom2.swift in Sources */,
 				84976AF722561EC4008A3EE1 /* TestOEIS Consistency.swift in Sources */,
 				841985782236383E00BEF0A4 /* TestSchizophrenic.swift in Sources */,
 				84C07EE8223AD07A00E2C6BF /* TestConstant.swift in Sources */,

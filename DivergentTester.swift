@@ -15,6 +15,7 @@ public enum Divergents : Int, CaseIterable {
     case onehalf
     case onethird
     case minusone
+    case minusone10
     
     
     public var pvalue : padic {
@@ -27,6 +28,8 @@ public enum Divergents : Int, CaseIterable {
              return padic(1, base: 7) / padic(3, base: 7)
         case .minusone:
             return  padic(-1, base: 7)
+        case .minusone10:
+            return  padic(-1, base: 10)
         }
     }
     
@@ -38,7 +41,7 @@ public enum Divergents : Int, CaseIterable {
             return "\\frac{1}{2}"
         case .onethird:
             return "\\frac{1}{3}"
-        case .minusone:
+        case .minusone,.minusone10:
             return "-1"
         }
     }
@@ -51,7 +54,7 @@ public enum Divergents : Int, CaseIterable {
             return "\\sum_{k=0}^{\\infty} (-1)^k = 1 - 1 + 1 - 1 + ..."
         case .onethird:
             return "\\sum_{k=0}^{\\infty} (-1)^k 2^k= 1 - 2 + 4 - 8 + ..."
-        case .minusone:
+        case .minusone,.minusone10:
             return "\\sum_{k=0}^{\\infty} 2^k= 1 + 2 + 4 + 8 + ..."
         }
     }
@@ -67,7 +70,7 @@ public enum Divergents : Int, CaseIterable {
             return ans
         case .onethird:
             return ""
-        case .minusone:
+        case .minusone,.minusone10:
             var ans = "\\\\ S = 1 + 2 + 4 + 8 + ..."
             ans = ans + "\\\\ 1 + 2S = S"
             ans = ans + "\\\\ \\rightarrow S = -1"

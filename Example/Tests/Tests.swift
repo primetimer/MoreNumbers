@@ -191,4 +191,12 @@ class Tests: XCTestCase {
         
     }
     
+    func testPadicRoot() {
+        let x = padic(2, base: 7)
+        let r = x.squareRoot()!
+        let r2 = r*r
+        print(r)
+        XCTAssert(r2.value == 2)
+    }
+    
 }

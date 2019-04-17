@@ -15,82 +15,118 @@ class TestPalindromSum2: XCTestCase {
         super.tearDown()
     }
     
-    private func Palindrom2(s: [Int], b: Int = 10) -> ([Int],[Int])? {
+    private func Palindrom2(n: BigUInt, b: Int = 10) -> (BigUInt,BigUInt)? {
         
-        if s.count == 0 { return nil }
-        var x = Array(repeating: 0, count: s.count)
-        var y = Array(repeating: 0, count: s.count)
-        var z = Array(repeating: 0, count: s.count)
-        let c = s.count - 1
-        
-        //Leading zero possible?
-        if s[0] == 1 {
-            var s0 = Array(repeating: 0, count: s.count-1)
-            for i in 0...c-1 {
-                s0[i] = s[i+1]
+        func reflect(_ p: BigUInt, m: Int, mid : Bool, base : Int) -> BigUInt {
+            var s = p.getDigits(base: b)
+            while s.count < m { s.insert(0, at: 0) }
+            var r = s
+            
+            if mid { s.removeFirst() }
+            for d in  r {
+                s.insert(d, at: 0)
             }
-            s0[0] += b
-            if let ans = Palindrom2(s: s0) {
-                for i in 0...s.count-2 {
-                    x[i+1] = ans.0[i]
-                    y[i+1] = ans.1[i]
-                }
-                return (x,y)
+            
+            var ans = BigUInt(0)
+            for d in s {
+                ans = ans * BigUInt(b) + BigUInt(d)
             }
+            return ans
         }
-        for x0 in 0...b-1 {
-            x[0] = x0
-            x[c] = x0
-            //Case 1 ohne Uebertrag
-            
-            y[0] = s[0] - x[0]
-            if y[0] < 0 { y[0] = 0 }
-            if y[0] >= b { y[0] = b-1 }
-            y[c] = y[0]
-            
-            if x[c]+y[c] == s[c] {
-                if s.count == 1 { return (x,y) }
-                var s1 = Array(repeating: 0, count: s.count-1)
-                for i in 0..<s.count-1 { s1[i] = s[i+1] }
-                if let ans = Palindrom2(s: s1) {
-                    for i in 0...s.count-2 {
-                        x[i+1] = ans.0[i]
-                        y[i+1] = ans.1[i]
+        
+        if n.isPalindromic(base: b) {
+            return (n,0)
+        }
+        
+        let m : Int = {
+            let s = n.getDigits(base: b)
+            let count = s.count
+            let m = count % 2 == 0 ? count / 2 : count / 2 + 1
+            return m
+        }()
+       
+        
+        let n2 = BigUInt(b).power(m)
+        for p2 in 1 ..< n2 {
+            do {
+                let p = reflect(p2,m: m, mid: true, base: b)
+                if p <= n {
+                    let q = n-p
+                    if q.isPalindromic(base: b) {
+                        assert(p.isPalindromic(base: b))
+                        return (p,q)
                     }
-                    return (x,y)
                 }
             }
-            
-            //Case 2 2 mit Uebertrag vorher
-            y[0] = max(s[0] - x[0] - 1,0)
-            z[0] = 1
-            x[c] = x[0]
-            y[c] = y[0]
-            
-            if x[0]+y[0]+z[0] == s[0] && (x[c] + y[c] + 1) % b == s[c] && s.count > 1 {
-                var s2 = Array(repeating: 0, count: s.count-1)
-                s2[0] = 10 + s[1]
-                for i in 1..<s.count-1 { s2[i] = s2[i+1] }
-                if let ans = Palindrom2(s: s2) {
-                    for i in 0...s.count-2 {
-                        x[i+1] = ans.0[i]
-                        y[i+1] = ans.1[i]
+            do {
+                let p = reflect(p2,m: m-1, mid: false, base: b)
+                if p <= n {
+                    let q = n-p
+                    if q.isPalindromic(base: b) {
+                        assert(p.isPalindromic(base: b))
+                        return (p,q)
                     }
-                    return (x,y)
                 }
             }
         }
         return nil
+        
+        
     }
     
     func test2() {
-        let n = BigUInt(100)
-        let b = 10
         
+        for n0 in 100 ... 999 {
+            if n0 == 201 { continue }
+            let n = BigUInt(n0)
+            let b = 10
+            if let ans = Palindrom2(n: n, b: b) {
+                XCTAssert(ans.0 + ans.1 == n)
+                print(n0,":",ans)
+            } else {
+                print("No sum: \(n0)")
+            }
+        }
         
-        let s : [Int] = n.getDigits(base: b).reversed()
-        let ans = Palindrom2(s: s)
-        print(ans)
-        
+    }
+    
+     func test2_1000() {
+        for n0 in 1000 ... 1108 {
+            if n0 == 201 { continue }
+            let n = BigUInt(n0)
+            let b = 10
+            if let ans = Palindrom2(n: n, b: b) {
+                XCTAssert(ans.0 + ans.1 == n)
+                //print(n0,":",ans)
+            } else {
+                print("No sum: \(n0)")
+            }
+        }
+    }
+    
+    func test2_nosum() {
+        for n0 in [/* 200000000001, */ 6849,103748,104294,87218] {
+            let n = BigUInt(n0)
+            let b = 10
+            if let ans = Palindrom2(n: n, b: b) {
+                XCTAssert(ans.0 + ans.1 == n)
+                //print(n0,":",ans)
+            } else {
+                print("No sum: \(n0)")
+            }
+        }
+    }
+    
+    func test2_issum() {
+        for n0 in [100000000,6849-1,103748-1,104294-1,87218-1] {
+            let n = BigUInt(n0)
+            let b = 10
+            if let ans = Palindrom2(n: n, b: b) {
+                XCTAssert(ans.0 + ans.1 == n)
+                //print(n0,":",ans)
+            } else {
+                XCTAssert(false)
+            }
+        }
     }
 }

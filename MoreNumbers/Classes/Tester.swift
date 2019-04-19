@@ -85,7 +85,7 @@ public class Tester {
         SumOfTwoCubesTester(),TaxiCabTester(),
 		SierpinskiTester(),CatalanTester(),NonTotientTester(),
 		PlatonicTester(),
-		PalindromicTester(),PandigitalTester(), LucasTester(),SupersingularTester(),
+		PalindromicTester(),Palindromic2Tester(),PandigitalTester(), LucasTester(),SupersingularTester(),
 		HappyTester(),
         LookAndSayTester(),
         AudioActiveTester(),

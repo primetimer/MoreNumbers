@@ -147,6 +147,17 @@ class ViewController: UIViewController {
         }
     }
     
+    private func testPalindromic2() {
+        let t = Palindromic2Tester()
+        let n = BigUInt(1031)
+//        let n = BigUInt(1030)
+//        let n = BigUInt(1001) //Nothing
+        
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
+    
     private func testPadic() {
         let t = DivergentTester()
 //        let n = BigUInt(404)
@@ -183,6 +194,7 @@ class ViewController: UIViewController {
 //        testSquares()
 //         testGompertz()
         testPadic()
+//        testPalindromic2()
         
         
         // Do any additional setup after loading the view, typically from a nib.

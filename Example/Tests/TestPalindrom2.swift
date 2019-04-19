@@ -15,119 +15,25 @@ class TestPalindromSum2: XCTestCase {
         super.tearDown()
     }
     
-    private func Pali2(n: BigUInt, b: Int = 10) -> (BigUInt,BigUInt)? {
-        
-        func isPalindromic(_ d: [Int]) -> Bool {
-            let l = d.count
-            for i in 0..<l {
-                if d[i] != d[l-i-1] { return false }
-            }
-            return true
-        }
-        
-        let d = n.getDigits(base: b)
-        let m = d.count / 2
-        
-        if isPalindromic(d) {
-            return (n,0)
-        }
-        
-        for r in 0...1 {
-            
-            var p = Array(repeating: 0, count: d.count)
-            var q = Array(repeating: 0, count: d.count)
-            
-            var loopcount = b
-            for _ in 0...m {
-                loopcount = loopcount * b
-            }
-            for _ in 0...loopcount - 1 {
-                
-                var j = 0
-                repeat {
-                    p[j] = p[j] + 1
-                    p[d.count-j-1-r] = p[j]
-                    if p[j] == b {
-                        p[j] = 0
-                        p[d.count-j-1-r] = p[j]
-                        j = j + 1
-                    } else {
-                        break
-                    }
-                    
-                } while j <= m-r
-                
-                if p[0] == 0 {
-                    continue
-                }
-                if j > m {
-                    continue //r-loop
-                }
-                
-                //Reflect
-                //            for r in 0..<m {
-                //                p[d.count-1-r] = p[r]
-                //            }
-                
-                var carry = 0
-                for k in 0..<d.count {
-                    q[k] = d[k] - p[k] - carry
-                    if q[k] < 0 {
-                        carry = 1
-                        q[k] = q[k] + b
-                    } else {
-                        carry = 0
-                    }
-                }
-                if carry>0 {
-                    continue
-                }
-                
-                //sum
-                var start = d.count
-                repeat {
-                    start = start - 1
-                } while q[start] == 0 && start > 0
-                
-                var ispalindrom = true
-                for l in 0...start {
-                    if q[start-l] != q[l] {
-                        ispalindrom = false
-                        break
-                    }
-                }
-                
-                if ispalindrom {
-                    var ansp : BigUInt = 0
-                    var ansq : BigUInt = 0
-                    for i in 0..<p.count {
-                        ansp = ansp * BigUInt(b) + BigUInt(p[d.count-i-1])
-                        ansq = ansq * BigUInt(b) + BigUInt(q[d.count-i-1])
-                    }
-                    return (ansp,ansq)
-                }
-            }
-        }
-        return nil
-    }
     
     func test2_2() {
         
         var counter = 0
-        for n0 in 1 ... 20001 {
+        for n0 in 0 ... 20001 {
             //if n0 == 201 { continue }
             let n = BigUInt(n0)
             let b = 10
-            if let ans = Pali2(n: n, b: b) {
+            if let ans = Palindromic2Tester.Pali2(n: n, b: b, cancel: nil) {
                 XCTAssert(ans.0 + ans.1 == n)
                 XCTAssert(ans.0.isPalindromic(base: 10))
                 XCTAssert(ans.1.isPalindromic(base: 10))
                 //print(n0,":",ans)
             } else {
                 counter += 1
-                print("No sum: \(counter):\(n0)")
+                //print("No sum: \(counter):\(n0)")
             }
         }
+        XCTAssert(counter == 3006)
     }
     private func Palindrom2(n: BigUInt, b: Int = 10) -> (BigUInt,BigUInt)? {
         
@@ -206,34 +112,28 @@ class TestPalindromSum2: XCTestCase {
         
     }
     
-    func test2_1000() {
-        for n0 in 1000 ... 1108 {
-            if n0 == 201 { continue }
-            let n = BigUInt(n0)
-            let b = 10
-            if let ans = Palindrom2(n: n, b: b) {
-                XCTAssert(ans.0 + ans.1 == n)
-                //print(n0,":",ans)
-            } else {
-                print("No sum: \(n0)")
+    func test2_nosum() {
+        self.measure {
+            for n0 in [  /* 200000000001 ,*/ 6849,103748,104292,104294,87218,37283] {
+                let n = BigUInt(n0)
+                let b = 10
+                if Palindromic2Tester.Pali2(n: n, b: b,cancel : nil) != nil {
+                    XCTAssert(false)
+                    //print(n0,":",ans)
+                } else {
+                    //print("No sum: \(n0)")
+                }
             }
         }
     }
     
-    func test2_nosum() {
+    func test2_3600() {
         self.measure {
-            
-        
-        for n0 in [ /* 200000000001 ,*/ 6849,103748,104294,87218] {
-            let n = BigUInt(n0)
-            let b = 10
-            if let ans = Pali2(n: n, b: b) {
-                XCTAssert(false)
-                //print(n0,":",ans)
-            } else {
-                print("No sum: \(n0)")
+            for n0 in 0...3600 {
+                let n = BigUInt(n0)
+                let b = 10
+                let ans = Palindromic2Tester.Pali2(n: n, b: b,cancel : nil)
             }
-        }
         }
     }
     
@@ -275,7 +175,7 @@ class TestPalindromSum2: XCTestCase {
                 if n0 == 201 { continue }
                 let n = BigUInt(n0)
                 let b = 10
-                if let ans = Pali2(n: n, b: b) {
+                if let ans = Palindromic2Tester.Pali2(n: n, b: b,cancel : nil) {
                     XCTAssert(ans.0 + ans.1 == n)
                     //print(n0,":",ans)
                 } else {

@@ -122,7 +122,7 @@ public class DivergentTester : NumTester {
             var latex = String(p, digits : UInt(l))
             latex = latex.replacingOccurrences(of: "...", with: "..._{\(p.base)}")
             latex = d.svalue + "=" + latex + "\\\\"
-            latex = latex + d.svalue + "=" + d.series
+            latex = latex + d.svalue + "=_R" + d.series
             latex = latex + d.explain
             return latex
         }

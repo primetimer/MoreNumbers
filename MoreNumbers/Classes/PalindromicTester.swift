@@ -9,20 +9,6 @@
 import Foundation
 import BigInt
 import PrimeFactors
-//import Numeral
-
-//extension BigUInt {
-//    func asString(toBase : Int) -> String {
-//        if toBase == 12 {
-//            return self.Duodezimal()
-//        }
-//        if toBase == 20 {
-//            return self.Vigesimal()
-//        }
-//        return String(self,radix:toBase)
-//    }
-//}
-
 
 public class PalindromicTester : NumTester {
     public init() {}
@@ -92,4 +78,155 @@ public class PalindromicTester : NumTester {
 	}
 	
 	
+}
+
+public class Palindromic2Tester : NumTester {
+    
+    public init() {}
+    
+    static public func Pali2(n: BigUInt, b: Int = 10, cancel : CalcCancelProt?) -> (BigUInt,BigUInt)? {
+        
+        func isPalindromic(_ d: [Int]) -> Bool {
+            let l = d.count
+            for i in 0..<l {
+                if d[i] != d[l-i-1] { return false }
+            }
+            return true
+        }
+        
+        if n == 0 { return (0,0) }
+        let d = n.getDigits(base: b)
+        let nfirst = d[d.count-1]
+        let m = d.count / 2
+        
+        if isPalindromic(d) {
+            return (n,0)
+        }
+        
+        for r in 0...1 {
+            
+            var p = Array(repeating: 0, count: d.count)
+            var q = Array(repeating: 0, count: d.count)
+            
+            var loopcount = b
+            for _ in 0...m-r {
+                loopcount = loopcount * b
+            }
+            
+            for _ in 0...loopcount - 1 {
+                
+                if cancel?.IsCancelled() ?? false { return nil }
+                
+                var j = 0
+                repeat {
+                    p[j] = p[j] + 1
+                    p[d.count-j-1-r] = p[j]
+                    if p[j] == b {
+                        p[j] = 0
+                        p[d.count-j-1-r] = p[j]
+                        j = j + 1
+                    } else {
+                        break
+                    }
+                    
+                } while j <= m-r
+                
+                if r == 0 && p[d.count-1] > d[d.count-1] {
+                    continue // loop
+                }
+                //Potentielle q an erster Stelle
+                //                let qtest = nfirst - p.last!
+                //                if qtest < 0 {
+                //                    continue
+                //                }
+                
+                if p[0] == 0 {
+                    continue
+                }
+                if j > m {
+                    continue //r-loop
+                }
+                
+                //Reflect
+                //            for r in 0..<m {
+                //                p[d.count-1-r] = p[r]
+                //            }
+                
+                var carry = 0
+                for k in 0..<d.count {
+                    q[k] = d[k] - p[k] - carry
+                    if q[k] < 0 {
+                        carry = 1
+                        q[k] = q[k] + b
+                    } else {
+                        carry = 0
+                    }
+                }
+                if carry>0 {
+                    continue
+                }
+                
+                //sum
+                var start = d.count
+                repeat {
+                    start = start - 1
+                } while q[start] == 0 && start > 0
+                
+                var ispalindrom = true
+                for l in 0...start {
+                    if q[start-l] != q[l] {
+                        ispalindrom = false
+                        break
+                    }
+                }
+                
+                if ispalindrom {
+                    var ansp : BigUInt = 0
+                    var ansq : BigUInt = 0
+                    for i in 0..<p.count {
+                        ansp = ansp * BigUInt(b) + BigUInt(p[d.count-i-1])
+                        ansq = ansq * BigUInt(b) + BigUInt(q[d.count-i-1])
+                    }
+                    return (ansp,ansq)
+                }
+            }
+        }
+        return nil
+    }
+
+    public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+        if n.isPalindromic(base: 10) {
+            return false
+        }
+        if let(a,b) = Palindromic2Tester.Pali2(n: n, b: 10, cancel: cancel) {
+            return false
+        }
+        if cancel?.IsCancelled() ?? false { return nil }
+        return true
+    }
+    
+    public func property() -> String {
+        return "not sum of 2 palindromes"
+    }
+    
+    public func propertyString() -> String {
+        return "not sum of 2 palindromes"
+    }
+    
+    public func getLatex(n: BigUInt) -> String? {
+        if n.isPalindromic(base: 10) { return nil }
+        var latex = String(n) + "="
+        if let (a,b) = Palindromic2Tester.Pali2(n: n, b: 10, cancel: TimeOut()) {
+            latex = latex + String(a) + "+" + String(b)
+        } else {
+            let splitter = PalindromeSplitter(p: n, base: 10)
+            splitter.Calc()
+            latex = latex + String(splitter.p1) + "+"
+            latex = latex + String(splitter.p2) + "+"
+            latex = latex + String(splitter.p3)
+        }
+        return latex
+    }
+    
+    
 }

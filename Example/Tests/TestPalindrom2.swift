@@ -16,10 +16,19 @@ class TestPalindromSum2: XCTestCase {
     }
     
     private func Pali2(n: BigUInt, b: Int = 10) -> (BigUInt,BigUInt)? {
+        
+        func isPalindromic(_ d: [Int]) -> Bool {
+            let l = d.count
+            for i in 0..<l {
+                if d[i] != d[l-i-1] { return false }
+            }
+            return true
+        }
+        
         let d = n.getDigits(base: b)
         let m = d.count / 2
         
-        if n.isPalindromic(base: b) {
+        if isPalindromic(d) {
             return (n,0)
         }
         
@@ -40,13 +49,13 @@ class TestPalindromSum2: XCTestCase {
                     p[d.count-j-1-r] = p[j]
                     if p[j] == b {
                         p[j] = 0
-                        p[d.count-j-1] = p[j]
+                        p[d.count-j-1-r] = p[j]
                         j = j + 1
                     } else {
                         break
                     }
                     
-                } while j <= m
+                } while j <= m-r
                 
                 if p[0] == 0 {
                     continue
@@ -103,15 +112,20 @@ class TestPalindromSum2: XCTestCase {
     }
     
     func test2_2() {
-        for n0 in 100 ... 1108 {
+        
+        var counter = 0
+        for n0 in 1 ... 20001 {
             //if n0 == 201 { continue }
             let n = BigUInt(n0)
             let b = 10
             if let ans = Pali2(n: n, b: b) {
                 XCTAssert(ans.0 + ans.1 == n)
-                print(n0,":",ans)
+                XCTAssert(ans.0.isPalindromic(base: 10))
+                XCTAssert(ans.1.isPalindromic(base: 10))
+                //print(n0,":",ans)
             } else {
-                print("No sum: \(n0)")
+                counter += 1
+                print("No sum: \(counter):\(n0)")
             }
         }
     }
@@ -210,7 +224,7 @@ class TestPalindromSum2: XCTestCase {
         self.measure {
             
         
-        for n0 in [ 200000000001, 6849,103748,104294,87218] {
+        for n0 in [ /* 200000000001 ,*/ 6849,103748,104294,87218] {
             let n = BigUInt(n0)
             let b = 10
             if let ans = Pali2(n: n, b: b) {

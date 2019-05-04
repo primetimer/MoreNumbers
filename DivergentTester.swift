@@ -11,6 +11,8 @@ import BigInt
 import PrimeFactors
 
 public enum Divergents : Int, CaseIterable {
+    
+    //comment
     case one12 = 0
     case onehalf
     case onethird
@@ -134,4 +136,3 @@ public class DivergentTester : NumTester {
 		return "p-adic"
 	}
 }
-

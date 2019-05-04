@@ -161,8 +161,18 @@ public class TitanicTester : NumTester {
 		let latex = "10^{999} + " + String(n) + "\\in \\mathbb{P}"
 		return latex
 	}
+    
+    public func Desc(n: BigUInt) -> String? {
+        guard let special = isSpecial(n: n,cancel: TimeOut()) else { return nil }
+        if !special { return nil }
+        let latex = "10^999" + "+" + String(n) + "is prime."
+        return latex
+    }
 	public func property() -> String {
 		return "titanic"
 	}
+    public func propertyString() -> String {
+        return "titanic prime"
+    }
 }
 

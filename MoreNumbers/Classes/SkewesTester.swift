@@ -91,6 +91,12 @@ public class GrahamNumberTester : NumTester {
        
         return ""
 	}
+    
+    public func Desc(n: BigUInt) -> String? {
+        guard let root = RootIndex(n: n) else { return nil }
+        var desc = String(n) + " are the last \(root+1) digits of Grahams number"
+        return desc
+    }
 	
 	public func property() -> String {
 		return "Graham Number"

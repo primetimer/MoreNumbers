@@ -71,6 +71,18 @@ public class PalindromicTester : NumTester {
         return latex
 
     }
+    
+    public func Desc(n: BigUInt) -> String? {
+        let pbase = PalindromicBase(n: n)
+        if pbase.count == 0 { return nil }
+        var nrstr = String(n)
+        var desc = ""
+        
+        for b in pbase {
+            desc = desc + nrstr + "is palindromic in base " + String(b) + "\n"
+        }
+        return desc
+    }
 	
 	public func property() -> String {
 		return "palindromic"
@@ -211,8 +223,25 @@ public class Palindromic2Tester : NumTester {
         return "not sum of 2 palindromes"
     }
     
+    public func Desc(n: BigUInt) -> String? {
+        if n.isPalindromic(base: 10) { return nil }
+        
+        var latex = String(n) + "="
+        if let (a,b) = Palindromic2Tester.Pali2(n: n, b: 10, cancel: TimeOut()) {
+            latex = latex + String(a) + "+" + String(b)
+        } else {
+            let splitter = PalindromeSplitter(p: n, base: 10)
+            splitter.Calc()
+            latex = latex + String(splitter.p1) + "+"
+            latex = latex + String(splitter.p2) + "+"
+            latex = latex + String(splitter.p3)
+        }
+        return latex
+    }
+    
     public func propertyString() -> String {
-        return "not sum of 2 palindromes"
+        var prop = "Not the sum of two palindromes\n"
+        return prop
     }
     
     public func getLatex(n: BigUInt) -> String? {

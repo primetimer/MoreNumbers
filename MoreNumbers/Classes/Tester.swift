@@ -81,9 +81,16 @@ public extension NumTester {
     }
     
     func Desc(n: BigUInt) -> String? {
+        if let rtest = self as? RationalApproxTester {
+            return rtest.Desc(n: n)
+        }
+        
         if let index = RootIndex(n: n) {
-            let ans = "\(n) is the \(index.ordinal) \(propertyString()) number"
-            return ans
+            if index > 0 {
+                let ord = (index+1).ordinal
+                let ans = "\(n) is the \(ord) \(propertyString()) number"
+                return ans
+            }
         }
         let ans = "\(n) is a \(propertyString()) number"
         return ans

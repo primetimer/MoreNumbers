@@ -25,7 +25,8 @@ public class PandigitalTester : NumTester {
 	}
 			
 	public func getLatex(n: BigUInt) -> String? {
-        guard let b = Base(n: n) else { return nil }		
+        guard let b = Base(n: n) else { return nil }
+        if b <= 1 { return nil }
         var latex = String(n)
 		latex = latex + " = " + String(n,radix : b).uppercased()
         latex = latex + "_{" + String(b) + "}"
@@ -33,6 +34,17 @@ public class PandigitalTester : NumTester {
 		return latex
 
 	}
+    
+    public func Desc(n: BigUInt) -> String? {
+        guard let b = Base(n: n) else { return nil }
+        if b <= 1 { return nil }
+        var latex = String(n) + " is the smallest pandigital number in base \(b)"
+        latex = latex + "\n \(String(n)) = " + String(n,radix : b).uppercased()
+        latex = latex + "_" + String(b) + ""
+        
+        return latex
+
+    }
 	
 	public func property() -> String {
 		return "pandigital"

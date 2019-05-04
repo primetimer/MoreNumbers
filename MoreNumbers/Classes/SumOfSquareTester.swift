@@ -13,6 +13,16 @@ import PrimeFactors
 public class SumOfTwoSquaresTester : NumTester {
     public init() {}
     
+    public func Desc(n: BigUInt) -> String? {
+        if let (a,b) = Express(n: n,cancel : TimeOut()) {
+            let stra = String(a)
+            let strb = String(b)
+            let latex = String(n) + "=" + stra + "^2 + " + strb + "^2"
+            return latex
+        }
+        return propertyString()
+    }
+    
     private func GaussianLatex(p: BigUInt) -> String? {
         if let (g1,g2) = GaussianInt.FactorPrime(p: p) {
             var latex = String(p) + "="
@@ -235,6 +245,32 @@ public class SumOf4SquaresTester: NumTester {
         return "Only sum of 4 squares"
     }
     
+    public func Desc(n: BigUInt) -> String? {
+        var latex = ""
+        guard let sq = squareTerms(n: n, cancel: TimeOut()) else { return nil }
+        for q in sq {
+            if latex.count > 0 { latex = latex + "+" }
+            latex = latex + String(q) + "^2"
+        }
+        latex = String(n) + "=" + latex
+        
+        if let hfactors = HurwitzInt.FactorHurwitz(n: n, cancel: TimeOut()) {
+            var more = ""
+            for (i,h) in hfactors.enumerated() {
+                if !more.isEmpty { more = more + "*" }
+                more = more + "(" + h.0.asString() + ")"
+                if h.pow > 1 { more = more + "^{ \(h.pow) }" }
+                if i % 2 == 1 { more = more + "\n" }
+            }
+            more = "\(n) = " + more
+            more = more + "i^2=j^2=k^2 = ijk = -1"
+            latex = latex + "n" + more
+        }
+        
+        return latex
+
+    }
+    
     public func getLatex(n: BigUInt) -> String? {
         var latex = ""
         guard let sq = squareTerms(n: n, cancel: TimeOut()) else { return nil }
@@ -376,6 +412,19 @@ public class SumOf3SquaresTester: NumTester {
         for q in sq {
             if latex.count > 0 { latex = latex + "+" }
             latex = latex + String(q) + "^{2}"
+        }
+        latex = String(n) + "=" + latex
+        return latex
+        
+    }
+    
+    public func Desc(n: BigUInt) -> String? {
+        
+        var latex = ""
+        guard let sq = squareTerms(n: n, cancel: TimeOut()) else { return nil }
+        for q in sq {
+            if latex.count > 0 { latex = latex + "+" }
+            latex = latex + String(q) + "^2"
         }
         latex = String(n) + "=" + latex
         return latex

@@ -359,6 +359,45 @@ public class NarcisticTester : NumTester {
         return latex
     }
     
+    public func Desc(n: BigUInt) -> String? {
+        
+        func formatDesc(n: BigUInt,base : Int = 10, param : [(d: Int,pow: Int)]) -> String {
+            var desc = String(n) + "="
+            for (i,d) in param.enumerated() {
+                if i > 0 { desc = desc + "+" }
+                desc = desc + String(d.d) + "^" + String(d.pow) + ""
+            }
+//            latex = latex + "\\\\"
+            
+            return desc
+        }
+        
+        var desc = ""
+        let p1 = CheckDigits(n: BigInt(n), base: 10)
+        if p1.count > 0 {
+            desc = desc + formatDesc(n: n, param: p1)
+        }
+        
+        let p2 = CheckConstantBase(n: BigInt(n))
+        if p2.count > 0  {
+            desc = desc + formatDesc(n: n, param: p2)
+        }
+        let p3 = CheckMunchhausen(n: BigInt(n),base: 10)
+        if p3.count > 0  {
+            desc = desc + formatDesc(n: n, param: p3)
+        }
+        
+        #if false //Append single digit presentation
+        do {
+            let singledigit = SDRepresentation()
+            let format = singledigit.PresentLatex(n: BigInt(n), digit: 6)
+            latex = latex + String(n) + "=" + format
+        }
+        #endif
+        
+        return desc
+    }
+    
     public func getLatex(n: BigUInt) -> String? {
         
         var latex = ""

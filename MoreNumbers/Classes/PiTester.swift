@@ -649,6 +649,19 @@ public class RationalApproxTester : MathConstantTester  {
         return super.getRationalLatex(n: n, type: self.type)
     }
     
+    public func Desc(n: BigUInt) -> String? {
+        guard let (num,denom,_) = FindRational(n: n, type: type) else { return nil }
+        var desc = ""
+        let name = type.Symbol()
+       
+        guard let (_,_,oeiscf) = type.OEISRational() else { return nil }
+ 
+        desc = desc + name + "≈"
+        desc = desc + String(num) + "/" + String(denom)
+        return desc
+
+    }
+    
     public func OEISNr() -> String? {
         
         guard let (oeis_n_nr,oeis_d_nr,_) = type.OEISRational() else { return nil }

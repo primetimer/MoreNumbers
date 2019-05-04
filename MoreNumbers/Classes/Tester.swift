@@ -85,6 +85,8 @@ public extension NumTester {
             return rtest.Desc(n: n)
         }
         
+        let factorstr = FactorCache.shared.Desc(n: n, withpot: true, cancel: TimeOut()) ?? ""
+        
         if let index = RootIndex(n: n) {
             if index > 0 {
                 let ord = (index+1).ordinal
@@ -93,7 +95,8 @@ public extension NumTester {
             }
         }
         let ans = "\(n) is a \(propertyString()) number"
-        return ans
+        
+        return ans + "\n" + factorstr
     }
 }
 

@@ -192,10 +192,10 @@ class TestOEISConsistency: XCTestCase {
         for n in start...100 {
             let special = tester.isSpecial(n: BigUInt(n), cancel: nil) ?? false
             if special {
-                let root = tester.Root(n: BigUInt(n))
+                let root = tester.RootIndex(n: BigUInt(n))
                 if root == nil {
                     print("Fehler: \(n)")
-                    let rdebug = tester.Root(n: BigUInt(n))
+                    let rdebug = tester.RootIndex(n: BigUInt(n))
                     XCTAssert(false)
                 } else if root! >= 0 {
                     if rindex != root! && rindex != root!+1 && rindex != root!-1 {

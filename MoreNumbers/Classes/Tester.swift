@@ -10,6 +10,43 @@ import Foundation
 import BigInt
 import PrimeFactors
 
+//private var ordinalFormatter: NumberFormatter = {
+//    let formatter = NumberFormatter()
+//    formatter.numberStyle = .ordinal
+//    return formatter
+//}()
+//
+//extension Int {
+//    var ordinal: String? {
+//        if let ans = ordinalFormatter.string(from: NSNumber(value: self)) {
+//            return ans
+//        }
+//        return String(self)
+//    }
+//}
+
+extension Int {
+    
+    var ordinal: String {
+        var suffix: String
+        let ones: Int = self % 10
+        let tens: Int = (self/10) % 10
+        if tens == 1 {
+            suffix = "th"
+        } else if ones == 1 {
+            suffix = "st"
+        } else if ones == 2 {
+            suffix = "nd"
+        } else if ones == 3 {
+            suffix = "rd"
+        } else {
+            suffix = "th"
+        }
+        return "\(self)\(suffix)"
+    }
+    
+}
+
 public protocol NumTester {
 	func isSpecial(n: BigUInt, cancel : CalcCancelProt?) -> Bool?
 	func property() -> String	        //Name of tested property
@@ -18,7 +55,8 @@ public protocol NumTester {
 	func issubTester() -> Bool
     func getLatex(n: BigUInt) -> String?
     func OEISNr() -> String?
-    func Root(n: BigUInt) -> Int?
+    func RootIndex(n: BigUInt) -> Int?
+    func Desc(n: BigUInt) -> String?
 }
 
 public extension NumTester {
@@ -30,7 +68,7 @@ public extension NumTester {
         let oeisnr = OEIS.shared.OEISNumber(key: self.property())
         return oeisnr
     }
-    func Root(n: BigUInt) -> Int? {
+    func RootIndex(n: BigUInt) -> Int? {
         guard let oeis = OEISNr() else { return nil }
         guard let seq = OEIS.shared.GetSequence(key: property()) else { return nil }
         let index = seq.index(of: BigInt(n))
@@ -40,6 +78,15 @@ public extension NumTester {
             return -1
         }
         return index
+    }
+    
+    func Desc(n: BigUInt) -> String? {
+        if let index = RootIndex(n: n) {
+            let ans = "\(n) is the \(index.ordinal) \(propertyString()) number"
+            return ans
+        }
+        let ans = "\(n) is a \(propertyString()) number"
+        return ans
     }
 }
 

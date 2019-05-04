@@ -41,7 +41,7 @@ public enum MathConstantType : Int {
     static public let allValues = [pi,e,gamma,mill,bruns,root2,ln2,pisquare,phi,crt2,zeta3,conwaylambda,khinchin,silver,plastic,gauss,chaitin,copelanderdos,champernowne,ramanujan,feigenbaumdelta,feigenbaumalpha,gelfond,gompertz, viswanath,carefree]
     static public let wiki = ["pi","E_(mathematical_constant)","Euler–Mascheroni_constant","Mills_constant","Brun_theorem","Square_root_of_2",
                        "Natural_logarithm","pi","Golden_ratio","Cube_root","Apéry_constant","Look-and-say_sequence","Khinchin_constant","Silver_ratio","Plastic_number","gauss_constant","chaitin_constant","Copeland–Erdős_constant","Champernowne_constant","Landau–Ramanujan_constant","Feigenbaum_constants","Feigenbaum_constants","gelfond_constant","gompertz_constant","Random_Fibonacci_sequence","List_of_mathematical_constants"]
-    static public let name = ["π","e","γ","θ","B2","√2","ln(2)","π^2","φ",",∛2","ζ(3)","λ","K","δ","ρ","G","Ω","C","C10","K","δ","α","e^π","eE1(1)","v","K1"]
+    static public let name = ["π","e","γ","θ","B2","√2","ln(2)","π^2","φ","∛2","ζ(3)","λ","K","δ","ρ","G","Ω","C","C10","K","δ","α","e^π","eE1(1)","v","K1"]
     static public let latex = ["\\pi","e","\\gamma","\\theta","B_{2}","\\sqrt{2}","ln(2)","\\pi^2","\\phi","\\sqrt[3]{2}","\\zeta (3)","\\lambda","K_{0}","\\delta_{S}","\\rho","G","\\Omega","C_{CE}","C_{10}","K_{RL}","\\delta","\\alpha","e^{\\pi}","eE_1(1)","e^{\\gamma_{f}}","K_{1}"]
     
     func asString() -> String {

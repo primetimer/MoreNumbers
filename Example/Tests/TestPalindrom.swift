@@ -279,7 +279,7 @@ class PalindromeTests: XCTestCase {
     
     func testRandom() {
         var testalgorithms = [false,false,false,false,false,false]
-        for _ in 1...100000 {
+        for _ in 1...1000 {
             let ndigits = Int.random(in: 1...20)
             var r = BigUInt(0)
             for _ in 0...ndigits {

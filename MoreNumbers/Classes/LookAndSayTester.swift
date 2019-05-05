@@ -462,7 +462,11 @@ BigInt("111312211312113221133211322112211213322112"),BigInt("3113112221131112211
 
 */
 
-#if true
+struct SayAndAnswer {
+    var say : String = ""
+    var formatted : String = ""
+    var next = BigUInt(0)
+}
 public class LookAndSayTester : NumTester {
 	
     public init() {}
@@ -477,11 +481,11 @@ public class LookAndSayTester : NumTester {
 		
 	}
 	
-    #if true
-	public func Say(n: BigUInt) -> (say: String, formatted : String, next: BigUInt) {
+    func Say(n: BigUInt) -> SayAndAnswer? {
         let spoken = ["zero","one","two","three","four","five","six","seven","eight","nine"]
-		if n == 0 { return ("One Zero","0",0) }
+        if n == 0 { return nil }
 		var next = BigUInt(0)
+
 		var ans = ""
 		var formatted = ""
 		var count = 0
@@ -494,7 +498,7 @@ public class LookAndSayTester : NumTester {
 				count = count + 1
 				continue
 			}
-			formatted = formatted + "_"
+			formatted = formatted + " "
 			if ans != "" { ans = ans + ", "}
 			ans = ans + String(count+1) + " " //SpokenNumber.shared.spoken(n: BigUInt(count+1))
 			guard let digit = BigUInt(String(a[i])) else { continue }
@@ -505,36 +509,36 @@ public class LookAndSayTester : NumTester {
 			ans = ans + " " + digitstr
 			count = 0
 		}
-		ans = "say(x) = \\text{count the equal digits from left to right "
-		ans = "\\\\say(" + String(n) + ") =\\text{" + ans + "}"
+        let say = "say(x) = \\text{count the equal digits from left to right}"
+		ans = "\\\\ say(" + String(n) + ") =\\text{" + say + "}"
 //		let (previous,speakable) = ConwayElem.LookPrevious(say: String(n))
 //		ans = String(n) + "= say(" + previous + ")"
 //		if !speakable { ans = ans + "unspeakable" }
-		return (ans,formatted,next)
-	}
-    #endif
+        
+        let ret = SayAndAnswer(say: say, formatted: formatted, next: next)
+        return ret
+    }
 
-    #if true
-	public func getLatex(n: BigUInt) -> String? {
+    public func getLatex(n: BigUInt) -> String? {
 		var latex = ""
 		var set = "S : = \\{ s_{n} \\} \\\\"
-		set = set + "s_{n+1} = \\begin{cases}"
-		set = set + "1 & n = 0 \\\\"
-		set = set + "say(s_{n}) & n > 0 "
-		set = set + "\\end{cases} \\\\"
-		
+        set = set + "s_{n+1} = \\begin{cases}"
+        set = set + "1 & n = 0 \\\\"
+        set = set + "say(s_{n}) & n > 0 "
+        set = set + "\\end{cases} \\\\"
+
 		if isSpecial(n: n, cancel: nil) ?? false {
 			latex = set + String(n) + "\\in S"
 		} else {
 			latex = set + String(n) + "\\notin S"
 		}
-		
-		let (say,formatted,next) = Say(n: n)
-		latex = latex + say + " = " + String(next)
+        
+        guard let say = Say(n: n) else { return nil }
+        print(say)
+        
+        latex = latex + "\\\\" + say.say + " = " + String(say.next)
 		return latex
 	}
-    #endif
-
 	
 	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		if n <= 1 { return false }
@@ -546,44 +550,9 @@ public class LookAndSayTester : NumTester {
 		return false
 	}
 	
-        #if false
-	private func Say(rep: Int, repdigit: Int) -> String {
-		var repdigitstr = SpokenNumber.shared.spoken(n: BigUInt(repdigit))
-		if rep > 1 { repdigitstr = repdigitstr + "s" }
-		return "\\text{" + String(rep) + " " + String(repdigitstr) + " }"
-	}
-	
-
-	func getLatex(n: BigUInt) -> String? {
-		guard let special = TestSpecialSync(n: n) else { return nil }
-		if !special { return nil }
-		if n <= 1 { return nil }
-		guard let prev = Previous(n: n) else { return nil }
-		
-		var latex = String(n) + "\\leftarrow "
-		let s = String(prev)
-		let c = Array(s)
-		
-		var rep = 0
-		guard var repdigit = Int(String(c[0])) else { return nil }
-		for i in 0..<c.count {
-			let nextdigit = Int(String(c[i]))!
-			if repdigit == nextdigit {
-				rep = rep + 1
-			} else {
-				latex = latex + Say(rep: rep, repdigit: repdigit) + " "
-				rep = 1
-				repdigit = nextdigit
-			}
-		}
-		latex = latex + Say(rep: rep, repdigit: repdigit) + " = " + String(prev)
-		return latex
-	}
-	#endif
-	
 	public func property() -> String {
 		return "look & say"
 	}
 }
-#endif
+
 

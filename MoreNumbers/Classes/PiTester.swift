@@ -630,7 +630,7 @@ public  class SpecialConstantTester : MathConstantTester, TestDescriber  {
     }
     
     override public func property() -> String {
-        return type.Explain() //MathConstantType.name[type.rawValue]
+        return MathConstantType.name[type.rawValue]
     }
     
     override public func getLatex(n: BigUInt) -> String? {

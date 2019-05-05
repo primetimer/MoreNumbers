@@ -144,7 +144,7 @@ public struct EisensteinInt {
 				if d > p { break }
 			}
 		}
-		assert(false)
+//        assert(false) Hier ist ein Fehler für p = 106
 		return nil
 	}
 }

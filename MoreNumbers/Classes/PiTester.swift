@@ -506,7 +506,7 @@ public class MathConstantTester : NumTester {
         }
     }
     
-    public func Desc(n: BigUInt, type: MathConstantType) -> String? {
+    public func Desc(n: BigUInt, type: MathConstantType) -> String {
         let nstr = String(n)
         let symbol = type.Symbol()
         let desc = "\(nstr) are the first \(nstr.count) digits of \(symbol)"
@@ -610,7 +610,7 @@ public protocol NumberTypeProt {
     func ConstantType() -> Set<NumberType>
 }
 
-public  class SpecialConstantTester : MathConstantTester  {
+public  class SpecialConstantTester : MathConstantTester, TestDescriber  {
     
     public var type : MathConstantType!
     public init(_ type: MathConstantType) {
@@ -631,12 +631,12 @@ public  class SpecialConstantTester : MathConstantTester  {
         return super.getLatex(n: n, type: self.type)
     }
     
-    public func Desc(n: BigUInt) -> String? {
+    public func Desc(n: BigUInt) -> String {
         return super.Desc(n: n, type: self.type)
     }
 }
 
-public class RationalApproxTester : MathConstantTester  {
+public class RationalApproxTester : MathConstantTester, TestDescriber  {
     
     public var type : MathConstantType!
     public init(_ type: MathConstantType) {
@@ -659,12 +659,12 @@ public class RationalApproxTester : MathConstantTester  {
         return super.getRationalLatex(n: n, type: self.type)
     }
     
-    public func Desc(n: BigUInt) -> String? {
-        guard let (num,denom,_) = FindRational(n: n, type: type) else { return nil }
+    public func Desc(n: BigUInt) -> String {
+        guard let (num,denom,_) = FindRational(n: n, type: type) else { return "" }
         var desc = ""
         let name = type.Symbol()
        
-        guard let (_,_,oeiscf) = type.OEISRational() else { return nil }
+        guard let (_,_,oeiscf) = type.OEISRational() else { return "" }
  
         desc = desc + name + "≈"
         desc = desc + String(num) + "/" + String(denom)

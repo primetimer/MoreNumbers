@@ -44,7 +44,7 @@ public class SkewesTester : NumTester {
     public init() {}
     
 }
-public class GrahamNumberTester : NumTester {
+public class GrahamNumberTester : NumTester, TestDescriber {
     
     public init() {}
     
@@ -92,8 +92,8 @@ public class GrahamNumberTester : NumTester {
         return ""
 	}
     
-    public func Desc(n: BigUInt) -> String? {
-        guard let root = RootIndex(n: n) else { return nil }
+    public func Desc(n: BigUInt) -> String {
+        guard let root = RootIndex(n: n) else { return "" }
         var desc = String(n) + " are the last \(root+1) digits of Grahams number"
         return desc
     }

@@ -10,7 +10,7 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-public class PalindromicTester : NumTester {
+public class PalindromicTester : NumTester, TestDescriber {
     public init() {
         
     }
@@ -72,10 +72,10 @@ public class PalindromicTester : NumTester {
 
     }
     
-    public func Desc(n: BigUInt) -> String? {
+    public func Desc(n: BigUInt) -> String {
         let pbase = PalindromicBase(n: n)
-        if pbase.count == 0 { return nil }
-        var nrstr = String(n)
+        if pbase.count == 0 { return "" }
+        let nrstr = String(n)
         var desc = ""
         
         for b in pbase {
@@ -94,7 +94,7 @@ public class PalindromicTester : NumTester {
 	
 }
 
-public class Palindromic2Tester : NumTester {
+public class Palindromic2Tester : NumTester, TestDescriber {
     
     public init() {}
     
@@ -223,8 +223,8 @@ public class Palindromic2Tester : NumTester {
         return "not sum of 2 palindromes"
     }
     
-    public func Desc(n: BigUInt) -> String? {
-        if n.isPalindromic(base: 10) { return nil }
+    public func Desc(n: BigUInt) -> String {
+        if n.isPalindromic(base: 10) { return "" }
         
         var latex = String(n) + "="
         if let (a,b) = Palindromic2Tester.Pali2(n: n, b: 10, cancel: TimeOut()) {

@@ -10,10 +10,10 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-public class SumOfTwoSquaresTester : NumTester {
+public class SumOfTwoSquaresTester : NumTester, TestDescriber {
     public init() {}
     
-    public func Desc(n: BigUInt) -> String? {
+    public func Desc(n: BigUInt) -> String {
         if let (a,b) = Express(n: n,cancel : TimeOut()) {
             let stra = String(a)
             let strb = String(b)
@@ -230,7 +230,7 @@ public class SumOfTwoSquaresTester : NumTester {
 }
 
 
-public class SumOf4SquaresTester: NumTester {
+public class SumOf4SquaresTester: NumTester,TestDescriber {
     public init() {}
     public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
         if n < 7 { return false }
@@ -245,9 +245,9 @@ public class SumOf4SquaresTester: NumTester {
         return "Only sum of 4 squares"
     }
     
-    public func Desc(n: BigUInt) -> String? {
+    public func Desc(n: BigUInt) -> String {
         var latex = ""
-        guard let sq = squareTerms(n: n, cancel: TimeOut()) else { return nil }
+        guard let sq = squareTerms(n: n, cancel: TimeOut()) else { return "" }
         for q in sq {
             if latex.count > 0 { latex = latex + "+" }
             latex = latex + String(q) + "^2"
@@ -387,7 +387,7 @@ public class SumOf4SquaresTester: NumTester {
     }
 }
 
-public class SumOf3SquaresTester: NumTester {
+public class SumOf3SquaresTester: NumTester, TestDescriber {
     public init() {}
     public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
         if n < 3 { return false }
@@ -418,10 +418,10 @@ public class SumOf3SquaresTester: NumTester {
         
     }
     
-    public func Desc(n: BigUInt) -> String? {
+    public func Desc(n: BigUInt) -> String {
         
         var latex = ""
-        guard let sq = squareTerms(n: n, cancel: TimeOut()) else { return nil }
+        guard let sq = squareTerms(n: n, cancel: TimeOut()) else { return "" }
         for q in sq {
             if latex.count > 0 { latex = latex + "+" }
             latex = latex + String(q) + "^2"
@@ -447,7 +447,7 @@ public class SumOf3SquaresTester: NumTester {
         if n == 1 { return [BigInt(1),BigInt(0),BigInt(0)] }
         var res = [BigInt(1),BigInt(0),BigInt(0)]
         
-        var n2 = BigInt(n)
+        let n2 = BigInt(n)
         var sq2 = BigInt(0)
         while n2 > sq2*sq2 {
             let n3 = n2 - sq2*sq2

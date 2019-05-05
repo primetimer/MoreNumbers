@@ -149,7 +149,7 @@ public class SierpinskiTester : NumTester {
 	
 }
 
-public class TitanicTester : NumTester {
+public class TitanicTester : NumTester, TestDescriber {
     public init() {}
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		let special = OEIS.shared.ContainsNumber(key: property(), n: n)
@@ -162,9 +162,9 @@ public class TitanicTester : NumTester {
 		return latex
 	}
     
-    public func Desc(n: BigUInt) -> String? {
-        guard let special = isSpecial(n: n,cancel: TimeOut()) else { return nil }
-        if !special { return nil }
+    public func Desc(n: BigUInt) -> String {
+        guard let special = isSpecial(n: n,cancel: TimeOut()) else { return "" }
+        if !special { return "" }
         let latex = "10^999" + "+" + String(n) + "is prime."
         return latex
     }

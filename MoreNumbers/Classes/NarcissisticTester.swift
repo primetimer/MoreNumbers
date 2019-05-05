@@ -268,7 +268,7 @@ class SDRepresentation {
 }
 
 
-public class NarcisticTester : NumTester {
+public class NarcisticTester : NumTester, TestDescriber {
     
     public init() {}
     private func CheckDigits(n: BigInt, base : UInt64) -> [(d: Int,pow: Int)] {
@@ -359,7 +359,7 @@ public class NarcisticTester : NumTester {
         return latex
     }
     
-    public func Desc(n: BigUInt) -> String? {
+    public func Desc(n: BigUInt) -> String {
         
         func formatDesc(n: BigUInt,base : Int = 10, param : [(d: Int,pow: Int)]) -> String {
             var desc = String(n) + "="

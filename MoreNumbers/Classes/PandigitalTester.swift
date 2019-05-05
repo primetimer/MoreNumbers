@@ -10,7 +10,7 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-public class PandigitalTester : NumTester {
+public class PandigitalTester : NumTester, TestDescriber {
     
     public init() {}
 	
@@ -35,10 +35,11 @@ public class PandigitalTester : NumTester {
 
 	}
     
-    public func Desc(n: BigUInt) -> String? {
-        guard let b = Base(n: n) else { return nil }
-        if b <= 1 { return nil }
+    public func Desc(n: BigUInt) -> String {
+        guard let b = Base(n: n) else { return "not pandigital" }
+        //if b <= 1 { return "" }
         var latex = String(n) + " is the smallest pandigital number in base \(b)"
+        if b <= 1 { return latex }
         latex = latex + "\n \(String(n)) = " + String(n,radix : b).uppercased()
         latex = latex + "_" + String(b) + ""
         

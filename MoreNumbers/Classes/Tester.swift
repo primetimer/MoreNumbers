@@ -80,13 +80,16 @@ public extension NumTester {
         return index
     }
     
-    func Desc(n: BigUInt) -> String? {
+    func Desc(n:BigUInt) -> String? {
+        return defaultDesc(n: n)
+    }
+    
+    func defaultDesc(n: BigUInt) -> String? {
         if let rtest = self as? RationalApproxTester {
             return rtest.Desc(n: n)
         }
         
-        let factorstr = FactorCache.shared.Desc(n: n, withpot: true, cancel: TimeOut()) ?? ""
-        
+       
         if let index = RootIndex(n: n) {
             if index > 0 {
                 let ord = (index+1).ordinal
@@ -96,7 +99,7 @@ public extension NumTester {
         }
         let ans = "\(n) is a \(propertyString()) number"
         
-        return ans + "\n" + factorstr
+        return ans 
     }
 }
 

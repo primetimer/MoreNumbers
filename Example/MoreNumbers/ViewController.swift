@@ -11,12 +11,10 @@ import BigInt
 import iosMath
 import MoreNumbers
 
-
 class ViewController: UIViewController {
 
     var uimath : MTMathUILabel!
     var uilabel : UILabel!
-//
 //
     private func testSchizophrenic() {
         let t = SchizophrenicTester()

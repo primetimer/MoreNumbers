@@ -15,6 +15,15 @@ public class CompositeTester : NumTester {
     public func getLatex(n: BigUInt) -> String? {
         return FactorCache.shared.Latex(n: n, withpot: true, cancel: TimeOut())
     }
+    
+    public func Desc(n: BigUInt) -> String? {
+        
+        let basedesc = defaultDesc(n:n) ?? ""
+        let factorstr = FactorCache.shared.Desc(n: n, withpot: true, cancel: TimeOut()) ?? ""
+        return basedesc + "\n" + factorstr
+        
+        
+    }
         public init() {}
 	public func property() -> String {
 		return "composite"

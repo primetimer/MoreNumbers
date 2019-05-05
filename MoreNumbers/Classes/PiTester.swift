@@ -73,6 +73,9 @@ public enum MathConstantType : Int {
     func Symbol() -> String {
         return MathConstantType.name[self.rawValue]
     }
+    func Explain() -> String {
+        return MathConstantType.explain[self.rawValue]
+    }
     
     func asDouble() -> Double {
         switch self {
@@ -627,7 +630,7 @@ public  class SpecialConstantTester : MathConstantTester, TestDescriber  {
     }
     
     override public func property() -> String {
-        return MathConstantType.name[type.rawValue]
+        return type.Explain() //MathConstantType.name[type.rawValue]
     }
     
     override public func getLatex(n: BigUInt) -> String? {
@@ -671,6 +674,12 @@ public class RationalApproxTester : MathConstantTester, TestDescriber  {
  
         desc = desc + name + "≈"
         desc = desc + String(num) + "/" + String(denom)
+        if let nindex = RootIndex(n: n) {
+            if nindex > 0 {
+                let ord = (nindex+1).ordinal
+                desc = desc + "\n \(ord) best rational approximation"
+            }
+        }
         return desc
 
     }

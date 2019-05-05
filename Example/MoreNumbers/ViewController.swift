@@ -41,6 +41,9 @@ class ViewController: UIViewController {
         let latex = t.getLatex(n: n)
         print(latex)
         uimath.latex = latex
+        
+        let desc = t.Desc(n: n)
+        print(desc)
     }
     
     private func testPadovan() {
@@ -190,8 +193,8 @@ class ViewController: UIViewController {
 //        testSkewes()
 //        testGraham()
 //        testSquares()
-//         testGompertz()
-        testPadic()
+        testGompertz()
+//        testPadic()
 //        testPalindromic2()
         
         

@@ -1,0 +1,6 @@
+framework module MoreNumbers {
+  umbrella header "MoreNumbers-watchOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

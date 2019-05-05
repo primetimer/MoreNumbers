@@ -1,0 +1,45 @@
+PODS:
+  - BigInt (3.1.0):
+    - SipHash (~> 1.2)
+  - iosMath (0.9.4)
+  - MoreNumbers (0.1.0):
+    - BigInt
+    - PrimeFactors
+  - PrimeFactors (0.2.0):
+    - BigInt
+  - SipHash (1.2.2)
+
+DEPENDENCIES:
+  - BigInt (~> 3.0)
+  - iosMath
+  - MoreNumbers (from `../`)
+  - PrimeFactors (from `https://github.com/primetimer/PrimeFactors`)
+  - SipHash (~> 1.2)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BigInt
+    - iosMath
+    - SipHash
+
+EXTERNAL SOURCES:
+  MoreNumbers:
+    :path: "../"
+  PrimeFactors:
+    :git: https://github.com/primetimer/PrimeFactors
+
+CHECKOUT OPTIONS:
+  PrimeFactors:
+    :commit: ca3481942850228db801acc65e60d34bcc0dd644
+    :git: https://github.com/primetimer/PrimeFactors
+
+SPEC CHECKSUMS:
+  BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
+  iosMath: f7a6cbadf9d836d2149c2a84c435b1effc244cba
+  MoreNumbers: 8dccfb3878a9b991b2c51b1defd60516c582c182
+  PrimeFactors: 6c92c3dc3cecd007d02084cfec1639ef27b9408e
+  SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
+
+PODFILE CHECKSUM: 6714346c134909009fc109f566613fbc603061af
+
+COCOAPODS: 1.5.3

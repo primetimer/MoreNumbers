@@ -1,0 +1,34 @@
+{
+  "name": "MoreNumbers",
+  "version": "0.1.0",
+  "summary": "A short description of MoreNumbers.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/primetimer/MoreNumbers",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "primetimer": "primetimertime@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/primetimer/MoreNumbers.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0",
+    "osx": "10.10",
+    "watchos": "2.0",
+    "tvos": "9.0"
+  },
+  "dependencies": {
+    "BigInt": [
+
+    ],
+    "PrimeFactors": [
+
+    ]
+  },
+  "source_files": "MoreNumbers/**/*.{swift}",
+  "resources": "MoreNumbers/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+}

@@ -1,0 +1,6 @@
+framework module Pods_MoreNumbers_Extension {
+  umbrella header "Pods-MoreNumbers Extension-umbrella.h"
+
+  export *
+  module * { export * }
+}

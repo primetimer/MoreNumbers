@@ -1,0 +1,30 @@
+{
+  "name": "PrimeFactors",
+  "version": "0.2.0",
+  "summary": "Prime Number detection and Decomposition",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/primetimer/PrimeFactors",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "primetimer": "primetimertime@gmail.coom"
+  },
+  "source": {
+    "git": "https://github.com/primetimer/PrimeFactors.git",
+    "tag": "0.2.0"
+  },
+  "platforms": {
+    "ios": "8.0",
+    "osx": "10.9",
+    "watchos": "2.0",
+    "tvos": "9.0"
+  },
+  "dependencies": {
+    "BigInt": [
+
+    ]
+  },
+  "source_files": "PrimeFactors/Classes/**/*"
+}

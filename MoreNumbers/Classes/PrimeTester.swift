@@ -30,14 +30,12 @@ public class TwinPrimeTester : NumTester {
 	}
 	
     public func getLatex(n: BigUInt) -> String? {
-        let special = isSpecial(n: n,cancel : TimeOut()) ?? false
-        
-        if !special { return nil }
+//        let special = isSpecial(n: n,cancel : TimeOut()) ?? false
+//
+//        if !special { return nil }
         let nstr = String(n)
         var latex = ""
-        if PrimeCache.shared.IsPrime(p: BigUInt(n+2)) {
-            latex = nstr + PrimeTester.subset(type:2)
-        }
+        latex = nstr + PrimeTester.subset(type:2)
         return latex
     }
 	
@@ -55,18 +53,16 @@ public class CousinPrimeTester : NumTester {
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if !PrimeCache.shared.IsPrime(p: n) { return false }
 		if !PrimeCache.shared.IsPrime(p: n+4) { return false }
+        if n >= 7 {
+            if !PrimeCache.shared.IsPrime(p: n-4) { return false }
+        }
 		return true
 	}
 	
     public func getLatex(n: BigUInt) -> String? {
-        guard let special = isSpecial(n: n, cancel: TimeOut()) else { return nil }
-
-        if !special { return nil }
         let nstr = String(n)
         var latex = ""
-        if PrimeCache.shared.IsPrime(p: BigUInt(n+4)) {
-            latex = nstr + PrimeTester.subset(type:4)
-        }
+        latex = nstr + PrimeTester.subset(type:4)
         return latex
     }
 	public func issubTester() -> Bool { return true }
@@ -80,17 +76,14 @@ public class SexyPrimeTester : NumTester {
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if !PrimeCache.shared.IsPrime(p: n) { return false }
 		if !PrimeCache.shared.IsPrime(p: n+6) { return false }
+        if n > 7 {
+            if !PrimeCache.shared.IsPrime(p: n-6) { return false }
+        }
 		return true
 	}
     public func getLatex(n: BigUInt) -> String? {
-        guard let special = isSpecial(n: n,cancel : nil) else { return nil }
-        if !special { return nil }
-
-        let nstr = String(n)
-        var latex = ""
-        if PrimeCache.shared.IsPrime(p: BigUInt(n+6)) {
-            latex = nstr + PrimeTester.subset(type:6)
-        }
+       let nstr = String(n)
+        let latex = nstr + PrimeTester.subset(type:6)
         return latex
     }
     public func issubTester() -> Bool { return true }

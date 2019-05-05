@@ -42,6 +42,8 @@ class TestDesc: XCTestCase {
                 }
             }
             
+            var first = true
+            
             for n in 0...314 {
                 let special = t.isSpecial(n: BigUInt(n), cancel: nil) ?? false
                 if special {
@@ -50,6 +52,13 @@ class TestDesc: XCTestCase {
                         print("Error Describer \(t.property())")
                     }
                     XCTAssert(desc != "")
+                    
+                    if first {
+                        print("\(n) \(t.property()) : \(desc)")
+                        first = false
+                        let again = TesterDescriber.Desc(n: BigUInt(n),tester: t)
+                    }
+                    
                 }
                 
             }

@@ -165,7 +165,7 @@ public class TitanicTester : NumTester, TestDescriber {
     public func Desc(n: BigUInt) -> String {
         guard let special = isSpecial(n: n,cancel: TimeOut()) else { return "" }
         if !special { return "" }
-        let latex = "10^999" + "+" + String(n) + "is prime."
+        let latex = "10^999" + "+" + String(n) + " is prime."
         return latex
     }
 	public func property() -> String {

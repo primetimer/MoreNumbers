@@ -264,7 +264,7 @@ public class SumOf4SquaresTester: NumTester,TestDescriber {
             }
             more = "\(n) = " + more
             more = more + "i^2=j^2=k^2 = ijk = -1"
-            latex = latex + "n" + more
+            latex = latex + "\n" + more
         }
         
         return latex

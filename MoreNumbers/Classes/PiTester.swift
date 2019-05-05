@@ -47,10 +47,10 @@ public enum MathConstantType : Int {
     static public let name = ["π","e","γ","θ","B2","√2","ln(2)","π^2","φ","∛2","ζ(3)","λ","K","δ","ρ","G","Ω","C","C10","K","δ","α","e^π","eE1(1)","v","K1"]
     static public let latex = ["\\pi","e","\\gamma","\\theta","B_{2}","\\sqrt{2}","ln(2)","\\pi^2","\\phi","\\sqrt[3]{2}","\\zeta (3)","\\lambda","K_{0}","\\delta_{S}","\\rho","G","\\Omega","C_{CE}","C_{10}","K_{RL}","\\delta","\\alpha","e^{\\pi}","eE_1(1)","e^{\\gamma_{f}}","K_{1}"]
     
-    func asString() -> String {
+    public func asString() -> String {
         return MathConstant.shared.dict[self] ?? ""
     }
-    func withPot() -> Int{
+    public func withPot() -> Int{
         switch self {
         case .pi, .e, .pisquare,.root2,.mill,.phi,.crt2,.bruns,.zeta3,.conwaylambda,.khinchin,.silver,.plastic,.feigenbaumalpha,.feigenbaumdelta:
             return 0
@@ -67,17 +67,17 @@ public enum MathConstantType : Int {
         
         }
     }
-    func Latex() -> String {
+    public func Latex() -> String {
         return MathConstantType.latex[self.rawValue]
     }
-    func Symbol() -> String {
+    public func Symbol() -> String {
         return MathConstantType.name[self.rawValue]
     }
-    func Explain() -> String {
+    public func Explain() -> String {
         return MathConstantType.explain[self.rawValue]
     }
     
-    func asDouble() -> Double {
+    public func asDouble() -> Double {
         switch self {
         case .pi:
             return Double.pi

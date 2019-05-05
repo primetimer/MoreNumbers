@@ -8,6 +8,7 @@
 
 import Foundation
 import BigInt
+import PrimeFactors
 
 public extension BigUInt {
     func getDigits(base : Int) -> [Int] {

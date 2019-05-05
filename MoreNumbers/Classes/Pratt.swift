@@ -10,33 +10,33 @@ import Foundation
 import BigInt
 import PrimeFactors
 
-typealias LatexString = String
-class PrattTester : NumTester {
-	func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+public typealias LatexString = String
+public class PrattTester : NumTester {
+	public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
 		let pratt = PrattCertficate(nr: n)
 		return pratt.PrattTest()
 	}
 	
-	func getLatex(n: BigUInt) -> String? {
+	public func getLatex(n: BigUInt) -> String? {
 		let pratt = PrattCertficate(nr: n)
 		return pratt.LatexGeneralInfo()
 	}
 	
-	func property() -> String {
+	public func property() -> String {
 		return "pratt"
 	}
 	
 }
 
-class PrattCertficate  {
+public class PrattCertficate  {
 	private (set) var nr: BigUInt!
 	private var factors : FactorsWithPot!
-	init(nr: BigUInt) {
+	public init(nr: BigUInt) {
 		self.nr = nr
 		self.factors = FactorsWithPot(n: nr-1, cancel: TimeOut())
 	}
 	
-	func PrattTest() -> Bool? {
+	public func PrattTest() -> Bool? {
 		if nr < 2 { return false }
 		if nr <= 3 { return true  }
 		let p = nr - 1
@@ -51,7 +51,7 @@ class PrattCertficate  {
 		return true
 	}
 	
-	func PrimitiveRoot(n: BigUInt) -> BigUInt {
+	public func PrimitiveRoot(n: BigUInt) -> BigUInt {
 		if n <= 2 { return 1 }
 		var a = BigUInt(2)
 		let p = n - 1
@@ -83,7 +83,7 @@ class PrattCertficate  {
 		return ans
 	}
 		
-	func LatexGeneralInfo() -> LatexString {
+	public func LatexGeneralInfo() -> LatexString {
 		var ans = "n \\in \\mathbb{P}  \\Leftrightarrow \\exists a < n : \\\\"
 		ans = ans + "\\quad1: a^{n-1} \\equiv 1 \\text{ mod } n, \\\\"
 		ans = ans + "\\quad2:\\forall q \\in \\mathbb{P}, q | (n-1) : a^{\\frac{n-1}{q}} \\neq 1 \\text{ mod } n \\\\"
@@ -91,7 +91,7 @@ class PrattCertficate  {
 		
 	}
 	
-	func LatexCertificate() -> [LatexString] {
+	public func LatexCertificate() -> [LatexString] {
 		if PrimeCache.shared.IsPrime(p: nr) {
 			return LatexPrimeCertfificate()
 		}

@@ -37,7 +37,7 @@ class TestResult : NSObject {
 public class TesterCache  {
     
     //Synchroner Aufruf
-    func TestSpecial(tester : NumTester, n: BigUInt,cancel : CalcCancelProt? ) -> Bool? {
+    public func TestSpecial(tester : NumTester, n: BigUInt,cancel : CalcCancelProt? ) -> Bool? {
         let key = CacheKey(tester: tester, n: n)
         if let val = specialcache.object(forKey: key) {
             return val.boolValue
@@ -48,14 +48,14 @@ public class TesterCache  {
         return special
     }
 
-	func NotifySpecial(t: NumTester, nr: BigUInt, special: Bool?) {
+	public func NotifySpecial(t: NumTester, nr: BigUInt, special: Bool?) {
 		if let special = special {
 			let key = CacheKey(tester: t, n: nr)
 			let ns_special = NSNumber(booleanLiteral: special)
 			specialcache.setObject(ns_special, forKey: key)
 		}
 	}
-	func NotifyLatex(t: NumTester, nr: BigUInt, latex: LatexString?, completed: Bool) {
+	public func NotifyLatex(t: NumTester, nr: BigUInt, latex: LatexString?, completed: Bool) {
 		let key = CacheKey(tester: t, n: nr)
 		if let nsval = latex as NSString? {
 			latexcache.setObject(nsval, forKey: key)
@@ -65,14 +65,14 @@ public class TesterCache  {
 		let nsstr = NSString(string: tester.property() + ":" + String(n.hashValue))
 		return nsstr
 	}
-	func HasCacheSpecial(tester: NumTester, n: BigUInt) -> Bool? {
+	public func HasCacheSpecial(tester: NumTester, n: BigUInt) -> Bool? {
 		let key = CacheKey(tester: tester, n: n)
 		if let val = specialcache.object(forKey: key) {
 			return val.boolValue
 		}
 		return nil
 	}
-	func HasCacheLatex(tester: NumTester, n: BigUInt) -> LatexString? {
+	public func HasCacheLatex(tester: NumTester, n: BigUInt) -> LatexString? {
 		let key = CacheKey(tester: tester, n: n)
 		if let val = latexcache.object(forKey: key) {
 			return String(val)

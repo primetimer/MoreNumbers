@@ -79,7 +79,7 @@ public class PalindromicTester : NumTester, TestDescriber {
         var desc = ""
         
         for b in pbase {
-            desc = desc + nrstr + "is palindromic in base " + String(b) + "\n"
+            desc = desc + nrstr + " is palindromic in base " + String(b) + "\n"
         }
         return desc
     }

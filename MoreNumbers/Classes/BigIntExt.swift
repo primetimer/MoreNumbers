@@ -52,3 +52,40 @@ public extension BigUInt {
 	}
 }
 
+
+public extension FactorCache {
+func Desc(n: BigUInt, withpot : Bool, cancel: CalcCancelProt?) -> String? {
+    if n<2 { return nil }
+    let factors = Factor(p: n,cancel: cancel)
+    if cancel?.IsCancelled() ?? false { return nil }
+    if factors.factors.count < 2 { return nil }
+    var latex = String(n) + "="
+    
+    if withpot {
+        let fwithpots = FactorsWithPot(n: n, cancel: cancel)
+        for (index,f) in fwithpots.factors.enumerated() {
+            if index > 0 { latex = latex + "*" }
+            latex = latex + String(f.f)
+            if f.e > 1 {
+                latex = latex + "^" + String(f.e)
+            }
+            //                if index>0 {
+            //                    latex = latex + "}"
+            //                }
+        }
+    } else {
+        for (index,f) in factors.factors.enumerated() {
+            if index > 0 { latex = latex + "*" }
+            latex = latex + String(f)
+            //                if index > 0 { latex = latex + "}" }
+        }
+    }
+    if factors.unfactored > 1 {
+        latex = latex + "*?"
+    }
+    //latex = latex + "\\\\"
+    return latex
+}
+}
+
+

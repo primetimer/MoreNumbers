@@ -506,7 +506,7 @@ public class MathConstantTester : NumTester {
         }
     }
     
-    public func getDesc(n: BigUInt, type: MathConstantType) -> String? {
+    public func Desc(n: BigUInt, type: MathConstantType) -> String? {
         let nstr = String(n)
         let symbol = type.Symbol()
         let desc = "\(nstr) are the first \(nstr.count) digits of \(symbol)"
@@ -632,7 +632,7 @@ public  class SpecialConstantTester : MathConstantTester  {
     }
     
     public func Desc(n: BigUInt) -> String? {
-        return super.getDesc(n: n, type: self.type)
+        return super.Desc(n: n, type: self.type)
     }
 }
 

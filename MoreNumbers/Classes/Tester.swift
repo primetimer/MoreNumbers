@@ -54,9 +54,9 @@ public protocol NumTester {
 	func subtester() -> [NumTester]?
 	func issubTester() -> Bool
     func getLatex(n: BigUInt) -> String?
-    func OEISNr() -> String?
-    func RootIndex(n: BigUInt) -> Int?
-    func Desc(n: BigUInt) -> String?
+//    func OEISNr() -> String?
+//    func RootIndex(n: BigUInt) -> Int?
+//    func Desc(n: BigUInt) -> String?
 }
 
 public extension NumTester {
@@ -83,14 +83,14 @@ public extension NumTester {
     func Desc(n:BigUInt) -> String? {
         return defaultDesc(n: n)
     }
-    
+
     func defaultDesc(n: BigUInt) -> String? {
         if let rtest = self as? RationalApproxTester {
             return rtest.Desc(n: n)
         }
         
-        if let ctest = self as? MathConstantTester{
-            return ctest.Desc(n: n)
+        if let ctest = self as? SpecialConstantTester{
+            return ctest.Desc(n: n, type: ctest.type)
         }
         
        

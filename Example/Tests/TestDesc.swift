@@ -29,10 +29,20 @@ class TestDesc: XCTestCase {
     func testDesc() {
 //        XCTAssert(false)
         for t in Tester.shared.completetesters {
-            for n in 0...100 {
-                if t is CompositeTester {
-                    print("CompositeTester")
+            
+            if t is CompositeTester {
+                print("CompositeTester")
+            }
+            if t is RationalApproxTester {
+                print("Rational Constant Tester")
+            } else {
+                if t is MathConstantTester {
+                    print("Math Constant Tester \(t.property())")
                 }
+            }
+            
+            for n in 0...314 {
+               
                 let special = t.isSpecial(n: BigUInt(n), cancel: nil) ?? false
                 if special {
                     let desc = t.Desc(n: BigUInt(n))

@@ -156,6 +156,8 @@
 		7FCBA009F86C6270865E33D92C243380 /* LuckyTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E0D139A304E94474751FC4E81EDCD1 /* LuckyTester.swift */; };
 		809ABA5D8C1F30BD3DEDD43C39A118BB /* MersenneTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8883696ABE421E35A1A099AF48598DE3 /* MersenneTester.swift */; };
 		82993D25B92AAD2E774AAC3837C1DEE1 /* Bitwise Ops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A4D4E4AB38900A81776321E7929F42 /* Bitwise Ops.swift */; };
+		8414587A227EFF3200A6E3B1 /* TesterDescriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84145879227EFF3200A6E3B1 /* TesterDescriber.swift */; };
+		8414587B227EFF3200A6E3B1 /* TesterDescriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84145879227EFF3200A6E3B1 /* TesterDescriber.swift */; };
 		84DF1E824616A4F933231A16E459823F /* Primitive Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657E9D299C273007CCC2243B234E9E55 /* Primitive Types.swift */; };
 		8571DE596496D4D0891C95BC8D48F68E /* MoreNumbersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0E07BA3690E4BA08131288D26D592 /* MoreNumbersExtension.swift */; };
 		87B6D745E0B9143A1C52672F17EFEB6A /* MTMathListIndex.h in Headers */ = {isa = PBXBuildFile; fileRef = C34144D48E1975D3B7E4EB40B9EE6F6B /* MTMathListIndex.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -449,9 +451,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00381DA316E12E802FA8AF4BEC13B95D /* mathFonts.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = mathFonts.bundle; path = "iosMath-mathFonts.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00381DA316E12E802FA8AF4BEC13B95D /* mathFonts.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mathFonts.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		00DFD670D27DBC728395AE742969F185 /* SipHash-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SipHash-iOS-dummy.m"; sourceTree = "<group>"; };
-		0135C7F53BB6D12A5B37BE21596C2E06 /* texgyretermes-math.otf */ = {isa = PBXFileReference; includeInIndex = 1; name = "texgyretermes-math.otf"; path = "fonts/texgyretermes-math.otf"; sourceTree = "<group>"; };
+		0135C7F53BB6D12A5B37BE21596C2E06 /* texgyretermes-math.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "texgyretermes-math.otf"; path = "fonts/texgyretermes-math.otf"; sourceTree = "<group>"; };
 		020F52928A604D4A2CD353DC5BA61027 /* MoreNumbers-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MoreNumbers-watchOS-dummy.m"; path = "../MoreNumbers-watchOS/MoreNumbers-watchOS-dummy.m"; sourceTree = "<group>"; };
 		030AB73730B5D3F73EEAD5F8856E2087 /* DivergentTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DivergentTester.swift; path = MoreNumbers/Classes/DivergentTester.swift; sourceTree = "<group>"; };
 		03FD2FCF3F17E70978319D770707E276 /* BigInt-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "BigInt-watchOS.modulemap"; path = "../BigInt-watchOS/BigInt-watchOS.modulemap"; sourceTree = "<group>"; };
@@ -496,12 +498,12 @@
 		2BA6C4442041B30B262B1B86F71D9928 /* SipHash-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "SipHash-iOS.modulemap"; sourceTree = "<group>"; };
 		2DAC00C53E06FB5BE1190F57F11FB5BD /* BigInt-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BigInt-iOS-prefix.pch"; sourceTree = "<group>"; };
 		2E7061D2FF43116F62834AD685D34DFC /* MTFontManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTFontManager.m; path = iosMath/render/MTFontManager.m; sourceTree = "<group>"; };
-		2F4BF9C6A0D51C97DAD70866305DAE49 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		2F4BF9C6A0D51C97DAD70866305DAE49 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		301D3CB018CD1BA4C8BC0AB5D9C12497 /* Pods-MoreNumbers_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoreNumbers_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3143DC1E5AA088BB095A578BE346904D /* OEIS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OEIS.swift; path = MoreNumbers/Classes/OEIS.swift; sourceTree = "<group>"; };
 		318F0A992EC2F448A4BBA6AC381E3A9C /* IosMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IosMath.h; path = iosMath/IosMath.h; sourceTree = "<group>"; };
 		321795999D71F8AC7B84135F4A9794CC /* PrimeFactors-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "PrimeFactors-watchOS-dummy.m"; path = "../PrimeFactors-watchOS/PrimeFactors-watchOS-dummy.m"; sourceTree = "<group>"; };
-		33802A6FF91DAC26CB642016DD762C58 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		33802A6FF91DAC26CB642016DD762C58 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		35787844B9F165F365FD935F0366AA30 /* BernoulliTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BernoulliTester.swift; path = MoreNumbers/Classes/BernoulliTester.swift; sourceTree = "<group>"; };
 		38EFB8DEDC0F09426F1A18658429DAAB /* NSBezierPath+addLineToPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBezierPath+addLineToPoint.h"; path = "iosMath/render/NSBezierPath+addLineToPoint.h"; sourceTree = "<group>"; };
 		398FD1487654C44D898EA6BA3CAB9684 /* MoreNumbers-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MoreNumbers-iOS.xcconfig"; sourceTree = "<group>"; };
@@ -517,7 +519,7 @@
 		475C20A8B7D59E9A1835EEC9227464D8 /* Pods-MoreNumbers_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MoreNumbers_Tests.modulemap"; sourceTree = "<group>"; };
 		48F43D289AC337A721AFC2A5F10FE510 /* BigInt-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BigInt-watchOS-dummy.m"; path = "../BigInt-watchOS/BigInt-watchOS-dummy.m"; sourceTree = "<group>"; };
 		4907A871CEE2D3F15BE2301E5C4B38BE /* SipHashable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SipHashable.swift; path = SipHash/SipHashable.swift; sourceTree = "<group>"; };
-		4B6F2A9ED2A1BC8AF57F8E1AC26C9B86 /* latinmodern-math.otf */ = {isa = PBXFileReference; includeInIndex = 1; name = "latinmodern-math.otf"; path = "fonts/latinmodern-math.otf"; sourceTree = "<group>"; };
+		4B6F2A9ED2A1BC8AF57F8E1AC26C9B86 /* latinmodern-math.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "latinmodern-math.otf"; path = "fonts/latinmodern-math.otf"; sourceTree = "<group>"; };
 		4C6B1FCFA8C4232FF2274654E9F007F0 /* Pods-MoreNumbers_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MoreNumbers_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		4CB340403AE2BA7EC5ED010CA99497E8 /* UninterestingTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UninterestingTester.swift; path = MoreNumbers/Classes/UninterestingTester.swift; sourceTree = "<group>"; };
 		4E3C14D9DA74A7F0EF0278A9A60BD943 /* UInt128.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UInt128.swift; path = PrimeFactors/Classes/UInt128.swift; sourceTree = "<group>"; };
@@ -525,7 +527,7 @@
 		52E22F4CD72E79CC7088C90D75D13E00 /* iosMath-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iosMath-dummy.m"; sourceTree = "<group>"; };
 		53D0CA4F3EF8963380683D86B4C6B219 /* SipHash-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SipHash-watchOS-prefix.pch"; path = "../SipHash-watchOS/SipHash-watchOS-prefix.pch"; sourceTree = "<group>"; };
 		56C2B0B931E0302E109133284BD9A5C1 /* MTTypesetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTTypesetter.h; path = iosMath/render/internal/MTTypesetter.h; sourceTree = "<group>"; };
-		56DAC608A77A815DF43B427D6B7AF3AE /* MoreNumbers.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = MoreNumbers.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		56DAC608A77A815DF43B427D6B7AF3AE /* MoreNumbers.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = MoreNumbers.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		583CFB7FE12FDAD1FF8CB62913AC97FD /* MTMathListDisplayInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTMathListDisplayInternal.h; path = iosMath/render/internal/MTMathListDisplayInternal.h; sourceTree = "<group>"; };
 		5864B99FE58BCA4E21027062AB7ADC0B /* Pods-MoreNumbers_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MoreNumbers_Tests-umbrella.h"; sourceTree = "<group>"; };
 		598D1BE02945A99AF3DF699B108F4F5B /* SumOfSquareTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SumOfSquareTester.swift; path = MoreNumbers/Classes/SumOfSquareTester.swift; sourceTree = "<group>"; };
@@ -536,8 +538,8 @@
 		5D73719117469F3D75F181B7BB8A5BD5 /* PalindromicTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PalindromicTester.swift; path = MoreNumbers/Classes/PalindromicTester.swift; sourceTree = "<group>"; };
 		5DE2D166903A6A7B13AA9194C9C6DFCA /* SmithTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SmithTester.swift; path = MoreNumbers/Classes/SmithTester.swift; sourceTree = "<group>"; };
 		5E98CAE482F13200F6EEAD7E3F894750 /* NSColor+HexString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSColor+HexString.m"; path = "iosMath/render/NSColor+HexString.m"; sourceTree = "<group>"; };
-		5F5D7636475EB4F6042A5D26D129A858 /* Pods_MoreNumbers_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MoreNumbers_Example.framework; path = "Pods-MoreNumbers_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FFA925631628861FF4FEE5FD33122B6 /* MoreNumbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MoreNumbers.framework; path = "MoreNumbers-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5D7636475EB4F6042A5D26D129A858 /* Pods_MoreNumbers_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbers_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FFA925631628861FF4FEE5FD33122B6 /* MoreNumbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoreNumbers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		625EC474571B173D520367D1D9BD0AC2 /* Pods-MoreNumbers Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MoreNumbers Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		626EE4C8B0B759BCF271562E34B2A3A3 /* SchizophrenicTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SchizophrenicTester.swift; path = MoreNumbers/Classes/SchizophrenicTester.swift; sourceTree = "<group>"; };
 		656D9773CE471BB8AC7D5BF5CF082D41 /* Pods-MoreNumbers_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MoreNumbers_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -560,10 +562,10 @@
 		7A7862E9E2996F3B0E34AF2CB993EF01 /* iosMath.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = iosMath.modulemap; sourceTree = "<group>"; };
 		7AD8AFF7439823B929A4A4708C7D1E0A /* BigInt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BigInt.swift; path = sources/BigInt.swift; sourceTree = "<group>"; };
 		7B3BDF58EDE7AC93218466E15A9C0F96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		7BF3D882366DEDA94AC076E8718819BB /* PrimeFactors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PrimeFactors.framework; path = "PrimeFactors-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BF3D882366DEDA94AC076E8718819BB /* PrimeFactors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrimeFactors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC0D3EEF400B7618695C860FED93380 /* Pods-MoreNumbers_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MoreNumbers_Tests-dummy.m"; sourceTree = "<group>"; };
-		7D2A6BB7A9CD4369C9DE9936108E4F2C /* SipHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SipHash.framework; path = "SipHash-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D897D613423FE2D040307BDFCCB45B5 /* Pods_MoreNumbers_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MoreNumbers_Extension.framework; path = "Pods-MoreNumbers Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D2A6BB7A9CD4369C9DE9936108E4F2C /* SipHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SipHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D897D613423FE2D040307BDFCCB45B5 /* Pods_MoreNumbers_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbers_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE42870F6BAE9F7BEDFEA788F63CAE1 /* MTMathUILabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTMathUILabel.m; path = iosMath/render/MTMathUILabel.m; sourceTree = "<group>"; };
 		7DE5B3A904BEC9D8A08F0E608F88BCD2 /* MTMathListDisplay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTMathListDisplay.h; path = iosMath/render/MTMathListDisplay.h; sourceTree = "<group>"; };
 		7E0582EE641113C5377F917ED70D6BB5 /* LatticeTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LatticeTester.swift; path = MoreNumbers/Classes/LatticeTester.swift; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 		7EED06D68E145F5D5FB9CCFBAC32D98D /* Pods-MoreNumbers_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoreNumbers_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		7FD0F397C01918290339492B5C594924 /* Pods-MoreNumbers_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MoreNumbers_Example-umbrella.h"; sourceTree = "<group>"; };
 		839750A9459ABF25980F0D04BB46C898 /* Fibonacci.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Fibonacci.swift; path = MoreNumbers/Classes/Fibonacci.swift; sourceTree = "<group>"; };
+		84145879227EFF3200A6E3B1 /* TesterDescriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TesterDescriber.swift; path = MoreNumbers/Classes/TesterDescriber.swift; sourceTree = "<group>"; };
 		861B00FA1C483DC489BD3F67126D6AAE /* Pods-MoreNumbers_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MoreNumbers_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		87FDF925B3CFCBC26FFF45388400D498 /* FactorStrategy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FactorStrategy.swift; path = PrimeFactors/Classes/FactorStrategy.swift; sourceTree = "<group>"; };
 		883C4933387E2316C6BE40B3717A7FEF /* FactorialTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FactorialTester.swift; path = MoreNumbers/Classes/FactorialTester.swift; sourceTree = "<group>"; };
@@ -582,11 +585,11 @@
 		8B079211342BBF5C95463C772A15C292 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C552AEE64CF4D25FC2350ACC6FF093E /* SipHash-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SipHash-watchOS-umbrella.h"; path = "../SipHash-watchOS/SipHash-watchOS-umbrella.h"; sourceTree = "<group>"; };
 		8D9E88FCC462400EA5912985234AEAE6 /* CompositeTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompositeTester.swift; path = MoreNumbers/Classes/CompositeTester.swift; sourceTree = "<group>"; };
-		8DB9F608C3F07D6915216470A54C7AD3 /* SipHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SipHash.framework; path = "SipHash-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DB9F608C3F07D6915216470A54C7AD3 /* SipHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SipHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8951A4373B5712E610042AFB918611 /* MTMathListIndex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTMathListIndex.m; path = iosMath/lib/MTMathListIndex.m; sourceTree = "<group>"; };
 		91556DFBB341B3A05B33C45BF7D247AB /* MTLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLabel.h; path = iosMath/render/MTLabel.h; sourceTree = "<group>"; };
 		9193156ADF07CE8C0C543367770072E1 /* Pods-MoreNumbers Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MoreNumbers Extension-resources.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93F25C69A1EE18076B7FE20BA2AC78C9 /* UIColor+HexString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+HexString.h"; path = "iosMath/render/UIColor+HexString.h"; sourceTree = "<group>"; };
 		93F480A5C079ACE98FE8A7AB094A17B3 /* BigInt-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BigInt-iOS-dummy.m"; sourceTree = "<group>"; };
 		9455315BEA7966D82F8C15607D093661 /* MoreNumbers-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MoreNumbers-iOS-dummy.m"; sourceTree = "<group>"; };
@@ -614,7 +617,7 @@
 		A6C1BA5274F28B4223CBBCE9F4D0210E /* padic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = padic.swift; path = MoreNumbers/Classes/padic.swift; sourceTree = "<group>"; };
 		A821112E2D10737D88A9B82A13BA6D6B /* UIColor+HexString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HexString.m"; path = "iosMath/render/UIColor+HexString.m"; sourceTree = "<group>"; };
 		AA1904AAEBE0AB572AB9A0DF22CBAA81 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AAB9D6F0F15D6B7178C3F54FFC9DEFA4 /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BigInt.framework; path = "BigInt-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAB9D6F0F15D6B7178C3F54FFC9DEFA4 /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BigInt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC1029B66DD2C6C83E1502ED9A81686 /* SipHash-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SipHash-watchOS-dummy.m"; path = "../SipHash-watchOS/SipHash-watchOS-dummy.m"; sourceTree = "<group>"; };
 		ACEB279E755BDEFFCA19A6E515B0C04C /* Pods-MoreNumbers_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MoreNumbers_Example.modulemap"; sourceTree = "<group>"; };
 		ACF88FED608016AE90DF21FEF27A7116 /* Prime Test.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Prime Test.swift"; path = "sources/Prime Test.swift"; sourceTree = "<group>"; };
@@ -628,14 +631,14 @@
 		BA9E87440DAE639DCAC4029E96767F09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BDBAAD059DEE7B7B593D34536D93A92B /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BigInt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE5E0A0F716CF1F759F1762C5524121 /* MTMathListDisplay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTMathListDisplay.m; path = iosMath/render/MTMathListDisplay.m; sourceTree = "<group>"; };
-		BF48846127F227419E3B8F625E32B805 /* MoreNumbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MoreNumbers.framework; path = "MoreNumbers-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF48846127F227419E3B8F625E32B805 /* MoreNumbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoreNumbers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5B18B726DE87CF663FA52F679B47B9 /* Pods-MoreNumbers_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MoreNumbers_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C2F1E4189B737FA0D017338A219B81D5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C31427AD287EBE7756865298E48BB5FA /* Data Conversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data Conversion.swift"; path = "sources/Data Conversion.swift"; sourceTree = "<group>"; };
 		C34144D48E1975D3B7E4EB40B9EE6F6B /* MTMathListIndex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTMathListIndex.h; path = iosMath/lib/MTMathListIndex.h; sourceTree = "<group>"; };
 		C5A5FDCDF408B6607D6B77ABC8E3B348 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		C5CCA33C1F5BA5D94A7AEDDD5EBBEF79 /* PrimeFactors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrimeFactors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6DD84D5394BF0B140ED9CBA4A488456 /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BigInt.framework; path = "BigInt-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6DD84D5394BF0B140ED9CBA4A488456 /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BigInt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C813DC5C4EE687230348EE90F3DF2CAE /* SipHash-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SipHash-iOS-prefix.pch"; sourceTree = "<group>"; };
 		C85BBB0B0780193F4D97426DE870E698 /* Supersingular.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Supersingular.swift; path = MoreNumbers/Classes/Supersingular.swift; sourceTree = "<group>"; };
 		CB1BF86F3BF8806EAAE5A7F96DBB6C28 /* SipHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SipHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -649,7 +652,7 @@
 		D23BA5A34A35DAE1E32F25291142FC45 /* ExtraTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtraTester.swift; path = MoreNumbers/Classes/ExtraTester.swift; sourceTree = "<group>"; };
 		D3FB92F46CC16FED504C0390B1581EAC /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = MoreNumbers/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		D45D7FDAA352979C24DDF13CBC15BEF8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../SipHash-watchOS/Info.plist"; sourceTree = "<group>"; };
-		D68D88904C0DE93DAD95D074D763ACE5 /* xits-math.otf */ = {isa = PBXFileReference; includeInIndex = 1; name = "xits-math.otf"; path = "fonts/xits-math.otf"; sourceTree = "<group>"; };
+		D68D88904C0DE93DAD95D074D763ACE5 /* xits-math.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "xits-math.otf"; path = "fonts/xits-math.otf"; sourceTree = "<group>"; };
 		D80F97C59EF28E537FC6303B87A8828F /* SemiPrimeTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SemiPrimeTester.swift; path = MoreNumbers/Classes/SemiPrimeTester.swift; sourceTree = "<group>"; };
 		D86ABAC75097FB0B51D0D92F34D27F13 /* FactorCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FactorCache.swift; path = PrimeFactors/Classes/FactorCache.swift; sourceTree = "<group>"; };
 		D86AE818EC6778B3E192E28795263DFE /* Shifts.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shifts.swift; path = sources/Shifts.swift; sourceTree = "<group>"; };
@@ -658,10 +661,10 @@
 		DA6220FF9D8A7348075582B2FE24D3A4 /* SipHash-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SipHash-iOS.xcconfig"; sourceTree = "<group>"; };
 		DB3C71DD67C2DBD7BDF703B805DF441E /* Codable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Codable.swift; path = sources/Codable.swift; sourceTree = "<group>"; };
 		E0999607083135674F903841358EA7E9 /* NumberSequencer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NumberSequencer.swift; path = MoreNumbers/Classes/NumberSequencer.swift; sourceTree = "<group>"; };
-		E2D6748069E787598D1A5980145E9B05 /* Pods_MoreNumbers_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MoreNumbers_Tests.framework; path = "Pods-MoreNumbers_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2D6748069E787598D1A5980145E9B05 /* Pods_MoreNumbers_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbers_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E481BFD2A4E633752AD063CDE978AB28 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6224D258D1156FACCC0ADB94B76FCE7 /* UInt128Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UInt128Extension.swift; path = PrimeFactors/Classes/UInt128Extension.swift; sourceTree = "<group>"; };
-		E7ACD589A7AF90CB35CC5BCF81A9DCDD /* PrimeFactors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PrimeFactors.framework; path = "PrimeFactors-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7ACD589A7AF90CB35CC5BCF81A9DCDD /* PrimeFactors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrimeFactors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E2C6FF2CE14811A98F353517C632EC /* Pods-MoreNumbers Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoreNumbers Extension-acknowledgements.plist"; sourceTree = "<group>"; };
 		EAA82EBD1472DFA85695D87584181057 /* Pods-MoreNumbers_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoreNumbers_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EABE3D05FDB55B7DD3124469FAAA453E /* Multiplication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Multiplication.swift; path = sources/Multiplication.swift; sourceTree = "<group>"; };
@@ -677,7 +680,7 @@
 		F20A08A803CC8B6D9493B7C64CA4245C /* Addition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Addition.swift; path = sources/Addition.swift; sourceTree = "<group>"; };
 		F22331B7E2C9F5E1B8B14321C1B1809E /* PrimeCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrimeCache.swift; path = PrimeFactors/Classes/PrimeCache.swift; sourceTree = "<group>"; };
 		F26B5DDA6E9FDCFC013A74970AD95C3E /* MTMathUILabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTMathUILabel.h; path = iosMath/render/MTMathUILabel.h; sourceTree = "<group>"; };
-		F37DF4D296DE680D74D30A8FD7472834 /* iosMath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iosMath.framework; path = iosMath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F37DF4D296DE680D74D30A8FD7472834 /* iosMath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iosMath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AED75A05D71C0714D9CD753EB6B70F /* Pollard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Pollard.swift; path = PrimeFactors/Classes/Pollard.swift; sourceTree = "<group>"; };
 		F4BBA465A044F672D6D72C1AE5193141 /* HCNTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HCNTester.swift; path = MoreNumbers/Classes/HCNTester.swift; sourceTree = "<group>"; };
 		F500E585B428E80728DC53F3C41F59FB /* BigInt-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BigInt-watchOS-prefix.pch"; path = "../BigInt-watchOS/BigInt-watchOS-prefix.pch"; sourceTree = "<group>"; };
@@ -876,6 +879,7 @@
 				598D1BE02945A99AF3DF699B108F4F5B /* SumOfSquareTester.swift */,
 				C85BBB0B0780193F4D97426DE870E698 /* Supersingular.swift */,
 				99C61D039F74DC3E7A9A8EE0DA16DA3B /* Tester.swift */,
+				84145879227EFF3200A6E3B1 /* TesterDescriber.swift */,
 				3FAC959C4A0A8956A7A4054E7E6DA8F2 /* TesterCache.swift */,
 				ED6CBDB4C354D8414FDB810FFCE083AA /* TetrahedralTester.swift */,
 				4CB340403AE2BA7EC5ED010CA99497E8 /* UninterestingTester.swift */,
@@ -974,7 +978,6 @@
 				B8599BAD3B3B0037E0232487A01534FB /* Resources */,
 				A714AB334941DD24A44420E8E4F831E7 /* Support Files */,
 			);
-			name = iosMath;
 			path = iosMath;
 			sourceTree = "<group>";
 		};
@@ -1047,7 +1050,6 @@
 				250A243DFA00541AC6F404FB70814E79 /* Words and Bits.swift */,
 				433494C42D0E18DD731FF902599EB9F4 /* Support Files */,
 			);
-			name = BigInt;
 			path = BigInt;
 			sourceTree = "<group>";
 		};
@@ -1078,7 +1080,6 @@
 				9A3DDC3B9B32BC5BD1095D87D3F11EE4 /* SipHasher.swift */,
 				FBE7016759ACFE98C43DD30427E8B441 /* Support Files */,
 			);
-			name = SipHash;
 			path = SipHash;
 			sourceTree = "<group>";
 		};
@@ -1160,7 +1161,6 @@
 				D879B2F5D6AF01328B71F476A09C939F /* WheelSieve.swift */,
 				D311189B1F7783C722EE0B433155A385 /* Support Files */,
 			);
-			name = PrimeFactors;
 			path = PrimeFactors;
 			sourceTree = "<group>";
 		};
@@ -1647,6 +1647,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
@@ -1837,6 +1838,7 @@
 				1E6DB2C72192826F17E8B61A928D1624 /* SemiPrimeTester.swift in Sources */,
 				D9868FDD8EDCAA7669EE4D74D1894A5B /* SkewesTester.swift in Sources */,
 				30E2DD6088D656237E615F6AA008D1F8 /* SmithTester.swift in Sources */,
+				8414587B227EFF3200A6E3B1 /* TesterDescriber.swift in Sources */,
 				D6F26A3D9E396467BBD3ABFD09D1ECC3 /* SumOfCubesTester.swift in Sources */,
 				F5F77B36D38B7ABDC0E7603D1A0D94AE /* SumOfEisensteinSquareTester.swift in Sources */,
 				2893B5F6D9AF96B7A54C2D16710ED714 /* SumOfSquareTester.swift in Sources */,
@@ -2000,6 +2002,7 @@
 				C69E4FA1F6899F0EAC5D4F9FAE6FECE6 /* SemiPrimeTester.swift in Sources */,
 				9D8F67E2B450FFE80142B413D15F0E41 /* SkewesTester.swift in Sources */,
 				0E4A1E01CED1CD150EFECD2D34A86780 /* SmithTester.swift in Sources */,
+				8414587A227EFF3200A6E3B1 /* TesterDescriber.swift in Sources */,
 				3CABFDD2C3B217821810BD87AF7438DF /* SumOfCubesTester.swift in Sources */,
 				B8692F5D56D1B7BCE32A934079DF63E6 /* SumOfEisensteinSquareTester.swift in Sources */,
 				FD4A83F688E8C80945794D6832792F28 /* SumOfSquareTester.swift in Sources */,
@@ -3018,8 +3021,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;

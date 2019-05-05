@@ -80,31 +80,31 @@ public extension NumTester {
         return index
     }
     
-    func Desc(n:BigUInt) -> String? {
-        return defaultDesc(n: n)
-    }
+//    func Desc(n:BigUInt) -> String? {
+//        return defaultDesc(n: n)
+//    }
 
-    func defaultDesc(n: BigUInt) -> String? {
-        if let rtest = self as? RationalApproxTester {
-            return rtest.Desc(n: n)
-        }
-        
-        if let ctest = self as? SpecialConstantTester{
-            return ctest.Desc(n: n, type: ctest.type)
-        }
-        
-       
-        if let index = RootIndex(n: n) {
-            if index > 0 {
-                let ord = (index+1).ordinal
-                let ans = "\(n) is the \(ord) \(propertyString()) number"
-                return ans
-            }
-        }
-        let ans = "\(n) is a \(propertyString()) number"
-        
-        return ans 
-    }
+//    public func defaultDesc(n: BigUInt) -> String? {
+//        if let rtest = self as? RationalApproxTester {
+//            return rtest.Desc(n: n)
+//        }
+//        
+//        if let ctest = self as? SpecialConstantTester{
+//            return ctest.Desc(n: n, type: ctest.type)
+//        }
+//        
+//       
+//        if let index = RootIndex(n: n) {
+//            if index > 0 {
+//                let ord = (index+1).ordinal
+//                let ans = "\(n) is the \(ord) \(propertyString()) number"
+//                return ans
+//            }
+//        }
+//        let ans = "\(n) is a \(propertyString()) number"
+//        
+//        return ans 
+//    }
 }
 
 //public extension NumTester {

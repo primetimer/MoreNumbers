@@ -15,7 +15,7 @@ public protocol TestDescriber {
 }
 public class TesterDescriber {
     
-    static func Desc(n:BigUInt,tester: NumTester) -> String {
+    static public func Desc(n:BigUInt,tester: NumTester) -> String {
         
         if let selfdescriber = tester as? TestDescriber {
             return selfdescriber.Desc(n: n)

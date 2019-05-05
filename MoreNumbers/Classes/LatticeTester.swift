@@ -47,7 +47,9 @@ public class PiLatticeTester : NumTester {
 public class LatticeTester : NumTester {
 	    public init() {}
 	public func getLatex(n: BigUInt) -> String? {
-		return nil
+        guard let index = RootIndex(n: n) else { return nil }
+        let latex = "\(String(n)) = \\mid {{ (m,n) : m^2 + n^2 \\leq \(index+1)^2 }}\\mid"
+        return latex
 	}
     public func property() -> String {
 		return "Lattice points in circle"

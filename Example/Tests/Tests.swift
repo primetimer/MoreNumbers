@@ -154,6 +154,15 @@ class Tests: XCTestCase {
         }
     }
     
+    func test2Squares() {
+        let n = BigUInt(529)
+        let t = SumOfTwoSquaresTester()
+        
+        let desc = t.Desc(n: n)
+        let (a,b) = t.Express(n: n, cancel: nil)!
+        print(a,b)
+    }
+    
     func testHurwitz() {
         for n in 1...100 {
 //            print("Factorize : \(n)")

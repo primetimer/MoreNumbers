@@ -75,6 +75,12 @@ public class SemiPrimeTester : NumTester {
 //        return desc
 //    }
 //
+    
+    public func Desc(n: BigUInt) -> String? {
+        let desc = FactorCache.shared.Desc(n: n, withpot: false, cancel: nil)
+        return desc
+    }
+    
     public func getLatex(n: BigUInt) -> String? {
         let dummycert = "is there a semiprime certifcate"
         return nil // Factorization is shown elsewhere

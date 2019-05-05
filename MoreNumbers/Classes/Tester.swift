@@ -89,6 +89,10 @@ public extension NumTester {
             return rtest.Desc(n: n)
         }
         
+        if let ctest = self as? MathConstantTester{
+            return ctest.Desc(n: n)
+        }
+        
        
         if let index = RootIndex(n: n) {
             if index > 0 {

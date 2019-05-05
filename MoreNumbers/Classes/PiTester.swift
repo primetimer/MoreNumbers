@@ -506,6 +506,13 @@ public class MathConstantTester : NumTester {
         }
     }
     
+    public func getDesc(n: BigUInt, type: MathConstantType) -> String? {
+        let nstr = String(n)
+        let symbol = type.Symbol()
+        let desc = "\(nstr) are the first \(nstr.count) digits of \(symbol)"
+        return desc
+    }
+    
     internal func getLatex(n: BigUInt, type: MathConstantType) -> String {
         let latexname = type.Latex()
         let pot = type.withPot()
@@ -624,6 +631,9 @@ public  class SpecialConstantTester : MathConstantTester  {
         return super.getLatex(n: n, type: self.type)
     }
     
+    public func Desc(n: BigUInt) -> String? {
+        return super.getDesc(n: n, type: self.type)
+    }
 }
 
 public class RationalApproxTester : MathConstantTester  {

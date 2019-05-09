@@ -13,14 +13,17 @@ public typealias OEISNR = String
 
 public class OEIS {
 	let oeisdefault = "https://oeis.org"
+    
+    public var smallprimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271]
+    public var smallprimesb : [BigInt] = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271]
 	public static var shared = OEIS()
 	private (set) var oeis : [String:OEISNR] = [:]			//Mapping from key to oeisnr
 	private var seq : [OEISNR:[BigInt]] = [:]		//Mapping from oeisnr to sequence
 	//private (set) var testerprop : [String:String] = [:]	//Mapping from oeisnr to testertype
 	
 	private init() {
-		Add(PrimeTester().property(),"A000040",
-			[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271])
+		Add(PrimeTester().property(),"A000040",smallprimesb)
+        Add(GoldbachTester().property(),"A320447",[5, 7, 10, 16, 36, 210])
 		Add(Pow2Tester().property(),"A000079",
 			[	1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288, 1048576, 2097152, 4194304, 8388608, 16777216])
 		Add(TetrahedralTester().property(),"A000292",

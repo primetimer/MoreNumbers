@@ -192,6 +192,9 @@ class TestOEISConsistency: XCTestCase {
         for n in start...100 {
             let special = tester.isSpecial(n: BigUInt(n), cancel: nil) ?? false
             if special {
+//                if tester.property() == "sexy prime" {
+//                    print("Debug: \(tester.property())")
+//                }
                 let root = tester.RootIndex(n: BigUInt(n))
                 if root == nil {
                     print("Fehler: \(n)")

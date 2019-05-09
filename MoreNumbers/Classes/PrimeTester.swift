@@ -76,9 +76,9 @@ public class SexyPrimeTester : NumTester {
 	public func isSpecial(n: BigUInt,cancel: CalcCancelProt?) -> Bool? {
 		if !PrimeCache.shared.IsPrime(p: n) { return false }
 		if !PrimeCache.shared.IsPrime(p: n+6) { return false }
-        if n > 7 {
-            if !PrimeCache.shared.IsPrime(p: n-6) { return false }
-        }
+//        if n > 7 { 
+//            if !PrimeCache.shared.IsPrime(p: n-6) { return false }
+//        }
 		return true
 	}
     public func getLatex(n: BigUInt) -> String? {

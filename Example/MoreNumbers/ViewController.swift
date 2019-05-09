@@ -159,6 +159,15 @@ class ViewController: UIViewController {
         uimath.latex = latex
     }
     
+    private func testGoldbach(){
+        let t = GoldbachTester()
+        let n = BigUInt(210)
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
+
+    
     private func testPadic() {
         let t = DivergentTester()
 //        let n = BigUInt(404)
@@ -221,7 +230,8 @@ class ViewController: UIViewController {
 //        testPadic()
 //        testPalindromic2()
 //        testLookAndSay()
-        testLattice()
+//        testLattice()
+        testGoldbach()
         
         
         // Do any additional setup after loading the view, typically from a nib.

@@ -158,6 +158,8 @@
 		82993D25B92AAD2E774AAC3837C1DEE1 /* Bitwise Ops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A4D4E4AB38900A81776321E7929F42 /* Bitwise Ops.swift */; };
 		8414587A227EFF3200A6E3B1 /* TesterDescriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84145879227EFF3200A6E3B1 /* TesterDescriber.swift */; };
 		8414587B227EFF3200A6E3B1 /* TesterDescriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84145879227EFF3200A6E3B1 /* TesterDescriber.swift */; };
+		841458A522849B9600A6E3B1 /* GoldbachTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841458A422849B9600A6E3B1 /* GoldbachTester.swift */; };
+		841458A622849B9600A6E3B1 /* GoldbachTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841458A422849B9600A6E3B1 /* GoldbachTester.swift */; };
 		84DF1E824616A4F933231A16E459823F /* Primitive Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657E9D299C273007CCC2243B234E9E55 /* Primitive Types.swift */; };
 		8571DE596496D4D0891C95BC8D48F68E /* MoreNumbersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0E07BA3690E4BA08131288D26D592 /* MoreNumbersExtension.swift */; };
 		87B6D745E0B9143A1C52672F17EFEB6A /* MTMathListIndex.h in Headers */ = {isa = PBXBuildFile; fileRef = C34144D48E1975D3B7E4EB40B9EE6F6B /* MTMathListIndex.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -574,6 +576,7 @@
 		7FD0F397C01918290339492B5C594924 /* Pods-MoreNumbers_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MoreNumbers_Example-umbrella.h"; sourceTree = "<group>"; };
 		839750A9459ABF25980F0D04BB46C898 /* Fibonacci.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Fibonacci.swift; path = MoreNumbers/Classes/Fibonacci.swift; sourceTree = "<group>"; };
 		84145879227EFF3200A6E3B1 /* TesterDescriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TesterDescriber.swift; path = MoreNumbers/Classes/TesterDescriber.swift; sourceTree = "<group>"; };
+		841458A422849B9600A6E3B1 /* GoldbachTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoldbachTester.swift; path = MoreNumbers/Classes/GoldbachTester.swift; sourceTree = "<group>"; };
 		861B00FA1C483DC489BD3F67126D6AAE /* Pods-MoreNumbers_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MoreNumbers_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		87FDF925B3CFCBC26FFF45388400D498 /* FactorStrategy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FactorStrategy.swift; path = PrimeFactors/Classes/FactorStrategy.swift; sourceTree = "<group>"; };
 		883C4933387E2316C6BE40B3717A7FEF /* FactorialTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FactorialTester.swift; path = MoreNumbers/Classes/FactorialTester.swift; sourceTree = "<group>"; };
@@ -849,6 +852,7 @@
 				839750A9459ABF25980F0D04BB46C898 /* Fibonacci.swift */,
 				A32BBF8DAC626EE2B5EC01F3FCA7FE94 /* HappyTester.swift */,
 				F4BBA465A044F672D6D72C1AE5193141 /* HCNTester.swift */,
+				841458A422849B9600A6E3B1 /* GoldbachTester.swift */,
 				99B357AC88060649E7252A1C42D07A7F /* HeegnerTester.swift */,
 				7E0582EE641113C5377F917ED70D6BB5 /* LatticeTester.swift */,
 				3A307369F42E6C257B41D999BEAE52BC /* LookAndSayTester.swift */,
@@ -1846,6 +1850,7 @@
 				EC7C39C64D118A674A23A080791AD235 /* Tester.swift in Sources */,
 				D6705666B2FDC212DD72CEC63C5ED05E /* TesterCache.swift in Sources */,
 				46B6BCBF7D217C59DD27E70B88200372 /* TetrahedralTester.swift in Sources */,
+				841458A622849B9600A6E3B1 /* GoldbachTester.swift in Sources */,
 				7D828030105CEDE80CB183108CF40A04 /* UninterestingTester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2010,6 +2015,7 @@
 				B7814F99D71CCEBB4921D62C2EAB75BB /* Tester.swift in Sources */,
 				1D8F543589AD0FFFB98991FE775B7B88 /* TesterCache.swift in Sources */,
 				413986298030506AE9FFA43C0FFA7A33 /* TetrahedralTester.swift in Sources */,
+				841458A522849B9600A6E3B1 /* GoldbachTester.swift in Sources */,
 				E863BAF17D0D73F14CC5A76B48269691 /* UninterestingTester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

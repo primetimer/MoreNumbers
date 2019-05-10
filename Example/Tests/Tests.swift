@@ -208,4 +208,25 @@ class Tests: XCTestCase {
         XCTAssert(r2.value == 2)
     }
     
+    func testGoldbach() {
+        let g = [5, 7, 10, 16, 36, 210]
+        let t = GoldbachTester()
+        for n in 4...360 {
+            let special = t.isSpecial(n: BigUInt(n), cancel: nil) ?? false
+            if g.contains(n) {
+                XCTAssert(special)
+            } else {
+                XCTAssert(!special)
+            }
+            let latex = t.getLatex(n: BigUInt(n)) ?? ""
+            if latex.isEmpty {
+                print("Goldbacherror\(n)" )
+            }
+            XCTAssert(!latex.isEmpty)
+            
+            print("\(n): \(special) - \(latex)")
+            
+        }
+    }
+    
 }

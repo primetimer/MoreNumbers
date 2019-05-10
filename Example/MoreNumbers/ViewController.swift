@@ -205,7 +205,7 @@ class ViewController: UIViewController {
     }
     
     private func testEisenstein() {
-        let t = PrimeTester()
+        let t = GeneralizedCubanPrimeTester()
         //        let n = BigUInt(404)
         //        let n = BigUInt(334)
         //        let n = BigUInt(445) // 1 / 3
@@ -256,8 +256,8 @@ class ViewController: UIViewController {
 //        testLookAndSay()
 //        testLattice()
 //        testGoldbach()
-//        testEisenstein()
-        testGauss()
+        testEisenstein()
+//        testGauss()
         
         
         // Do any additional setup after loading the view, typically from a nib.

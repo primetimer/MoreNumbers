@@ -204,6 +204,18 @@ class ViewController: UIViewController {
         uimath.latex = latex
     }
     
+    private func testEisenstein() {
+        let t = PrimeTester()
+        //        let n = BigUInt(404)
+        //        let n = BigUInt(334)
+        //        let n = BigUInt(445) // 1 / 3
+        //        let n = BigUInt(666)
+        let n = BigUInt(7)
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -231,7 +243,8 @@ class ViewController: UIViewController {
 //        testPalindromic2()
 //        testLookAndSay()
 //        testLattice()
-        testGoldbach()
+//        testGoldbach()
+        testEisenstein()
         
         
         // Do any additional setup after loading the view, typically from a nib.

@@ -40,10 +40,10 @@ public class SumOfTwoSquaresTester : NumTester, TestDescriber {
         if let (g1,g2) = EisensteinInt.FactorPrime(p: p) {
             var latex = String(p) + "="
             let g1str = g1.asString()
-            let g2str = g2.asString()
+            let g2str = g2?.asString()
             
             latex = latex + "(" + g1str + ")"
-            latex = latex + "(" + g2str + ")"
+            if g2str != nil { latex = latex + "(" + g2str! + ")" }
             return latex
         }
         return nil

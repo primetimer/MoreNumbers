@@ -224,14 +224,14 @@ public class PrimeTester : NumTester {
         return nil
     }
 
-    private func EisensteinLatex(p: BigUInt) -> String? {
+    func EisensteinLatex(p: BigUInt) -> String? {
         if let (g1,g2) = EisensteinInt.FactorPrime(p: p) {
             var latex = String(p) + "="
-            let g1str = g1.asString()
-            let g2str = g2.asString()
+            let g1str = g1.asStringLatex()
+            let g2str = g2?.asStringLatex() ?? ""
 
             latex = latex + "(" + g1str + ")"
-            latex = latex + "(" + g2str + ")"
+            if g2str != "" { latex = latex + "(" + g2str + ")" }
             return latex
         }
         return nil

@@ -229,4 +229,15 @@ class Tests: XCTestCase {
         }
     }
     
+    func testEisensteinPrime() {
+        let t = PrimeTester()
+        let f = EisensteinInt.FactorPrime(p: 7)
+        print(f)
+        let latex = t.getLatex(n: 7)
+        print(latex)
+        
+        
+    }
+
+    
 }

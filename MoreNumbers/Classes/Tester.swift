@@ -160,7 +160,8 @@ public class Tester {
         GrahamNumberTester(),
         SkewesTester(),
         BernoulliTester(),
-        DivergentTester()
+        DivergentTester(),
+        GoldbachTester()
 		//,IrregularTester()
 	]
 	

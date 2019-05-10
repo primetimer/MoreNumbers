@@ -161,7 +161,9 @@ public class Tester {
         SkewesTester(),
         BernoulliTester(),
         DivergentTester(),
-        GoldbachTester()
+        GoldbachTester(),
+        PythagoreanPrimeTester(),
+        GeneralizedCubanPrimeTester()
 		//,IrregularTester()
 	]
 	

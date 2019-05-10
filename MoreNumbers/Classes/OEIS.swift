@@ -238,6 +238,12 @@ public class OEIS {
         Add(SkewesTester().property(),"SKEWES",[1,13,139,1397,13971,139716,1397162])
         Add(GrahamNumberTester().property(),"A133613",[7, 87, 387, 5387, 95387, 195387, 4195387, 64195387, 464195387, 2464195387])
         
+        Add(PythagoreanPrimeTester().property(),"A002144",[5, 13, 17, 29, 37, 41, 53, 61, 73, 89, 97, 101, 109, 113, 137, 149, 157, 173, 181, 193, 197, 229, 233, 241, 257, 269, 277, 281, 293, 313, 317, 337, 349, 353, 373, 389, 397, 401, 409, 421, 433, 449, 457, 461, 509, 521, 541, 557, 569, 577, 593, 601, 613, 617])
+        
+        Add(GeneralizedCubanPrimeTester().property(),"A007645",[3, 7, 13, 19, 31, 37, 43, 61, 67, 73, 79, 97, 103, 109, 127, 139, 151, 157, 163, 181, 193, 199, 211, 223, 229, 241, 271, 277, 283, 307, 313, 331, 337, 349, 367, 373, 379, 397, 409, 421, 433, 439, 457, 463, 487, 499, 523, 541, 547, 571, 577, 601, 607, 613])
+
+        
+        
         /*
 		Add("sqrt 19","A010124", [4, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2, 1, 3, 1, 2, 8, 2])
 		*/
@@ -299,22 +305,22 @@ public class OEIS {
         }
         
         
-		#if false
-		AddWiki("Sophie Germain prime","https://en.wikipedia.org/wiki/Sophie_Germain_prime")
-		AddWiki("safe prime","https://en.wikipedia.org/wiki/Safe_prime")
-		AddWiki("nontotient","https://en.wikipedia.org/wiki/Nontotient")
-		AddWiki("Fermat","https://en.wikipedia.org/wiki/Fermat_number")
-		
-		AddWiki("Lucas","https://en.wikipedia.org/wiki/Lucas_number")
-		AddWiki("Sierpinski","https://en.wikipedia.org/wiki/Sierpinski_number")
-		AddWiki("Catalan","https://en.wikipedia.org/wiki/Catalan_number")
-
-		AddWiki("sum of two squares","https://en.wikipedia.org/wiki/Fermat%27s_theorem_on_sums_of_two_squares")
-		AddWiki("sum of two cubes","https://en.wikipedia.org/wiki/Sums_of_powers")
-		AddWiki("dull","https://en.wikipedia.org/wiki/Interesting_number_paradox")
-		AddWiki("supersingular","https://en.wikipedia.org/wiki/Supersingular_prime_(moonshine_theory)")
-		AddWiki("semiprime","https://en.wikipedia.org/wiki/Semiprime")
-		#endif
+//        #if false
+//        AddWiki("Sophie Germain prime","https://en.wikipedia.org/wiki/Sophie_Germain_prime")
+//        AddWiki("safe prime","https://en.wikipedia.org/wiki/Safe_prime")
+//        AddWiki("nontotient","https://en.wikipedia.org/wiki/Nontotient")
+//        AddWiki("Fermat","https://en.wikipedia.org/wiki/Fermat_number")
+//
+//        AddWiki("Lucas","https://en.wikipedia.org/wiki/Lucas_number")
+//        AddWiki("Sierpinski","https://en.wikipedia.org/wiki/Sierpinski_number")
+//        AddWiki("Catalan","https://en.wikipedia.org/wiki/Catalan_number")
+//
+//        AddWiki("sum of two squares","https://en.wikipedia.org/wiki/Fermat%27s_theorem_on_sums_of_two_squares")
+//        AddWiki("sum of two cubes","https://en.wikipedia.org/wiki/Sums_of_powers")
+//        AddWiki("dull","https://en.wikipedia.org/wiki/Interesting_number_paradox")
+//        AddWiki("supersingular","https://en.wikipedia.org/wiki/Supersingular_prime_(moonshine_theory)")
+//        AddWiki("semiprime","https://en.wikipedia.org/wiki/Semiprime")
+//        #endif
 	}
 	
 	public func NumberIndex(key: String, n: BigUInt, ordered : Bool = true) -> Int? {

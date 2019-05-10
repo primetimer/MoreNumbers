@@ -211,20 +211,23 @@ public class PrimeTester : NumTester {
         return latex
     }
 	
-    private func GaussianLatex(p: BigUInt) -> String? {
+    static public func GaussianLatex(p: BigUInt) -> String? {
         if let (g1,g2) = GaussianInt.FactorPrime(p: p) {
             var latex = String(p) + "="
             let g1str = g1.asString()
-            let g2str = g2.asString()
-
-            latex = latex + "(" + g1str + ")"
-            latex = latex + "(" + g2str + ")"
+            let g2str = g2?.asString() ?? ""
+            if g2str == "" {
+                latex = latex + g1str
+            } else {
+                latex = latex + "(" + g1str + ")"
+                latex = latex + "(" + g2str + ")"
+            }
             return latex
         }
         return nil
     }
 
-    func EisensteinLatex(p: BigUInt) -> String? {
+    static func EisensteinLatex(p: BigUInt) -> String? {
         if let (g1,g2) = EisensteinInt.FactorPrime(p: p) {
             var latex = String(p) + "="
             let g1str = g1.asStringLatex()
@@ -253,10 +256,10 @@ public class PrimeTester : NumTester {
         //var latex = nstr + "\\in \\mathbb{P} := \\{ p \\in \\mathbb{N} | \\forall q : q\\mid p \\rightarrow q=1 \\lor q=p \\}"
 
         if special {
-            if let gausslatex = GaussianLatex(p: n) {
+            if let gausslatex = PrimeTester.GaussianLatex(p: n) {
                 latex = latex + "\\\\" + gausslatex
             }
-            if let eisensteinlatex = EisensteinLatex(p: n) {
+            if let eisensteinlatex = PrimeTester.EisensteinLatex(p: n) {
                 latex = latex + "\\\\" + eisensteinlatex
                 
                 //latex = latex + "," + EisensteinInt.omegaDefinition
@@ -278,3 +281,54 @@ public class PrimeTester : NumTester {
 		return subtesters
 	}
 }
+
+public class PythagoreanPrimeTester : NumTester {
+    public init() {}
+    public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+        if PrimeCache.shared.IsPrime(p: n) {
+            if n % 4 == 1 {
+                return true
+            }
+        }
+        return false
+    }
+    
+    public func property() -> String {
+        return "Pythagorean prime"
+    }
+    public func propertyString() -> String {
+        return "Pytha\u{00AD}go\u{00AD}rean prime"
+    }
+    
+    public func getLatex(n: BigUInt) -> String? {
+        let g = GaussianInt(BigInt(n), i: 0)
+        let gstr = PrimeTester.GaussianLatex(p: n)
+        return gstr
+    }
+}
+
+public class GeneralizedCubanPrimeTester : NumTester {
+    public init() {}
+    public func isSpecial(n: BigUInt, cancel: CalcCancelProt?) -> Bool? {
+        if PrimeCache.shared.IsPrime(p: n) {
+            if n % 3 == 0 || n % 3 == 1 {
+                return true
+            }
+        }
+        return false
+    }
+    
+    public func property() -> String {
+        return "cuban prime"
+    }
+    public func propertyString() -> String {
+        return "cuban prime"
+    }
+    
+    public func getLatex(n: BigUInt) -> String? {
+        let g = EisensteinInt(BigInt(n), w: 0)
+        let gstr = PrimeTester.EisensteinLatex(p: n)
+        return gstr
+    }
+}
+

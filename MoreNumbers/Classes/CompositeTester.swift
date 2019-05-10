@@ -35,10 +35,11 @@ public class CompositeTester : NumTester, TestDescriber {
 	}
 }
 
-public struct GaussianInt {
-	var a: BigInt = 0
-	var i: BigInt = 0
-	init(_ a: BigInt, i : BigInt) {
+public struct GaussianInt : CustomStringConvertible, Equatable {
+    public var description: String { return self.asString() }
+	public private (set) var a: BigInt = 0
+	public private (set) var i: BigInt = 0
+	init(_ a: BigInt, i : BigInt = 0 ) {
 		self.a = a
 		self.i = i
 	}
@@ -57,14 +58,14 @@ public struct GaussianInt {
 		return ans
 	}
 	
-	public static func FactorPrime(p : BigUInt ) -> (GaussianInt,GaussianInt)? {
+	public static func FactorPrime(p : BigUInt ) -> (GaussianInt,GaussianInt?)? {
 		if p == 2 {
 			let g1 = GaussianInt(1,i: 1)
 			let g2 = GaussianInt(1,i:-1)
 			return (g1,g2)
 		}
 		if p % 4 == 3 {
-			return nil
+			return (GaussianInt(BigInt(p), i: 0),nil)
 		}
 		if let (a,b) = SumOfTwoSquaresTester().Express(n: p,cancel : TimeOut()) {
 			let g1 = GaussianInt(BigInt(a),i:BigInt(b))
@@ -73,6 +74,26 @@ public struct GaussianInt {
 		}
 		return nil
 	}
+}
+
+public func +(_ lhs: GaussianInt, _ rhs: GaussianInt) -> GaussianInt {
+    
+    let ans = GaussianInt(lhs.a+rhs.a,i: lhs.i+rhs.i)
+    return ans
+    
+}
+
+public func -(_ lhs: GaussianInt, _ rhs: GaussianInt) -> GaussianInt {
+    let ans = GaussianInt(lhs.a-rhs.a,i: lhs.i-rhs.i)
+    return ans
+}
+
+public func *(_ lhs: GaussianInt, _ rhs: GaussianInt) -> GaussianInt {
+   
+    let a = lhs.a*rhs.a-lhs.i*rhs.i
+    let i = lhs.a*rhs.i+rhs.a*lhs.i
+    let ans = GaussianInt(a, i: i)
+    return ans
 }
 
 public func +(_ lhs: HurwitzInt, _ rhs: HurwitzInt) -> HurwitzInt {

@@ -216,6 +216,18 @@ class ViewController: UIViewController {
         uimath.latex = latex
     }
     
+    private func testGauss() {
+        let t = PythagoreanPrimeTester()
+        //        let n = BigUInt(404)
+        //        let n = BigUInt(334)
+        //        let n = BigUInt(445) // 1 / 3
+        //        let n = BigUInt(666)
+        let n = BigUInt(2)
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -244,7 +256,8 @@ class ViewController: UIViewController {
 //        testLookAndSay()
 //        testLattice()
 //        testGoldbach()
-        testEisenstein()
+//        testEisenstein()
+        testGauss()
         
         
         // Do any additional setup after loading the view, typically from a nib.

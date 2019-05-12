@@ -57,11 +57,13 @@ public class SumOfTwoSquaresTester : NumTester, TestDescriber {
             let strb = String(b)
             let latex = String(n) + "=" + stra + "^2 + " + strb + "^2"
             
-            
-            let glatex = GaussianLatex(p: n) ?? ""
-            let elatex = EisensteinLatex(p: n) ?? ""
-            
-            return latex + "\\\\" + glatex + "\\\\" + elatex
+            if n.isPrime() {
+                let glatex = GaussianLatex(p: n) ?? ""
+                let elatex = EisensteinLatex(p: n) ?? ""
+                return latex + "\\\\" + glatex + "\\\\" + elatex
+            } else {
+                return latex
+            }
         }
         return nil
     }

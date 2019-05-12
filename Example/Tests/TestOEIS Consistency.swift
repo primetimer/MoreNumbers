@@ -51,6 +51,8 @@ class TestOEISConsistency: XCTestCase {
             if special {
                 print(String(n))
             }
+            let latex = t.getLatex(n: BigUInt(n))
+            XCTAssert(latex != "")
         }
     }
     

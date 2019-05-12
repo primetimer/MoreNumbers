@@ -211,7 +211,7 @@ public class PrimeTester : NumTester {
         return latex
     }
 	
-    static public func GaussianLatex(p: BigUInt) -> String? {
+    static public func GaussianPrimeLatex(p: BigUInt) -> String? {
         if let (g1,g2) = GaussianInt.FactorPrime(p: p) {
             var latex = String(p) + "="
             let g1str = g1.asString()
@@ -227,7 +227,7 @@ public class PrimeTester : NumTester {
         return nil
     }
 
-    static func EisensteinLatex(p: BigUInt) -> String? {
+    static func EisensteinPrimeLatex(p: BigUInt) -> String? {
         if let (g1,g2) = EisensteinInt.FactorPrime(p: p) {
             var latex = String(p) + "="
             let g1str = g1.asStringLatex()
@@ -256,10 +256,10 @@ public class PrimeTester : NumTester {
         //var latex = nstr + "\\in \\mathbb{P} := \\{ p \\in \\mathbb{N} | \\forall q : q\\mid p \\rightarrow q=1 \\lor q=p \\}"
 
         if special {
-            if let gausslatex = PrimeTester.GaussianLatex(p: n) {
+            if let gausslatex = PrimeTester.GaussianPrimeLatex(p: n) {
                 latex = latex + "\\\\" + gausslatex
             }
-            if let eisensteinlatex = PrimeTester.EisensteinLatex(p: n) {
+            if let eisensteinlatex = PrimeTester.EisensteinPrimeLatex(p: n) {
                 latex = latex + "\\\\" + eisensteinlatex
                 
                 //latex = latex + "," + EisensteinInt.omegaDefinition
@@ -302,7 +302,7 @@ public class PythagoreanPrimeTester : NumTester {
     
     public func getLatex(n: BigUInt) -> String? {
         let g = GaussianInt(BigInt(n), i: 0)
-        let gstr = PrimeTester.GaussianLatex(p: n)
+        let gstr = PrimeTester.GaussianPrimeLatex(p: n)
         return gstr
     }
 }
@@ -327,7 +327,7 @@ public class GeneralizedCubanPrimeTester : NumTester {
     
     public func getLatex(n: BigUInt) -> String? {
         let g = EisensteinInt(BigInt(n), w: 0)
-        let gstr = PrimeTester.EisensteinLatex(p: n)
+        let gstr = PrimeTester.EisensteinPrimeLatex(p: n)
         return gstr
     }
 }

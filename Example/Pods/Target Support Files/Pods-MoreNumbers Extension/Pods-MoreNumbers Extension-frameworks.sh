@@ -143,16 +143,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/BigInt-watchOS/BigInt.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MoreNumbers-watchOS/MoreNumbers.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PrimeFactors-watchOS/PrimeFactors.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SipHash-watchOS/SipHash.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BigInt-watchOS5.1/BigInt.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MoreNumbers-watchOS5.1/MoreNumbers.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PrimeFactors-watchOS5.1/PrimeFactors.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SipHash-watchOS5.1/SipHash.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/BigInt-watchOS/BigInt.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MoreNumbers-watchOS/MoreNumbers.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PrimeFactors-watchOS/PrimeFactors.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SipHash-watchOS/SipHash.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BigInt-watchOS5.1/BigInt.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MoreNumbers-watchOS5.1/MoreNumbers.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PrimeFactors-watchOS5.1/PrimeFactors.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SipHash-watchOS5.1/SipHash.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

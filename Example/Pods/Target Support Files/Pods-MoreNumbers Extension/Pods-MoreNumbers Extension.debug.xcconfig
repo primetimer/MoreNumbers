@@ -1,8 +1,8 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/BigInt-watchOS" "${PODS_CONFIGURATION_BUILD_DIR}/MoreNumbers-watchOS" "${PODS_CONFIGURATION_BUILD_DIR}/PrimeFactors-watchOS" "${PODS_CONFIGURATION_BUILD_DIR}/SipHash-watchOS"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/BigInt-watchOS5.1" "${PODS_CONFIGURATION_BUILD_DIR}/MoreNumbers-watchOS5.1" "${PODS_CONFIGURATION_BUILD_DIR}/PrimeFactors-watchOS5.1" "${PODS_CONFIGURATION_BUILD_DIR}/SipHash-watchOS5.1"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/BigInt-watchOS/BigInt.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/MoreNumbers-watchOS/MoreNumbers.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/PrimeFactors-watchOS/PrimeFactors.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SipHash-watchOS/SipHash.framework/Headers"
+OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/BigInt-watchOS5.1/BigInt.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/MoreNumbers-watchOS5.1/MoreNumbers.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/PrimeFactors-watchOS5.1/PrimeFactors.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SipHash-watchOS5.1/SipHash.framework/Headers"
 OTHER_LDFLAGS = $(inherited) -framework "BigInt" -framework "MoreNumbers" -framework "PrimeFactors" -framework "SipHash"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = ${BUILD_DIR}

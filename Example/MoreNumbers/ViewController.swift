@@ -13,8 +13,38 @@ import MoreNumbers
 
 class ViewController: UIViewController {
 
+    var uiinput : UITextField!
+    
+    override func viewDidLoad() {
+        
+       view.backgroundColor = .blue
+        
+    super.viewDidLoad()
+
+
+        uiinput = UITextField()
+        view.addSubview(uiinput)
+        uiinput.text = "Hallo x Welt"
+        //uiinput.isUserInteractionEnabled = true
+        uiinput.frame = CGRect(x: 20, y: 0, width: view.frame.width, height: 100)
+
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        view.backgroundColor = .blue
+        super.viewDidAppear(animated)
+    }
+
+
+}
+
+#if false
+class ViewController: UIViewController {
+
     var uimath : MTMathUILabel!
     var uilabel : UILabel!
+    var uiinput : UITextField!
 //
     private func testSchizophrenic() {
         let t = SchizophrenicTester()
@@ -210,7 +240,7 @@ class ViewController: UIViewController {
         //        let n = BigUInt(334)
         //        let n = BigUInt(445) // 1 / 3
         //        let n = BigUInt(666)
-        let n = BigUInt(7)
+        let n = BigUInt(21)
         let latex = t.getLatex(n: n)
         print(latex)
         uimath.latex = latex
@@ -228,17 +258,43 @@ class ViewController: UIViewController {
         uimath.latex = latex
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //uiinput.becomeFirstResponder()
+        print("Will Appear")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        uiinput.becomeFirstResponder()
+        print("Did Appear")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        #if true
         uimath = MTMathUILabel()
-        uilabel = UILabel()
         view.addSubview(uimath)
-//        view.addSubview(uilabel)
+        uimath.frame = CGRect(x: 0, y: 100, width: view.frame.width, height: view.frame.height-100)
+        #endif
         
-        uimath.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        #if false
+        uilabel = UILabel()
+        view.addSubview(uilabel)
         uilabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         uilabel.text = "Hallo Welt"
+        #endif
+        
+        uiinput = UITextField()
+        view.addSubview(uiinput)
+        uiinput.text = "Hallo x Welt"
+        //uiinput.isUserInteractionEnabled = true
+        uiinput.frame = CGRect(x: 20, y: 0, width: view.frame.width, height: 100)
+     
+
+        
+        
+        
 //        testPadovan()
 //        testViswanath()
 //       testCarefree()
@@ -256,7 +312,7 @@ class ViewController: UIViewController {
 //        testLookAndSay()
 //        testLattice()
 //        testGoldbach()
-        testEisenstein()
+    // testEisenstein()
 //        testGauss()
         
         
@@ -264,4 +320,6 @@ class ViewController: UIViewController {
     }
 
 }
+
+#endif
 

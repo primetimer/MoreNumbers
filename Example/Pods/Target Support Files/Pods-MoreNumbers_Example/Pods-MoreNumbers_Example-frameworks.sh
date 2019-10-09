@@ -143,18 +143,18 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/BigInt-iOS/BigInt.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MoreNumbers-iOS/MoreNumbers.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PrimeFactors-iOS/PrimeFactors.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SipHash-iOS/SipHash.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/iosMath/iosMath.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BigInt-iOS9.3/BigInt.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MoreNumbers-iOS9.3/MoreNumbers.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PrimeFactors-iOS9.3/PrimeFactors.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SipHash-iOS9.3/SipHash.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/iosMath-iOS9.3/iosMath.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/BigInt-iOS/BigInt.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MoreNumbers-iOS/MoreNumbers.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PrimeFactors-iOS/PrimeFactors.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SipHash-iOS/SipHash.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/iosMath/iosMath.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BigInt-iOS9.3/BigInt.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MoreNumbers-iOS9.3/MoreNumbers.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PrimeFactors-iOS9.3/PrimeFactors.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SipHash-iOS9.3/SipHash.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/iosMath-iOS9.3/iosMath.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

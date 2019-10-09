@@ -30,7 +30,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PrimeFactors:
-    :commit: ca3481942850228db801acc65e60d34bcc0dd644
+    :commit: f42b5ad6954e8fa6c7c65a1ffe2e58b32511ff3e
     :git: https://github.com/primetimer/PrimeFactors
 
 SPEC CHECKSUMS:
@@ -40,6 +40,6 @@ SPEC CHECKSUMS:
   PrimeFactors: 6c92c3dc3cecd007d02084cfec1639ef27b9408e
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
 
-PODFILE CHECKSUM: 6714346c134909009fc109f566613fbc603061af
+PODFILE CHECKSUM: 04abb156eeef828c09d508f0edc131102af9f27f
 
 COCOAPODS: 1.5.3

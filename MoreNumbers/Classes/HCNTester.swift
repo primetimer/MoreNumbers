@@ -51,7 +51,7 @@ public class HCNumber {
 	static let shared = HCNumber()
 
 	let primes : [BigUInt] = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
-	let maxn  = BigUInt("1000000000000")! //00000000
+	let maxn  = BigUInt("1000000000000") //00000000
 	
 	private init() {
 		gen_hcn()

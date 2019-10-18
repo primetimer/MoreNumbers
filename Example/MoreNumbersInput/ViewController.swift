@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
         
         super.viewDidLoad()
         
@@ -44,16 +44,27 @@ class ViewController: UIViewController {
         uimath.frame = CGRect(x: 0, y: 100, width: view.frame.width, height: view.frame.height-100)
         #endif
 
+        test227()
         
-        testSchizophrenic()
+       // testSchizophrenic()
         
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
         super.viewDidAppear(animated)
     }
+    
+    private func test227() {
+        let t = RationalApproxTester(.pi)
+        let n = BigUInt(355) // BigUInt(355)
+        let special = t.isSpecial(n: n, cancel: nil)
+        let latex = t.getLatex(n: n)
+        print(latex)
+        uimath.latex = latex
+    }
+
     
     
 }

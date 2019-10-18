@@ -661,7 +661,19 @@ public class RationalApproxTester : MathConstantTester, TestDescriber  {
         return "rational " + texttype + " approx"
     }
     
+    
+    
     override public func getLatex(n: BigUInt) -> String? {
+        if type == .pi {
+            if n == 22 {
+                let ans = type.Latex() + " - \\frac{22}{7} = \\int_{0}^{1}\\frac{x^4(1-x^4)}{1+x^2}dx"
+                return ans + "\\\\" + (super.getRationalLatex(n: n, type: self.type) ?? "")
+            }
+            if n == 355 {
+                let ans = type.Latex() + " - \\frac{355}{113} = \\int_{0}^{1}\\frac{x^8(1-x^8)(25+816x^2}{3164(1+x^2)}dx"
+                return ans + "\\\\" + (super.getRationalLatex(n: n, type: self.type) ?? "")
+            }
+        }
         return super.getRationalLatex(n: n, type: self.type)
     }
     

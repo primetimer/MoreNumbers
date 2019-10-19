@@ -15,26 +15,6 @@ class TestPalindromSum2: XCTestCase {
         super.tearDown()
     }
     
-    
-    func test2_2() {
-        
-        var counter = 0
-        for n0 in 0 ... 20001 {
-            //if n0 == 201 { continue }
-            let n = BigUInt(n0)
-            let b = 10
-            if let ans = Palindromic2Tester.Pali2(n: n, b: b, cancel: nil) {
-                XCTAssert(ans.0 + ans.1 == n)
-                XCTAssert(ans.0.isPalindromic(base: 10))
-                XCTAssert(ans.1.isPalindromic(base: 10))
-                //print(n0,":",ans)
-            } else {
-                counter += 1
-                //print("No sum: \(counter):\(n0)")
-            }
-        }
-        XCTAssert(counter == 3006)
-    }
     private func Palindrom2(n: BigUInt, b: Int = 10) -> (BigUInt,BigUInt)? {
         
         func reflect(_ p: BigUInt, m: Int, mid : Bool, base : Int) -> BigUInt {
@@ -93,8 +73,7 @@ class TestPalindromSum2: XCTestCase {
         
         
     }
-    
-    
+
     
     func test2() {
         
@@ -111,6 +90,31 @@ class TestPalindromSum2: XCTestCase {
         }
         
     }
+
+    
+    #if false //NUR FUER DETAILTESTS
+    func test2_2() {
+        
+        var counter = 0
+        for n0 in 0 ... 20001 {
+            //if n0 == 201 { continue }
+            let n = BigUInt(n0)
+            let b = 10
+            if let ans = Palindromic2Tester.Pali2(n: n, b: b, cancel: nil) {
+                XCTAssert(ans.0 + ans.1 == n)
+                XCTAssert(ans.0.isPalindromic(base: 10))
+                XCTAssert(ans.1.isPalindromic(base: 10))
+                //print(n0,":",ans)
+            } else {
+                counter += 1
+                //print("No sum: \(counter):\(n0)")
+            }
+        }
+        XCTAssert(counter == 3006)
+    }
+    
+
+    
     
     func test2_nosum() {
         self.measure {
@@ -195,4 +199,6 @@ class TestPalindromSum2: XCTestCase {
             }// Put the code you want to measure the time of here.
         }
     }
+    
+#endif
 }

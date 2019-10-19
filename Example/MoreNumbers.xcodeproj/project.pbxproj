@@ -15,6 +15,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		72C67CD9E72BE1A23E64139A /* Pods_MoreNumbers_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D670F12322713ACB97D9BA /* Pods_MoreNumbers_Tests.framework */; };
 		7526D859AF689397A52DB816 /* Pods_MoreNumbers_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72791AF954D5ED2986BCF7F7 /* Pods_MoreNumbers_Example.framework */; };
+		840359F9235B8912001EE1BF /* TestAmicable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840359F7235B886D001EE1BF /* TestAmicable.swift */; };
 		841458AB2285CB1600A6E3B1 /* TestEisenstein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841458A92285CB0C00A6E3B1 /* TestEisenstein.swift */; };
 		841458B1228626DC00A6E3B1 /* TestGauss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841458AF228626D400A6E3B1 /* TestGauss.swift */; };
 		841985782236383E00BEF0A4 /* TestSchizophrenic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84198576223637E300BEF0A4 /* TestSchizophrenic.swift */; };
@@ -107,6 +108,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		72791AF954D5ED2986BCF7F7 /* Pods_MoreNumbers_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbers_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D670F12322713ACB97D9BA /* Pods_MoreNumbers_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbers_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		840359F7235B886D001EE1BF /* TestAmicable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAmicable.swift; sourceTree = "<group>"; };
 		841458A92285CB0C00A6E3B1 /* TestEisenstein.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEisenstein.swift; sourceTree = "<group>"; };
 		841458AF228626D400A6E3B1 /* TestGauss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestGauss.swift; sourceTree = "<group>"; };
 		84198576223637E300BEF0A4 /* TestSchizophrenic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSchizophrenic.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				844365B62264532800F2FD6E /* TestPalindrom.swift */,
 				84976AF622561EC4008A3EE1 /* TestOEIS Consistency.swift */,
 				84198576223637E300BEF0A4 /* TestSchizophrenic.swift */,
+				840359F7235B886D001EE1BF /* TestAmicable.swift */,
 				84C07EE7223AD07A00E2C6BF /* TestConstant.swift */,
 				84C07EEC223C063300E2C6BF /* TestFibonacci.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
@@ -735,6 +738,7 @@
 				841458B1228626DC00A6E3B1 /* TestGauss.swift in Sources */,
 				84F1BA30226A37E8009AC9DC /* TestMandel.swift in Sources */,
 				84976AF722561EC4008A3EE1 /* TestOEIS Consistency.swift in Sources */,
+				840359F9235B8912001EE1BF /* TestAmicable.swift in Sources */,
 				849E3CAD2279875500BCEDB2 /* TestsDate.swift in Sources */,
 				841985782236383E00BEF0A4 /* TestSchizophrenic.swift in Sources */,
 				84C07EE8223AD07A00E2C6BF /* TestConstant.swift in Sources */,

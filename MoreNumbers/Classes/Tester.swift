@@ -136,6 +136,8 @@ public class Tester {
 	public static var shared = Tester()
 	public static let testers : [NumTester] = [
         NarcisticTester(),
+        AmicableTester(),
+        SocialTester(),
 //        ExtraTester(),
         PrimeTester(), SemiPrimeTester(),
 //        CarmichaelTester(),

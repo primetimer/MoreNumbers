@@ -44,6 +44,31 @@ class TestOEISConsistency: XCTestCase {
         }
     }
     
+    func testAmicableList() {
+        let t = AmicableTester()
+
+        for n in 0...400 {
+            let special = t.isSpecial(n: BigUInt(n), cancel: nil) ?? false
+            if special {
+                print(String(n))
+            }
+        }
+        testSeries(tester: t)
+    }
+    
+    func testSocialList() {
+           let t = SocialTester()
+
+           for n in 14000...15000 {
+               let special = t.isSpecial(n: BigUInt(n), cancel: nil) ?? false
+               if special {
+                   print(String(n))
+               }
+           }
+           testSeries(tester: t)
+       }
+
+    
      func testSumOfTwoSuares() {
         let t = SumOfTwoSquaresTester()
         for n in 0...400 {
@@ -137,7 +162,7 @@ class TestOEISConsistency: XCTestCase {
     }
     
     func testConsitency() {
-        let n = BigUInt(22)
+       
         for t in Tester.shared.completetesters {
             let oeis = t.OEISNr()
             //print(t.property(),oeis)

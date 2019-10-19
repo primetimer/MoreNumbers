@@ -11,35 +11,35 @@ import BigInt
 import iosMath
 import MoreNumbers
 
-class ViewController: UIViewController {
+//class ViewController: UIViewController {
+//
+//    var uiinput : UITextField!
+//
+//    override func viewDidLoad() {
+//
+//       view.backgroundColor = .blue
+//
+//    super.viewDidLoad()
+//
+//
+//        uiinput = UITextField()
+//        view.addSubview(uiinput)
+//        uiinput.text = "Hallo x Welt"
+//        //uiinput.isUserInteractionEnabled = true
+//        uiinput.frame = CGRect(x: 20, y: 0, width: view.frame.width, height: 100)
+//
+//        // Do any additional setup after loading the view.
+//    }
+//
+//    override func viewDidAppear(_ animated: Bool) {
+//        view.backgroundColor = .blue
+//        super.viewDidAppear(animated)
+//    }
+//
+//
+//}
 
-    var uiinput : UITextField!
-    
-    override func viewDidLoad() {
-        
-       view.backgroundColor = .blue
-        
-    super.viewDidLoad()
-
-
-        uiinput = UITextField()
-        view.addSubview(uiinput)
-        uiinput.text = "Hallo x Welt"
-        //uiinput.isUserInteractionEnabled = true
-        uiinput.frame = CGRect(x: 20, y: 0, width: view.frame.width, height: 100)
-
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        view.backgroundColor = .blue
-        super.viewDidAppear(animated)
-    }
-
-
-}
-
-#if false
+#if true
 class ViewController: UIViewController {
 
     var uimath : MTMathUILabel!
@@ -91,6 +91,30 @@ class ViewController: UIViewController {
         print(latex)
         uimath.latex = latex
     }
+    
+    private func testAmicable() {
+           let t = AmicableTester()
+          // let n = BigUInt(220)
+        let n = BigUInt(9363584)
+        guard let special = t.isSpecial(n: n, cancel: TimeOut()) else { return }
+        if special {
+           let latex = t.getLatex(n: n)
+           print(latex)
+           uimath.latex = latex
+        }
+       }
+    
+    private func testSocial() {
+              let t = SocialTester()
+             // let n = BigUInt(220)
+           let n = BigUInt(12496)
+           guard let special = t.isSpecial(n: n, cancel: TimeOut()) else { return }
+           if special {
+              let latex = t.getLatex(n: n)
+              print(latex)
+              uimath.latex = latex
+           }
+          }
     private func testCarefree() {
         let t = MathConstantTester()
         let n = BigUInt(428)
@@ -292,7 +316,8 @@ class ViewController: UIViewController {
         uiinput.frame = CGRect(x: 20, y: 0, width: view.frame.width, height: 100)
      
 
-        
+        //testAmicable()
+        testSocial()
         
         
 //        testPadovan()

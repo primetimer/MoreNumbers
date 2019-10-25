@@ -30,7 +30,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PrimeFactors:
-    :commit: f42b5ad6954e8fa6c7c65a1ffe2e58b32511ff3e
+    :commit: df2b543cf8a23ee7aa0bd8416e3fb01cc9e7ca9e
     :git: https://github.com/primetimer/PrimeFactors
 
 SPEC CHECKSUMS:

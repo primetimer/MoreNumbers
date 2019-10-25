@@ -78,7 +78,7 @@ public class SocialTester : NumTester {
         return "social"
     }
     public func isSpecial(n: BigUInt, cancel : CalcCancelProt?) -> Bool? {
-        if n < 12496 { return false }
+        if n < 12496 { return false } //Code unten ist aber auch für zahlen von 2...12496 geeignet
         var nn = n
         for cycle in 0...maxcycle {
             guard let sigma = SumOfProperDivisors(n: nn, cancel: cancel) else { return nil }

@@ -140,6 +140,7 @@ public class Tester {
         SocialTester(),
 //        ExtraTester(),
         PrimeTester(), SemiPrimeTester(),
+        PinTester10n(),
 //        CarmichaelTester(),
         AbundanceTester(),
 		TriangleTester(),PronicTester(),SquareTester(),CubeTester(),

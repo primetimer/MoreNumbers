@@ -9,6 +9,7 @@
 import UIKit
 import BigInt
 import iosMath
+import PrimeFactors
 import MoreNumbers
 
 //class ViewController: UIViewController {
@@ -46,6 +47,40 @@ class ViewController: UIViewController {
     var uilabel : UILabel!
     var uiinput : UITextField!
 //
+    
+   
+    
+    private func testPIN() {
+            let pcalc = PrimeCalculator()
+            let pitable = PiTable(pcalc: pcalc, tableupto: 100000)
+            let ml = PiMeisselLehmer(pcalc: pcalc, pitable: pitable)
+          
+            let n = BigUInt(100000*100000/10)
+            let pin = ml.Pin(n: UInt64(n))
+        
+            let pintester = PinTester10n()
+            print("Pin:",pin)
+    }
+    
+    private func testSheldon() {
+            let ptester = SheldonNumberTester()
+            let n = BigUInt(73)
+            let special = ptester.isSpecial(n: n, cancel: nil)
+            let latex = ptester.getLatex(n: n)
+            print(special,latex)
+        uimath.latex = latex
+    }
+    
+    private func testCongruent() {
+            let ptester = CongruentTester()
+           // let n = BigUInt(318)
+        let n = BigUInt(5088)
+            let special = ptester.isSpecial(n: n, cancel: nil)
+            let latex = ptester.getLatex(n: n)
+            print(special,latex)
+        uimath.latex = latex
+    }
+    
     private func testSchizophrenic() {
         let t = SchizophrenicTester()
         let n = SchizophrenicTester.fn[27]
@@ -296,18 +331,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
+        
         #if true
         uimath = MTMathUILabel()
         view.addSubview(uimath)
         uimath.frame = CGRect(x: 0, y: 100, width: view.frame.width, height: view.frame.height-100)
         #endif
         
-        #if false
-        uilabel = UILabel()
-        view.addSubview(uilabel)
-        uilabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        uilabel.text = "Hallo Welt"
-        #endif
+        
         
         uiinput = UITextField()
         view.addSubview(uiinput)
@@ -317,7 +349,10 @@ class ViewController: UIViewController {
      
 
         //testAmicable()
-        testSocial()
+//        testSocial()
+//        testPIN()
+//        testSheldon()
+        testCongruent()
         
         
 //        testPadovan()

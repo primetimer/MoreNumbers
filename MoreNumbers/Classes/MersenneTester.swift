@@ -73,7 +73,7 @@ public class MersenneTester : NumTester {
 	}
 	public func recordLatex() -> String? {
         return "2^{82589933}-1 - \\text{Mersenne prime}(2019)"
-		return "2^{77232917}-1 - \\text{Mersenne prime}(2018)"
+//		return "2^{77232917}-1 - \\text{Mersenne prime}(2018)"
 	}
 	
     public func subtester() -> [NumTester]? {

@@ -540,7 +540,7 @@ public class PalindromeSplitter {
 		var z : [Int] = Array(repeating: 0, count: m+2)
 		var c : [Int] = Array(repeating: 0, count: m+2)
 		
-		var _ref2 = [config[0][0], config[1][0], config[2][0]];
+        let _ref2 = [config[0][0], config[1][0], config[2][0]];
 		x[1] = _ref2[0];
 		y[1] = _ref2[1];
 		z[1] = _ref2[2];

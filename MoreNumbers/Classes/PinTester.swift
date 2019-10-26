@@ -154,7 +154,7 @@ public class SheldonPrimeTester : NumTester {
     
     public func getLatex(n: BigUInt) -> String? {
         if !n.isInt64() { return nil }
-        guard let (pin,base,str) = Info(n: n, cancel: TimeOut()) else { return nil }
+        guard let (pin,base,_) = Info(n: n, cancel: TimeOut()) else { return nil }
         
         var latex = "\\pi(" + String(n) + ")="
         if base != 10 {

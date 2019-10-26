@@ -63,8 +63,9 @@ public class IrregularTester : NumTester {
 		
 		let oeisn = BernoulliTester().oeisn
 		guard let seqn = OEIS.shared.GetSequence(oeisnr: oeisn) else { return nil }
-		guard let seqd = OEIS.shared.GetSequence(oeisnr: oeisn) else { return nil }
-		for (index,b) in seqn.enumerated() {
+//		guard let seqd = OEIS.shared.GetSequence(oeisnr: oeisn) else { return nil }
+		
+        for (index,b) in seqn.enumerated() {
 			let babs = BigUInt(abs(b))
 			if babs <= BigInt(1) { continue }
 			if babs % n == 0 {

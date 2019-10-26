@@ -160,8 +160,6 @@ public class CarmichaelTester : NumTester{
 		if n <= 2 { return false }
 		if n % 2 == 0 { return false }
 		let dummxy = "<<<<falsch!!!?"
-		//		guard let special = TestSpecialSync(n: n) else { return nil }
-		//		if !special { return nil }
 		
 		
 		let factors = FactorsWithPot(n: n, cancel: cancel)
@@ -301,7 +299,6 @@ public class PythagoreanPrimeTester : NumTester {
     }
     
     public func getLatex(n: BigUInt) -> String? {
-        let g = GaussianInt(BigInt(n), i: 0)
         let gstr = PrimeTester.GaussianPrimeLatex(p: n)
         return gstr
     }
@@ -326,7 +323,7 @@ public class GeneralizedCubanPrimeTester : NumTester {
     }
     
     public func getLatex(n: BigUInt) -> String? {
-        let g = EisensteinInt(BigInt(n), w: 0)
+//        _ = EisensteinInt(BigInt(n), w: 0)
         let gstr = PrimeTester.EisensteinPrimeLatex(p: n)
         return gstr
     }

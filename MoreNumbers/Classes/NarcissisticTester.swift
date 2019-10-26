@@ -125,10 +125,6 @@ class SDRepresentation {
     func PresentLatex(n: BigInt,digit : Int) -> String {
         let ans = Present(n: n, digit: digit, latexform: true)
         return ans
-        //        ans = Replace(instr: ans, with: String(digit))
-        //        ans = Replace(instr: ans, what: "d", with: "frac")
-        //        ans = Replace(instr: ans, what: "*", with: " \\cdot ")
-        return ans
     }
     #endif
     

@@ -86,8 +86,8 @@ public class SemiPrimeTester : NumTester, TestDescriber {
         let composite = CompositeTester()
         let latex = composite.getLatex(n: n)
         return latex
-        let dummycert = "is there a semiprime certifcate"
-        return nil // Factorization is shown elsewhere
+//        let dummycert = "is there a semiprime certifcate"
+//        return nil // Factorization is shown elsewhere
     }
 	
 	public func property() -> String {

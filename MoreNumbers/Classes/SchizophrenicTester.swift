@@ -111,7 +111,7 @@ public class SchizophrenicTester : NumTester {
     #endif
     #if true
     private func Splitter(number: String) -> [String] {
-        var f = Array(number)
+        let f = Array(number)
         var result : [String] = []
         var n = 0
         while true {

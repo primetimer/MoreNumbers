@@ -69,7 +69,7 @@ public extension NumTester {
         return oeisnr
     }
     func RootIndex(n: BigUInt) -> Int? {
-        guard let oeis = OEISNr() else { return nil }
+        guard let _ = OEISNr() else { return nil }
         guard let seq = OEIS.shared.GetSequence(key: property()) else { return nil }
         let index = seq.index(of: BigInt(n))
         

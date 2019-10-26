@@ -67,7 +67,7 @@ class TestEisenstein: XCTestCase {
             var prod = EisensteinInt(1)
             
             for f in factors {
-                for e in 1...f.pow {
+                for _ in 1...f.pow {
                     prod = prod * f.h
                 }
 

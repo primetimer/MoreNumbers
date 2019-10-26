@@ -39,7 +39,7 @@ public struct GaussianInt : CustomStringConvertible, Equatable {
     public var description: String { return self.asString() }
 	public private (set) var a: BigInt = 0
 	public private (set) var i: BigInt = 0
-	init(_ a: BigInt, i : BigInt = 0 ) {
+	public init(_ a: BigInt, i : BigInt = 0 ) {
 		self.a = a
 		self.i = i
 	}

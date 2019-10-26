@@ -22,11 +22,11 @@ public class TesterDescriber {
         }
         
         if let rtest = tester as? RationalApproxTester {
-            return rtest.Desc(n: n) ?? ""
+            return rtest.Desc(n: n)
         }
         
         if let ctest = tester as? SpecialConstantTester{
-            return ctest.Desc(n: n, type: ctest.type) ?? ""
+            return ctest.Desc(n: n, type: ctest.type)
         }
         
         let desc = defaultDesc(n: n, tester: tester) ?? ""

@@ -51,7 +51,7 @@ class TestsSchizo: XCTestCase {
         let fn = f(n: n)
         let r = fn.squareRoot()
         let fnp = fn * p10*p10
-        let fnr = fn - r*r
+        _ = fn - r*r
         let rp = fnp.squareRoot()
         let dif = rp - p10*r
         let frac = String(dif)

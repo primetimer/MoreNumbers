@@ -17,7 +17,7 @@ class TestsAmicable: XCTestCase {
         let n = BigUInt(220)
         let special = t.isSpecial(n: n, cancel: nil)
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         XCTAssert(special == true)
     }
     
@@ -39,7 +39,7 @@ class TestsAmicable: XCTestCase {
         let n = BigUInt(1264460)
         let special = t.isSpecial(n: n, cancel: nil)
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         XCTAssert(special == true)
 
     }
@@ -49,7 +49,7 @@ class TestsAmicable: XCTestCase {
         let n = BigUInt(1799281330)
         let special = t.isSpecial(n: n, cancel: nil)
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         XCTAssert(special == true)
     }
 }

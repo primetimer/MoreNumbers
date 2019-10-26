@@ -1141,7 +1141,7 @@ public extension PalindromeSplitter {
 	
 	
 	
-	public func AlgorithmIV() {
+    func AlgorithmIV() {
 		let digits = self.d
 		let l = digits.count;
 		let m = l >> 1;

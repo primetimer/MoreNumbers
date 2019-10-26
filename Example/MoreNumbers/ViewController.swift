@@ -58,7 +58,7 @@ class ViewController: UIViewController {
             let n = BigUInt(100000*100000/10)
             let pin = ml.Pin(n: UInt64(n))
         
-            let pintester = PinTester10n()
+//            let pintester = PinTester10n()
             print("Pin:",pin)
     }
     
@@ -67,17 +67,26 @@ class ViewController: UIViewController {
             let n = BigUInt(73)
             let special = ptester.isSpecial(n: n, cancel: nil)
             let latex = ptester.getLatex(n: n)
-            print(special,latex)
+        print(special!,latex!)
+        uimath.latex = latex
+    }
+    
+    private func testSheldonPrimeAsinOEIS() {
+            let ptester = SheldonPrimeTester()
+            let n = BigUInt(2475989)
+            let special = ptester.isSpecial(n: n, cancel: nil)
+            let latex = ptester.getLatex(n: n)
+        print(special!,latex!)
         uimath.latex = latex
     }
     
     private func testCongruent() {
             let ptester = CongruentTester()
            // let n = BigUInt(318)
-        let n = BigUInt(5088)
+        let n = BigUInt(37)
             let special = ptester.isSpecial(n: n, cancel: nil)
             let latex = ptester.getLatex(n: n)
-            print(special,latex)
+        print(special!,latex!)
         uimath.latex = latex
     }
     
@@ -86,7 +95,7 @@ class ViewController: UIViewController {
         let n = SchizophrenicTester.fn[27]
 
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
@@ -95,7 +104,7 @@ class ViewController: UIViewController {
         let n = BigUInt(231)
         
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
@@ -104,7 +113,7 @@ class ViewController: UIViewController {
         let n = BigUInt(124)
         
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
         
         let desc = t.Desc(n: n)
@@ -115,7 +124,7 @@ class ViewController: UIViewController {
         let t = PadovanTester()
         let n = PadovanTester.Nth(n: 13)
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     private func testViswanath() {
@@ -123,7 +132,7 @@ class ViewController: UIViewController {
         let n = BigUInt(113)
         
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
@@ -134,7 +143,7 @@ class ViewController: UIViewController {
         guard let special = t.isSpecial(n: n, cancel: TimeOut()) else { return }
         if special {
            let latex = t.getLatex(n: n)
-           print(latex)
+            print(latex!)
            uimath.latex = latex
         }
        }
@@ -146,7 +155,7 @@ class ViewController: UIViewController {
            guard let special = t.isSpecial(n: n, cancel: TimeOut()) else { return }
            if special {
               let latex = t.getLatex(n: n)
-              print(latex)
+            print(latex!)
               uimath.latex = latex
            }
           }
@@ -155,7 +164,7 @@ class ViewController: UIViewController {
         let n = BigUInt(428)
         
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
@@ -164,27 +173,26 @@ class ViewController: UIViewController {
         let n = BigUInt(428)
         
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
     private func testPrimorial() {
-        let t = PrimorialPrimeTester()
         let t2 = PrimorialTester()
         let n = BigUInt(30)
         //let n = BigUInt("304250263527210")
         let latex = t2.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
     private func testFactorial() {
-        let t = FactorialPrimeTester()
+//        let t = FactorialPrimeTester()
         let tf = FactorialTester()
         //let n = BigUInt(30029)
         let n = BigUInt("120")*BigUInt(6)*BigUInt(7)
         let latex = tf.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
@@ -192,14 +200,14 @@ class ViewController: UIViewController {
         let t = SkewesTester()
         let n = BigUInt(139)
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     private func testGraham() {
         let t = GrahamNumberTester()
         let n = BigUInt(387)
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
@@ -223,15 +231,16 @@ class ViewController: UIViewController {
     
     private func testSquares() {
         let ts : [NumTester] = [SumOfTwoSquaresTester(),SumOf3SquaresTester(),SumOf4SquaresTester()]
-      let n = BigUInt(252) // 4 Squares
+//      let n = BigUInt(252) // 4 Squares
 //        let n = BigUInt(381) // 3 Squares
 //        let n = BigUInt(17*29) // 2 Square
 //        let n = BigUInt(13) // 2 square prime
+        let n = BigUInt(40)
         
         for t in ts {
             if t.isSpecial(n: n, cancel: nil) ?? false {
                 let latex = t.getLatex(n: n)
-                print(latex)
+                print(latex!)
                 uimath.latex = latex
             }
         }
@@ -244,7 +253,7 @@ class ViewController: UIViewController {
 //        let n = BigUInt(1001) //Nothing
         
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
@@ -252,7 +261,7 @@ class ViewController: UIViewController {
         let t = GoldbachTester()
         let n = BigUInt(210)
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
 
@@ -265,7 +274,7 @@ class ViewController: UIViewController {
 //        let n = BigUInt(666)
         let n = BigUInt(999)
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
@@ -277,7 +286,7 @@ class ViewController: UIViewController {
         //        let n = BigUInt(666)
         let n = BigUInt(1211)
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
@@ -289,7 +298,7 @@ class ViewController: UIViewController {
         //        let n = BigUInt(666)
         let n = BigUInt(5)
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
@@ -301,7 +310,7 @@ class ViewController: UIViewController {
         //        let n = BigUInt(666)
         let n = BigUInt(21)
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
@@ -313,7 +322,7 @@ class ViewController: UIViewController {
         //        let n = BigUInt(666)
         let n = BigUInt(2)
         let latex = t.getLatex(n: n)
-        print(latex)
+        print(latex!)
         uimath.latex = latex
     }
     
@@ -352,7 +361,10 @@ class ViewController: UIViewController {
 //        testSocial()
 //        testPIN()
 //        testSheldon()
-        testCongruent()
+        //testCongruent()
+        
+        //testSheldonPrimeAsinOEIS()
+//        testSheldon()
         
         
 //        testPadovan()
@@ -365,7 +377,7 @@ class ViewController: UIViewController {
 //        testRational()
 //        testSkewes()
 //        testGraham()
-//        testSquares()
+        testSquares()
 //        testGompertz()
 //        testPadic()
 //        testPalindromic2()

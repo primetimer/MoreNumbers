@@ -167,8 +167,9 @@ class TestOEISConsistency: XCTestCase {
             let oeis = t.OEISNr()
             //print(t.property(),oeis)
             if oeis == nil {
-                 print(t.property(),oeis)
-                let debug = t.OEISNr()
+                if t is DivergentTester { continue }
+                print(t.property(),oeis!)
+                _ = t.OEISNr()
             }
             
             testSeries(tester: t)
@@ -176,8 +177,8 @@ class TestOEISConsistency: XCTestCase {
     }
     
     private func testSeries(tester: NumTester) {
-        print(tester.property(),tester.OEISNr())
-        guard let oeis = tester.OEISNr() else {
+        print(tester.property(),tester.OEISNr()!)
+        guard let _ = tester.OEISNr() else {
             if tester.property() == "p-adic" { return }
             print("No Oeis")
             XCTAssert(false)
@@ -225,11 +226,11 @@ class TestOEISConsistency: XCTestCase {
                 let root = tester.RootIndex(n: BigUInt(n))
                 if root == nil {
                     print("Fehler: \(n)")
-                    let rdebug = tester.RootIndex(n: BigUInt(n))
+                    _ = tester.RootIndex(n: BigUInt(n))
                     XCTAssert(false)
                 } else if root! >= 0 {
                     if rindex != root! && rindex != root!+1 && rindex != root!-1 {
-                        print("Error:",tester.property(),root,rindex)
+                        print("Error:",tester.property(),root!,rindex)
                         XCTAssert(false)
                     }
                     

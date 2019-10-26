@@ -333,7 +333,7 @@ class PalindromeTests: XCTestCase {
         let p1 = String(split.p1, radix : 16)
         let p2 = String(split.p2, radix : 16)
         let p3 = String(split.p3, radix : 16)
-        //        print(src,p1,p2,p3)
+        print(src,p1,p2,p3)
         XCTAssert(p2 == "e2e")
     }
     

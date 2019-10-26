@@ -14,7 +14,7 @@ class TestEisenstein: XCTestCase {
             }
             var prod = HurwitzInt(1)
             for h in harr {
-                for k in 0..<h.pow {
+                for _ in 0..<h.pow {
                     prod = prod * h.0
                 }
 //                print(h,prod)

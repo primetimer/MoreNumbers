@@ -64,10 +64,10 @@ class ConwayPrimordial  {
 }
 
 class ConwayElem : ConwayPrimordial {
-	internal (set) var index : Int = 0
-	internal (set) var name : String = ""
-	internal (set) var isotopes : [String] = []
-	internal (set) var nr : BigUInt = 0
+    var index : Int = 0
+    var name : String = ""
+    var isotopes : [String] = []
+    var nr : BigUInt = 0
 	
 	var graph : [ConwayElem] = []
 	

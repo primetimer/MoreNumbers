@@ -17,7 +17,7 @@ class Tests: XCTestCase {
     func testPiRational() {
         let t = MathConstantTester()
         
-        guard let (type,digits) = t.FindConst(n: 314) else { XCTAssert(false); return }
+        guard let (type,_) = t.FindConst(n: 314) else { XCTAssert(false); return }
         XCTAssert(type == MathConstantType.pi)
         let (oeis_n_nr,oeis_d_nr,_) = type.OEISRational()!
         let seqn = OEIS.shared.GetSequence(oeisnr: oeis_n_nr)!
@@ -33,7 +33,7 @@ class Tests: XCTestCase {
     func testGammaRational() {
         let t = MathConstantTester()
         
-        guard let (type,digits) = t.FindConst(n: 577) else { XCTAssert(false); return }
+        guard let (type,_) = t.FindConst(n: 577) else { XCTAssert(false); return }
         XCTAssert(type == MathConstantType.gamma)
         let (oeis_n_nr,oeis_d_nr,_) = type.OEISRational()!
         let seqn = OEIS.shared.GetSequence(oeisnr: oeis_n_nr)!
@@ -46,11 +46,11 @@ class Tests: XCTestCase {
     }
     
     func testPhiPow() {
-        let t = MathConstantTester()
+        _ = MathConstantTester()
         
         var phi = MathConstant().ValueStr(type: .phi)
         phi = phi.replacingOccurrences(of: ".", with: "")
-        phi.truncate(length: 100)
+        _ = phi.truncate(length: 100)
         let nphi = BigUInt(phi)!
         
         var pow10 = BigUInt(1)
@@ -158,7 +158,7 @@ class Tests: XCTestCase {
         let n = BigUInt(529)
         let t = SumOfTwoSquaresTester()
         
-        let desc = t.Desc(n: n)
+        _ = t.Desc(n: n)
         let (a,b) = t.Express(n: n, cancel: nil)!
         print(a,b)
     }
@@ -172,7 +172,7 @@ class Tests: XCTestCase {
             }
             var prod = HurwitzInt(1)
             for h in harr {
-                for k in 0..<h.pow {
+                for _ in 0..<h.pow {
                     prod = prod * h.0
                 }
 //                print(h,prod)
@@ -183,7 +183,7 @@ class Tests: XCTestCase {
     }
     
     func testAbundance() {
-        let n = BigUInt(18)
+//        let n = BigUInt(18)
         // 18 = 2*3*3
         // 1 +2 + 6 + 9 + 18 
         let t = AbundanceTester()
@@ -232,9 +232,9 @@ class Tests: XCTestCase {
     func testEisensteinPrime() {
         let t = PrimeTester()
         let f = EisensteinInt.FactorPrime(p: 7)
-        print(f)
+        print(f!)
         let latex = t.getLatex(n: 7)
-        print(latex)
+        print(latex!)
         
         
     }

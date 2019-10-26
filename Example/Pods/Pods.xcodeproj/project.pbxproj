@@ -728,7 +728,7 @@
 		0209AA1DB8400E2E2B871F42739214AF /* MTMathListBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTMathListBuilder.m; path = iosMath/lib/MTMathListBuilder.m; sourceTree = "<group>"; };
 		03088800D008E57AB033D0E9B905D761 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04424F57A24FF34F16333A14A085BE3C /* HappyTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HappyTester.swift; path = MoreNumbers/Classes/HappyTester.swift; sourceTree = "<group>"; };
-		0660FAA7946C4173FF05BD7FAAD10CF8 /* mathFonts.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = mathFonts.bundle; path = "iosMath-iOS9.3-mathFonts.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0660FAA7946C4173FF05BD7FAAD10CF8 /* mathFonts.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mathFonts.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		068D04EAB07B725A8B323618D7DE33DD /* iosMath-iOS9.3.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "iosMath-iOS9.3.xcconfig"; path = "../iosMath-iOS9.3/iosMath-iOS9.3.xcconfig"; sourceTree = "<group>"; };
 		06B6E40571E7BD7A17AA44AAACB271B5 /* Shifts.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shifts.swift; path = sources/Shifts.swift; sourceTree = "<group>"; };
 		0731630D7623A16894567AC52FBA43F1 /* Primitive Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Primitive Types.swift"; path = "SipHash/Primitive Types.swift"; sourceTree = "<group>"; };
@@ -770,10 +770,10 @@
 		2ADB5BB28F00D3DC8313DF1C76E7EDC5 /* MTUnicode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTUnicode.m; path = iosMath/lib/MTUnicode.m; sourceTree = "<group>"; };
 		2B37B8250D333D2E491E6716DC2216D2 /* HeegnerTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeegnerTester.swift; path = MoreNumbers/Classes/HeegnerTester.swift; sourceTree = "<group>"; };
 		2B4622A16A61B75B8E48A66FEE73D556 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../BigInt-iOS9.3/Info.plist"; sourceTree = "<group>"; };
-		2B4BE880DB592EDDB41E3A972495BA5E /* texgyretermes-math.otf */ = {isa = PBXFileReference; includeInIndex = 1; name = "texgyretermes-math.otf"; path = "fonts/texgyretermes-math.otf"; sourceTree = "<group>"; };
+		2B4BE880DB592EDDB41E3A972495BA5E /* texgyretermes-math.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "texgyretermes-math.otf"; path = "fonts/texgyretermes-math.otf"; sourceTree = "<group>"; };
 		2BDE776709659524536291BA23980671 /* UInt128Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UInt128Extension.swift; path = PrimeFactors/Classes/UInt128Extension.swift; sourceTree = "<group>"; };
 		2CEC26BF9A54EB3A05B134F25C6BF94E /* PrimeFactors-iOS13.0.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "PrimeFactors-iOS13.0.modulemap"; sourceTree = "<group>"; };
-		2D55D8D38FA3001D82ED726FFEC96CFE /* xits-math.otf */ = {isa = PBXFileReference; includeInIndex = 1; name = "xits-math.otf"; path = "fonts/xits-math.otf"; sourceTree = "<group>"; };
+		2D55D8D38FA3001D82ED726FFEC96CFE /* xits-math.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "xits-math.otf"; path = "fonts/xits-math.otf"; sourceTree = "<group>"; };
 		2EA5BA0275D5CA684A0C54CEDD41C70E /* SipHash-iOS13.0-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SipHash-iOS13.0-umbrella.h"; sourceTree = "<group>"; };
 		2FE14FE8CF219F0B3724D9F8E8AC83F9 /* PhiTable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhiTable.swift; path = PrimeFactors/Classes/PhiTable.swift; sourceTree = "<group>"; };
 		3113AFDD4BB6EB15307E08E150B7063D /* PrimeTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrimeTester.swift; path = MoreNumbers/Classes/PrimeTester.swift; sourceTree = "<group>"; };
@@ -795,7 +795,7 @@
 		3C0135A795C055A7753CDDCBB97D724A /* RandomUInt64.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomUInt64.swift; path = SipHash/RandomUInt64.swift; sourceTree = "<group>"; };
 		3F2AA83D1FA42BB704900E16E5D5F067 /* BigInt-watchOS5.1-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BigInt-watchOS5.1-umbrella.h"; path = "../BigInt-watchOS5.1/BigInt-watchOS5.1-umbrella.h"; sourceTree = "<group>"; };
 		3F556F56F166867A07CAB57619A1E110 /* Pods-MoreNumbersInput-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MoreNumbersInput-resources.sh"; sourceTree = "<group>"; };
-		400CD82CFB8E933D24498233A6F6E4E5 /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BigInt.framework; path = "BigInt-watchOS5.1.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		400CD82CFB8E933D24498233A6F6E4E5 /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BigInt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4098FBAF481450D7108CE3C315CC2584 /* Sampler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sampler.swift; path = MoreNumbers/Classes/Sampler.swift; sourceTree = "<group>"; };
 		40C3AB2DFD3E0CDE0BB87C0D3589EAF4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41E93B42B399DCC3D894BDC6EEA36AB9 /* MTMathListIndex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTMathListIndex.m; path = iosMath/lib/MTMathListIndex.m; sourceTree = "<group>"; };
@@ -803,7 +803,7 @@
 		4277A80EF96B6B0AE604CC92694F9972 /* Supersingular.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Supersingular.swift; path = MoreNumbers/Classes/Supersingular.swift; sourceTree = "<group>"; };
 		4415F93FD25D590111E642F7708B925A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../PrimeFactors-iOS9.3/Info.plist"; sourceTree = "<group>"; };
 		45BE7371DCB7F8B8CCA09BAA9F721477 /* MTConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTConfig.h; path = iosMath/render/MTConfig.h; sourceTree = "<group>"; };
-		46FEB52E447768D558D887EEB302BB41 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		46FEB52E447768D558D887EEB302BB41 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		48109966E610CF3D9801DDF5953F487F /* EisensteinInt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EisensteinInt.swift; path = MoreNumbers/Classes/EisensteinInt.swift; sourceTree = "<group>"; };
 		48B4E13E132AA386830A430779D6B565 /* PiTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PiTester.swift; path = MoreNumbers/Classes/PiTester.swift; sourceTree = "<group>"; };
 		48F2B4D2B5B36EFA05406BE00EB6819C /* GCD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCD.swift; path = sources/GCD.swift; sourceTree = "<group>"; };
@@ -813,7 +813,7 @@
 		4E95864EBFBD089A2547D44CCE25B64A /* BigInt-watchOS5.1.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "BigInt-watchOS5.1.xcconfig"; path = "../BigInt-watchOS5.1/BigInt-watchOS5.1.xcconfig"; sourceTree = "<group>"; };
 		4FA0400AD141A84864061BC03F286575 /* SumOfEisensteinSquareTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SumOfEisensteinSquareTester.swift; path = MoreNumbers/Classes/SumOfEisensteinSquareTester.swift; sourceTree = "<group>"; };
 		50DE13E2F600C7D2B19CF418C8B2814F /* iosMath-iOS13.0-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iosMath-iOS13.0-umbrella.h"; sourceTree = "<group>"; };
-		5123CFFFA6ED77C67577957DD2FE585F /* mathFonts.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = mathFonts.bundle; path = "iosMath-iOS13.0-mathFonts.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5123CFFFA6ED77C67577957DD2FE585F /* mathFonts.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mathFonts.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		5374CFE40D70E58ACE688664B27028E4 /* iosMath-iOS9.3-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "iosMath-iOS9.3-umbrella.h"; path = "../iosMath-iOS9.3/iosMath-iOS9.3-umbrella.h"; sourceTree = "<group>"; };
 		54905F6DB9B713A5CFC740FCD83D00A1 /* PrimeFactors-iOS9.3-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "PrimeFactors-iOS9.3-dummy.m"; path = "../PrimeFactors-iOS9.3/PrimeFactors-iOS9.3-dummy.m"; sourceTree = "<group>"; };
 		556E17194A31F6D90D9006C86E9C7EDA /* iosMath-iOS13.0-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iosMath-iOS13.0-prefix.pch"; sourceTree = "<group>"; };
@@ -840,12 +840,12 @@
 		65E100E8F0FCF6F534159939C5749C05 /* Division.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Division.swift; path = sources/Division.swift; sourceTree = "<group>"; };
 		65F58120A53F589F8AD0F406DF734A3C /* PrimeFactors-watchOS5.1.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "PrimeFactors-watchOS5.1.modulemap"; path = "../PrimeFactors-watchOS5.1/PrimeFactors-watchOS5.1.modulemap"; sourceTree = "<group>"; };
 		665FAD4C1766EC18B7EB6CAA6AF5406D /* SmithTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SmithTester.swift; path = MoreNumbers/Classes/SmithTester.swift; sourceTree = "<group>"; };
-		66C384348691CE229FB713390AB5B724 /* MoreNumbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MoreNumbers.framework; path = "MoreNumbers-iOS9.3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66C384348691CE229FB713390AB5B724 /* MoreNumbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoreNumbers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0944D56C875CEBA712FEC9715226BA /* BigInt-iOS9.3-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BigInt-iOS9.3-prefix.pch"; path = "../BigInt-iOS9.3/BigInt-iOS9.3-prefix.pch"; sourceTree = "<group>"; };
 		6A59431221FDA43F8EB6D980602E189D /* Pods-MoreNumbersInput.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MoreNumbersInput.modulemap"; sourceTree = "<group>"; };
 		6A6D85CCB31A5C3600833922647CE096 /* BigInt-iOS13.0.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "BigInt-iOS13.0.xcconfig"; sourceTree = "<group>"; };
 		6B86CAD51DB4952CC35B267B43C0FD1C /* MTUnicode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTUnicode.h; path = iosMath/lib/MTUnicode.h; sourceTree = "<group>"; };
-		6BFF85F7BA8C2FA2C69B019D06EA0ACE /* PrimeFactors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PrimeFactors.framework; path = "PrimeFactors-iOS13.0.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BFF85F7BA8C2FA2C69B019D06EA0ACE /* PrimeFactors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrimeFactors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA9EDE91FBE4826222273E63134A50B /* OEIS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OEIS.swift; path = MoreNumbers/Classes/OEIS.swift; sourceTree = "<group>"; };
 		6CF190A9A64D9ECFDC48ACB7E2F58FCD /* MTMathUILabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTMathUILabel.m; path = iosMath/render/MTMathUILabel.m; sourceTree = "<group>"; };
 		6DE11F4296A84CFA721D040076332FBE /* Pods-MoreNumbers_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MoreNumbers_Example-resources.sh"; sourceTree = "<group>"; };
@@ -853,13 +853,13 @@
 		6EDBC09D27BEFBA2111FF6650D2A92B7 /* SipHash-iOS9.3-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SipHash-iOS9.3-dummy.m"; path = "../SipHash-iOS9.3/SipHash-iOS9.3-dummy.m"; sourceTree = "<group>"; };
 		71D11BC688705CAAA034FFD7863F6062 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../MoreNumbers-watchOS5.1/Info.plist"; sourceTree = "<group>"; };
 		743D42CBE010D06E1EACEC32F25D4D55 /* Floating Point Conversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Floating Point Conversion.swift"; path = "sources/Floating Point Conversion.swift"; sourceTree = "<group>"; };
-		74BDB5BED4F97B45CA7947B75C6A4600 /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BigInt.framework; path = "BigInt-iOS9.3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74BDB5BED4F97B45CA7947B75C6A4600 /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BigInt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		758747655BB6A7502C61DD42D98819A5 /* MTMathListIndex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTMathListIndex.h; path = iosMath/lib/MTMathListIndex.h; sourceTree = "<group>"; };
 		75E944181C76F2042C9A029FE37A619A /* Pods-MoreNumbers_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MoreNumbers_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		75FB78FC8FA439E3395B3E2B7B0248E1 /* Data Conversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data Conversion.swift"; path = "sources/Data Conversion.swift"; sourceTree = "<group>"; };
 		7627B05BC39FE5914C719D9B32450334 /* NSColor+HexString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSColor+HexString.h"; path = "iosMath/render/NSColor+HexString.h"; sourceTree = "<group>"; };
 		76A259F3E409EA46897C1DD2A7EE86D2 /* SipHash-watchOS5.1-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SipHash-watchOS5.1-umbrella.h"; path = "../SipHash-watchOS5.1/SipHash-watchOS5.1-umbrella.h"; sourceTree = "<group>"; };
-		7720C3412E126FECEFEA9D22DEF315AE /* PrimeFactors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PrimeFactors.framework; path = "PrimeFactors-iOS9.3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7720C3412E126FECEFEA9D22DEF315AE /* PrimeFactors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrimeFactors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77BC9CD832A0EA88645FAE7764D51B12 /* MersenneTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MersenneTester.swift; path = MoreNumbers/Classes/MersenneTester.swift; sourceTree = "<group>"; };
 		77EA3C48A43F8B896B866117B25E6378 /* BigInt-watchOS5.1.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "BigInt-watchOS5.1.modulemap"; path = "../BigInt-watchOS5.1/BigInt-watchOS5.1.modulemap"; sourceTree = "<group>"; };
 		7AA413FF3A4029A13A0E1F6A0ED866F7 /* Pods-MoreNumbers Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoreNumbers Extension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -869,10 +869,10 @@
 		7BC459623A3B57AB981B131A4E98F942 /* SumOfCubesTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SumOfCubesTester.swift; path = MoreNumbers/Classes/SumOfCubesTester.swift; sourceTree = "<group>"; };
 		7C1D5DC89001BBCCF982339A2B58DEC6 /* BigInt-watchOS5.1-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BigInt-watchOS5.1-prefix.pch"; path = "../BigInt-watchOS5.1/BigInt-watchOS5.1-prefix.pch"; sourceTree = "<group>"; };
 		7C7E38F0243E9862F00ACFFC8B9E278B /* xits-math.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "xits-math.plist"; path = "fonts/xits-math.plist"; sourceTree = "<group>"; };
-		7C9F9D2ADB93C31464AA1AECDB23CE46 /* MoreNumbers.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = MoreNumbers.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7C9F9D2ADB93C31464AA1AECDB23CE46 /* MoreNumbers.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = MoreNumbers.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7CAF4894AB726F1C487F2E1AEC72F2A9 /* MoreNumbers-iOS13.0-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MoreNumbers-iOS13.0-umbrella.h"; sourceTree = "<group>"; };
 		7CED7C0516F7D915A1602EFCD3128566 /* Pods-MoreNumbers_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MoreNumbers_Example-umbrella.h"; sourceTree = "<group>"; };
-		7F82E92E1745C145C5D98D53A57A2705 /* SipHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SipHash.framework; path = "SipHash-iOS9.3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F82E92E1745C145C5D98D53A57A2705 /* SipHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SipHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FCC8CDC78545CC711758EAB8FAF218B /* latinmodern-math.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "latinmodern-math.plist"; path = "fonts/latinmodern-math.plist"; sourceTree = "<group>"; };
 		81146C02C21463B4A4C657827138D261 /* NSColor+HexString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSColor+HexString.m"; path = "iosMath/render/NSColor+HexString.m"; sourceTree = "<group>"; };
 		8294495444B5ADCE5383D6FA0BD42566 /* Bitwise Ops.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bitwise Ops.swift"; path = "sources/Bitwise Ops.swift"; sourceTree = "<group>"; };
@@ -889,7 +889,7 @@
 		9153E10B83FF88F09CFEBEC810CBD934 /* Pods-MoreNumbers_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoreNumbers_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		921A09B497EAA7915699B1960D00E72F /* BigInt-iOS13.0-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BigInt-iOS13.0-umbrella.h"; sourceTree = "<group>"; };
 		92925BD033DF0CAB27F758F75DE9040A /* UIColor+HexString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HexString.m"; path = "iosMath/render/UIColor+HexString.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94DA3BE00EFFF71C7297A1BB035126EC /* NSBezierPath+addLineToPoint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBezierPath+addLineToPoint.m"; path = "iosMath/render/NSBezierPath+addLineToPoint.m"; sourceTree = "<group>"; };
 		94EEA142F527EEC16921AC46E56A96CC /* NSView+backgroundColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSView+backgroundColor.h"; path = "iosMath/render/NSView+backgroundColor.h"; sourceTree = "<group>"; };
 		9510AD2E646935D3BC0D4A43C8E7ADA9 /* Pods-MoreNumbers_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MoreNumbers_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -910,17 +910,17 @@
 		9E0953044E0782F4C5F02F0006E2226D /* Pods-MoreNumbers_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoreNumbers_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9ECC2CCBEBA4F014EEF5DC4EEAB31964 /* SumOfSquareTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SumOfSquareTester.swift; path = MoreNumbers/Classes/SumOfSquareTester.swift; sourceTree = "<group>"; };
 		9F883A4D69548A0E8B27A0A31A6ED319 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A07F0EE8C0782721680699AFEDBDB298 /* iosMath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iosMath.framework; path = "iosMath-iOS13.0.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A07F0EE8C0782721680699AFEDBDB298 /* iosMath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iosMath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22C4672A8B1942FF7C334CDC8435830 /* Pods-MoreNumbers_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MoreNumbers_Tests-dummy.m"; sourceTree = "<group>"; };
 		A22D8A1B08DDFDF6B4FBEFA6F503FCE6 /* BigInt-iOS9.3.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "BigInt-iOS9.3.xcconfig"; path = "../BigInt-iOS9.3/BigInt-iOS9.3.xcconfig"; sourceTree = "<group>"; };
 		A3308E8D7447D5F7156718CDA94D9DA4 /* MTLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTLabel.h; path = iosMath/render/MTLabel.h; sourceTree = "<group>"; };
 		A37DEC4CBA293C927A493EB62C1AF3C9 /* PiTable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PiTable.swift; path = PrimeFactors/Classes/PiTable.swift; sourceTree = "<group>"; };
 		A437707BD5825E045515A8AB3EDC2C24 /* BigInt-iOS13.0-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BigInt-iOS13.0-prefix.pch"; sourceTree = "<group>"; };
-		A502030BA4ACF6DAF833004B43911C95 /* PrimeFactors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PrimeFactors.framework; path = "PrimeFactors-watchOS5.1.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A502030BA4ACF6DAF833004B43911C95 /* PrimeFactors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrimeFactors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8205A059C84B5FA02C16C7188C8276B /* Multiplication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Multiplication.swift; path = sources/Multiplication.swift; sourceTree = "<group>"; };
 		A915F9AC3BA5680D380055E87F524D96 /* PWheel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PWheel.swift; path = PrimeFactors/Classes/PWheel.swift; sourceTree = "<group>"; };
-		A9DAB105AA6292DD7AC55C5C79391214 /* Pods_MoreNumbersInput.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MoreNumbersInput.framework; path = "Pods-MoreNumbersInput.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA58097FB4D56672EF55B199616492B3 /* Pods_MoreNumbers_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MoreNumbers_Tests.framework; path = "Pods-MoreNumbers_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9DAB105AA6292DD7AC55C5C79391214 /* Pods_MoreNumbersInput.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbersInput.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA58097FB4D56672EF55B199616492B3 /* Pods_MoreNumbers_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbers_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBFB3435285223F0C561056D29498BB /* String Conversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String Conversion.swift"; path = "sources/String Conversion.swift"; sourceTree = "<group>"; };
 		AD102DEB555EC1D40D540788650070A8 /* SipHash-iOS9.3.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "SipHash-iOS9.3.modulemap"; path = "../SipHash-iOS9.3/SipHash-iOS9.3.modulemap"; sourceTree = "<group>"; };
 		AE4BFB28DDD764E897C576BAA0EA2CCA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../BigInt-watchOS5.1/Info.plist"; sourceTree = "<group>"; };
@@ -934,7 +934,7 @@
 		B7698909F1E0C644D2788085AEE9B29E /* MTFontMathTable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTFontMathTable.h; path = iosMath/render/internal/MTFontMathTable.h; sourceTree = "<group>"; };
 		B7C567F151E63E3A5BD299EFF99FB523 /* MTMathAtomFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTMathAtomFactory.h; path = iosMath/lib/MTMathAtomFactory.h; sourceTree = "<group>"; };
 		B825828BCB7284B772CAF6278502259A /* SipHasher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SipHasher.swift; path = SipHash/SipHasher.swift; sourceTree = "<group>"; };
-		B8A8C987222D80E068A0BF7476DD9C9F /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BigInt.framework; path = "BigInt-iOS13.0.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8A8C987222D80E068A0BF7476DD9C9F /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BigInt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D95ADAF35BD96A21FBE4DE149947BF /* MoreNumbers-iOS13.0.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MoreNumbers-iOS13.0.xcconfig"; sourceTree = "<group>"; };
 		BA6E508AB69603CB7F37D5823E583AE5 /* SipHash-iOS9.3.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SipHash-iOS9.3.xcconfig"; path = "../SipHash-iOS9.3/SipHash-iOS9.3.xcconfig"; sourceTree = "<group>"; };
 		BA9E87440DAE639DCAC4029E96767F09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -946,7 +946,7 @@
 		BDBAAD059DEE7B7B593D34536D93A92B /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BigInt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF17F8EDF1ED821DFD0C471B273BAEB7 /* MoreNumbers-watchOS5.1-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MoreNumbers-watchOS5.1-prefix.pch"; path = "../MoreNumbers-watchOS5.1/MoreNumbers-watchOS5.1-prefix.pch"; sourceTree = "<group>"; };
 		BF3BF9178D6AB69562B9696FCA9B1D34 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF76A2725CE136C8DD69A5CAB5B9A809 /* latinmodern-math.otf */ = {isa = PBXFileReference; includeInIndex = 1; name = "latinmodern-math.otf"; path = "fonts/latinmodern-math.otf"; sourceTree = "<group>"; };
+		BF76A2725CE136C8DD69A5CAB5B9A809 /* latinmodern-math.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "latinmodern-math.otf"; path = "fonts/latinmodern-math.otf"; sourceTree = "<group>"; };
 		C0B899A983C54AF25C7405D3F7ABF884 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../iosMath-iOS9.3/Info.plist"; sourceTree = "<group>"; };
 		C1D98804019F5EB947617C0DA21913BC /* TetrahedralTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TetrahedralTester.swift; path = MoreNumbers/Classes/TetrahedralTester.swift; sourceTree = "<group>"; };
 		C20A4914966596FC501CB2370C2D6C5C /* Pods-MoreNumbersInput.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoreNumbersInput.release.xcconfig"; sourceTree = "<group>"; };
@@ -954,7 +954,7 @@
 		C2C4A080FCABE15B5E06DE5070B7333A /* Pods-MoreNumbers Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoreNumbers Extension-acknowledgements.plist"; sourceTree = "<group>"; };
 		C4A0D66B560E796D59667A7A65F2B8F5 /* LoopTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoopTester.swift; path = MoreNumbers/Classes/LoopTester.swift; sourceTree = "<group>"; };
 		C4BA1D59E871D8A0D4D9B4F6395023BF /* MoreNumbers-watchOS5.1.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "MoreNumbers-watchOS5.1.modulemap"; path = "../MoreNumbers-watchOS5.1/MoreNumbers-watchOS5.1.modulemap"; sourceTree = "<group>"; };
-		C518648BEF0135E77125B78FCD360681 /* iosMath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iosMath.framework; path = "iosMath-iOS9.3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C518648BEF0135E77125B78FCD360681 /* iosMath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iosMath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A1AE1135B43DC50489503B3527104F /* MoreNumbers-iOS9.3-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MoreNumbers-iOS9.3-prefix.pch"; path = "../MoreNumbers-iOS9.3/MoreNumbers-iOS9.3-prefix.pch"; sourceTree = "<group>"; };
 		C5A5FDCDF408B6607D6B77ABC8E3B348 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		C5CCA33C1F5BA5D94A7AEDDD5EBBEF79 /* PrimeFactors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrimeFactors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -964,7 +964,7 @@
 		CB1BF86F3BF8806EAAE5A7F96DBB6C28 /* SipHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SipHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB06390445E9145E503F578C9D48261 /* Pods-MoreNumbers_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoreNumbers_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		CBB3893376003DAFF48806220459B407 /* PrimeFactors-iOS9.3.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "PrimeFactors-iOS9.3.modulemap"; path = "../PrimeFactors-iOS9.3/PrimeFactors-iOS9.3.modulemap"; sourceTree = "<group>"; };
-		CC4196866C276B7F1F64C8CB7DEA05B0 /* MoreNumbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MoreNumbers.framework; path = "MoreNumbers-watchOS5.1.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC4196866C276B7F1F64C8CB7DEA05B0 /* MoreNumbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoreNumbers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5224E21559179B2D105CC7ADED50E5 /* MoreNumbers-iOS13.0.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "MoreNumbers-iOS13.0.modulemap"; sourceTree = "<group>"; };
 		CF459A048E0700FE2DE861250FB1055A /* PrimeFactors-iOS13.0-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PrimeFactors-iOS13.0-dummy.m"; sourceTree = "<group>"; };
 		D02A0B36859911A5D22E638C116F7B53 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../SipHash-iOS9.3/Info.plist"; sourceTree = "<group>"; };
@@ -979,26 +979,26 @@
 		DA12881EDE841BAFF53B59F38D345BBD /* iosMath-iOS13.0.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "iosMath-iOS13.0.modulemap"; sourceTree = "<group>"; };
 		DA6D8D6C8BF4FE6D4B2048103C54337A /* WheelSieve.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WheelSieve.swift; path = PrimeFactors/Classes/WheelSieve.swift; sourceTree = "<group>"; };
 		DAC524526FA3AA24BCBFA40A0AAAD2F0 /* PrimeFactors-watchOS5.1-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "PrimeFactors-watchOS5.1-dummy.m"; path = "../PrimeFactors-watchOS5.1/PrimeFactors-watchOS5.1-dummy.m"; sourceTree = "<group>"; };
-		DAEBE918DC49521AD221CC9664928D71 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		DAEBE918DC49521AD221CC9664928D71 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DBA839694709899E17BFC3F13F98D6CD /* PandigitalTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PandigitalTester.swift; path = MoreNumbers/Classes/PandigitalTester.swift; sourceTree = "<group>"; };
 		DC8F621FA27387909A0755B2A903010A /* SkewesTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkewesTester.swift; path = MoreNumbers/Classes/SkewesTester.swift; sourceTree = "<group>"; };
 		DD475C3AC2BA011320C7BF63C118327C /* Pods-MoreNumbersInput-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MoreNumbersInput-frameworks.sh"; sourceTree = "<group>"; };
 		DE46376C088AEE859CB48A015E12BFEF /* MoreNumbers-iOS9.3-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MoreNumbers-iOS9.3-dummy.m"; path = "../MoreNumbers-iOS9.3/MoreNumbers-iOS9.3-dummy.m"; sourceTree = "<group>"; };
-		DEFA78229D3D7BD0BFC064DF4F2E9F77 /* Pods_MoreNumbers_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MoreNumbers_Extension.framework; path = "Pods-MoreNumbers Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEFA78229D3D7BD0BFC064DF4F2E9F77 /* Pods_MoreNumbers_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbers_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE0A29B480ABF38978F79D2955E93C8 /* MTMathListDisplay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTMathListDisplay.m; path = iosMath/render/MTMathListDisplay.m; sourceTree = "<group>"; };
 		DFF9FFA353D002D0721B933B8D1FD288 /* Pods-MoreNumbers_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MoreNumbers_Example-dummy.m"; sourceTree = "<group>"; };
 		DFFD0ACC864EF4DCD94E8A3525BEF574 /* Pods-MoreNumbers_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MoreNumbers_Example.modulemap"; sourceTree = "<group>"; };
 		E02580C7EC9A98EBDD03494927F08D7A /* UInt128.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UInt128.swift; path = PrimeFactors/Classes/UInt128.swift; sourceTree = "<group>"; };
 		E114EDC080504A41D6FF45F1DE1AD438 /* Factorize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Factorize.swift; path = PrimeFactors/Classes/Factorize.swift; sourceTree = "<group>"; };
 		E115B5BE1508AE0A38DFABED28AF9B26 /* SipHash-iOS9.3-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SipHash-iOS9.3-prefix.pch"; path = "../SipHash-iOS9.3/SipHash-iOS9.3-prefix.pch"; sourceTree = "<group>"; };
-		E1E7D7B2547C7B4871A8B7DE9B7F339C /* SipHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SipHash.framework; path = "SipHash-watchOS5.1.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2EC23584148A20020BEC908AEF943EE /* SipHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SipHash.framework; path = "SipHash-iOS13.0.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1E7D7B2547C7B4871A8B7DE9B7F339C /* SipHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SipHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2EC23584148A20020BEC908AEF943EE /* SipHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SipHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E43E1DA175D043898F35885E7A349E03 /* Subtraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Subtraction.swift; path = sources/Subtraction.swift; sourceTree = "<group>"; };
 		E5730A2EBB1EAEC0261B71206F6B3D82 /* Pods-MoreNumbers Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MoreNumbers Extension-umbrella.h"; sourceTree = "<group>"; };
 		E6A84A90BEF10A15CE6529E22F073051 /* LookAndSayTester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LookAndSayTester.swift; path = MoreNumbers/Classes/LookAndSayTester.swift; sourceTree = "<group>"; };
 		E7BA128B23B02B11661457B771E13786 /* Random.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Random.swift; path = sources/Random.swift; sourceTree = "<group>"; };
 		E87AE172516036C335751AFEB87CAF5C /* PrimeFactors-iOS9.3.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "PrimeFactors-iOS9.3.xcconfig"; path = "../PrimeFactors-iOS9.3/PrimeFactors-iOS9.3.xcconfig"; sourceTree = "<group>"; };
-		E98A5825EE9CAFE9D56A525F01605B9B /* MoreNumbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MoreNumbers.framework; path = "MoreNumbers-iOS13.0.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E98A5825EE9CAFE9D56A525F01605B9B /* MoreNumbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoreNumbers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1D428C85053F949FAFB27147E98C35 /* Square Root.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Square Root.swift"; path = "sources/Square Root.swift"; sourceTree = "<group>"; };
 		EE09D36AE7038162250723665ADB1018 /* SipHashable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SipHashable.swift; path = SipHash/SipHashable.swift; sourceTree = "<group>"; };
 		EEC87FD95D1F2BF02BE5F935078D0983 /* Addition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Addition.swift; path = sources/Addition.swift; sourceTree = "<group>"; };
@@ -1009,7 +1009,7 @@
 		F35993F9956328FEFA8BE0502A31D445 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F430DF5A739CA3DC07B47CA8319A6C04 /* Pods-MoreNumbers Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MoreNumbers Extension-frameworks.sh"; sourceTree = "<group>"; };
 		F4AD2A6732C07750C5FC92F919003AAB /* PrimeFactors-iOS13.0.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PrimeFactors-iOS13.0.xcconfig"; sourceTree = "<group>"; };
-		F4C478398D96E963B85921C09109F643 /* Pods_MoreNumbers_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MoreNumbers_Example.framework; path = "Pods-MoreNumbers_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4C478398D96E963B85921C09109F643 /* Pods_MoreNumbers_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreNumbers_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57D21769D023DA3E6F4F58292606336 /* MTMathList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTMathList.h; path = iosMath/lib/MTMathList.h; sourceTree = "<group>"; };
 		F5AE62F3687646F38750B105B2473D5F /* BigUInt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BigUInt.swift; path = sources/BigUInt.swift; sourceTree = "<group>"; };
 		F6C461058725FA3F27F73982AC80049B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../MoreNumbers-iOS9.3/Info.plist"; sourceTree = "<group>"; };
@@ -1388,7 +1388,6 @@
 				BB5530B36FAC640044240456BC38F440 /* Words and Bits.swift */,
 				D0425136035DA61BA28AEA468C9AA3E5 /* Support Files */,
 			);
-			name = BigInt;
 			path = BigInt;
 			sourceTree = "<group>";
 		};
@@ -1472,7 +1471,6 @@
 				DA6D8D6C8BF4FE6D4B2048103C54337A /* WheelSieve.swift */,
 				050774B9DAAD25116B5CD52A67E208D7 /* Support Files */,
 			);
-			name = PrimeFactors;
 			path = PrimeFactors;
 			sourceTree = "<group>";
 		};
@@ -1616,7 +1614,6 @@
 				B825828BCB7284B772CAF6278502259A /* SipHasher.swift */,
 				9C328ED9F679EDD90446FB57726B3ABA /* Support Files */,
 			);
-			name = SipHash;
 			path = SipHash;
 			sourceTree = "<group>";
 		};
@@ -1680,7 +1677,6 @@
 				7045F89371F6CD5E2A6CF2DBF2202E3E /* Resources */,
 				738D9888C2AE78689F2ABB32C54E4E75 /* Support Files */,
 			);
-			name = iosMath;
 			path = iosMath;
 			sourceTree = "<group>";
 		};
@@ -2317,7 +2313,9 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
+				Base,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
 			productRefGroup = 494A39A64F3BE324148D403262F4CC50 /* Products */;
@@ -4337,8 +4335,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 				WATCHOS_DEPLOYMENT_TARGET = 5.1;

@@ -166,7 +166,7 @@ public struct FactorWithPot {
 
 
 public extension FactorCache {
-    public func Latex(n: BigUInt, withpot : Bool, cancel: CalcCancelProt?) -> String? {
+    func Latex(n: BigUInt, withpot : Bool, cancel: CalcCancelProt?) -> String? {
         if n<2 { return nil }
         let factors = Factor(p: n,cancel: cancel)
         if cancel?.IsCancelled() ?? false { return nil }

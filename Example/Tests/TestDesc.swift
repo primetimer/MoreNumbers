@@ -56,7 +56,7 @@ class TestDesc: XCTestCase {
                     if first {
                         print("\(n) \(t.property()) : \(desc)")
                         first = false
-                        let again = TesterDescriber.Desc(n: BigUInt(n),tester: t)
+//                        let again = TesterDescriber.Desc(n: BigUInt(n),tester: t)
                     }
                     
                 }

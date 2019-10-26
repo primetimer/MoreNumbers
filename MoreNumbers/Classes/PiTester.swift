@@ -479,7 +479,7 @@ public class MathConstantTester : NumTester {
             ans = ans + "\(v1) = \\lim\\limits_{j \\rightarrow \\infty} \\frac{\\mu_{j} - \\mu_{j-1}}{\\mu_{j+1} - \\mu_{j}} \\\\"
             return ans
         case .feigenbaumalpha:
-            let v1 = "\\delta"
+            _ = "\\delta"
             let v2 = "\\alpha"
             var ans = "f_{\\mu}(x) = 1 - \\mu \\mid x \\mid^{2}, \\\\"
             ans = ans + "X_{\\mu} = \\{ x_{i+1} = f_{\\mu}(x_{i}), x_0 = 0 \\}, \\\\"
@@ -505,7 +505,7 @@ public class MathConstantTester : NumTester {
             ans = ans + "\(v) = \\lim\\limits_{n \\rightarrow \\infty} \\sqrt[n]{\\mid t_{n} \\mid } \\\\ "
             return ans
         case .carefree:
-            let v = MathConstantType.latex[type.rawValue]
+            _ = MathConstantType.latex[type.rawValue]
             var ans = "C_{1}(x) = \\mid \\{ (a,b) \\le x : gcd(a,b) = 1, a \\text{ is squarefree} \\} \\mid"
             ans = ans + "\\\\ C_{1}(x) = K_{1}x^{2} + O(x ln x)"
             return ans
@@ -682,7 +682,7 @@ public class RationalApproxTester : MathConstantTester, TestDescriber  {
         var desc = ""
         let name = type.Symbol()
        
-        guard let (_,_,oeiscf) = type.OEISRational() else { return "" }
+        guard let (_,_,_) = type.OEISRational() else { return "" }
  
         desc = desc + name + "≈"
         desc = desc + String(num) + "/" + String(denom)
@@ -698,7 +698,7 @@ public class RationalApproxTester : MathConstantTester, TestDescriber  {
     
     public func OEISNr() -> String? {
         
-        guard let (oeis_n_nr,oeis_d_nr,_) = type.OEISRational() else { return nil }
+        guard let (oeis_n_nr,_,_) = type.OEISRational() else { return nil }
         return oeis_n_nr
     }
     

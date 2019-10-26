@@ -110,7 +110,7 @@ public class Palindromic2Tester : NumTester, TestDescriber {
         
         if n == 0 { return (0,0) }
         let d = n.getDigits(base: b)
-        let nfirst = d[d.count-1]
+        _ = d[d.count-1]
         let m = d.count / 2
         
         if isPalindromic(d) {
@@ -212,7 +212,7 @@ public class Palindromic2Tester : NumTester, TestDescriber {
         if n.isPalindromic(base: 10) {
             return false
         }
-        if let(a,b) = Palindromic2Tester.Pali2(n: n, b: 10, cancel: cancel) {
+        if let(_,_) = Palindromic2Tester.Pali2(n: n, b: 10, cancel: cancel) {
             return false
         }
         if cancel?.IsCancelled() ?? false { return nil }
@@ -240,7 +240,7 @@ public class Palindromic2Tester : NumTester, TestDescriber {
     }
     
     public func propertyString() -> String {
-        var prop = "Not the sum of two palindromes\n"
+        let prop = "Not the sum of two palindromes\n"
         return prop
     }
     

@@ -20,7 +20,7 @@ class TestPalindromSum2: XCTestCase {
         func reflect(_ p: BigUInt, m: Int, mid : Bool, base : Int) -> BigUInt {
             var s = p.getDigits(base: b)
             while s.count < m { s.insert(0, at: 0) }
-            var r = s
+            let r = s
             
             if mid { s.removeFirst() }
             for d in  r {

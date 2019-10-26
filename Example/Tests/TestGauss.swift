@@ -18,7 +18,7 @@ class TestGauss: XCTestCase {
                     }
                     if b != nil {
                         let prod = a*b!
-                        print(n,a,b,prod)
+                        print(n,a,b!,prod)
                         XCTAssert(prod.a == n)
                         XCTAssert(prod.i == 0)
                     }

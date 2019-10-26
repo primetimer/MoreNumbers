@@ -66,7 +66,7 @@ class TestMandel: XCTestCase {
         return nil
     }
     func test1() {
-        Mandel(4)
+        _ = Mandel(4)
     }
    
 }

@@ -21,7 +21,7 @@ public class PinTester10n : NumTester {
     public init() {
     }
 	public func property() -> String {
-		return "primes up to 10^n"
+		return "primes up to power of ten"
 	}
     
     private func WhichPow(n: BigUInt) -> (pow: UInt64,npow: Int)? {
@@ -56,19 +56,147 @@ public class PinTester10n : NumTester {
 	}
 }
 
-public class PinReverseTester : NumTester {
+//
+//As used in OEIS A307851
+//
+public class SheldonPrimeTester : NumTester {
+    
+    public init() {}
+    public func property() -> String {
+        return "Sheldon prime"
+    }
+    
+    fileprivate var radix : [Int] = [10] //,2,4,16,12,20]
+    //private var radix : []= [2,3,4,5,6,7,9,10,11,12,13,14,15,16,17,18,19,20]
+    
+    fileprivate func Digits(n: BigUInt, base : Int) -> [Int] {
+        if n == 0 { return [0] }
+        
+        var ans : [Int] = []
+        var n = n
+        let b = BigUInt(base)
+        while n > 0 {
+           let d = n % b
+            n = n / b
+            ans.insert(Int(d), at: 0)
+        }
+        return ans
+    }
+    
+    fileprivate func BigBaseString(n: BigUInt, base : Int) ->String {
+        if base <= 36 {
+            return String(n, radix: base)
+        }
+        let d = Digits(n: n, base: base)
+        var ans = ""
+        for dig in d {
+            if !ans.isEmpty { ans = ans + " " }
+            ans = ans + String(dig)
+        }
+        return ans
+    }
+    
+    fileprivate func Product(n: BigUInt, base: Int) -> BigUInt {
+        let d = Digits(n: n, base: base)
+        var prod : BigUInt = 1
+        for dig in d {
+            prod = prod * BigUInt(dig)
+        }
+        return prod
+    }
+    
+    fileprivate func ProductString(n: BigUInt, base: Int) -> String {
+        let d = Digits(n: n, base: base)
+        var ans = ""
+        
+        for dig in d {
+            if !ans.isEmpty {
+                ans = ans + "\\cdot{" + String(dig) + "}"
+            } else {
+                ans = ans + String(dig)
+            }
+        }
+        return ans
+    }
+    
+    public func isSpecial(n: BigUInt,cancel : CalcCancelProt?) -> Bool? {
+        guard let isprime = PrimeTester().isSpecial(n: n, cancel: cancel) else { return nil }
+        if !isprime { return false }
+        if !n.isInt64() { return nil }
+        
+        for base in radix {
+            let prod = Product(n: n, base: base)
+            if prod == 0 { return false }
+            let prodpin = PinTester10n.ml.Pin(n: UInt64(n))
+            if prod % BigUInt(prodpin) == 0 {
+                return true
+            }
+        }
+        return false
+    }
+    
+    public func Info(n: BigUInt,cancel : CalcCancelProt?) -> (pin: UInt64, base: Int, str: String)? {
+        guard let isprime = PrimeTester().isSpecial(n: n, cancel: cancel) else { return nil }
+        if !isprime { return nil }
+        if !n.isInt64() { return nil }
+        
+        for base in radix {
+                let prod = Product(n: n, base: base)
+                if prod == 0 { return nil }
+            let prodpin = PinTester10n.ml.Pin(n: UInt64(n))
+            if prod % BigUInt(prodpin) == 0 {
+                 let s = ProductString(n: n, base: base)
+                return (pin: prodpin, base: base,str: s)
+            }
+        }
+        return nil
+    }
+    
+    public func getLatex(n: BigUInt) -> String? {
+        if !n.isInt64() { return nil }
+        guard let (pin,base,str) = Info(n: n, cancel: TimeOut()) else { return nil }
+        
+        var latex = "\\pi(" + String(n) + ")="
+        if base != 10 {
+            latex = latex + "\\pi(" + BigBaseString(n: n, base: base) + "_{\(base)} )="
+        }
+        latex = latex + String(pin)
+        let s = ProductString(n: n, base: base)
+        if base == 10 && [17,73, 2475989].contains(Int(n)) {
+            return latex + "=" + s
+        }
+        return latex + "\\mid" + s
+    }
+}
+
+
+
+//Sheldon Number π(rev(n) == rev(π(n))
+public class SheldonNumberTester : NumTester {
     
     public func property() -> String {
         return "Pinreverse"
     }
     
     public func getLatex(n: BigUInt) -> String? {
-        return nil
+        if !n.isInt64() { return nil }
+        let special = isSpecial(n: n, cancel: TimeOut()) ?? false
+        if !special { return nil }
+        
+        let rev = reverse(n: n, base: 10)
+        let pinrev = PinTester10n.ml.Pin(n: UInt64(rev))
+        
+        let pin = PinTester10n.ml.Pin(n: UInt64(n))
+        //let revpin = reverse(n: BigUInt(pin), base: 10)
+        
+        var latex = "\\pi(\(String(n)) ) = \(pin) \\\\"
+        latex = latex + "\\pi(\(String(rev))) = \(pinrev)"
+        return latex
     }
     
     public init() {}
     
-    private func reverse(n: BigUInt, base : Int) -> BigUInt {
+    public func reverse(n: BigUInt, base : Int) -> BigUInt {
         if n == 0 { return 0 }
         var ans = BigUInt(0)
         
@@ -97,6 +225,7 @@ public class PinReverseTester : NumTester {
     
 }
 
+/*
 public class SheldonNumberTester : NumTester {
     
     public init() {
@@ -211,6 +340,7 @@ public class SheldonNumberTester : NumTester {
         return nil
     }
 }
+ */
 
 public class SheldonReverseNumberTester : NumTester {
     

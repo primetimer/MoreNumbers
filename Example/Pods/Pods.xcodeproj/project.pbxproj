@@ -242,6 +242,9 @@
 		835A611F903B989E74E8DFDCB02DFFC0 /* MTFontMathTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD1F1562331FDFA5E9727E5A76C2C0E /* MTFontMathTable.m */; };
 		8467DD4A97DD9D336053D720D2F62E1D /* SemiPrimeTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2057E187A9C6FFD09ADC87843BEFDB /* SemiPrimeTester.swift */; };
 		8484752408FA94DA3A004208242C9D44 /* EisensteinInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48109966E610CF3D9801DDF5953F487F /* EisensteinInt.swift */; };
+		84C5D1292368CA94001F146B /* PowerTowerTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D1282368CA94001F146B /* PowerTowerTester.swift */; };
+		84C5D12A2368CA94001F146B /* PowerTowerTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D1282368CA94001F146B /* PowerTowerTester.swift */; };
+		84C5D12B2368CA94001F146B /* PowerTowerTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D1282368CA94001F146B /* PowerTowerTester.swift */; };
 		854667C3F00E4375C11E9F93FCFB06C3 /* MTUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB5BB28F00D3DC8313DF1C76E7EDC5 /* MTUnicode.m */; };
 		857B49B3A67BA0354DB092D7763217BC /* UIColor+HexString.h in Headers */ = {isa = PBXBuildFile; fileRef = 23171CC44B637AB790C7FCE956469746 /* UIColor+HexString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		85F6DAD756EB49D22EFF32C6F5E4422A /* DivergentTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD5F2B7F994588BB3C94E71629B2D23 /* DivergentTester.swift */; };
@@ -877,6 +880,7 @@
 		81146C02C21463B4A4C657827138D261 /* NSColor+HexString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSColor+HexString.m"; path = "iosMath/render/NSColor+HexString.m"; sourceTree = "<group>"; };
 		8294495444B5ADCE5383D6FA0BD42566 /* Bitwise Ops.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bitwise Ops.swift"; path = "sources/Bitwise Ops.swift"; sourceTree = "<group>"; };
 		831028C08EFBC04989CE3A57D2F7B36C /* iosMath-iOS9.3.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "iosMath-iOS9.3.modulemap"; path = "../iosMath-iOS9.3/iosMath-iOS9.3.modulemap"; sourceTree = "<group>"; };
+		84C5D1282368CA94001F146B /* PowerTowerTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PowerTowerTester.swift; path = MoreNumbers/Classes/PowerTowerTester.swift; sourceTree = "<group>"; };
 		87239722D075C2185ACBF0B99ADF48AE /* Pods-MoreNumbersInput-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoreNumbersInput-acknowledgements.plist"; sourceTree = "<group>"; };
 		8791C4DF452A5EA55C153DB61A259D6E /* MoreNumbersExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MoreNumbersExtension.swift; path = MoreNumbers/Classes/MoreNumbersExtension.swift; sourceTree = "<group>"; };
 		87EF8BF892FF7C5A5ACCF38ACE01F176 /* iosMath-iOS13.0.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "iosMath-iOS13.0.xcconfig"; sourceTree = "<group>"; };
@@ -1302,6 +1306,7 @@
 				F1B43BFA1BAD11CC69F345EDFCC927C6 /* PinTester.swift */,
 				48B4E13E132AA386830A430779D6B565 /* PiTester.swift */,
 				1515F876B890528048041EF1DBD1DA85 /* PlatonicTester.swift */,
+				84C5D1282368CA94001F146B /* PowerTowerTester.swift */,
 				1201B55BADE21F496DAF088DB3D4C0BD /* Pratt.swift */,
 				3113AFDD4BB6EB15307E08E150B7063D /* PrimeTester.swift */,
 				13EBFB3F940403D33E424DDB1F069FE5 /* ReplaceMe.swift */,
@@ -2578,6 +2583,7 @@
 				3C2F534A8B0BE9F9F1E2DD6B7E188621 /* MulitplicativePersistenceTester.swift in Sources */,
 				8646CB5FB537B42B5BD9C5972792B741 /* NarcissisticTester.swift in Sources */,
 				3A084DFC9AD83C62325D9D23FB968E3E /* NumberSequencer.swift in Sources */,
+				84C5D12B2368CA94001F146B /* PowerTowerTester.swift in Sources */,
 				134330AE1A53DFD5408A7A5F53378433 /* OEIS.swift in Sources */,
 				7E5411D745EEBDDA85057B7A34D82970 /* padic.swift in Sources */,
 				ED0247B3A98E01526A3F31157B9990BC /* PalindromeSplitter.swift in Sources */,
@@ -2868,6 +2874,7 @@
 				953515AB71A37C141A2C50344DEFD704 /* MulitplicativePersistenceTester.swift in Sources */,
 				378A78A5EB33E9C13C50386A01D55D02 /* NarcissisticTester.swift in Sources */,
 				963E19770B2F24E3EEDAF59B82480B40 /* NumberSequencer.swift in Sources */,
+				84C5D1292368CA94001F146B /* PowerTowerTester.swift in Sources */,
 				78BCF5ED71ECA2B840C93248CE6A16A8 /* OEIS.swift in Sources */,
 				51019BD8676DE85984980F6EBAFB324E /* padic.swift in Sources */,
 				9BB6E5C9BD7D53434CC08E52FC94D39A /* PalindromeSplitter.swift in Sources */,
@@ -2966,6 +2973,7 @@
 				1650FA7260911A74CE7645E92F4A8B2D /* MulitplicativePersistenceTester.swift in Sources */,
 				CC01E4DEB58CC950A04155A2303A4FAD /* NarcissisticTester.swift in Sources */,
 				9468A953A473CD2850EE1042A09F4AC7 /* NumberSequencer.swift in Sources */,
+				84C5D12A2368CA94001F146B /* PowerTowerTester.swift in Sources */,
 				C4EF3A9DAB14739FA090E7DEC01F4162 /* OEIS.swift in Sources */,
 				A3D7C32DCD660F0AF7DAE7020B9AE9F7 /* padic.swift in Sources */,
 				620E72D2956CA5BBBF94D8174818CC77 /* PalindromeSplitter.swift in Sources */,

@@ -326,6 +326,42 @@ class ViewController: UIViewController {
         uimath.latex = latex
     }
     
+    private func testEuler5() {
+        let t = EulerCounterexampleTester()
+        //        let n = BigUInt(404)
+        //        let n = BigUInt(334)
+        //        let n = BigUInt(445) // 1 / 3
+        //        let n = BigUInt(666)
+        let n = BigUInt(144)
+        let latex = t.getLatex(n: n)
+        print(latex!)
+        uimath.latex = latex
+    }
+    
+    private func testFermatMiss() {
+        let t = FermatNearMissTester()
+        //        let n = BigUInt(404)
+        //        let n = BigUInt(334)
+        //        let n = BigUInt(445) // 1 / 3
+        //        let n = BigUInt(666)
+        let n = BigUInt(12)
+        let latex = t.getLatex(n: n)
+        print(latex!)
+        uimath.latex = latex
+    }
+    
+    private func testTower() {
+        let t = PowerTowerTester()
+        //        let n = BigUInt(404)
+        //        let n = BigUInt(334)
+        //        let n = BigUInt(445) // 1 / 3
+        //        let n = BigUInt(666)
+        let n = BigUInt(256)
+        let latex = t.getLatex(n: n)
+        print(latex!)
+        uimath.latex = latex
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //uiinput.becomeFirstResponder()
@@ -377,7 +413,7 @@ class ViewController: UIViewController {
 //        testRational()
 //        testSkewes()
 //        testGraham()
-        testSquares()
+//        testSquares()
 //        testGompertz()
 //        testPadic()
 //        testPalindromic2()
@@ -387,6 +423,10 @@ class ViewController: UIViewController {
     // testEisenstein()
 //        testGauss()
         
+        
+//        testEuler5()
+        testTower()
+        //uimath.latex = "\\triangle"
         
         // Do any additional setup after loading the view, typically from a nib.
     }

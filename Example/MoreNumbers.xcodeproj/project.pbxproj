@@ -35,6 +35,7 @@
 		849E3CAD2279875500BCEDB2 /* TestsDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E3CAC2279875500BCEDB2 /* TestsDate.swift */; };
 		84C07EE8223AD07A00E2C6BF /* TestConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C07EE7223AD07A00E2C6BF /* TestConstant.swift */; };
 		84C07EED223C063300E2C6BF /* TestFibonacci.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C07EEC223C063300E2C6BF /* TestFibonacci.swift */; };
+		84C5D12723659319001F146B /* TestFermatMiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D12623659319001F146B /* TestFermatMiss.swift */; };
 		84F1BA30226A37E8009AC9DC /* TestMandel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1BA2F226A37E8009AC9DC /* TestMandel.swift */; };
 		84F88CDB2222071F0090BE75 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F88CDA2222071F0090BE75 /* Default-568h@2x.png */; };
 		84F90031234296DD0030B9A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F90030234296DD0030B9A5 /* AppDelegate.swift */; };
@@ -132,6 +133,7 @@
 		849E3CAC2279875500BCEDB2 /* TestsDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsDate.swift; sourceTree = "<group>"; };
 		84C07EE7223AD07A00E2C6BF /* TestConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestConstant.swift; sourceTree = "<group>"; };
 		84C07EEC223C063300E2C6BF /* TestFibonacci.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestFibonacci.swift; sourceTree = "<group>"; };
+		84C5D12623659319001F146B /* TestFermatMiss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestFermatMiss.swift; sourceTree = "<group>"; };
 		84F1BA2F226A37E8009AC9DC /* TestMandel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMandel.swift; sourceTree = "<group>"; };
 		84F88CDA2222071F0090BE75 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		84F9002E234296DD0030B9A5 /* MoreNumbersInput.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoreNumbersInput.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,6 +246,7 @@
 			children = (
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				841458A92285CB0C00A6E3B1 /* TestEisenstein.swift */,
+				84C5D12623659319001F146B /* TestFermatMiss.swift */,
 				841458AF228626D400A6E3B1 /* TestGauss.swift */,
 				84035A1F235F8852001EE1BF /* TestCongruent.swift */,
 				8462B185227E112400B17BA9 /* TestDesc.swift */,
@@ -745,6 +748,7 @@
 				841458B1228626DC00A6E3B1 /* TestGauss.swift in Sources */,
 				84F1BA30226A37E8009AC9DC /* TestMandel.swift in Sources */,
 				84976AF722561EC4008A3EE1 /* TestOEIS Consistency.swift in Sources */,
+				84C5D12723659319001F146B /* TestFermatMiss.swift in Sources */,
 				840359F9235B8912001EE1BF /* TestAmicable.swift in Sources */,
 				849E3CAD2279875500BCEDB2 /* TestsDate.swift in Sources */,
 				841985782236383E00BEF0A4 /* TestSchizophrenic.swift in Sources */,
